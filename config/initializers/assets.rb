@@ -15,8 +15,29 @@ Rails.application.config.assets.precompile += [
   "stylesheets/uikit.css"
 ]
 
+#Precompile Landing page Stylesheets
+Rails.application.config.assets.precompile += [
+  "bootstrap.min.css",
+  "owl.carousel.min.css",
+  "themify-icons.css",
+  "animate.css",
+  "magnific-popup.css",
+  "space.css",
+  "theme.css",
+  "overright.css",
+  "normalize.css",
+  "style.css",
+  "responsive.css"
+  ]
+
 # Precompile core javascripts
 Rails.application.config.assets.precompile += ['javascripts/*.js']
+
+# Precompile Landing page javascripts
+Rails.application.config.assets.precompile += [
+  "vendor/*.js",
+  "*.js",
+  ]
 
 # Precompile fonts
 Rails.application.config.assets.precompile += ['fonts/*']
