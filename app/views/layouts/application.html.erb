@@ -75,7 +75,7 @@
   <%= yield :head %>
 </head>
 <body>
-
+  <%= render 'navbar' %>
   <%= content_for?(:content) ? yield(:content) : yield %>
 
 <!-- LANDING PAGE JS -->
