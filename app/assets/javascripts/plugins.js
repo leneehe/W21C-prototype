@@ -94,12 +94,12 @@ $(window).scroll(function(){
 			var difference = $(window).scrollTop() - $(this).offset().top;
 			// Top value of image is set to half the amount scrolled
 			// (this gives the illusion of the image scrolling slower than the rest of the page)
-			var half = (difference / 2) + 'px';
+			var half = (difference / 2) - 200 + 'px';
 
 			$(this).find('img').css('top', half);
 		} else {
 			// if image is below the top of the window set top to 0
-			$(this).find('img').css('top', '0');
+			$(this).find('img').css('top', '-200px');
 		}
 	});
 });

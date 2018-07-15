@@ -80,8 +80,8 @@ Header-Background
 .section-bg img {
     min-height: 100%;
     min-width: 100%;
-    opacity: 0.3;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
 }
 
 .overlay-bg {
@@ -90,7 +90,7 @@ Header-Background
 }
 
 .dewo:after {
-    background: url("../images/header-dew.png") no-repeat scroll center bottom -10px / 100% auto;
+    background: url("header-dew.png") no-repeat scroll center bottom -10px / 100% auto;
     bottom: 0;
     content: "";
     height: 100%;
@@ -123,7 +123,7 @@ Header-Background
 }
 
 .blog-header {
-    background: url("../images/blog/bg-1.jpg") no-repeat scroll 0 0 / cover;
+    background: url("blog/bg-1.jpg") no-repeat scroll 0 0 / cover;
     opacity: 0.3;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
 }
@@ -233,12 +233,12 @@ Angle-background
 }
 
 .single_screen_slide {
-    background: rgba(0, 0, 0, 0) url("../images/screen/phone.png") no-repeat scroll center center;
+    background: rgba(0, 0, 0, 0) url("screen/phone.png") no-repeat scroll center center;
     padding: 66px 70px 70px 71px;
 }
 
 .list_screen_slide:after {
-    content: url("../images/screen/phone.png");
+    content: url("screen/phone.png");
     left: 50%;
     position: absolute;
     top: 50%;
@@ -454,7 +454,7 @@ address {
 }
 
 .md-icon {
-    font-size: 26px;
+    font-size: 30px;
 }
 
 .mainmenu-area {
