@@ -1,130 +1,91 @@
-<section data-spy="scroll" data-target="#mainmenu" data-offset="50">
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+  <!--Header-Area-->
+  <header class="blue-bg relative fix" id="home">
+      <div class="section-bg overlay-bg ripple ">
+          <div class="parallax-image">
+            <%= image_tag("login-bg.jpg")  %>
+          </div>
+      </div>
 
-    <div class="preloade">
-        <span><i class="ti-mobile"></i></span>
-    </div>
-
-    <!--Header-Area-->
-    <header class="blue-bg relative fix" id="home">
-        <div class="section-bg overlay-bg ripple ">
-            <div class="parallax-image">
-              <%= image_tag("login-bg.jpg")  %>
-            </div>
-        </div>
-        <!--Mainmenu-->
-        <nav class="navbar navbar-default mainmenu-area navbar-fixed-top" data-spy="affix" data-offset-top="60">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" data-toggle="collapse" class="navbar-toggle" data-target="#mainmenu">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="#" class="navbar-brand">
-                        <%= image_tag "mycarecompass_logo.png" %>
-                        <!-- <h2 class="text-white logo-text">My Care Compass</h2> -->
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse navbar-right" id="mainmenu">
-                    <ul class="nav navbar-nav">
-                        <li><%= link_to "Home", root_path %></li>
-                        <li><%= link_to "Plan", plan_path(anchor: "work") %></li>
-                        <li><%= link_to "Goal Centre", goal_centre_path(anchor: "feature") %></li>
-                        <li><%= link_to "Track", track_path(anchor: "team") %></li>
-                        <li><%= link_to "Learn", learn_path(anchor: "client") %></li>
-                        <li><%= link_to "Resources", resources_path(anchor: "price") %></li>
-                        <li><%= link_to "About", about_path(anchor: "blog") %></li>
-                        <li><%= link_to "Sign Up", signup_path(anchor: "contact") %></li>
-                        <li><%= link_to "Login", login_path %></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!--Mainmenu/-->
-        <div class="space-20 hidden-xs"></div>
-        <!--Header-Text-->
-        <div class="container text-white">
-            <div class="row text-center">
-                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-                    <div class="space-40"></div>
-                    <div class="space-100"></div>
-                    <h1>Sign Up</h1>
-                    <div class="space-10"></div>
-                    <p>Already have an account? <%= link_to "Login Here", login_path %></p>
-                    <div class="space-10"></div>
-                </div>
-            </div>
-        </div>
-        <!--Header-Text/-->
-        <div class="row">
-            <div class="">
-                <div class="col-xs-12 col-md-4 col-sm-offset-4 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="well well-lg">
-                        <h3>Create an Account</h3>
-                        <div class="space-10"></div>
-                        <p class="text-center">Why create an account?</p>
-                        <div class="space-10"></div>
-                        <form action="process.php" id="contact-form" method="post">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label for="form-subject" class="sr-only">Your Name</label>
-                                        <input type="text" class="form-control" id="form-name" name="form-name" placeholder="Your Name" required>
-                                    </div>
-                                    <div class="space-10"></div>
-                                </div>
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label for="form-subject" class="sr-only">Your Email</label>
-                                        <input type="email" class="form-control" id="form-email" name="form-email" placeholder="Your Email" required>
-                                    </div>
-                                    <div class="space-10"></div>
-                                </div>
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label for="form-subject" class="sr-only">Password</label>
-                                        <input type="password" class="form-control" id="form-password" name="form-password" placeholder="Password" required>
-                                    </div>
-                                    <div class="space-10"></div>
-                                </div>
-                                <div class="col-xs-12">
-                                    <div class="space-10"></div>
-                                    <button class="btn btn-link text-uppercase" style="width: 100%" type="submit">Sign Up</button>
-                                    <div class="space-20"></div>
-                                    <p>By clicking "Sign Up", you agree to our terms and privacy policy. We'll occasionally send you account related emails.</p>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="space-40"></div>
-    </header>
+      <div class="space-20 hidden-xs"></div>
+      <!--Header-Text-->
+      <div class="container text-white">
+          <div class="row text-center">
+              <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                  <div class="space-40"></div>
+                  <div class="space-100"></div>
+                  <h1>Sign Up</h1>
+                  <div class="space-10"></div>
+                  <p>Already have an account? <%= link_to "Login Here", login_path %></p>
+                  <div class="space-10"></div>
+              </div>
+          </div>
+      </div>
+      <!--Header-Text/-->
+      <div class="row">
+          <div class="">
+              <div class="col-xs-12 col-md-4 col-sm-offset-4 wow fadeInUp" data-wow-delay="0.2s">
+                  <div class="well well-lg">
+                      <h3>Create an Account</h3>
+                      <div class="space-10"></div>
+                      <p class="text-center">Why create an account?</p>
+                      <div class="space-10"></div>
+                      <form action="process.php" id="contact-form" method="post">
+                          <div class="row">
+                              <div class="col-xs-12">
+                                  <div class="form-group">
+                                      <label for="form-subject" class="sr-only">Your Name</label>
+                                      <input type="text" class="form-control" id="form-name" name="form-name" placeholder="Your Name" required>
+                                  </div>
+                                  <div class="space-10"></div>
+                              </div>
+                              <div class="col-xs-12">
+                                  <div class="form-group">
+                                      <label for="form-subject" class="sr-only">Your Email</label>
+                                      <input type="email" class="form-control" id="form-email" name="form-email" placeholder="Your Email" required>
+                                  </div>
+                                  <div class="space-10"></div>
+                              </div>
+                              <div class="col-xs-12">
+                                  <div class="form-group">
+                                      <label for="form-subject" class="sr-only">Password</label>
+                                      <input type="password" class="form-control" id="form-password" name="form-password" placeholder="Password" required>
+                                  </div>
+                                  <div class="space-10"></div>
+                              </div>
+                              <div class="col-xs-12">
+                                  <div class="space-10"></div>
+                                  <button class="btn btn-link text-uppercase" style="width: 100%" type="submit">Sign Up</button>
+                                  <div class="space-20"></div>
+                                  <p>By clicking "Sign Up", you agree to our terms and privacy policy. We'll occasionally send you account related emails.</p>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="space-40"></div>
+  </header>
 
 
-    <!--Footer-area-->
-    <footer class="black-bg">
-        <div class="container">
+  <!--Footer-area-->
+  <footer class="black-bg">
+      <div class="container">
 
-            <div class="space-80"></div>
-            <div class="row text-white wow fadeIn">
-                <div class="col-xs-12 text-center">
-                    <div class="social-menu">
-                        <a href="#"><span class="ti-facebook"></span></a>
-                        <a href="#"><span class="ti-twitter-alt"></span></a>
-                        <a href="#"><span class="ti-linkedin"></span></a>
-                        <a href="#"><span class="ti-pinterest-alt"></span></a>
-                    </div>
-                    <div class="space-20"></div>
-                    <p>@ 2017 <a href="https://themeforest.net/user/themectg">ThemeCTG</a> all right resurved. Designed by <a href="#">M S Newaz</a></p>
-                </div>
-            </div>
-            <div class="space-20"></div>
-        </div>
-    </footer>
-    <!--Footer-area-->
-  <section>
+          <div class="space-80"></div>
+          <div class="row text-white wow fadeIn">
+              <div class="col-xs-12 text-center">
+                  <div class="social-menu">
+                      <a href="#"><span class="ti-facebook"></span></a>
+                      <a href="#"><span class="ti-twitter-alt"></span></a>
+                      <a href="#"><span class="ti-linkedin"></span></a>
+                      <a href="#"><span class="ti-pinterest-alt"></span></a>
+                  </div>
+                  <div class="space-20"></div>
+                  <p>@ 2017 <a href="https://themeforest.net/user/themectg">ThemeCTG</a> all right resurved. Designed by <a href="#">M S Newaz</a></p>
+              </div>
+          </div>
+          <div class="space-20"></div>
+      </div>
+  </footer>
+  <!--Footer-area-->

@@ -1,60 +1,61 @@
 <header class="title-header container-fluid">
-    <div class="row">
-        <div class="col-xs-offset-1 col-sm-offset-2">
-            <h1><%= @title %></h1>
-        </div>
+    <div class="container">
+      <%= image_tag("icon/organize.png", class: "title-img") %>
+      <h1 class="title"><%= @title %></h1>
     </div>
 </header>
 <div class="container">
+    <div class="space-60"></div>
     <main class="panel-group" id="accordion">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">What is My Care Compass </a></h4>
-                            </div>
-                            <div id="collapse1" class="panel-collapse collapse in">
-                                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Who created My Care Compass</a></h4>
-                            </div>
-                            <div id="collapse2" class="panel-collapse collapse">
-                                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">My Doctor's office/local hospital already has an EMR.  Why do I need this?</a></h4>
-                            </div>
-                            <div id="collapse3" class="panel-collapse collapse">
-                                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                            </div>
-                        </div>
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">What is My Care Compass?</a></h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse in">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</div>
+          </div>
+      </div>
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Who created My Care Compass?</a></h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+      </div>
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">My Doctor's office/local hospital already has an EMR.  Why do I need this?</a></h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+      </div>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">I just go diagnosed and I don't know where to start.  Please help.</a></h4>
-                            </div>
-                            <div id="collapse4" class="panel-collapse collapse">
-                                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Is this all there is?</a></h4>
-                            </div>
-                            <div id="collapse5" class="panel-collapse collapse">
-                                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Why should I create a profile?</a></h4>
-                            </div>
-                            <div id="collapse6" class="panel-collapse collapse">
-                                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                            </div>
-                        </div>
-                    </main>
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">I just go diagnosed and I don't know where to start.  Please help.</a></h4>
+          </div>
+          <div id="collapse4" class="panel-collapse collapse">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+      </div>
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Is this all there is?</a></h4>
+          </div>
+          <div id="collapse5" class="panel-collapse collapse">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+      </div>
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Why should I create a profile?</a></h4>
+          </div>
+          <div id="collapse6" class="panel-collapse collapse">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+      </div>
+  </main>
+  <div class="space-60"></div>
 </div>
