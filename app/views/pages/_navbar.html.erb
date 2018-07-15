@@ -1,0 +1,28 @@
+ <!--Mainmenu-->
+        <nav class="navbar navbar-default mainmenu-area navbar-fixed-top" data-spy="affix" data-offset-top="60">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" data-toggle="collapse" class="navbar-toggle" data-target="#mainmenu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand">
+                        <%= image_tag "mycarecompass_logo.png" %>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse navbar-right" id="mainmenu">
+                    <ul class="nav navbar-nav">
+                        <li><%= link_to "Home", root_path %></li>
+                        <li><%= link_to "Plan", plan_path %></li>
+                        <li><%= link_to "Goal Centre", goal_centre_path %></li>
+                        <li><%= link_to "Track", track_path %></li>
+                        <li><%= link_to "Learn", learn_path %></li>
+                        <li><%= link_to "Resources", resources_path %></li>
+                        <li><%= link_to "About", about_path %></li>
+                        <li><%= link_to "Sign Up", signup_path %></li>
+                        <li><%= link_to "Login", login_path %></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
