@@ -1,3 +1,4 @@
 tmp/
+tmp/cache/bootsnap-load-path-cache
 log/development.log
 node_modules
