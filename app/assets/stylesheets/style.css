@@ -8,11 +8,11 @@
     Version: 1.0
 
 -----------------------------------------------------------------------------------
-    
+
     CSS INDEX
     ===================
     1. Google font
-	2. Theme Default CSS (body, link color, section etc)   
+	2. Theme Default CSS (body, link color, section etc)
 -----------------------------------------------------------------------------------*/
 
 
@@ -91,7 +91,7 @@ h3 span,
 h4 span,
 h5 span,
 h6 span {
-    color: #2fccd0;
+    color: #26D07C;
 }
 
 html,
