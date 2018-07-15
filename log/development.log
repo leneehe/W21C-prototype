@@ -34577,3 +34577,807 @@ puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
 puma (3.11.4) lib/puma/server.rb:446:in `process_client'
 puma (3.11.4) lib/puma/server.rb:306:in `block in run'
 puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:07:01 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (47.4ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (804.7ms)
+Completed 200 OK in 884ms (Views: 870.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:08:39 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (19.5ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (412.2ms)
+Completed 200 OK in 450ms (Views: 445.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:09:26 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (39.2ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (547.2ms)
+Completed 200 OK in 604ms (Views: 598.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:10:36 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (113.3ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (387.5ms)
+Completed 200 OK in 521ms (Views: 514.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/map-marker.png" for 127.0.0.1 at 2018-07-15 14:10:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/map-marker.png"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/images/map-marker.png" for 127.0.0.1 at 2018-07-15 14:10:39 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/map-marker.png"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:11:19 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (113.5ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (441.7ms)
+Completed 200 OK in 584ms (Views: 577.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:12:02 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (80.6ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (427.0ms)
+Completed 200 OK in 525ms (Views: 519.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:13:14 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (69.1ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (404.8ms)
+Completed 200 OK in 499ms (Views: 491.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:14:31 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (19.4ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (406.1ms)
+Completed 200 OK in 443ms (Views: 437.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:14:47 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (7.0ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (395.5ms)
+Completed 200 OK in 419ms (Views: 414.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:15:01 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (19.0ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (366.7ms)
+Completed 200 OK in 402ms (Views: 397.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:15:53 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (8.6ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (525.9ms)
+Completed 200 OK in 554ms (Views: 548.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:16:04 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (7.8ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (461.0ms)
+Completed 200 OK in 483ms (Views: 479.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:16:26 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (7.3ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (453.7ms)
+Completed 200 OK in 481ms (Views: 477.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:16:49 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (53.5ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (513.9ms)
+Completed 200 OK in 586ms (Views: 580.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:17:18 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (53.3ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (407.9ms)
+Completed 200 OK in 481ms (Views: 475.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:17:52 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (53.6ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (411.6ms)
+Completed 200 OK in 482ms (Views: 478.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:18:21 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (62.3ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (348.9ms)
+Completed 200 OK in 427ms (Views: 422.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:23:39 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (138.2ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (793.1ms)
+Completed 200 OK in 957ms (Views: 946.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:24:10 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (73.2ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (631.3ms)
+Completed 200 OK in 752ms (Views: 745.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:24:38 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (104.9ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (647.5ms)
+Completed 200 OK in 778ms (Views: 770.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:24:51 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (81.5ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (548.2ms)
+Completed 200 OK in 653ms (Views: 649.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:25:03 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (77.3ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (583.4ms)
+Completed 200 OK in 679ms (Views: 674.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:25:18 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (73.1ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (590.6ms)
+Completed 200 OK in 686ms (Views: 680.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:27:48 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (173.8ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (605.2ms)
+Completed 200 OK in 796ms (Views: 791.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:29:57 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (155.8ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (2329.4ms)
+Completed 200 OK in 2521ms (Views: 2509.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:32:11 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (67.2ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (1974.2ms)
+Completed 200 OK in 2059ms (Views: 2054.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:32:45 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (73.1ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (1901.3ms)
+Completed 200 OK in 1995ms (Views: 1990.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:35:48 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (53.8ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (417.5ms)
+Completed 200 OK in 490ms (Views: 483.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:41:24 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (166.3ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (2318.4ms)
+Completed 200 OK in 2524ms (Views: 2511.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:42:11 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (71.7ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (1954.7ms)
+Completed 200 OK in 2047ms (Views: 2041.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:42:39 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (51.1ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (436.8ms)
+Completed 200 OK in 505ms (Views: 501.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:43:00 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (48.1ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (391.0ms)
+Completed 200 OK in 457ms (Views: 452.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/plan" for 127.0.0.1 at 2018-07-15 14:43:59 -0400
+Processing by PagesController#plan as HTML
+  Rendering pages/plan.html.erb within layouts/main/layout-blank
+  Rendered pages/plan.html.erb within layouts/main/layout-blank (148.0ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (507.1ms)
+Completed 200 OK in 672ms (Views: 667.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/images/map-marker.png" for 127.0.0.1 at 2018-07-15 14:44:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/pages/images/map-marker.png"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pages/images/map-marker.png" for 127.0.0.1 at 2018-07-15 14:44:03 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/pages/images/map-marker.png"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:45:58 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (172.1ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (2136.0ms)
+Completed 200 OK in 2341ms (Views: 2328.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:47:14 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (66.4ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (1984.9ms)
+Completed 200 OK in 2068ms (Views: 2064.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:50:46 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (76.0ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (2079.3ms)
+Completed 200 OK in 2174ms (Views: 2170.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:52:28 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (72.2ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (2206.8ms)
+Completed 200 OK in 2300ms (Views: 2296.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:52:46 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (71.9ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (461.4ms)
+Completed 200 OK in 552ms (Views: 547.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:54:09 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (65.7ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (2043.5ms)
+Completed 200 OK in 2128ms (Views: 2124.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:54:51 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (63.2ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (1990.9ms)
+Completed 200 OK in 2087ms (Views: 2081.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:55:21 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (65.0ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (1994.4ms)
+Completed 200 OK in 2080ms (Views: 2074.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/screen/screen1.jpg" for 127.0.0.1 at 2018-07-15 14:56:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/screen/screen1.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/images/screen/screen2.jpg" for 127.0.0.1 at 2018-07-15 14:56:07 -0400
+  
+Started GET "/images/screen/screen3.jpg" for 127.0.0.1 at 2018-07-15 14:56:07 -0400
+ActionController::RoutingError (No route matches [GET] "/images/screen/screen2.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/screen/screen3.jpg"):
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/images/screen/screen4.jpg" for 127.0.0.1 at 2018-07-15 14:56:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/screen/screen4.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/images/screen/screen3.jpg" for 127.0.0.1 at 2018-07-15 14:56:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/screen/screen3.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/images/screen/screen5.jpg" for 127.0.0.1 at 2018-07-15 14:56:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/screen/screen5.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:57:16 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (76.7ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (2183.9ms)
+Completed 200 OK in 2280ms (Views: 2276.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:57:54 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (70.2ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (1987.5ms)
+Completed 200 OK in 2077ms (Views: 2072.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 14:58:36 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (78.3ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (1980.5ms)
+Completed 200 OK in 2079ms (Views: 2075.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/goal-centre" for 127.0.0.1 at 2018-07-15 15:01:29 -0400
+Processing by PagesController#goal_centre as HTML
+  Rendering pages/goal_centre.html.erb within layouts/main/layout-blank
+  Rendered pages/goal_centre.html.erb within layouts/main/layout-blank (146.3ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (665.4ms)
+Completed 200 OK in 858ms (Views: 828.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/images/map-marker.png" for 127.0.0.1 at 2018-07-15 15:01:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/pages/images/map-marker.png"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pages/images/map-marker.png" for 127.0.0.1 at 2018-07-15 15:01:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/pages/images/map-marker.png"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-07-15 15:02:01 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (59.4ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (415.9ms)
+Completed 200 OK in 494ms (Views: 490.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 15:05:07 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (121.1ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (1989.5ms)
+Completed 200 OK in 2139ms (Views: 2129.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-15 15:09:25 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/main/layout-blank
+  Rendered pages/index.html.erb within layouts/main/layout-blank (74.8ms)
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (2178.1ms)
+Completed 200 OK in 2271ms (Views: 2266.8ms | ActiveRecord: 0.0ms)
+
+
