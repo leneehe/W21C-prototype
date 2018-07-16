@@ -10,6 +10,17 @@ input:focus {
     color: #555 !important;
 }
 
+.title-img {
+  height: 50px;
+  width: auto;
+  vertical-align: sub;
+}
+
+.title {
+  display: inline;
+  margin-left: 2rem;
+}
+
 #tinted-image1 {
   background:
     /* top, transparent red, faked with gradient */
