@@ -5,57 +5,151 @@
     </div>
 </header>
 <div class="container">
-    <div class="space-60"></div>
-    <main class="panel-group" id="accordion">
-      <div class="panel panel-default">
-          <div class="panel-heading">
-              <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">What is My Care Compass?</a></h4>
-          </div>
-          <div id="collapse1" class="panel-collapse collapse in">
-              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</div>
-          </div>
-      </div>
-      <div class="panel panel-default">
-          <div class="panel-heading">
-              <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Who created My Care Compass?</a></h4>
-          </div>
-          <div id="collapse2" class="panel-collapse collapse">
-              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-          </div>
-      </div>
-      <div class="panel panel-default">
-          <div class="panel-heading">
-              <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">My Doctor's office/local hospital already has an EMR.  Why do I need this?</a></h4>
-          </div>
-          <div id="collapse3" class="panel-collapse collapse">
-              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-          </div>
-      </div>
 
-      <div class="panel panel-default">
-          <div class="panel-heading">
-              <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">I just go diagnosed and I don't know where to start.  Please help.</a></h4>
+    <main id="resources" class="container">
+  	<section class="row">
+  		<!-- <h1>
+  			External resources you may find helpful
+  		</h1> -->
+  		<p>
+  			We've searched the internet for credible resources and organizations that provide useful and helpful information to support you on your care journey.
+  		</p>
+  	</section>
+
+  	<section class="row">
+  		<div class="input-group col-sm-10">
+              <input type="text" class="form-control resources__search-bar" id="mc-email" placeholder="What can we help you find today? (Search by name, keywords, condition, tags, etc)">
+              <div class="input-group-btn">
+                  <button type="submit" class="btn btn-info">Search</button>
+              </div>
           </div>
-          <div id="collapse4" class="panel-collapse collapse">
-              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-          </div>
-      </div>
-      <div class="panel panel-default">
-          <div class="panel-heading">
-              <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Is this all there is?</a></h4>
-          </div>
-          <div id="collapse5" class="panel-collapse collapse">
-              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-          </div>
-      </div>
-      <div class="panel panel-default">
-          <div class="panel-heading">
-              <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Why should I create a profile?</a></h4>
-          </div>
-          <div id="collapse6" class="panel-collapse collapse">
-              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-          </div>
-      </div>
+  		<!-- <div class="col-sm-10 resources__search-bar-container">
+  			<input class="resources__search-bar"type="text" name="search" placeholder="What can we help you find today? (Search by name, keywords, condition, tags, etc)">
+  		</div>
+  		<div class="col-sm-1">
+  			<button type="button">
+
+  			</button>
+  		</div> -->
+    <div class="space-40"></div>
+  	</section>
+  	<section class="row resources__item">
+  		<div class="col-sm-3">
+  			<%= image_tag "kingsfund.png", class: "img-fluid  margin-25"%>
+  		</div>
+  		<div class="col-sm-7">
+  			<h2>
+  				The King's Fund
+  			</h2>
+  			<p>
+  				General health information website on chronoic conditions, highlighting the differences between different socio-economic groups in the UK.
+  			</p>
+  			<div class="tags">
+  				<a href="">basic info</a>
+  				<a href="">chronic conditions</a>
+  				<a href="">self-help</a>
+  				<a href="">research</a>
+  				<a href="">community services</a>
+  				<a href="">patient safety</a>
+  			</div>
+  		</div>
+  		<div class="col-sm-2 resources__quality-container">
+  				<h2>
+  					Quality Rating
+  				</h2>
+  				<span>
+  					12/13
+  				</span>
+  		</div>
+  	</section>
+  	<section class="row resources__item">
+  		<div class="col-sm-3">
+  			<%= image_tag "gig-logo.jpg", class: "img-fluid"%>
+  		</div>
+  		<div class="col-sm-7">
+  			<h2>
+  				National Health Services: Health in Wales: Chronic Conditions
+  			</h2>
+  			<p>
+  				Webpage for a general overview of asthma with links to more comprehensive webpages.
+  			</p>
+  			<div class="tags">
+  				<a href="">basic info</a>
+  				<a href="">chronic conditions</a>
+  				<a href="">self-help</a>
+  				<a href="">research</a>
+  				<a href="">community services</a>
+  				<a href="">patient safety</a>
+  			</div>
+  		</div>
+  		<div class="col-sm-2 resources__quality-container">
+  				<h2>
+  					Quality Rating
+  				</h2>
+  				<span>
+  					10/13
+  				</span>
+  		</div>
+  	</section>
+  	<section class="row resources__item">
+  		<div class="col-sm-3">
+  			<%= image_tag "choices-logo.png", class: "img-fluid"%>
+  		</div>
+  		<div class="col-sm-7">
+  			<h2>
+  				National Health Services: Asthma
+  			</h2>
+  			<p>
+  				PDF with general information about asthma and medications, as well as a Clinical Practice Guideline flowchart.
+  			</p>
+  			<div class="tags">
+  				<a href="">basic info</a>
+  				<a href="">asthma</a>
+  				<a href="">self-help</a>
+  				<a href="">research</a>
+  				<a href="">community services</a>
+  				<a href="">patient safety</a>
+  			</div>
+  		</div>
+  		<div class="col-sm-2 resources__quality-container">
+  				<h2>
+  					Quality Rating
+  				</h2>
+  				<span>
+  					12/13
+  				</span>
+  		</div>
+  	</section>
+  	<section class="row resources__item">
+  		<div class="col-sm-3">
+
+  		</div>
+  		<div class="col-sm-7">
+  			<h2>
+  				Queensland Ambulance Service: Clinical Practice Guidelines: Respiratory/Asthma
+  			</h2>
+  			<p>
+  				General health information website on chronoic conditions, highlighting the differences between different socio-economic groups in the UK.
+  			</p>
+  			<div class="tags">
+  				<a href="">basic info</a>
+  				<a href="">chronic conditions</a>
+  				<a href="">self-help</a>
+  				<a href="">research</a>
+  				<a href="">community services</a>
+  				<a href="">patient safety</a>
+  			</div>
+  		</div>
+  		<div class="col-sm-2 resources__quality-container">
+  				<h2>
+  					Quality Rating
+  				</h2>
+  				<span>
+  					12/13
+  				</span>
+  		</div>
+  	</section>
+
   </main>
   <div class="space-60"></div>
 </div>
