@@ -26,7 +26,7 @@
         background: #1e5799;
         background: -webkit-linear-gradient(left, #1e5799 0%, #3ccdbb 0%, #16c9f6 100%);
         background: linear-gradient(to right, #1e5799 0%, #3ccdbb 0%, #16c9f6 100%);
-        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#16c9f6', GradientType=1);
+        filter: "progid: DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#16c9f6', GradientType=1)";
     }
     .mainmenu-area .navbar-toggle {
         background: rgba(0, 0, 0, 0) none repeat scroll 0 0;

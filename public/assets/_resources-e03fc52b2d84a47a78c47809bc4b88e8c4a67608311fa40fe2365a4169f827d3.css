@@ -1,0 +1,52 @@
+/* line 2, /Users/william/Documents/work/W21C/app/assets/stylesheets/_resources.scss */
+#resources h1 {
+  font-size: 3rem;
+}
+/* line 5, /Users/william/Documents/work/W21C/app/assets/stylesheets/_resources.scss */
+#resources h2 {
+  font-size: 2rem;
+}
+/* line 8, /Users/william/Documents/work/W21C/app/assets/stylesheets/_resources.scss */
+#resources span {
+  font-size: 3rem;
+}
+/* line 11, /Users/william/Documents/work/W21C/app/assets/stylesheets/_resources.scss */
+#resources p {
+  line-height: 3rem;
+}
+/* line 14, /Users/william/Documents/work/W21C/app/assets/stylesheets/_resources.scss */
+#resources .resources__item {
+  padding: 1.5rem;
+  margin: 2rem -1.5rem;
+  border: 1px solid #707070;
+}
+/* line 20, /Users/william/Documents/work/W21C/app/assets/stylesheets/_resources.scss */
+#resources .resources__search-bar-container {
+  padding-left: 0 !important;
+}
+/* line 23, /Users/william/Documents/work/W21C/app/assets/stylesheets/_resources.scss */
+#resources .resources__search-bar {
+  padding: 0.5rem;
+  font-size: 2rem;
+}
+/* line 27, /Users/william/Documents/work/W21C/app/assets/stylesheets/_resources.scss */
+#resources .resources__quality-container {
+  padding-top: 4rem;
+  text-align: center;
+}
+/* line 31, /Users/william/Documents/work/W21C/app/assets/stylesheets/_resources.scss */
+#resources .margin-25 {
+  margin-top: 25%;
+  margin-bottom: 25%;
+}
+/* line 36, /Users/william/Documents/work/W21C/app/assets/stylesheets/_resources.scss */
+#resources .tags a {
+  padding: 0 0.5rem;
+  white-space: nowrap;
+  color: #FFFFFF;
+  background-color: #515759;
+}
+/* line 41, /Users/william/Documents/work/W21C/app/assets/stylesheets/_resources.scss */
+#resources .tags a:hover {
+  background-color: #787e84;
+}

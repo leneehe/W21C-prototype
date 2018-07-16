@@ -2,3 +2,10 @@ tmp/
 tmp/cache/bootsnap-load-path-cache
 log/development.log
 node_modules
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

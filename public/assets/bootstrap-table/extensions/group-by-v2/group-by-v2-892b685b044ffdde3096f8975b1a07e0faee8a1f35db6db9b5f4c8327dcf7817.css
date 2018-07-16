@@ -1,0 +1,9 @@
+/* line 1, /Users/william/Documents/work/W21C/node_modules/bootstrap-table/src/extensions/group-by-v2/bootstrap-table-group-by.css */
+.bootstrap-table .table > tbody > tr.groupBy {
+  cursor: pointer;
+}
+
+/* line 9, /Users/william/Documents/work/W21C/node_modules/bootstrap-table/src/extensions/group-by-v2/bootstrap-table-group-by.css */
+.bootstrap-table .table > tbody > tr.hidden + tr.detail-view {
+  display: none;
+}

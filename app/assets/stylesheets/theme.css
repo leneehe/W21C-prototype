@@ -412,7 +412,7 @@ Angle-background
     background: #00c9fd;
     background: -webkit-linear-gradient(left, #00c9fd 0%, #81ee8e 100%);
     background: linear-gradient(to right, #00c9fd 0%, #81ee8e 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00c9fd', endColorstr='#81ee8e', GradientType=1);
+    filter: "progid: DXImageTransform.Microsoft.gradient( startColorstr='#00c9fd', endColorstr='#81ee8e', GradientType=1)";
     -webkit-transition: 0.3s;
     transition: 0.3s;
 }
@@ -477,7 +477,7 @@ address {
     background: #1e5799;
     background: -webkit-linear-gradient(left, #1e5799 0%, #26D07C 0%, #41B6E6 100%);
     background: linear-gradient(to right, #1e5799 0%, #26D07C 0%, #41B6E6 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#41B6E6', GradientType=1);
+    filter: "progid: DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#41B6E6', GradientType=1)";
     box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
     padding: 0;
     position: fixed;
@@ -673,7 +673,7 @@ Preloader
 }
 
 @-webkit-keyframes mymove {
-    0 {
+    0% {
         box-shadow: 0 0 0 0 rgba(37, 162, 203, 0.4), 0 0 0 0 rgba(37, 162, 203, 0.4);
     }
     25% {
@@ -691,7 +691,7 @@ Preloader
 }
 
 @keyframes mymove {
-    0 {
+    0% {
         box-shadow: 0 0 0 0 rgba(37, 162, 203, 0.4), 0 0 0 0 rgba(37, 162, 203, 0.4);
     }
     25% {
