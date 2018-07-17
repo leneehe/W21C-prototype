@@ -464,7 +464,7 @@ address {
     left: 0;
     top: 0;
     width: 100%;
-    height: 55px;
+    height: 68px;
     z-index: 999;
     padding: 20px 0;
     -webkit-transition: 0.3s;
@@ -493,8 +493,13 @@ address {
     transition: 0.3s;
 }
 
+#mainmenu {
+  background-color: rgba(255, 255, 255, 0.95);
+  top:15px;
+}
+
 #mainmenu li a {
-    color: #ffffff;
+    color: #505759;
 }
 
 #mainmenu li.active a {
@@ -654,11 +659,11 @@ Preloader
 .preloade span {
     background: rgba(38,208,124, 1);
     /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left,  rgba(65,182,230, 0.8),rgba(38,208,124, 0.8));
+    background: -webkit-linear-gradient(left,  rgba(230, 239, 242, 0.8),rgba(230, 239, 242, 0.8));
     /* For Safari 5.1 to 6.0 */
     /* For Opera 11.1 to 12.0 */
     /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, rgba(65,182,230, 0.8),rgba(38,208,124, 0.8));
+    background: linear-gradient(to right, rgba(230, 239, 242, 0.8),rgba(230, 239, 242, 0.8));
     border-radius: 100%;
     bottom: 0;
     height: 60px;
@@ -668,6 +673,8 @@ Preloader
     right: 0;
     top: 0;
     width: 60px;
+    padding-top: 4px;
+    padding-right: 3px;
     -webkit-animation: mymove 1.5s infinite linear;
     animation: mymove 1.5s infinite linear;
 }
