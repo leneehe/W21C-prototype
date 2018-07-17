@@ -5,3 +5,60 @@
 		color: #FFFFFF;
 	}
 }
+
+.offset-bg {
+  top: -200px;
+}
+
+h5 {
+  color: black;
+}
+
+input:focus {
+    color: #555 !important;
+}
+
+.title-img {
+  height: 50px;
+  width: auto;
+  vertical-align: sub;
+}
+
+.title {
+  display: inline;
+  margin-left: 2rem;
+}
+
+#tinted-image1 {
+  background:
+    /* top, transparent red, faked with gradient */
+    linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.6)
+    ),
+    /* bottom, image */
+    url('home/home-organize.jpg');
+  background-size: contain;
+}
+#tinted-image2 {
+  background:
+    /* top, transparent red, faked with gradient */
+    linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.6)
+    ),
+    /* bottom, image */
+    url('home/home-tracking.jpg');
+  background-size: contain;
+}
+#tinted-image3 {
+  background:
+    /* top, transparent red, faked with gradient */
+    linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.6)
+    ),
+    /* bottom, image */
+    url('home/home-goals.jpg');
+  background-size: contain;
+}
