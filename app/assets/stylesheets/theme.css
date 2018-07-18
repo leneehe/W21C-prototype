@@ -66,12 +66,10 @@
 /*----------------------
 Header-Background
 -----------------------*/
-.parallax-image img {
+.parallax-image img, #home-parallax-image img {
     position: absolute;
 }
-#home-parallax-image img {
-    position: absolute;
-}
+
 .section-bg {
     height: 100%;
     left: 0;

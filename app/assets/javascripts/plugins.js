@@ -102,21 +102,47 @@ $(window).scroll(function(){
 			$(this).find('img').css('top', '0px');
 		}
 	});
-  // Add parallax scrolling to all images in .paralax-image container
+  // Add parallax scrolling to all images in #home-paralax-image container
   $('#home-parallax-image').each(function(){
-    // only put top value if the window scroll has gone beyond the top of the image
-    if ($(this).offset().top < $(window).scrollTop()) {
-      // Get ammount of pixels the image is above the top of the window
-      var difference = $(window).scrollTop() - $(this).offset().top;
-      // Top value of image is set to half the amount scrolled
-      // (this gives the illusion of the image scrolling slower than the rest of the page)
-      var half = (difference / 2) - 200 + 'px';
+    // Get window size
+    let winH = $(window).height();
+    let winW = $(window).width();
 
-      $(this).find('img').css('top', half);
-    } else {
-      // if image is below the top of the window set top to 0
-      $(this).find('img').css('top', '-200px');
+    // Keep minimum height 550
+    if(winH <= 550) {
+        winH = 550;
     }
+
+    if( winW >= 1350) {
+      // only put top value if the window scroll has gone beyond the top of the image
+      if ($(this).offset().top < $(window).scrollTop()) {
+        // Get ammount of pixels the image is above the top of the window
+        var difference = $(window).scrollTop() - $(this).offset().top;
+        // Top value of image is set to half the amount scrolled
+        // (this gives the illusion of the image scrolling slower than the rest of the page)
+        var half = (difference / 2) - 200 + 'px';
+
+        $(this).find('img').css('top', half);
+      } else {
+        // if image is below the top of the window set top to 0
+        $(this).find('img').css('top', '-200px');
+      }
+    } else{
+      // only put top value if the window scroll has gone beyond the top of the image
+      if ($(this).offset().top < $(window).scrollTop()) {
+        // Get ammount of pixels the image is above the top of the window
+        var difference = $(window).scrollTop() - $(this).offset().top;
+        // Top value of image is set to half the amount scrolled
+        // (this gives the illusion of the image scrolling slower than the rest of the page)
+        var half = (difference / 2) + 'px';
+
+        $(this).find('img').css('top', half);
+      } else {
+        // if image is below the top of the window set top to 0
+        $(this).find('img').css('top', '0px');
+      }
+    }
+
   });
 });
 

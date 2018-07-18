@@ -5,10 +5,11 @@
 		color: #FFFFFF;
 	}
 }
-
+/*
 .offset-bg {
   top: -200px;
 }
+*/
 
 h5 {
   color: black;
@@ -41,7 +42,7 @@ ul.nav.navbar-nav{
       rgba(255, 255, 255, 0.6)
     ),
     /* bottom, image */
-    url('home/home-organize.jpg');
+    asset-url('home/home-organize.jpg');
   background-size: contain;
 }
 #tinted-image2 {
@@ -52,7 +53,7 @@ ul.nav.navbar-nav{
       rgba(255, 255, 255, 0.6)
     ),
     /* bottom, image */
-    url('home/home-tracking.jpg');
+    asset-url('home/home-tracking.jpg');
   background-size: contain;
 }
 #tinted-image3 {
@@ -63,6 +64,6 @@ ul.nav.navbar-nav{
       rgba(255, 255, 255, 0.6)
     ),
     /* bottom, image */
-    url('home/home-goals.jpg');
+    asset-url('home/home-goals.jpg');
   background-size: contain;
 }

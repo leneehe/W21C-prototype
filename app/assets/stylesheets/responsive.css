@@ -1,3 +1,11 @@
+/* Large Layout: above 1200px */
+
+@media only screen and (min-width: 1350px) {
+  .offset-bg {
+    top: -200px;
+  }
+}
+
 /* Medium Layout: 1280px. */
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {}
@@ -72,6 +80,9 @@
     .comment-list .media-left {
         display: inline-block;
         padding: 20px 20px 10px;
+    }
+    .d-sm-none {
+      display: none !important;
     }
 }
 
