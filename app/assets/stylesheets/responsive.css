@@ -16,6 +16,13 @@
     #mainmenu ul.nav.navbar-nav li a {
         padding: 20px 10px;
     }
+    .navbar-brand {
+      display: none;
+    }
+    .sm-brand {
+      display: block !important;
+      padding-top: 10px;
+    }
 }
 
 
@@ -54,6 +61,13 @@
     }
     #mainmenu ul.nav.navbar-nav li a {
         text-align: center;
+    }
+    #mainmenu {
+      background-color: rgba(255, 255, 255, 0.95);
+      margin-top: 1em;
+    }
+    #mainmenu li a {
+        color: #505759 !important;
     }
     .comment-list .media-left {
         display: inline-block;
