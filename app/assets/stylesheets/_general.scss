@@ -43,7 +43,8 @@ ul.nav.navbar-nav{
     ),
     /* bottom, image */
     asset-url('home/home-organize.jpg');
-  background-size: contain;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 #tinted-image2 {
   background:
@@ -54,7 +55,8 @@ ul.nav.navbar-nav{
     ),
     /* bottom, image */
     asset-url('home/home-tracking.jpg');
-  background-size: contain;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 #tinted-image3 {
   background:
@@ -65,5 +67,10 @@ ul.nav.navbar-nav{
     ),
     /* bottom, image */
     asset-url('home/home-goals.jpg');
-  background-size: contain;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+#tinted-image1, #tinted-image2, #tinted-image3 {
+  min-height: 285px;
 }

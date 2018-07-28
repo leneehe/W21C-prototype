@@ -4,11 +4,18 @@
   .offset-bg {
     top: -200px;
   }
+  #tinted-image1, #tinted-image2, #tinted-image3 {
+    background-size: auto 100% !important;
+  }
 }
 
 /* Medium Layout: 1280px. */
 
-@media only screen and (min-width: 992px) and (max-width: 1200px) {}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  #tinted-image1, #tinted-image2, #tinted-image3 {
+    background-size: auto 100% !important;
+  }
+}
 
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -84,6 +91,7 @@
     .d-sm-none {
       display: none !important;
     }
+
 }
 
 
