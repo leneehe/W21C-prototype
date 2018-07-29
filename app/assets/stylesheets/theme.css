@@ -66,9 +66,10 @@
 /*----------------------
 Header-Background
 -----------------------*/
-.parallax-image img {
+.parallax-image img, #home-parallax-image img {
     position: absolute;
 }
+
 .section-bg {
     height: 100%;
     left: 0;
@@ -80,8 +81,8 @@ Header-Background
 .section-bg img {
     min-height: 100%;
     min-width: 100%;
-    opacity: 0.3;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
 }
 
 .overlay-bg {
@@ -90,7 +91,7 @@ Header-Background
 }
 
 .dewo:after {
-    background: url("../images/header-dew.png") no-repeat scroll center bottom -10px / 100% auto;
+    background: url("header-dew.png") no-repeat scroll center bottom -10px / 100% auto;
     bottom: 0;
     content: "";
     height: 100%;
@@ -123,7 +124,7 @@ Header-Background
 }
 
 .blog-header {
-    background: url("../images/blog/bg-1.jpg") no-repeat scroll 0 0 / cover;
+    background: url("blog/bg-1.jpg") no-repeat scroll 0 0 / cover;
     opacity: 0.3;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
 }
@@ -181,7 +182,7 @@ Angle-background
 .border-icon {
     border: 1px solid;
     border-radius: 50%;
-    color: #50d1c0;
+    color: #26D07C;
     font-size: 20px;
     height: 50px;
     line-height: 2.7;
@@ -193,7 +194,7 @@ Angle-background
 
 .active .single-feature .border-icon,
 .single-feature:hover .border-icon {
-    background-color: #50d1c0;
+    background-color: #26D07C;
     color: #ffffff;
 }
 
@@ -233,12 +234,12 @@ Angle-background
 }
 
 .single_screen_slide {
-    background: rgba(0, 0, 0, 0) url("../images/screen/phone.png") no-repeat scroll center center;
+    background: rgba(0, 0, 0, 0) url("screen/phone.png") no-repeat scroll center center;
     padding: 66px 70px 70px 71px;
 }
 
 .list_screen_slide:after {
-    content: url("../images/screen/phone.png");
+    content: url("screen/phone.png");
     left: 50%;
     position: absolute;
     top: 50%;
@@ -263,7 +264,7 @@ Angle-background
 }
 
 .social-menu a {
-    color: #50d1c0;
+    color: #26D07C;
     display: inline-block;
     height: 35px;
     line-height: 2.8;
@@ -275,7 +276,7 @@ Angle-background
 }
 
 .social-menu a:hover {
-    background-color: #50d1c0;
+    background-color: #26D07C;
     box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.2);
     color: #ffffff;
 }
@@ -342,9 +343,9 @@ Angle-background
 
 .btn.btn-link.active:hover,
 .btn.btn-link {
-    border: 1px solid #50d1c0;
+    border: 1px solid #41B6E6;
     border-radius: 100px;
-    color: #50d1c0;
+    color: #41B6E6;
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 2px;
@@ -359,7 +360,7 @@ Angle-background
 .btn.btn-link.active,
 .btn.btn-link:hover,
 .price-table.active .btn.btn-link {
-    background-color: #50d1c0;
+    background-color: #41B6E6;
     box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.2);
     color: #ffffff;
     -webkit-transform: translateY(-3px);
@@ -409,7 +410,7 @@ Angle-background
     background: #00c9fd;
     background: -webkit-linear-gradient(left, #00c9fd 0%, #81ee8e 100%);
     background: linear-gradient(to right, #00c9fd 0%, #81ee8e 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00c9fd', endColorstr='#81ee8e', GradientType=1);
+    filter: "progid: DXImageTransform.Microsoft.gradient( startColorstr='#00c9fd', endColorstr='#81ee8e', GradientType=1)";
     -webkit-transition: 0.3s;
     transition: 0.3s;
 }
@@ -454,13 +455,14 @@ address {
 }
 
 .md-icon {
-    font-size: 26px;
+    font-size: 30px;
 }
 
 .mainmenu-area {
     left: 0;
     top: 0;
     width: 100%;
+    height: 68px;
     z-index: 999;
     padding: 20px 0;
     -webkit-transition: 0.3s;
@@ -471,9 +473,9 @@ address {
 
 .mainmenu-area.affix {
     background: #1e5799;
-    background: -webkit-linear-gradient(left, #1e5799 0%, #3ccdbb 0%, #16c9f6 100%);
-    background: linear-gradient(to right, #1e5799 0%, #3ccdbb 0%, #16c9f6 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#16c9f6', GradientType=1);
+    background: -webkit-linear-gradient(left, #1e5799 0%, #26D07C 0%, #41B6E6 100%);
+    background: linear-gradient(to right, #1e5799 0%, #26D07C 0%, #41B6E6 100%);
+    filter: "progid: DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#41B6E6', GradientType=1)";
     box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
     padding: 0;
     position: fixed;
@@ -489,8 +491,12 @@ address {
     transition: 0.3s;
 }
 
+.sm-brand {
+  display: none;
+}
+
 #mainmenu li a {
-    color: #ffffff;
+    color: #FFF;
 }
 
 #mainmenu li.active a {
@@ -569,8 +575,8 @@ address {
 }
 
 #scrollUp {
-    background-color: #50d1c0;
-    border: 1px solid #50d1c0;
+    background-color: #26D07C;
+    border: 1px solid #26D07C;
     border-radius: 2px;
     bottom: 30px;
     color: #ffffff;
@@ -582,7 +588,7 @@ address {
 }
 
 #scrollUp:hover {
-    background-color: #55c4b5;
+    background-color: #41B6E6;
 }
 
 .img-full {
@@ -648,13 +654,13 @@ Preloader
 }
 
 .preloade span {
-    background: rgba(58, 123, 213, 1);
+    background: rgba(38,208,124, 1);
     /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left, rgba(58, 123, 213, 0.8), rgba(0, 210, 255, 0.8));
+    background: -webkit-linear-gradient(left,  rgba(230, 239, 242, 0.8),rgba(230, 239, 242, 0.8));
     /* For Safari 5.1 to 6.0 */
     /* For Opera 11.1 to 12.0 */
     /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, rgba(58, 123, 213, 0.8), rgba(0, 210, 255, 0.8));
+    background: linear-gradient(to right, rgba(230, 239, 242, 0.8),rgba(230, 239, 242, 0.8));
     border-radius: 100%;
     bottom: 0;
     height: 60px;
@@ -664,12 +670,14 @@ Preloader
     right: 0;
     top: 0;
     width: 60px;
+    padding-top: 4px;
+    padding-right: 3px;
     -webkit-animation: mymove 1.5s infinite linear;
     animation: mymove 1.5s infinite linear;
 }
 
 @-webkit-keyframes mymove {
-    0 {
+    0% {
         box-shadow: 0 0 0 0 rgba(37, 162, 203, 0.4), 0 0 0 0 rgba(37, 162, 203, 0.4);
     }
     25% {
@@ -687,7 +695,7 @@ Preloader
 }
 
 @keyframes mymove {
-    0 {
+    0% {
         box-shadow: 0 0 0 0 rgba(37, 162, 203, 0.4), 0 0 0 0 rgba(37, 162, 203, 0.4);
     }
     25% {

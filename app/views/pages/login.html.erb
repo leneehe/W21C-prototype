@@ -1,0 +1,62 @@
+  <!--Header-Area-->
+  <header class="blue-bg relative fix" id="home">
+      <div class="section-bg overlay-bg ripple ">
+          <div class="parallax-image">
+            <%= image_tag("login-bg.jpg")  %>
+          </div>
+      </div>
+
+      <div class="space-20 hidden-xs"></div>
+      <!--Header-Text-->
+      <div class="container text-white">
+          <div class="row text-center">
+              <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                  <div class="space-40"></div>
+                  <div class="space-100"></div>
+                  <h1>Login</h1>
+                  <div class="space-10"></div>
+                  <p>Don't have an account? Sign up <%= link_to "Here", signup_path %></p>
+                  <div class="space-10"></div>
+              </div>
+          </div>
+      </div>
+      <!--Header-Text/-->
+      <div class="row">
+          <div class="">
+              <div class="col-xs-12 col-md-4 col-sm-offset-4 wow fadeInUp" data-wow-delay="0.2s">
+                  <div class="well well-lg">
+                      <h3>Login your account</h3>
+                      <div class="space-20"></div>
+                      <form action="process.php" id="contact-form" method="post">
+                          <div class="row">
+                              <div class="col-xs-12">
+                                  <div class="form-group">
+                                      <label for="form-subject" class="sr-only">Email</label>
+                                      <input type="email" class="form-control" id="form-email" name="form-email" placeholder="Email" required>
+                                  </div>
+                                  <div class="space-10"></div>
+                              </div>
+                              <div class="col-xs-12">
+                                  <div class="form-group">
+                                      <label for="form-subject" class="sr-only">Password</label>
+                                      <input type="password" class="form-control" id="form-password" name="form-password" placeholder="Password" required>
+                                  </div>
+                                  <div class="space-10"></div>
+                              </div>
+                              <div class="col-xs-6">
+                                  <div class="space-10"></div>
+                                  <input type="checkbox" name="form-remember" value="">
+                                  remember me
+                              </div>
+                              <div class="col-xs-6 text-right">
+                                  <div class="space-10"></div>
+                                  <button class="btn btn-link text-uppercase" type="submit">Sign In</button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="space-40"></div>
+  </header>

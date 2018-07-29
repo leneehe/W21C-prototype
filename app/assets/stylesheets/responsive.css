@@ -1,6 +1,21 @@
+/* Large Layout: above 1200px */
+
+@media only screen and (min-width: 1350px) {
+  .offset-bg {
+    top: -200px;
+  }
+  #tinted-image1, #tinted-image2, #tinted-image3 {
+    background-size: auto 100% !important;
+  }
+}
+
 /* Medium Layout: 1280px. */
 
-@media only screen and (min-width: 992px) and (max-width: 1200px) {}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  #tinted-image1, #tinted-image2, #tinted-image3 {
+    background-size: auto 100% !important;
+  }
+}
 
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -16,6 +31,13 @@
     #mainmenu ul.nav.navbar-nav li a {
         padding: 20px 10px;
     }
+    .navbar-brand {
+      display: none;
+    }
+    .sm-brand {
+      display: block !important;
+      padding-top: 10px;
+    }
 }
 
 
@@ -26,7 +48,7 @@
         background: #1e5799;
         background: -webkit-linear-gradient(left, #1e5799 0%, #3ccdbb 0%, #16c9f6 100%);
         background: linear-gradient(to right, #1e5799 0%, #3ccdbb 0%, #16c9f6 100%);
-        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#16c9f6', GradientType=1);
+        filter: "progid: DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#16c9f6', GradientType=1)";
     }
     .mainmenu-area .navbar-toggle {
         background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
@@ -55,10 +77,21 @@
     #mainmenu ul.nav.navbar-nav li a {
         text-align: center;
     }
+    #mainmenu {
+      background-color: rgba(255, 255, 255, 0.95);
+      margin-top: 1em;
+    }
+    #mainmenu li a {
+        color: #505759 !important;
+    }
     .comment-list .media-left {
         display: inline-block;
         padding: 20px 20px 10px;
     }
+    .d-sm-none {
+      display: none !important;
+    }
+
 }
 
 

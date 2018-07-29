@@ -1,0 +1,68 @@
+  <!--Header-Area-->
+  <header class="blue-bg relative fix" id="home">
+      <div class="section-bg overlay-bg ripple ">
+          <div class="parallax-image">
+            <%= image_tag("login-bg.jpg")  %>
+          </div>
+      </div>
+
+      <div class="space-20 hidden-xs"></div>
+      <!--Header-Text-->
+      <div class="container text-white">
+          <div class="row text-center">
+              <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                  <div class="space-40"></div>
+                  <div class="space-100"></div>
+                  <h1>Sign Up</h1>
+                  <div class="space-10"></div>
+                  <p>Already have an account? <%= link_to "Login Here", login_path %></p>
+                  <div class="space-10"></div>
+              </div>
+          </div>
+      </div>
+      <!--Header-Text/-->
+      <div class="row">
+          <div class="">
+              <div class="col-xs-12 col-md-4 col-sm-offset-4 wow fadeInUp" data-wow-delay="0.2s">
+                  <div class="well well-lg">
+                      <h3>Create an Account</h3>
+                      <div class="space-10"></div>
+                      <p class="text-center">Why create an account?</p>
+                      <div class="space-10"></div>
+                      <form action="process.php" id="contact-form" method="post">
+                          <div class="row">
+                              <div class="col-xs-12">
+                                  <div class="form-group">
+                                      <label for="form-subject" class="sr-only">Your Name</label>
+                                      <input type="text" class="form-control" id="form-name" name="form-name" placeholder="Your Name" required>
+                                  </div>
+                                  <div class="space-10"></div>
+                              </div>
+                              <div class="col-xs-12">
+                                  <div class="form-group">
+                                      <label for="form-subject" class="sr-only">Your Email</label>
+                                      <input type="email" class="form-control" id="form-email" name="form-email" placeholder="Your Email" required>
+                                  </div>
+                                  <div class="space-10"></div>
+                              </div>
+                              <div class="col-xs-12">
+                                  <div class="form-group">
+                                      <label for="form-subject" class="sr-only">Password</label>
+                                      <input type="password" class="form-control" id="form-password" name="form-password" placeholder="Password" required>
+                                  </div>
+                                  <div class="space-10"></div>
+                              </div>
+                              <div class="col-xs-12">
+                                  <div class="space-10"></div>
+                                  <button class="btn btn-link text-uppercase" style="width: 100%" type="submit">Sign Up</button>
+                                  <div class="space-20"></div>
+                                  <p>By clicking "Sign Up", you agree to our terms and privacy policy. We'll occasionally send you account related emails.</p>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="space-40"></div>
+  </header>

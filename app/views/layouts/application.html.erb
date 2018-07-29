@@ -10,6 +10,8 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
+  <%= favicon_link_tag 'favicon.ico' %>
+
   <title><%= @title ? @title + " - " : "" %>My Care Compass</title>
 
   <!-- Main font -->
@@ -33,7 +35,6 @@
 
     <%= javascript_include_tag 'vendor/modernizr-2.8.3.min.js', 'data-turbolinks-track': 'reload' %>
 
-
   <!-- Icons. Uncomment required icon fonts -->
   <!-- <%= stylesheet_link_tag 'fontawesome.css', media: 'all', 'data-turbolinks-track': 'reload' %> -->
   <%= stylesheet_link_tag 'ionicons.css', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -46,8 +47,8 @@
   <%= stylesheet_link_tag 'appwork.css', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag 'theme-corporate.css', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag 'colors.css', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= stylesheet_link_tag 'uikit.css', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> -->
+  <%= stylesheet_link_tag 'uikit.css', media: 'all', 'data-turbolinks-track': 'reload' %> -->
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
   <!-- Layout helpers -->
   <!-- <%= javascript_include_tag 'layout-helpers.js', 'data-turbolinks-track': 'reload' %> -->
@@ -73,9 +74,9 @@
   <%= yield :head %>
 </head>
 <body>
-
+  <%= render 'navbar' %>
   <%= content_for?(:content) ? yield(:content) : yield %>
-
+  <%= render 'footer' %>
 <!-- LANDING PAGE JS -->
   <!--Vendor JS-->
   <%= javascript_include_tag 'vendor/jquery-1.12.4.min.js'%>
