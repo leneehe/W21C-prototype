@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  severity_score: 1.5
+  last_checked: 2018-10-06 23:00:48
+
+two:
+  user: two
+  severity_score: 1.5
+  last_checked: 2018-10-06 23:00:48

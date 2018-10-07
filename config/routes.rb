@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # get 'home', to: 'pages#index', as: 'home'
   get 'plan', to: 'pages#plan', as: 'plan'
   get 'goal-centre', to: 'pages#goal_centre', as: 'goal_centre'
