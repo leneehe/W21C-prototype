@@ -74,9 +74,9 @@
   <%= yield :head %>
 </head>
 <body>
-  <%= render 'navbar' %>
+  <%= render 'layouts/partials/navbar' %>
   <%= content_for?(:content) ? yield(:content) : yield %>
-  <%= render 'footer' %>
+  <%= render 'layouts/partials/footer' %>
 <!-- LANDING PAGE JS -->
   <!--Vendor JS-->
   <%= javascript_include_tag 'vendor/jquery-1.12.4.min.js'%>
