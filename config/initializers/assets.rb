@@ -27,7 +27,8 @@ Rails.application.config.assets.precompile += [
   "overright.css",
   "normalize.css",
   "style.css",
-  "responsive.css"
+  "responsive.css",
+  "main.css"
   ]
 
 # Precompile core javascripts

@@ -1,4 +1,47 @@
 <% content_for :content do %>
+<!-- LANDING PAGE STYLES -->
+<!-- Plugin-CSS -->
+    <%= stylesheet_link_tag 'bootstrap.min.css', media: 'all'%>
+    <%= stylesheet_link_tag 'owl.carousel.min.css', media: 'all'%>
+    <%= stylesheet_link_tag 'themify-icons.css', media: 'all'%>
+    <%= stylesheet_link_tag 'animate.css', media: 'all'%>
+    <%= stylesheet_link_tag 'magnific-popup.css', media: 'all'%>
+
+    <!-- Main-Stylesheets -->
+    <%= stylesheet_link_tag 'space.css', media: 'all'%>
+    <%= stylesheet_link_tag 'theme.css', media: 'all'%>
+    <%= stylesheet_link_tag 'overright.css', media: 'all'%>
+    <%= stylesheet_link_tag 'normalize.css', media: 'all'%>
+    <%= stylesheet_link_tag 'style.css', media: 'all'%>
+    <%= stylesheet_link_tag 'responsive.css', media: 'all'%>
+    <%= stylesheet_link_tag 'main.css', media: 'all'%>
+
+    <%= stylesheet_link_tag 'ionicons.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<%= render 'layouts/partials/navbar' %>
   <%= yield %>
+<%= render 'layouts/partials/footer' %>
+
+<!-- LANDING PAGE JS -->
+  <!--Vendor JS-->
+  <%= javascript_include_tag 'vendor/jquery-1.12.4.min.js'%>
+  <%= javascript_include_tag 'vendor/bootstrap.min.js'%>
+
+  <!--Plugin JS-->
+  <%= javascript_include_tag 'owl.carousel.min.js'%>
+  <%= javascript_include_tag 'scrollUp.min.js'%>
+  <%= javascript_include_tag 'magnific-popup.min.js'%>
+  <%= javascript_include_tag 'ripples-min.js'%>
+  <%= javascript_include_tag 'contact-form.js'%>
+  <%= javascript_include_tag 'spectragram.min.js'%>
+  <%= javascript_include_tag 'ajaxchimp.js'%>
+  <%= javascript_include_tag 'wow.min.js'%>
+  <%= javascript_include_tag 'plugins.js'%>
+  <!--Active JS-->
+  <%= javascript_include_tag 'main.js'%>
+  <!--Maps JS-->
+  <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBTS_KEDfHXYBslFTI_qPJIybDP3eceE-A&sensor=false'%>
+  <%= javascript_include_tag 'maps.js'%>
+
 <% end %>
 <%= render template: "layouts/application" %>
