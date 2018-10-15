@@ -1,13 +1,8 @@
 class ApplicationController < ActionController::Base
-  # Default layout
-  # layout 'main/layout-blank'
-  layout :choose_layout
-
-  def choose_layout
-    if user_signed_in?
-      'main/layout-2'
-    else
-      'main/layout-blank'
-    end
+  def after_sign_in_path_for(resource)
+    dashboard_index_path
+  end
+  def after_sign_up_path_for(resource)
+    dashboard_index_path
   end
 end
