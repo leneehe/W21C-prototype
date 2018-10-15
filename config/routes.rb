@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'signup', to: 'pages#signup', as: 'signup'
   get 'login', to: 'pages#login', as: 'login'
 
+  get 'dashboard/index', to: 'dashboard#index'
+
 
   root :to => 'pages#index'
 end
