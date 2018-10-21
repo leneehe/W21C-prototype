@@ -16,6 +16,21 @@
       <% end %>
     </li>
 
+    <!-- Place holder nav menu dropdown-->
+    <li class="sidenav-item<%= current_page?(plan_path) ? ' active' : '' %>">
+      <a href="javascript:void(0)" class="sidenav-link sidenav-toggle">
+          <div>Measurements</div>
+      </a>
+
+      <ul class="sidenav-menu">
+        <li class="sidenav-item<%= current_page?(plan_path)|| request.path == '/' ? ' active' : '' %>">
+          <%= link_to plan_path, class: "sidenav-link" do %>
+            <div>Plan</div>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
   </ul>
 </div>
 <!-- / Layout sidenav -->
