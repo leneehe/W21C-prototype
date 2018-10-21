@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'login', to: 'pages#login', as: 'login'
 
   get 'dashboard/index', to: 'dashboard#index'
+  get 'dashboard/measurements', to: 'dashboard#measurements'
 
 
   root :to => 'pages#index'

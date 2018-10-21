@@ -4,28 +4,38 @@
   <!-- Inner -->
   <ul class="sidenav-inner<% if local_assigns[:horizontal] != true %> py-1<% end %>">
 
-    <li class="sidenav-item<%= current_page?(root_path) ? ' active' : '' %>">
+    <li class="sidenav-item">
       <%= link_to root_path, class: "sidenav-link" do %>
         <i class="sidenav-icon ion ion-ios-contact"></i><div>Home</div>
       <% end %>
     </li>
 
-    <li class="sidenav-item<%= current_page?(plan_path) ? ' active' : '' %>">
+    <li class="sidenav-item">
       <%= link_to plan_path, class: "sidenav-link" do %>
         <i class="sidenav-icon ion ion-md-desktop"></i><div>Plan</div>
       <% end %>
     </li>
 
     <!-- Place holder nav menu dropdown-->
-    <li class="sidenav-item<%= current_page?(plan_path) ? ' active' : '' %>">
+    <li class="sidenav-item">
       <a href="javascript:void(0)" class="sidenav-link sidenav-toggle">
           <div>Measurements</div>
       </a>
 
       <ul class="sidenav-menu">
-        <li class="sidenav-item<%= current_page?(plan_path)|| request.path == '/' ? ' active' : '' %>">
-          <%= link_to plan_path, class: "sidenav-link" do %>
-            <div>Plan</div>
+        <li class="sidenav-item">
+          <%= link_to dashboard_measurements_path, class: "sidenav-link" do %>
+            <div>Blood Glucose</div>
+          <% end %>
+        </li>
+        <li class="sidenav-item">
+          <%= link_to dashboard_measurements_path, class: "sidenav-link" do %>
+            <div>Blood Pressure</div>
+          <% end %>
+        </li>
+        <li class="sidenav-item">
+          <%= link_to dashboard_measurements_path, class: "sidenav-link" do %>
+            <div>Overall Stress</div>
           <% end %>
         </li>
       </ul>

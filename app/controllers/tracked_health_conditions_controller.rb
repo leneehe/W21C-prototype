@@ -1,0 +1,2 @@
+class TrackedHealthConditionsController < ApplicationController
+end
