@@ -15,11 +15,32 @@
   <title><%= @title ? @title + " - " : "" %>My Care Compass</title>
 
   <!-- Main font -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+
+  <%= javascript_include_tag 'vendor/modernizr-2.8.3.min.js', 'data-turbolinks-track': 'reload' %>
+
+<!-- Icons. Uncomment required icon fonts -->
+<%= stylesheet_link_tag 'fontawesome.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<%= stylesheet_link_tag 'linearicons.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'open-iconic.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'pe-icon-7-stroke.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<!-- Core stylesheets -->
+<%= stylesheet_link_tag 'bootstrap.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'appwork.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'theme-corporate.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'colors.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'uikit.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'theme.css', media: 'all', 'data-turbolinks-track': 'reload'%>
+
+  <!-- Main font -->
   <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet"> -->
 
 
 
-    <!-- <%= javascript_include_tag 'vendor/modernizr-2.8.3.min.js', 'data-turbolinks-track': 'reload' %> -->
+
 
   <!-- Icons. Uncomment required icon fonts -->
   <!-- <%= stylesheet_link_tag 'fontawesome.css', media: 'all', 'data-turbolinks-track': 'reload' %> -->
@@ -29,23 +50,28 @@
   <!-- <%= stylesheet_link_tag 'pe-icon-7-stroke.css', media: 'all', 'data-turbolinks-track': 'reload' %> -->
 
   <!-- Layout helpers -->
+  
 <%= javascript_include_tag 'layout-helpers.js', 'data-turbolinks-track': 'reload' %>
 
 <!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<%= javascript_include_tag 'vendor/jquery-1.12.4.min.js'%>
+<%= javascript_include_tag 'vendor/bootstrap.min.js'%>
+  <%= javascript_include_tag 'vendor/modernizr-2.8.3.min.js', 'data-turbolinks-track': 'reload' %>
 
 <!-- Libs -->
 
 <!-- `perfect-scrollbar` library required by SideNav plugin -->
 
-<%= stylesheet_link_tag 'perfect-scrollbar/perfect-scrollbar.css', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= javascript_include_tag 'perfect-scrollbar/perfect-scrollbar.js', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'perfect-scrollbar/perfect-scrollbar.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'perfect-scrollbar/perfect-scrollbar.js', 'data-turbolinks-track': 'reload' %>
 
 <!-- Core scripts -->
-<%= javascript_include_tag 'popper/popper.js', 'data-turbolinks-track': 'reload' %>
-<%= javascript_include_tag 'bootstrap.js', 'data-turbolinks-track': 'reload' %>
-<%= javascript_include_tag 'sidenav.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'popper/popper.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'sidenav.js', 'data-turbolinks-track': 'reload' %>
 
+  <%= javascript_include_tag 'owl.carousel.min.js'%>
+  <%= javascript_include_tag 'scrollUp.min.js'%>
+  <%= javascript_include_tag 'dashboard.js', 'data-turbolinks-track': 'reload' %>
   <%= yield :head %>
 </head>
   <body>
@@ -53,12 +79,12 @@
 
     <!-- LANDING PAGE JS -->
     <!--Vendor JS-->
-    <%= javascript_include_tag 'vendor/jquery-1.12.4.min.js'%>
-    <%= javascript_include_tag 'vendor/bootstrap.min.js'%>
+
+    
 
     <!--Plugin JS-->
-    <%= javascript_include_tag 'owl.carousel.min.js'%>
-    <%= javascript_include_tag 'scrollUp.min.js'%>
+    
+   
     <%= javascript_include_tag 'magnific-popup.min.js'%>
     <%= javascript_include_tag 'ripples-min.js'%>
     <%= javascript_include_tag 'contact-form.js'%>
@@ -67,5 +93,6 @@
     <%= javascript_include_tag 'wow.min.js'%>
     <!--Active JS-->
     <%= javascript_include_tag 'main.js'%>
+
   </body>
 </html>
