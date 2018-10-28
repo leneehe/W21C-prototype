@@ -1,18 +1,41 @@
 <!-- Layout sidenav -->
 <div id="layout-sidenav" class="<% if local_assigns[:horizontal] == true %>layout-sidenav-horizontal sidenav-horizontal container-p-x flex-grow-0<% else %>layout-sidenav sidenav-vertical<% end %> sidenav bg-sidenav-theme">
 
+  <% if local_assigns[:horizontal] != true %>
+  <!-- Brand demo (see assets/css/demo/demo.css) -->
+  <div class="app-brand demo">
+    <span class="app-brand-logo demo">
+      <%= image_tag("MCC_logo_50x50.png", size: "32") %>
+    </span>
+    <a href="/" class="app-brand-text demo sidenav-text font-weight-normal ml-2">MCC</a>
+    <a href="javascript:void(0)" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
+      ☰
+      <i class="ion ion-md-menu align-middle"></i>
+    </a>
+  </div>
+
+  <div class="sidenav-divider mt-0"></div>
+  <% end %>
+
+
   <!-- Inner -->
   <ul class="sidenav-inner<% if local_assigns[:horizontal] != true %> py-1<% end %>">
 
-    <li class="sidenav-item">
-      <%= link_to root_path, class: "sidenav-link" do %>
-        <i class="sidenav-icon ion ion-ios-contact"></i><div>Home</div>
+    <li class="sidenav-item<%= current_page?('/dashboard') || request.path == '/' ? ' active open' : '' %>">
+      <%= link_to dashboard_path, class: "sidenav-link" do %>
+        <i class="sidenav-icon ion ion-ios-contact"></i><div>Dashboard</div>
       <% end %>
     </li>
 
     <li class="sidenav-item">
       <%= link_to plan_path, class: "sidenav-link" do %>
         <i class="sidenav-icon ion ion-md-desktop"></i><div>Plan</div>
+      <% end %>
+    </li>
+
+    <li class="sidenav-item<%= current_page?(dashboard_goals_path) ? ' active' : '' %>">
+      <%= link_to dashboard_goals_path, class: "sidenav-link" do %>
+        <i class="sidenav-icon ion ion-md-desktop"></i><div>Goal Centre</div>
       <% end %>
     </li>
 
