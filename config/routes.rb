@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
   }
   # get 'home', to: 'pages#index', as: 'home'
   get 'plan', to: 'pages#plan', as: 'plan'
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
 
   get 'dashboard/index', to: 'dashboard#index'
   get 'dashboard/measurements', to: 'dashboard#measurements'
+  resources :tracked_health_conditions
 
 
   root :to => 'pages#index'

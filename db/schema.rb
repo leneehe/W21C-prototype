@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_15_020110) do
+ActiveRecord::Schema.define(version: 2018_10_31_042042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2018_10_15_020110) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "health_condition_ranges", force: :cascade do |t|
+  create_table "health_conditions", force: :cascade do |t|
     t.string "condition_name"
     t.float "normal_range_upper"
     t.float "normal_range_lower"
@@ -92,6 +92,10 @@ ActiveRecord::Schema.define(version: 2018_10_15_020110) do
     t.datetime "last_checked"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "health_condition_id"
+    t.float "range_lower"
+    t.float "range_upper"
+    t.index ["health_condition_id"], name: "index_tracked_health_conditions_on_health_condition_id"
     t.index ["user_id"], name: "index_tracked_health_conditions_on_user_id"
   end
 

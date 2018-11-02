@@ -1,2 +1,0 @@
-class HealthConditionRange < ApplicationRecord
-end
