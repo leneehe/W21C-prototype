@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_31_042042) do
+ActiveRecord::Schema.define(version: 2018_11_04_195916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,9 @@ ActiveRecord::Schema.define(version: 2018_10_31_042042) do
     t.float "normal_range_lower"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "assistance_threshold"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_health_conditions_on_user_id"
   end
 
   create_table "internal_contents", force: :cascade do |t|
@@ -87,16 +90,12 @@ ActiveRecord::Schema.define(version: 2018_10_31_042042) do
   end
 
   create_table "tracked_health_conditions", force: :cascade do |t|
-    t.integer "user_id"
     t.float "severity_score"
     t.datetime "last_checked"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "health_condition_id"
-    t.float "range_lower"
-    t.float "range_upper"
     t.index ["health_condition_id"], name: "index_tracked_health_conditions_on_health_condition_id"
-    t.index ["user_id"], name: "index_tracked_health_conditions_on_user_id"
   end
 
   create_table "tracked_medications", force: :cascade do |t|

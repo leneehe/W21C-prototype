@@ -5,6 +5,6 @@ class DashboardController < ApplicationController
     end
 
     def measurements
-        
+
     end
 end
