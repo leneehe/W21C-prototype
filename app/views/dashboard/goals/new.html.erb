@@ -1,0 +1,65 @@
+<!-- Smart Wizard plugin -->
+<%= stylesheet_link_tag 'libs/smartwizard/smartwizard.css', media: 'all', 'data-turbolinks-track': 'reload'%>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<%= javascript_include_tag 'libs/smartwizard/smartwizard.js', 'data-turbolinks-track': 'reload' %>
+
+<h1>Setting SMART Goals</h1>
+<div id="smartwizard-3">
+  <ul class="card px-4 pt-3 mb-3">
+    <li>
+      <a href="#smartwizard-3-step-1" class="mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-number">1</span>
+        <div class="text-muted small">FIRST STEP</div>
+        Keyboard
+      </a>
+    </li>
+    <li>
+      <a href="#smartwizard-3-step-2" class="mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-number">2</span>
+        <div class="text-muted small">SECOND STEP</div>
+        Effects
+      </a>
+    </li>
+    <li>
+      <a href="#smartwizard-3-step-3" class="mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-number">3</span>
+        <div class="text-muted small">THIRD STEP</div>
+        Pager
+      </a>
+    </li>
+  </ul>
+
+  <div class="mb-3">
+    <div id="smartwizard-3-step-1" class="card animated fadeIn">
+      <div class="card-body">
+        Step Content 1
+      </div>
+    </div>
+    <div id="smartwizard-3-step-2" class="card animated fadeIn">
+      <div class="card-body">
+        Step Content 2
+      </div>
+    </div>
+    <div id="smartwizard-3-step-3" class="card animated fadeIn">
+      <div class="card-body">
+        Step Content 3
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Javascript -->
+<script>
+  $(function() {
+    $('#smartwizard-3').smartWizard({
+      autoAdjustHeight: false,
+      backButtonSupport: false,
+      useURLhash: false,
+      showStepURLhash: false
+    });
+  });
+</script>
+<!-- / Javascript -->
