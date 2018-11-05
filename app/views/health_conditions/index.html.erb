@@ -1,2 +1,6 @@
 <h1>My Conditions</h1>
-<%= @user_conditions %>
+<% @user_conditions.each do |condition| %>
+  <%= link_to health_condition_path(condition.id) do %>
+    <%= condition.condition_name %>
+  <% end %>
+<% end %>
