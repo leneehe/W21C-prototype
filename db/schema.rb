@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_15_020110) do
+ActiveRecord::Schema.define(version: 2018_11_04_215320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,12 +48,16 @@ ActiveRecord::Schema.define(version: 2018_10_15_020110) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "health_condition_ranges", force: :cascade do |t|
+  create_table "health_conditions", force: :cascade do |t|
     t.string "condition_name"
     t.float "normal_range_upper"
     t.float "normal_range_lower"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "assistance_threshold"
+    t.bigint "user_id"
+    t.string "unit_of_measure"
+    t.index ["user_id"], name: "index_health_conditions_on_user_id"
   end
 
   create_table "internal_contents", force: :cascade do |t|
@@ -87,12 +91,12 @@ ActiveRecord::Schema.define(version: 2018_10_15_020110) do
   end
 
   create_table "tracked_health_conditions", force: :cascade do |t|
-    t.integer "user_id"
     t.float "severity_score"
     t.datetime "last_checked"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_tracked_health_conditions_on_user_id"
+    t.bigint "health_condition_id"
+    t.index ["health_condition_id"], name: "index_tracked_health_conditions_on_health_condition_id"
   end
 
   create_table "tracked_medications", force: :cascade do |t|

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
   }
   namespace :dashboard do
     resources :goals
@@ -19,5 +20,9 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'dashboard#index'
   get 'dashboard/measurements', to: 'dashboard#measurements'
 
+  resources :health_conditions do
+    resources :tracked_health_conditions
+  end
+  
   root :to => 'pages#index'
 end
