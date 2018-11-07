@@ -12,7 +12,8 @@ Rails.application.config.assets.precompile += [
   "stylesheets/appwork.css",
   "stylesheets/theme-corporate.css",
   "stylesheets/colors.css",
-  "stylesheets/uikit.css"
+  "stylesheets/uikit.css",
+  "libs/smartwizard/smartwizard.css",
 ]
 
 #Precompile Landing page Stylesheets
