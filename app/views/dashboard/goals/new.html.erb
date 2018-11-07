@@ -4,57 +4,132 @@
 <%= javascript_include_tag 'libs/smartwizard/smartwizard.js', 'data-turbolinks-track': 'reload' %>
 
 <h1>Setting SMART Goals</h1>
-<div id="smartwizard-3">
-  <ul class="card px-4 pt-3 mb-3">
-    <li>
-      <a href="#smartwizard-3-step-1" class="mb-3">
-        <span class="sw-done-icon ion ion-md-checkmark"></span>
-        <span class="sw-number">1</span>
-        <div class="text-muted small">FIRST STEP</div>
-        Keyboard
-      </a>
-    </li>
-    <li>
-      <a href="#smartwizard-3-step-2" class="mb-3">
-        <span class="sw-done-icon ion ion-md-checkmark"></span>
-        <span class="sw-number">2</span>
-        <div class="text-muted small">SECOND STEP</div>
-        Effects
-      </a>
-    </li>
-    <li>
-      <a href="#smartwizard-3-step-3" class="mb-3">
-        <span class="sw-done-icon ion ion-md-checkmark"></span>
-        <span class="sw-number">3</span>
-        <div class="text-muted small">THIRD STEP</div>
-        Pager
-      </a>
-    </li>
-  </ul>
+<div id="smartgoal">
+  <!-- <form id="smartgoal-form" action="#"> -->
+    <ul class="card px-4 pt-3 mb-3">
+      <li>
+        <a href="#smartgoal-step-0" class="mb-3">
+          <span class="sw-done-icon ion ion-md-checkmark"></span>
+          <span class="sw-icon ion ion-ios-play"></span>
+          <div class="text-muted small">Getting Started</div>
+          Start
+        </a>
+      </li>
+      <li>
+        <a href="#smartgoal-step-1" class="mb-3">
+          <span class="sw-done-icon ion ion-md-checkmark"></span>
+          <span class="sw-number">1</span>
+          <div class="text-muted small">FIRST STEP</div>
+          Specific
+        </a>
+      </li>
+      <li>
+        <a href="#smartgoal-step-2" class="mb-3">
+          <span class="sw-done-icon ion ion-md-checkmark"></span>
+          <span class="sw-number">2</span>
+          <div class="text-muted small">SECOND STEP</div>
+          Measurable
+        </a>
+      </li>
+      <li>
+        <a href="#smartgoal-step-3" class="mb-3">
+          <span class="sw-done-icon ion ion-md-checkmark"></span>
+          <span class="sw-number">3</span>
+          <div class="text-muted small">THIRD STEP</div>
+          Attainable
+        </a>
+      </li>
+      <li>
+        <a href="#smartgoal-step-4" class="mb-3">
+          <span class="sw-done-icon ion ion-md-checkmark"></span>
+          <span class="sw-number">4</span>
+          <div class="text-muted small">FOURTH STEP</div>
+          Rewarding
+        </a>
+      </li>
+      <li>
+        <a href="#smartgoal-step-5" class="mb-3">
+          <span class="sw-done-icon ion ion-md-checkmark"></span>
+          <span class="sw-number">5</span>
+          <div class="text-muted small">FIFTH STEP</div>
+          Timely
+        </a>
+      </li>
+    </ul>
 
-  <div class="mb-3">
-    <div id="smartwizard-3-step-1" class="card animated fadeIn">
-      <div class="card-body">
-        Step Content 1
+    <div class="mb-3">
+      <div id="smartgoal-step-0" class="card animated fadeIn">
+        <div class="card-body">
+          <div class="col-sm-12 col-md-8">
+            <p>
+              Based on Alberta Health Services "Setting SMART Goals" document
+            </p>
+            <p>
+              Includes a video...
+            </p>
+          </div>
+          <div class="card bg-info col-sm-12 col-md-4 mb-4 p-4">
+            <h3 class="text-white">SMART Goals Guide</h3>
+            Goal setting is an important step that you can take to help yourself. No Matter what you want to achieve as part of your health journey, this guide is intended to help you set SMART goals - goals that are specific, measureable, attainable, rewarding, and timely, so that your chances of success are best supported. To learn more about setting SMART goals, visit .... (Information and guide based on Alberta Health Services "SMART Goal Setting" guide.)
+          </div>
+        </div>
+      </div>
+      <div id="smartgoal-step-1" class="card animated fadeIn">
+        <div class="card-body">
+          <div class="col-sm-12 col-md-8">
+            <h3>Be Specific</h3>
+            <p>
+              blah blah
+            </p>
+          </div>
+          <div class="card bg-info col-sm-12 col-md-4 mb-4 p-4">
+            <h3 class="text-white">SMART Goals Guide</h3>
+            <p>
+              Let's start with being specific. Goals that are written clearly are easier to focus on, act on, and follow.
+            </p>
+            <p>
+              As an example to help get you started:
+            </p>
+            <p>
+              <b>WHAT:</b> I will eat 7 servings of vegetables and fruit each day.
+            </p>
+            <p>
+              <b>HOW:</b> Eat one piece of fruit at breakfast, 10am, and 4pm (3 servings total). I will eat 1 cup of vegetables at lunch and 1 cup at dinner (total 4 servings).
+            </p>
+            <p>
+              <b>WHEN:</b> At meal and snack times, as specified above.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="smartgoal-step-2" class="card animated fadeIn">
+        <div class="card-body">
+          Step Content 2
+        </div>
+      </div>
+      <div id="smartgoal-step-3" class="card animated fadeIn">
+        <div class="card-body">
+          Step Content 3
+        </div>
+      </div>
+      <div id="smartgoal-step-4" class="card animated fadeIn">
+        <div class="card-body">
+          Step Content 4
+        </div>
+      </div>
+      <div id="smartgoal-step-5" class="card animated fadeIn">
+        <div class="card-body">
+          Step Content 5
+        </div>
       </div>
     </div>
-    <div id="smartwizard-3-step-2" class="card animated fadeIn">
-      <div class="card-body">
-        Step Content 2
-      </div>
-    </div>
-    <div id="smartwizard-3-step-3" class="card animated fadeIn">
-      <div class="card-body">
-        Step Content 3
-      </div>
-    </div>
-  </div>
+  <!-- </form> -->
 </div>
 
 <!-- Javascript -->
 <script>
   $(function() {
-    $('#smartwizard-3').smartWizard({
+    $('#smartgoal').smartWizard({
       autoAdjustHeight: false,
       backButtonSupport: false,
       useURLhash: false,
