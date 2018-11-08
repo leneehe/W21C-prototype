@@ -1,5 +1,6 @@
 class Dashboard::GoalsController < ApplicationController
   layout 'main/layout-2'
+
   def index
   end
 
@@ -9,6 +10,16 @@ class Dashboard::GoalsController < ApplicationController
 
   def create
     @goal = current_user.goals.build(goal_params)
+
+    respond_to do |format|
+      # if @existing_condition
+      if @goal.save
+        format.html { redirect_to dashboard_goals_path, notice: "goal created!" }
+      else
+        format.html { render :new }
+      end
+    end
+
   end
 
 private
