@@ -2,10 +2,10 @@
 <%= stylesheet_link_tag 'libs/smartwizard/smartwizard.css', media: 'all', 'data-turbolinks-track': 'reload'%>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <%= javascript_include_tag 'libs/smartwizard/smartwizard.js', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'libs/validate/validate.js', 'data-turbolinks-track': 'reload' %>
 
 <h1>Setting SMART Goals</h1>
-<div id="smartgoal">
-  <!-- <form id="smartgoal-form" action="#"> -->
+  <%= form_for @goal, url: new_dashboard_goal_path(@goal), html: {id: "smartgoal"} do |g| %>
     <ul class="card px-4 pt-3 mb-3">
       <li>
         <a href="#smartgoal-step-0" class="mb-3">
@@ -58,6 +58,7 @@
     </ul>
 
     <div class="mb-3">
+      <!-- Start - set goal content -->
       <div id="smartgoal-step-0" class="card animated fadeIn">
         <div class="card-body">
           <div class="col-sm-12 col-md-8">
@@ -74,13 +75,46 @@
           </div>
         </div>
       </div>
+
+      <!-- 1. Be Specific -->
       <div id="smartgoal-step-1" class="card animated fadeIn">
         <div class="card-body">
-          <div class="col-sm-12 col-md-8">
+          <div class="col-sm-12 col-md-8 pr-5">
             <h3>Be Specific</h3>
-            <p>
-              blah blah
-            </p>
+
+            <div class="form-group">
+              <%= g.label :specific_1, "What do you want to achieve?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :specific_1,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :specific_2, "How will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :specific_2,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :specific_3, "When will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :specific_3,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :specific_4, "Where will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :specific_4,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+
           </div>
           <div class="card bg-info col-sm-12 col-md-4 mb-4 p-4">
             <h3 class="text-white">SMART Goals Guide</h3>
@@ -102,9 +136,11 @@
           </div>
         </div>
       </div>
+
+      <!-- 2. Make it Measurable -->
       <div id="smartgoal-step-2" class="card animated fadeIn">
         <div class="card-body">
-          Step Content 2
+          <h3>Make it Measurable</h3>
         </div>
       </div>
       <div id="smartgoal-step-3" class="card animated fadeIn">
@@ -123,17 +159,62 @@
         </div>
       </div>
     </div>
-  <!-- </form> -->
-</div>
+  <% end %>
 
 <!-- Javascript -->
 <script>
   $(function() {
-    $('#smartgoal').smartWizard({
+    var form = $('#smartgoal');
+    var btnFinish = $('<button class="btn-finish btn btn-primary hidden mr-2" type="submit">Finish</button>');
+
+    // Set up validator
+    form.validate({
+      errorPlacement: function errorPlacement(error, element) {
+        $(element).parents('.form-group').append(
+          error.addClass('invalid-feedback small d-block')
+        )
+      },
+      highlight: function(element) {
+        $(element).addClass('is-invalid');
+      },
+      unhighlight: function(element) {
+        $(element).removeClass('is-invalid');
+      }
+    });
+
+    form.smartWizard({
       autoAdjustHeight: false,
       backButtonSupport: false,
       useURLhash: false,
-      showStepURLhash: false
+      showStepURLhash: true,
+      toolbarSettings: {
+        toolbarExtraButtons: [btnFinish]
+      }
+    })
+    .on('leaveStep', function(e, anchorObject, stepNumber, stepDirection) {
+        // stepDirection === 'forward' :- this condition allows to do the form validation
+        // only on forward navigation, that makes easy navigation on backwards still do the validation when going next
+        if (stepDirection === 'forward'){ return form.valid(); }
+        return true;
+    })
+    .on('showStep', function(e, anchorObject, stepNumber, stepDirection) {
+        var btn = form.find('.btn-finish');
+
+        // Enable finish button only on last step
+        if (stepNumber === 5) {
+          btn.removeClass('hidden');
+        } else {
+          btn.addClass('hidden');
+        }
+    })
+
+    // Click on finish button
+    form.find('.btn-finish').on('click', function(){
+      if (!form.valid()){ return; }
+
+      // Submit form
+      alert("Great! We're ready to submit form.");
+      return false;
     });
   });
 </script>

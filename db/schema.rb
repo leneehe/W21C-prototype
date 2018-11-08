@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_04_215320) do
+ActiveRecord::Schema.define(version: 2018_11_08_031808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,10 +42,28 @@ ActiveRecord::Schema.define(version: 2018_11_04_215320) do
   end
 
   create_table "goals", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "specific_1"
+    t.string "specific_2"
+    t.string "specific_3"
+    t.string "specific_4"
+    t.string "measurable_1"
+    t.string "measurable_2"
+    t.string "measurable_3"
+    t.string "measurable_4"
+    t.string "attainable_1"
+    t.string "attainable_2"
+    t.string "attainable_3"
+    t.string "attainable_4"
+    t.string "rewarding_1"
+    t.string "rewarding_2"
+    t.string "rewarding_3"
+    t.string "rewarding_4"
+    t.string "timely_1"
+    t.string "timely_2"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
   create_table "health_conditions", force: :cascade do |t|
@@ -129,4 +147,5 @@ ActiveRecord::Schema.define(version: 2018_11_04_215320) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "goals", "users"
 end
