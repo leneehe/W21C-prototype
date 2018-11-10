@@ -1,6 +1,13 @@
+<%= stylesheet_link_tag 'chartist/chartist.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag "health-charts" %>
+<%= javascript_include_tag "chartist/chartist"%>
+
 <h1>My Conditions</h1>
 <% @user_conditions.each do |condition| %>
   <%= link_to health_condition_path(condition.id) do %>
     <%= condition.condition_name %>
   <% end %>
 <% end %>
+
+<div id="chartist-graph" style="height: 250px"></div>
+<div id="chartist-bi-polar" style="height: 250px"></div>

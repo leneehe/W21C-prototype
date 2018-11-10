@@ -15,7 +15,7 @@
     "bootstrap-sortable": "git+https://github.com/drvic10k/bootstrap-sortable.git",
     "bootstrap-table": "~1.12.1",
     "bootstrap-tour": "git+https://github.com/sorich87/bootstrap-tour.git#master",
-    "chartist": "~0.11.0",
+    "chartist": "^0.11.0",
     "cropper": "~4.0.0-beta",
     "datatables.net-bs4": "~1.10.16",
     "dragula": "~3.7.2",
