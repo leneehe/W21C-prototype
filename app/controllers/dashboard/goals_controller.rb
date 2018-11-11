@@ -2,6 +2,7 @@ class Dashboard::GoalsController < ApplicationController
   layout 'main/layout-2'
 
   def index
+    @goals = current_user.goals.all
   end
 
   def new

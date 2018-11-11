@@ -10,7 +10,13 @@
     </div>
     <div class="card-body text-center ">
       <p>
-        You have no current goals!
+        <% @goals.each do |goal| %>
+          <ol>
+            <li>
+              <%= goal.specific_1 %>
+            </li>
+          </ol>
+        <% end %>
       </p>
       <%= button_to "Add a new goal", new_dashboard_goal_path, method: :get, class: "btn btn-outline-primary" %>
     </div>

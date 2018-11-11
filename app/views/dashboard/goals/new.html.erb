@@ -12,7 +12,7 @@
         <a href="#smartgoal-step-0" class="mb-3">
           <span class="sw-done-icon ion ion-md-checkmark"></span>
           <span class="sw-icon ion ion-ios-play"></span>
-          <div class="text-muted small">Getting Started</div>
+          <div class="text-muted small">GETTING STARTED</div>
           Start
         </a>
       </li>
@@ -54,6 +54,14 @@
           <span class="sw-number">5</span>
           <div class="text-muted small">FIFTH STEP</div>
           Timely
+        </a>
+      </li>
+      <li>
+        <a href="#smartgoal-summary" class="mb-3">
+          <span class="sw-done-icon ion ion-md-checkmark"></span>
+          <span class="sw-icon ion ion-ios-trophy"></span>
+          <div class="text-muted small">FINISH</div>
+          Summary
         </a>
       </li>
     </ul>
@@ -333,6 +341,24 @@
             </p>
             <p>
               <b>BENEFITS:</b> I'll be eating better foods and this will help me avoid the foods that are not as good for me.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- 6. Summary -->
+      <div id="smartgoal-summary" class="card animated fadeIn">
+        <div class="card-body">
+          <div class="col-sm-12 col-md-8 pr-5">
+            <h1>Your New Goal Summary</h1>
+            <% if @goal.id %>
+              <%= render(partial: 'new_goal_summary', goal: @goal) %>
+            <% end %>
+          </div>
+
+          <div class="card bg-info col-sm-12 col-md-4 mb-4 p-4">
+            <h3 class="text-white">SMART Goals Guide</h3>
+            <p>
+              You're done!
             </p>
           </div>
         </div>
