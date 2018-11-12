@@ -14,7 +14,7 @@
         <% @goals.each do |goal| %>
             <li>
               <%= link_to dashboard_goal_path(goal) do %>
-                <%= goal.specific_1%> <%= goal.created_at %>
+                <%= goal.specific_1%> - <%= goal.created_at.to_formatted_s(:long)  %>
               <% end %>
             </li>
         <% end %>

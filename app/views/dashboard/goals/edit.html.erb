@@ -1,0 +1,148 @@
+<h1>Edit Goal # <%= @goals.length - @goal.id + 1 %></h1>
+<br><br>
+<%= form_for @goal, url: dashboard_goal_path(@goal) do |g| %>
+<h3>1. Be Specific</h3>
+
+<div class="form-group">
+  <%= g.label :specific_1, "What do you want to achieve?" %>
+  <span class="text-danger">*</span>
+  <%= g.text_field :specific_1,
+      class: "form-control required",
+      required: true
+  %>
+</div>
+<div class="form-group">
+  <%= g.label :specific_2, "How will you do this?" %>
+  <span class="text-danger">*</span>
+  <%= g.text_field :specific_2,
+      class: "form-control required",
+      required: true
+  %>
+</div>
+<div class="form-group">
+  <%= g.label :specific_3, "When will you do this?" %>
+  <span class="text-danger">*</span>
+  <%= g.text_field :specific_3,
+      class: "form-control required",
+      required: true
+  %>
+</div>
+<div class="form-group">
+  <%= g.label :specific_4, "Where will you do this?" %>
+  <span class="text-danger">*</span>
+  <%= g.text_field :specific_4,
+      class: "form-control required",
+      required: true
+  %>
+</div>
+
+<h3>2. Make it Measurable</h3>
+<div class="form-group">
+  <%= g.label :measurable_1, "How are you going to measure progress?" %>
+  <span class="text-danger">*</span>
+  <%= g.text_field :measurable_1,
+      class: "form-control required",
+      required: true
+  %>
+</div>
+<div class="form-group">
+  <%= g.label :measurable_2, "What defines 'Success' for each instance?" %>
+  <span class="text-danger">*</span>
+  <%= g.text_field :measurable_2,
+      class: "form-control required",
+      required: true
+  %>
+</div>
+<div class="form-group">
+  <%= g.label :measurable_3, "When will you do this?" %>
+  <span class="text-danger">*</span>
+  <%= g.text_field :measurable_3,
+      class: "form-control required",
+      required: true
+  %>
+</div>
+<div class="form-group">
+  <%= g.label :measurable_4, "Where will you do this?" %>
+  <span class="text-danger">*</span>
+  <%= g.text_field :measurable_4,
+      class: "form-control required",
+      required: true
+  %>
+</div>
+
+<h3>3. Make it Attainable</h3>
+<div class="form-group">
+  <%= g.label :attainable_1, "How are you going to measure progress?" %>
+  <%= g.text_field :attainable_1,
+      class: "form-control"
+  %>
+</div>
+<div class="form-group">
+  <%= g.label :attainable_2, "What defines 'Success' for each instance?" %>
+  <span class="text-danger">*</span>
+  <%= g.text_field :attainable_2,
+      class: "form-control required",
+      required: true
+  %>
+</div>
+<div class="form-group">
+  <%= g.label :attainable_3, "When will you do this?" %>
+  <span class="text-danger">*</span>
+  <%= g.text_field :attainable_3,
+      class: "form-control required",
+      required: true
+  %>
+</div>
+<div class="form-group">
+  <%= g.label :attainable_4, "Where will you do this?" %>
+  <span class="text-danger">*</span>
+  <%= g.text_field :attainable_4,
+      class: "form-control required",
+      required: true
+  %>
+</div>
+
+<h3>4. Make it Rewarding</h3>
+<div class="form-group">
+  <%= g.label :rewarding_1, "How will you feel when you reach this goal?" %>
+  <%= g.text_field :rewarding_1,
+      class: "form-control"
+  %>
+</div>
+<div class="form-group">
+  <%= g.label :rewarding_2, "What benefits will reaching this goal have for you?" %>
+  <%= g.text_field :rewarding_2,
+      class: "form-control"
+  %>
+</div>
+<div class="form-group">
+  <%= g.label :rewarding_3, "Did you set this goal for yourself?" %>
+  <%= g.text_field :rewarding_3,
+      class: "form-control"
+  %>
+</div>
+<div class="form-group">
+  <%= g.label :rewarding_4, "Is this something you want to do?" %>
+  <%= g.text_field :rewarding_4,
+      class: "form-control"
+  %>
+</div>
+
+<h3>5. Keep it Timely</h3>
+<div class="form-group">
+  <%= g.label :timely_1, "When will you start working towards your goal?" %>
+  <%= g.text_field :timely_1,
+      class: "form-control"
+  %>
+</div>
+<div class="form-group">
+  <%= g.label :timely_2, "How you chosen a start date that's comfortable but soon?" %>
+  <%= g.text_field :timely_2,
+      class: "form-control"
+  %>
+</div>
+
+<div class="form-group">
+  <%= g.submit class: "btn btn-default" %>
+</div>
+<% end %>

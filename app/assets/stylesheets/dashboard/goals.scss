@@ -11,3 +11,7 @@ ol {
   font-weight: bold;
   margin: 0;
 }
+
+[class^="ti-"], [class*=" ti-"] {
+  line-height: 2.5 !important;
+}

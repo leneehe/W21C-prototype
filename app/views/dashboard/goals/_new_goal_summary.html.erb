@@ -79,3 +79,6 @@
   <b>How you chosen a start date that's comfortable but soon? </b>
   <%= @goal.timely_2 %>
 </p>
+<%= button_to "Edit", edit_dashboard_goal_path(@goal), method: :get, class: "btn btn-default" %>
+<%= button_to "Delete Goal", dashboard_goal_path(@goal), method: :delete, data: { confirm: 'Are you sure to delete this goal?' }, class: "btn btn-secondary" %>
+<%= link_to 'Back', dashboard_goals_path %>
