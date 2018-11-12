@@ -9,13 +9,23 @@ class Dashboard::GoalsController < ApplicationController
     @goal = current_user.goals.build
   end
 
+  # GET /goals/1
+  def show
+    @goal = current_user.goals.find(params[:id])
+    @goals = current_user.goals.all
+  end
+
+  def goal_summary
+    @goal = current_user.goals.last
+  end
+
   def create
     @goal = current_user.goals.build(goal_params)
 
     respond_to do |format|
       # if @existing_condition
       if @goal.save
-        format.html { redirect_to dashboard_goals_path, notice: "goal created!" }
+        format.html { redirect_to dashboard_goal_summary_path, notice: "goal created!" }
       else
         format.html { render :new }
       end

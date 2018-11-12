@@ -56,14 +56,6 @@
           Timely
         </a>
       </li>
-      <li>
-        <a href="#smartgoal-summary" class="mb-3">
-          <span class="sw-done-icon ion ion-md-checkmark"></span>
-          <span class="sw-icon ion ion-ios-trophy"></span>
-          <div class="text-muted small">FINISH</div>
-          Summary
-        </a>
-      </li>
     </ul>
 
     <div class="mb-3">
@@ -345,24 +337,7 @@
           </div>
         </div>
       </div>
-      <!-- 6. Summary -->
-      <div id="smartgoal-summary" class="card animated fadeIn">
-        <div class="card-body">
-          <div class="col-sm-12 col-md-8 pr-5">
-            <h1>Your New Goal Summary</h1>
-            <% if @goal.id %>
-              <%= render(partial: 'new_goal_summary', goal: @goal) %>
-            <% end %>
-          </div>
 
-          <div class="card bg-info col-sm-12 col-md-4 mb-4 p-4">
-            <h3 class="text-white">SMART Goals Guide</h3>
-            <p>
-              You're done!
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   <% end %>
 
@@ -424,7 +399,7 @@
         method: 'POST',
         data: $(this).serialize(),
       }).done(function(){
-        window.location = '/dashboard/goals/';
+        window.location = '/dashboard/goals/goal_summary';
         console.log('Goal created!')
       }).fail(function() {
         console.log('failed to create goal.')

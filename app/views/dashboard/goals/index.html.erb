@@ -10,13 +10,15 @@
     </div>
     <div class="card-body text-center ">
       <p>
+        <ol>
         <% @goals.each do |goal| %>
-          <ol>
             <li>
-              <%= goal.specific_1 %>
+              <%= link_to dashboard_goal_path(goal) do %>
+                <%= goal.specific_1%> <%= goal.created_at %>
+              <% end %>
             </li>
-          </ol>
         <% end %>
+        </ol>
       </p>
       <%= button_to "Add a new goal", new_dashboard_goal_path, method: :get, class: "btn btn-outline-primary" %>
     </div>

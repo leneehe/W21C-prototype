@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   namespace :dashboard do
+    get 'goals/goal_summary', to: 'goals#goal_summary', as: 'goal_summary'
     resources :goals
   end
 
@@ -23,6 +24,6 @@ Rails.application.routes.draw do
   resources :health_conditions do
     resources :tracked_health_conditions
   end
-  
+
   root :to => 'pages#index'
 end
