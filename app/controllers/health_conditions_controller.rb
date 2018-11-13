@@ -3,6 +3,7 @@ class HealthConditionsController < ApplicationController
   layout 'main/layout-2'
   def index
     @user_conditions = current_user.health_conditions
+    @severity_scores = Array.new
   end
   def show
     @health_condition = HealthCondition.find(params[:id])
