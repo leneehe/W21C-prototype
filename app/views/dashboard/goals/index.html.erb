@@ -10,7 +10,15 @@
     </div>
     <div class="card-body text-center ">
       <p>
-        You have no current goals!
+        <ol>
+        <% @goals.each do |goal| %>
+            <li>
+              <%= link_to dashboard_goal_path(goal) do %>
+                <%= goal.specific_1%> - <%= goal.created_at.to_formatted_s(:long)  %>
+              <% end %>
+            </li>
+        <% end %>
+        </ol>
       </p>
       <%= button_to "Add a new goal", new_dashboard_goal_path, method: :get, class: "btn btn-outline-primary" %>
     </div>
@@ -23,6 +31,22 @@
       <div class="title-text">Upcoming Milestones/Targets</div>
     </div>
     <div class="card-body">
+    </div>
+  </div>
+  <div class="card mb-4">
+    <div class="card-header">
+      <div class="title-text">Complete Goals</div>
+    </div>
+    <div class="card-body">
+      <ol>
+      <% @complete_goals.each do |goal| %>
+          <li>
+            <%= link_to dashboard_goal_path(goal) do %>
+              <%= goal.specific_1%> - <%= goal.created_at.to_formatted_s(:long)  %>
+            <% end %>
+          </li>
+      <% end %>
+      </ol>
     </div>
   </div>
 </div>

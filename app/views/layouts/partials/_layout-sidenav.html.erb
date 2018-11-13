@@ -32,15 +32,9 @@
       <% end %>
     </li>
 
-    <li class="sidenav-item<%= current_page?(dashboard_goals_path) || current_page?(new_dashboard_goal_path) ? ' active' : '' %>">
+    <li class="sidenav-item<%= current_page?(dashboard_goals_path) || current_page?(new_dashboard_goal_path) || current_page?(dashboard_goal_summary_path) || current_page?('dashboard_goal_path') ? ' active' : '' %>">
       <%= link_to dashboard_goals_path, class: "sidenav-link" do %>
         <i class="sidenav-icon ion ion-md-trophy"></i><div>Goal Centre</div>
-      <% end %>
-    </li>
-
-    <li class="sidenav-item<%= current_page?(dashboard_goals_path) ? ' active' : '' %>">
-      <%= link_to dashboard_goals_path, class: "sidenav-link" do %>
-        <i class="sidenav-icon ion ion-md-desktop"></i><div>Goal Centre</div>
       <% end %>
     </li>
 

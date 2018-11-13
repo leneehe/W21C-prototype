@@ -1,0 +1,84 @@
+<h3>1. Be Specific</h3>
+<p>
+  <b>What do you want to achieve? </b>
+  <%= @goal.specific_1 %>
+</p>
+<p>
+  <b>How will you do this? </b>
+  <%= @goal.specific_2 %>
+</p>
+<p>
+  <b>When will you do this? </b>
+  <%= @goal.specific_3 %>
+</p>
+<p>
+  <b>Where will you do this? </b>
+  <%= @goal.specific_4 %>
+</p>
+
+<h3>2. Make it Measurable</h3>
+<p>
+  <b>How are you going to measure progress? </b>
+  <%= @goal.measurable_1 %>
+</p>
+<p>
+  <b>What defines 'Success' for each instance? </b>
+  <%= @goal.measurable_2 %>
+</p>
+<p>
+  <b>When will you do this? </b>
+  <%= @goal.measurable_3 %>
+</p>
+<p>
+  <b>Where will you do this? </b>
+  <%= @goal.measurable_4 %>
+</p>
+
+<h3>3. Make it Attainable</h3>
+<p>
+  <b>How are you going to measure progress? </b>
+  <%= @goal.attainable_1 %>
+</p>
+<p>
+  <b>What defines 'Success' for each instance? </b>
+  <%= @goal.attainable_2 %>
+</p>
+<p>
+  <b>When will you do this? </b>
+  <%= @goal.attainable_3 %>
+</p>
+<p>
+  <b>Where will you do this? </b>
+  <%= @goal.attainable_4 %>
+</p>
+
+<h3>4. Make it Rewarding</h3>
+<p>
+  <b>How will you feel when you reach this goal? </b>
+  <%= @goal.rewarding_1 %>
+</p>
+<p>
+  <b>What benefits will reaching this goal have for you? </b>
+  <%= @goal.rewarding_2 %>
+</p>
+<p>
+  <b>Did you set this goal for yourself? </b>
+  <%= @goal.rewarding_3 %>
+</p>
+<p>
+  <b>Is this something you want to do?</b>
+  <%= @goal.rewarding_4 %>
+</p>
+
+<h3>5. Keep it Timely</h3>
+<p>
+  <b>When will you start working towards your goal? </b>
+  <%= @goal.timely_1 %>
+</p>
+<p>
+  <b>How you chosen a start date that's comfortable but soon? </b>
+  <%= @goal.timely_2 %>
+</p>
+<%= button_to "Edit", edit_dashboard_goal_path(@goal), method: :get, class: "btn btn-default" %>
+<%= button_to "Delete Goal", dashboard_goal_path(@goal), method: :delete, data: { confirm: 'Are you sure to delete this goal?' }, class: "btn btn-secondary" %>
+<%= link_to 'Back', dashboard_goals_path %>

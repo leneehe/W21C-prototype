@@ -1,0 +1,6 @@
+<h1>Goal Summary</h1>
+You have created a new goal!
+<br><br>
+<% if @goal.id %>
+  <%= render(partial: 'new_goal_summary', goal: @goal) %>
+<% end %>

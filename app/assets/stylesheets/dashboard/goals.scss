@@ -4,3 +4,14 @@
 span.sw-icon, span.sw-done-icon {
   padding-top: 5px;
 }
+
+ol {
+  font-size: 1.2rem;
+  text-align: left;
+  font-weight: bold;
+  margin: 0;
+}
+
+[class^="ti-"], [class*=" ti-"] {
+  line-height: 2.5 !important;
+}

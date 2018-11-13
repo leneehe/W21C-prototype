@@ -1,17 +1,18 @@
 <!-- Smart Wizard plugin -->
-<%= stylesheet_link_tag 'libs/smartwizard/smartwizard.css', media: 'all', 'data-turbolinks-track': 'reload'%>
+<%= stylesheet_link_tag 'libs/smartwizard/smartwizard.css', media: 'all' %>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<%= javascript_include_tag 'libs/smartwizard/smartwizard.js', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'libs/smartwizard/smartwizard.js' %>
+<%= javascript_include_tag 'libs/validate/validate.js' %>
 
 <h1>Setting SMART Goals</h1>
-<div id="smartgoal">
-  <!-- <form id="smartgoal-form" action="#"> -->
+  <%= form_for @goal, url: dashboard_goals_path(@goal), html: {id: "smartgoal"}, remote: true do |g| %>
+  <%= csrf_meta_tags %>
     <ul class="card px-4 pt-3 mb-3">
       <li>
         <a href="#smartgoal-step-0" class="mb-3">
           <span class="sw-done-icon ion ion-md-checkmark"></span>
           <span class="sw-icon ion ion-ios-play"></span>
-          <div class="text-muted small">Getting Started</div>
+          <div class="text-muted small">GETTING STARTED</div>
           Start
         </a>
       </li>
@@ -58,6 +59,7 @@
     </ul>
 
     <div class="mb-3">
+      <!-- Start - set goal content -->
       <div id="smartgoal-step-0" class="card animated fadeIn">
         <div class="card-body">
           <div class="col-sm-12 col-md-8">
@@ -74,13 +76,46 @@
           </div>
         </div>
       </div>
+
+      <!-- 1. Be Specific -->
       <div id="smartgoal-step-1" class="card animated fadeIn">
         <div class="card-body">
-          <div class="col-sm-12 col-md-8">
+          <div class="col-sm-12 col-md-8 pr-5">
             <h3>Be Specific</h3>
-            <p>
-              blah blah
-            </p>
+
+            <div class="form-group">
+              <%= g.label :specific_1, "What do you want to achieve?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :specific_1,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :specific_2, "How will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :specific_2,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :specific_3, "When will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :specific_3,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :specific_4, "Where will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :specific_4,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+
           </div>
           <div class="card bg-info col-sm-12 col-md-4 mb-4 p-4">
             <h3 class="text-white">SMART Goals Guide</h3>
@@ -102,38 +137,273 @@
           </div>
         </div>
       </div>
+
+      <!-- 2. Make it Measurable -->
       <div id="smartgoal-step-2" class="card animated fadeIn">
         <div class="card-body">
-          Step Content 2
+          <div class="col-sm-12 col-md-8 pr-5">
+            <h3>Make it Measurable</h3>
+
+            <div class="form-group">
+              <%= g.label :measurable_1, "How are you going to measure progress?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :measurable_1,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :measurable_2, "What defines 'Success' for each instance?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :measurable_2,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :measurable_3, "When will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :measurable_3,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :measurable_4, "Where will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :measurable_4,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+
+          </div>
+          <div class="card bg-info col-sm-12 col-md-4 mb-4 p-4">
+            <h3 class="text-white">SMART Goals Guide</h3>
+            <p>
+            Next let's decide on how you're going to measure progress towards your goal, or how you'll define success for each occurance.
+            </p>
+            <p> As an example to help get you started:</p>
+            <p>MEASURE:</p>
+            <p>RECORD:</p>
+          </div>
         </div>
       </div>
+
+      <!-- 3. Make it Attainable -->
       <div id="smartgoal-step-3" class="card animated fadeIn">
         <div class="card-body">
-          Step Content 3
+          <div class="col-sm-12 col-md-8 pr-5">
+            <h3>Make it Attainable</h3>
+
+            <div class="form-group">
+              <%= g.label :attainable_1, "How are you going to measure progress?" %>
+              <%= g.text_field :attainable_1,
+                  class: "form-control"
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :attainable_2, "What defines 'Success' for each instance?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :attainable_2,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :attainable_3, "When will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :attainable_3,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :attainable_4, "Where will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :attainable_4,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+
+          </div>
+          <div class="card bg-info col-sm-12 col-md-4 mb-4 p-4">
+            <h3 class="text-white">SMART Goals Guide</h3>
+            <p>
+              Every change you make will encounter some challenges or maybe you'll have to shift some habits to guarantee success.
+            </p>
+            <p>
+              In our example:
+            </p>
+            <p>
+              <b>CHALLENGES:</b> Before I can plan my meals, I'll need to make sure I have 7 servings of fruits and vegetables available to eat.
+            </p>
+            <p>
+              <b>STEPS TO TAKE:</b> I will plan to buy enough vegetables and fruits when I do the grocery shopping each week.
+            </p>
+            <p>
+              <b>WHEN:</b> I'll make a list before I leave the house to go to the grocery store, I will make sure I have added enough vegetables/fruits to my list.
+            </p>
+            <p>
+              <b>WHERE:</b> When I go to the grocery store.
+            </p>
+          </div>
         </div>
       </div>
+      <!-- 4. Make it Rewarding -->
       <div id="smartgoal-step-4" class="card animated fadeIn">
         <div class="card-body">
-          Step Content 4
+          <div class="col-sm-12 col-md-8 pr-5">
+            <h3>Make it Rewarding</h3>
+
+            <div class="form-group">
+              <%= g.label :rewarding_1, "How will you feel when you reach this goal?" %>
+              <%= g.text_field :rewarding_1,
+                  class: "form-control"
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :rewarding_2, "What benefits will reaching this goal have for you?" %>
+              <%= g.text_field :rewarding_2,
+                  class: "form-control"
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :rewarding_3, "Did you set this goal for yourself?" %>
+              <%= g.text_field :rewarding_3,
+                  class: "form-control"
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :rewarding_4, "Is this something you want to do?" %>
+              <%= g.text_field :rewarding_4,
+                  class: "form-control"
+              %>
+            </div>
+
+          </div>
+          <div class="card bg-info col-sm-12 col-md-4 mb-4 p-4">
+            <h3 class="text-white">SMART Goals Guide</h3>
+            <p>
+              To help you focus on why this goal is important to you, and to help motivate you, this step asks you to think about what positive outcomes you can look forward to when you reach this goal.
+            </p>
+            <p>
+              In our example:
+            </p>
+            <p>
+              <b>FEEL:</b> When I eat more vegetables and fruits each day, I will feel like I'm doing something to help myself.
+            </p>
+            <p>
+              <b>BENEFITS:</b> I'll be eating better foods and this will help me avoid the foods that are not as good for me.
+            </p>
+          </div>
         </div>
       </div>
+      <!-- 5. Keep it Timely -->
       <div id="smartgoal-step-5" class="card animated fadeIn">
         <div class="card-body">
-          Step Content 5
+          <div class="col-sm-12 col-md-8 pr-5">
+            <h3>Keep it Timely</h3>
+
+            <div class="form-group">
+              <%= g.label :timely_1, "When will you start working towards your goal?" %>
+              <%= g.text_field :timely_1,
+                  class: "form-control"
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :timely_2, "How you chosen a start date that's comfortable but soon?" %>
+              <%= g.text_field :timely_2,
+                  class: "form-control"
+              %>
+            </div>
+
+          </div>
+          <div class="card bg-info col-sm-12 col-md-4 mb-4 p-4">
+            <h3 class="text-white">SMART Goals Guide</h3>
+            <p>
+              To help you focus on why this goal is important to you, and to help motivate you, this step asks you to think about what positive outcomes you can look forward to when you reach this goal.
+            </p>
+            <p>
+              In our example:
+            </p>
+            <p>
+              <b>FEEL:</b> When I eat more vegetables and fruits each day, I will feel like I'm doing something to help myself.
+            </p>
+            <p>
+              <b>BENEFITS:</b> I'll be eating better foods and this will help me avoid the foods that are not as good for me.
+            </p>
+          </div>
         </div>
       </div>
+
     </div>
-  <!-- </form> -->
-</div>
+  <% end %>
 
 <!-- Javascript -->
 <script>
   $(function() {
-    $('#smartgoal').smartWizard({
+    var form = $('#smartgoal');
+    var btnFinish = $('<button class="btn-finish btn btn-primary hidden mr-2" type="submit">Finish</button>');
+
+    // Set up validator
+    form.validate({
+      errorPlacement: function errorPlacement(error, element) {
+        $(element).parents('.form-group').append(
+          error.addClass('invalid-feedback small d-block')
+        )
+      },
+      highlight: function(element) {
+        $(element).addClass('is-invalid');
+      },
+      unhighlight: function(element) {
+        $(element).removeClass('is-invalid');
+      }
+    });
+
+    form.smartWizard({
       autoAdjustHeight: false,
       backButtonSupport: false,
       useURLhash: false,
-      showStepURLhash: false
+      showStepURLhash: true,
+      toolbarSettings: {
+        toolbarExtraButtons: [btnFinish]
+      }
+    })
+    .on('leaveStep', function(e, anchorObject, stepNumber, stepDirection) {
+        // stepDirection === 'forward' :- this condition allows to do the form validation
+        // only on forward navigation, that makes easy navigation on backwards still do the validation when going next
+        if (stepDirection === 'forward'){ return form.valid(); }
+        return true;
+    })
+    .on('showStep', function(e, anchorObject, stepNumber, stepDirection) {
+        var btn = form.find('.btn-finish');
+
+        // Enable finish button only on last step
+        if (stepNumber === 5) {
+          btn.removeClass('hidden');
+        } else {
+          btn.addClass('hidden');
+        }
+    })
+
+    // Click on finish button
+    form.on('submit', function(e){
+      if (!form.valid()){ return; }
+
+      e.preventDefault();
+      $.ajax({
+        url: $(this).attr('action'),
+        beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+        method: 'POST',
+        data: $(this).serialize(),
+      }).done(function(){
+        window.location = '/dashboard/goals/goal_summary';
+        console.log('Goal created!')
+      }).fail(function() {
+        console.log('failed to create goal.')
+      })
     });
   });
 </script>
