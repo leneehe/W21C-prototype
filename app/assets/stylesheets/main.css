@@ -1,0 +1,123 @@
+/* Navbar */
+main{
+	margin-top:2rem;
+}
+
+/* General */
+.title-header{
+	background: linear-gradient(to right, #1e5799 0%, #26D07C 0%, #41B6E6 100%);
+	padding:15rem 0 3rem 0;
+}
+.title-header h1{
+		color: #FFFFFF;
+	}
+
+h5 {
+  color: black;
+}
+
+input:focus {
+    color: #555 !important;
+}
+
+.title-img {
+  height: 50px;
+  width: auto;
+  vertical-align: sub;
+}
+
+.title {
+  display: inline;
+  margin-left: 2rem;
+}
+
+ul.nav.navbar-nav{
+  margin-top: 10px;
+}
+
+#tinted-image1 {
+  background:
+    /* top, transparent red, faked with gradient */
+    linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.6)
+    ),
+    /* bottom, image */
+    asset-url('home/home-organize.jpg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+#tinted-image2 {
+  background:
+    /* top, transparent red, faked with gradient */
+    linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.6)
+    ),
+    /* bottom, image */
+    asset-url('home/home-tracking.jpg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+#tinted-image3 {
+  background:
+    /* top, transparent red, faked with gradient */
+    linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.6)
+    ),
+    /* bottom, image */
+    asset-url('home/home-goals.jpg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+#tinted-image1, #tinted-image2, #tinted-image3 {
+  min-height: 285px;
+}
+
+/* Resources */
+
+#resources h1{
+	font-size: 3rem;
+}
+#resources h2{
+	font-size: 2rem;
+}
+#resources span{
+	font-size: 3rem;
+}
+#resources p{
+	line-height:3rem;
+}
+#resources .resources__item{
+	padding:1.5rem;
+	margin: 2rem -1.5rem;
+	border:1px solid #707070;
+
+}
+#resources .resources__search-bar-container{
+	padding-left:0 !important;
+}
+#resources .resources__search-bar{
+	padding: 0.5rem;
+	font-size: 2rem;
+}
+#resources .resources__quality-container{
+	padding-top:4rem;
+	text-align:center;
+}
+#resources .margin-25{
+	margin-top:25%;
+	margin-bottom:25%;
+}
+#resources .tags a{
+		padding: 0 0.5rem;
+		white-space: nowrap;
+		color: #FFFFFF;
+		background-color: #515759;
+}
+
+#resources .tags a:hover {
+  background-color: #787e84;
+}

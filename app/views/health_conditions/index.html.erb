@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag 'chartist/chartist.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag "health-charts" %>
+<%= javascript_include_tag "chartist/chartist"%>
+
+<h1>My Conditions</h1>
+<main id="chart-area">
+  <!-- Loop through current user's self-tracking conditions -->
+  <% @user_conditions.each_with_index do |condition, index| %>
+  <!-- Build Graphing template -->
+    <%= content_tag "section", id: "chart-area-#{index}" do %>
+    <!-- Build Data for graph -->
+      <% if !condition.tracked_health_conditions.empty? %>
+        <% condition.tracked_health_conditions.each do |measurement|%>
+          <% @severity_scores.push({"x" => measurement.created_at, "y" => measurement.severity_score}) %>
+        <% end %>
+        <!-- Chart -->
+        <%= content_tag "div", class: "chart", id: "chart#{index}", data: {nodes: @severity_scores}, style: "height: 250px" do %>
+          <% @severity_scores = [] %>
+        <% end %>
+      <% end %>
+      <!-- Actions -->
+      <%= link_to health_condition_path(condition.id) do %>
+        <%= condition.condition_name %>
+      <% end %>
+
+      
+    <% end %>
+  <% end %>
+</main>
+
+<div id="chartist-bi-polar" style="height: 250px"></div>

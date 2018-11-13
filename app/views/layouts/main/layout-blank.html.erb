@@ -1,4 +1,25 @@
 <% content_for :content do %>
+<!-- LANDING PAGE STYLES -->
+<!-- Plugin-CSS -->
+    <%= stylesheet_link_tag 'bootstrap.min.css', media: 'all'%>
+    <%= stylesheet_link_tag 'owl.carousel.min.css', media: 'all'%>
+    <%= stylesheet_link_tag 'themify-icons.css', media: 'all'%>
+    <%= stylesheet_link_tag 'animate.css', media: 'all'%>
+    <%= stylesheet_link_tag 'magnific-popup.css', media: 'all'%>
+
+    <!-- Main-Stylesheets -->
+    <%= stylesheet_link_tag 'space.css', media: 'all'%>
+    <%= stylesheet_link_tag 'overright.css', media: 'all'%>
+    <%= stylesheet_link_tag 'normalize.css', media: 'all'%>
+    <%= stylesheet_link_tag 'style.css', media: 'all'%>
+    <%= stylesheet_link_tag 'responsive.css', media: 'all'%>
+    <%= stylesheet_link_tag 'main.css', media: 'all'%>
+
+    <!-- <%= stylesheet_link_tag 'ionicons.css', media: 'all', 'data-turbolinks-track': 'reload' %> -->
+
+<%= render 'layouts/partials/navbar' %>
   <%= yield %>
+<%= render 'layouts/partials/footer' %>
+
 <% end %>
 <%= render template: "layouts/application" %>

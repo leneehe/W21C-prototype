@@ -12,7 +12,8 @@ Rails.application.config.assets.precompile += [
   "stylesheets/appwork.css",
   "stylesheets/theme-corporate.css",
   "stylesheets/colors.css",
-  "stylesheets/uikit.css"
+  "stylesheets/uikit.css",
+  "libs/smartwizard/smartwizard.css",
 ]
 
 #Precompile Landing page Stylesheets
@@ -27,7 +28,8 @@ Rails.application.config.assets.precompile += [
   "overright.css",
   "normalize.css",
   "style.css",
-  "responsive.css"
+  "responsive.css",
+  "main.css"
   ]
 
 # Precompile core javascripts

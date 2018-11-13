@@ -1,0 +1,86 @@
+  <!--Header-Area-->
+  <header class="blue-bg relative fix" id="home">
+      <div class="section-bg overlay-bg ripple ">
+          <div class="parallax-image">
+            <%= image_tag("login-bg.jpg")  %>
+          </div>
+      </div>
+
+      <div class="space-20 hidden-xs"></div>
+      <!--Header-Text-->
+      <div class="container text-white">
+          <div class="row text-center">
+              <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                  <div class="space-40"></div>
+                  <div class="space-100"></div>
+                  <h1>Login</h1>
+                  <div class="space-10"></div>
+                  <p>Don't have an account? Sign up <%= link_to "Here", new_user_registration_path %></p>
+                  <div class="space-10"></div>
+              </div>
+          </div>
+      </div>
+      <!--Header-Text/-->
+      <div class="row">
+          <div class="">
+              <div class="col-xs-12 col-md-4 col-sm-offset-4 wow fadeInUp" data-wow-delay="0.2s">
+                  <div class="well well-lg">
+                      <h3>Login your account</h3>
+                      <div class="space-20"></div>
+                      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                          <div class="row">
+                              <div class="col-xs-12">
+                                  <div class="form-group">
+                                      <%= f.label :email,
+                                          class: "sr-only"
+                                      %><br />
+                                      <%= f.email_field :email,
+                                          class: "form-control",
+                                          placeholder: "Email",
+                                          autofocus: true,
+                                          autocomplete: "email",
+                                          required: true
+                                      %>
+                                  </div>
+                                  <div class="space-10"></div>
+                              </div>
+                              <div class="col-xs-12">
+                                  <div class="form-group">
+                                      <%= f.label :password,
+                                          class: "sr-only"
+                                      %><br />
+                                      <%= f.password_field :password,
+                                           autocomplete: "current-password",
+                                           class: "form-control",
+                                           id: "form-password",
+                                           placeholder: "Password",
+                                           required: true
+                                      %>
+                                  </div>
+                                  <div class="space-10"></div>
+                              </div>
+                              <% if devise_mapping.rememberable? -%>
+                              <div class="col-xs-6">
+                                  <div class="space-10"></div>
+
+                                    <div class="field">
+                                      <%= f.check_box :remember_me %>
+                                      <%= f.label :remember_me %>
+                                    </div>
+
+                              </div>
+                              <% end -%>
+                              <div class="col-xs-6 text-right">
+                                  <div class="space-10"></div>
+                                  <%= f.submit "Log in",
+                                      class: "btn btn-link text-uppercase"
+                                  %>
+                              </div>
+                          </div>
+                      <% end %>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="space-40"></div>
+  </header>

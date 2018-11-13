@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prescribed_by: MyString
+  instruction: MyString
+  dosage: MyString
+  frequency: MyString
+  user: one
+  medication: one
+
+two:
+  prescribed_by: MyString
+  instruction: MyString
+  dosage: MyString
+  frequency: MyString
+  user: two
+  medication: two

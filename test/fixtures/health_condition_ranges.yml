@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  condition_name: MyString
+  normal_range_upper: 1.5
+  normal_range_lower: 1.5
+
+two:
+  condition_name: MyString
+  normal_range_upper: 1.5
+  normal_range_lower: 1.5

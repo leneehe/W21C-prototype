@@ -64,6 +64,10 @@ bootstrap@>=4.0.0-beta, bootstrap@~4.1.1:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.1.2.tgz#aee2a93472e61c471fc79fb475531dcbc87de326"
 
+bootstrap@^4.0.0:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.1.3.tgz#0eb371af2c8448e8c210411d0cb824a6409a12be"
+
 chartist@~0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/chartist/-/chartist-0.11.0.tgz#84ba5e05490d096d93dcfa9343ebc31ef6a3bd28"
@@ -129,7 +133,7 @@ jquery.growl@~1.3.5:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/jquery.growl/-/jquery.growl-1.3.5.tgz#fa1c4d758e0d7686551e15896b1aaac2bb1af7f1"
 
-"jquery@>= 1.7.x", jquery@>=1.12.0, jquery@>=1.7, jquery@>=1.9.1, jquery@^3.0.0:
+"jquery@>= 1.7.x", jquery@>=1.12.0, jquery@>=1.7, jquery@>=1.9.1, jquery@^3.0.0, jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
@@ -167,6 +171,13 @@ select2@~4.0.6-rc.1:
   dependencies:
     almond "~0.3.1"
     jquery-mousewheel "~3.1.13"
+
+smartwizard@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/smartwizard/-/smartwizard-4.3.1.tgz#118b69eb2a19724f88e0c72487ff666cda5ed8eb"
+  dependencies:
+    bootstrap "^4.0.0"
+    jquery "^3.3.1"
 
 spin.js@^4.0.0:
   version "4.0.0"
