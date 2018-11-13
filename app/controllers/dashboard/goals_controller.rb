@@ -1,10 +1,10 @@
 class Dashboard::GoalsController < ApplicationController
   layout 'main/layout-2'
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
-  before_action :set_goals, only: [:index, :show, :edit]
 
   def index
-
+    @goals = current_user.goals.incomplete
+    @complete_goals = current_user.goals.complete
   end
 
   def new
@@ -62,11 +62,7 @@ private
     @goal = current_user.goals.find(params[:id])
   end
 
-  def set_goals
-    @goals = current_user.goals.all
-  end
-
   def goal_params
-    params.require(:goal).permit(:specific_1, :specific_2, :specific_3, :specific_4, :measurable_1, :measurable_2, :measurable_3, :measurable_4, :attainable_1, :attainable_2, :attainable_3, :attainable_4, :rewarding_1, :rewarding_2, :rewarding_3, :rewarding_4, :timely_1, :timely_2)
+    params.require(:goal).permit(:specific_1, :specific_2, :specific_3, :specific_4, :measurable_1, :measurable_2, :measurable_3, :measurable_4, :attainable_1, :attainable_2, :attainable_3, :attainable_4, :rewarding_1, :rewarding_2, :rewarding_3, :rewarding_4, :timely_1, :timely_2, :complete)
   end
 end

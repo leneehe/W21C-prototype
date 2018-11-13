@@ -1,3 +1,9 @@
-<h1>Goal # <%= @goals.length - @goal.id + 1 %></h1>
+<h1>Goal # <%= @goal.id %></h1>
+<b>Status: </b>
+<% if @goal.complete %>
+  Complete
+<% else %>
+  Not Complete
+<% end %>
 <br><br>
 <%= render(partial: 'new_goal_summary', goal: @goal) %>

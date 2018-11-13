@@ -1,4 +1,4 @@
-<h1>Edit Goal # <%= @goals.length - @goal.id + 1 %></h1>
+<h1>Edit Goal # <%= @goal.id %></h1>
 <br><br>
 <%= form_for @goal, url: dashboard_goal_path(@goal) do |g| %>
 <h3>1. Be Specific</h3>
@@ -142,7 +142,13 @@
   %>
 </div>
 
+<h3>Goal Completed?</h3>
+<div class="form-group">
+  <%= g.check_box :complete %> <%= g.label :complete, "Completed" %>
+</div>
+
 <div class="form-group">
   <%= g.submit class: "btn btn-default" %>
 </div>
+<%= link_to 'Back', dashboard_goal_path(@goal) %>
 <% end %>
