@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :dashboard do
+    get 'medications/index'
+    get 'medications/new'
+    get 'medications/create'
+    get 'medications/edit'
+    get 'medications/update'
+    get 'medications/destroy'
+  end
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
@@ -6,6 +14,7 @@ Rails.application.routes.draw do
   namespace :dashboard do
     get 'goals/goal_summary', to: 'goals#goal_summary', as: 'goal_summary'
     resources :goals
+    resources :medications, :except => :show
   end
 
   # get 'home', to: 'pages#index', as: 'home'
