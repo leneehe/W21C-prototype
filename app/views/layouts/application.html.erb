@@ -63,7 +63,7 @@
   <%= javascript_include_tag 'scrollUp.min.js'%>
   <%= javascript_include_tag 'dashboard.js', 'data-turbolinks-track': 'reload' %>
 
-  <%= yield :head %>
+  <%= yield :styles %>
 </head>
   <body>
     <%= content_for?(:content) ? yield(:content) : yield %>
@@ -85,5 +85,6 @@
     <!--Active JS-->
     <%= javascript_include_tag 'main.js'%>
 
+    <%= yield :scripts %>
   </body>
 </html>

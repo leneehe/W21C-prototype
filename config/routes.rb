@@ -28,7 +28,6 @@ Rails.application.routes.draw do
   get 'login', to: 'pages#login', as: 'login'
 
   get 'dashboard', to: 'dashboard#index'
-  get 'dashboard/measurements', to: 'dashboard#measurements'
 
   resources :health_conditions do
     resources :tracked_health_conditions

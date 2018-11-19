@@ -1,4 +1,6 @@
 class Dashboard::MedicationsController < ApplicationController
+  layout 'main/layout-2'
+  
   def index
   end
 
