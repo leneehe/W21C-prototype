@@ -22,7 +22,7 @@ class TrackedHealthConditionsController < ApplicationController
       else
         format.html { redirect_to health_conditions_path }
       end
-    end
+    end 
   end
   def edit
 

@@ -8,7 +8,6 @@ $(document).ready(function () {
         var firstLoad = true;
         var sidenav = null;
 
-        console.log('fuck2');
             if (layoutHelpers) {
                 // Update layout
                 layoutHelpers.update();
