@@ -156,7 +156,7 @@ div.card-datatable .dataTable {
   div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-link {
     padding: $pagination-padding-y-sm $pagination-padding-x-sm;
     min-width: calc(#{"#{($font-size-sm * $pagination-line-height) + ($pagination-padding-y-sm * 2)} + #{$pagination-border-width * 2}"});
-    font-size: $font-size-sm;
+    font-size: $font-size-lg;
     line-height: $pagination-line-height;
   }
 
