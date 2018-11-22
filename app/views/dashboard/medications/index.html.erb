@@ -15,7 +15,7 @@
 -->
 <h1>My Medications</h1>
 <p>
-  <%= button_to "Add medication", new_dashboard_medication_path, class: "btn btn-outline-primary" %>
+  <%= button_to "Add medication", new_dashboard_medication_path, method: :get, class: "btn btn-outline-primary" %>
 </p>
 <br>
 <div class="table-responsive">
@@ -37,7 +37,7 @@
       <% @tracked_medications.each do |tracked_medication| %>
       <tr>
         <td>
-          <%= tracked_medication.find_name %>
+          <%= link_to tracked_medication.find_name, dashboard_medication_path(tracked_medication) %>
         </td>
         <td>
           <%= tracked_medication.find_strength %>

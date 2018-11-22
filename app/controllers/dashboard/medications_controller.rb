@@ -5,7 +5,13 @@ class Dashboard::MedicationsController < ApplicationController
     @tracked_medications = current_user.tracked_medications.all
   end
 
+  def show
+    @medication = current_user.medications.find(params[:id])
+    @tracked_medication = current_user.tracked_medications.find_by(medication_id: params[:id])
+  end
+
   def new
+
   end
 
   def create

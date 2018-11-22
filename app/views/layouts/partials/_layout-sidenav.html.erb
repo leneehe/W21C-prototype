@@ -38,7 +38,7 @@
       <% end %>
     </li>
 
-    <li class="sidenav-item<%= current_page?(dashboard_medications_path) || current_page?( new_dashboard_medication_path) ? ' active' : '' %>">
+    <li class="sidenav-item<%= current_page_path?('/dashboard/medications') ? ' active' : '' %>">
       <%= link_to dashboard_medications_path, class: "sidenav-link" do %>
         <i class="sidenav-icon ion ion-md-medical"></i><div>Medication</div>
       <% end %>
