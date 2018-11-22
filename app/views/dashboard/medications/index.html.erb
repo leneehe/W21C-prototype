@@ -13,8 +13,11 @@
 =================================================================
 **************************** CONTENT ****************************
 -->
-<h1>Medications</h1>
-
+<h1>My Medications</h1>
+<p>
+  <%= button_to "Add medication", new_dashboard_medication_path, class: "btn btn-outline-primary" %>
+</p>
+<br>
 <div class="table-responsive">
   <table class="datatables-demo table table-striped table-bordered">
     <thead>
@@ -29,37 +32,36 @@
         <th>Who Perscribed the Medication?</th>
       </tr>
     </thead>
+
     <tbody>
+      <% @tracked_medications.each do |tracked_medication| %>
       <tr>
-        <td>Trident</td>
-        <td>Internet Explorer 4.0</td>
-        <td>Win 95+</td>
-        <td class="center"> 4</td>
-        <td class="center">X</td>
-        <td>Win 95+</td>
-        <td class="center"> 4</td>
-        <td class="center">X</td>
+        <td>
+          <%= tracked_medication.find_name %>
+        </td>
+        <td>
+          <%= tracked_medication.find_strength %>
+        </td>
+        <td>
+          <%= tracked_medication.find_description %>
+        </td>
+        <td class="center">
+          <%= tracked_medication.dosage %>
+        </td>
+        <td class="center">
+          <%= tracked_medication.find_instruction %>
+        </td>
+        <td>
+          <%= tracked_medication.special_instruction %>
+        </td>
+        <td class="center">
+          <%= tracked_medication.find_condition %>
+        </td>
+        <td class="center">
+          <%= tracked_medication.prescribed_by %>
+        </td>
       </tr>
-      <tr>
-        <td>Trident</td>
-        <td>Internet Explorer 5.0</td>
-        <td>Win 95+</td>
-        <td class="center">5</td>
-        <td class="center">C</td>
-        <td>Win 95+</td>
-        <td class="center">5</td>
-        <td class="center">C</td>
-      </tr>
-      <tr>
-        <td>Trident</td>
-        <td>Internet Explorer 5.5</td>
-        <td>Win 95+</td>
-        <td class="center">5.5</td>
-        <td class="center">A</td>
-        <td>Win 95+</td>
-        <td class="center">5.5</td>
-        <td class="center">A</td>
-      </tr>
+      <% end %>
     </tbody>
   </table>
 </div>

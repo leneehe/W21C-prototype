@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :health_conditions
   has_many :goals
   has_many :tracked_medications
-  has_many :mediacations, through: :tracked_medications
+  has_many :medications, through: :tracked_medications
 end

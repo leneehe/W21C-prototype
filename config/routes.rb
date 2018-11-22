@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   namespace :dashboard do
     get 'goals/goal_summary', to: 'goals#goal_summary', as: 'goal_summary'
     resources :goals
-    resources :medications, :except => :show
+    resources :medications #, :except => :show
   end
 
   # get 'home', to: 'pages#index', as: 'home'

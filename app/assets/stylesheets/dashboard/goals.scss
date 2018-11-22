@@ -15,3 +15,10 @@ ol {
 [class^="ti-"], [class*=" ti-"] {
   line-height: 2.5 !important;
 }
+
+.btn-outline-primary {
+  border-color: #26B4FF;
+  &:hover {
+    color: #FFF !important;
+  }
+}

@@ -13,3 +13,10 @@ table {
 .form-control {
   padding: 0 12px;
 }
+
+.btn-outline-primary {
+  border-color: #26B4FF;
+  &:hover {
+    color: #FFF !important;
+  }
+}
