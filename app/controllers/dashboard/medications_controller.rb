@@ -11,10 +11,12 @@ class Dashboard::MedicationsController < ApplicationController
   end
 
   def new
-
+    @medications = current_user.medications.map{|m| m.name}
+    @medication = current_user.medications.build
   end
 
   def create
+    @medication = current_user.medications.build(medication_params)
   end
 
   def edit
@@ -24,5 +26,11 @@ class Dashboard::MedicationsController < ApplicationController
   end
 
   def destroy
+  end
+
+private
+
+  def medication_params
+    params.require(:medication).permit(:name, :rx_photograph_link, :link, :strength, :description, :instruction, :condition_cure)
   end
 end

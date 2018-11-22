@@ -11,9 +11,11 @@
       <%= image_tag(@medication.rx_photograph_link) %>
     </p>
     <% end %>
+    <% if @medication.link %>
     <p>
-      <b>Link:</b> <%= link_to "Pharmacy link", @medication.link %>
+      <%= link_to "Pharmacy link", @medication.link %>
     </p>
+    <% end %>
     <p>
       <b>Strength of Medication:</b> <%= @medication.strength %>
     </p>

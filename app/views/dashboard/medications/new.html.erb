@@ -1,1 +1,27 @@
-<h1>Add medication</h1>
+<% content_for :styles do %>
+<%= stylesheet_link_tag 'typeahead-js/typeahead.css', media: 'all' %>
+<% end %>
+
+<% content_for :scripts do %>
+<!-- Dependencies -->
+<%= javascript_include_tag 'typeahead-js/typeahead.js' %>
+<%= javascript_include_tag 'dashboard/forms_typeahead.js' %>
+<% end %>
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">My Medication /</span> Add Medication
+</h4>
+<%= form_for @medication, url: new_dashboard_medication_path(@medication), remote: true do |f| %>
+  <div class="card mb-4">
+    <div class="card-body">
+      <%= f.hidden_field "med-names", id:"med-names", value: @medications %>
+
+      <%= f.label :name, "Enter your medication name:", class: "form-label" %>
+      <%= f.text_field :name, id: "typeahead-input", class: "form-control", autocomplete: "off" %>
+    </div>
+  </div>
+<% end %>
