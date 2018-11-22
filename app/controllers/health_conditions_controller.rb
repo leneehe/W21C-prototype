@@ -35,7 +35,8 @@ class HealthConditionsController < ApplicationController
 
 private
   def health_condition_params
-    params.require(:health_condition).permit(:condition_name, :normal_range_upper, :normal_range_lower, :assistance_threshold)
+    params.require(:health_condition).permit(:condition_name, :normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure,
+      value_types_attributes:[:id, :name])
   end
 end
 
