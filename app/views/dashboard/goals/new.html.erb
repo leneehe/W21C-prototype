@@ -1,8 +1,12 @@
 <!-- Smart Wizard plugin -->
-<%= stylesheet_link_tag 'libs/smartwizard/smartwizard.css', media: 'all' %>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<%= javascript_include_tag 'libs/smartwizard/smartwizard.js' %>
-<%= javascript_include_tag 'libs/validate/validate.js' %>
+<% content_for :styles do %>
+  <%= stylesheet_link_tag 'libs/smartwizard/smartwizard.css', media: 'all' %>
+<% end %>
+<% content_for :scripts do %>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <%= javascript_include_tag 'libs/smartwizard/smartwizard.js' %>
+  <%= javascript_include_tag 'libs/validate/validate.js' %>
+<% end %>
 
 <h1>Setting SMART Goals</h1>
   <%= form_for @goal, url: dashboard_goals_path(@goal), html: {id: "smartgoal"}, remote: true do |g| %>

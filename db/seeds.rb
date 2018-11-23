@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 user = User.new(
     :first_name => "cat",
     :last_name => "meow",
@@ -17,6 +18,12 @@ user = User.new(
 )
 
 user.save!
+
+# User Seeds
+user1 = User.create(email: "lena@lena.com", password: "password", first_name: "Lena", last_name: "H", gender: "Female", date_of_birth: Date.new(1990,10,24) )
+
+user2 = User.create(email: "dog@dog.com", password: "password", first_name: "Dog", last_name: "Kat", gender: "Male", date_of_birth: Date.new(1995,2,3) )
+
 
 blood_glucose = user.health_conditions.create!(
   condition_name: "Blood Glucose",
@@ -53,3 +60,9 @@ molar = blood_glucose.value_types.create!(name: "Molar Concentration")
     systolic.tracked_health_conditions.create!(severity_score: y*1.2 , health_condition_id: blood_pressure.id)
   end
 end
+
+# Create some Medications
+Medication.create(name: "Generic: Levothyroxine, Brand: Synthroid", strength: "112 mcg", description: "Pink oblong tablet", instruction: "1 tablet by mouth every day", condition_cure: "Thyroid")
+
+# User's Medications
+user2.tracked_medications.create(prescribed_by: "Dr. Smith", special_instruction: "Take in the morning an empty stomach", dosage: "1 tablet", frequency: "Daily", medication_id: 1)

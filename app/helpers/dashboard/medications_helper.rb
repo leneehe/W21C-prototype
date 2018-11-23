@@ -1,0 +1,2 @@
+module Dashboard::MedicationsHelper
+end

@@ -1,0 +1,26 @@
+// Place all the styles related to the dashboard/Medications controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+
+  th{
+    font-weight: bold;
+  }
+
+}
+
+.form-control {
+  padding: 0 12px;
+}
+
+.form-label {
+  font-size: 1.3rem;
+}
+
+.btn-outline-primary {
+  border-color: #26B4FF;
+  &:hover {
+    color: #FFF !important;
+  }
+}
