@@ -2,7 +2,7 @@ class Dashboard::MedicationsController < ApplicationController
   layout 'main/layout-2'
 
   def index
-    @tracked_medications = current_user.tracked_medications.all
+    @tracked_medications = current_user.tracked_medications
   end
 
   def show
@@ -17,6 +17,14 @@ class Dashboard::MedicationsController < ApplicationController
 
   def create
     @medication = current_user.medications.build(medication_params)
+
+    respond_to do |format|
+      if @medication.save
+        format.html { redirect_to dashboard_medications_url, notice: "New Medication added"}
+      else
+        format.html { render :new }
+      end
+    end
   end
 
   def edit
@@ -31,7 +39,7 @@ class Dashboard::MedicationsController < ApplicationController
 private
 
   def medication_params
-    params.require(:medication).permit(:name, :rx_photograph_link, :link, :strength, :description, :instruction, :condition_cure,
+    params.require(:medication).except(:mednames).permit(:name, :rx_photograph_link, :link, :strength, :description, :instruction, :condition_cure,
     tracked_medications_attributes: [:id,
       :prescribed_by, :special_instruction, :dosage, :frequency, :medication_id, :_destroy
       ])
