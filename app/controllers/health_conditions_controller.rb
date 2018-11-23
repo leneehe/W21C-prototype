@@ -7,7 +7,12 @@ class HealthConditionsController < ApplicationController
   end
   def show
     @health_condition = HealthCondition.find(params[:id])
-    @measurement = TrackedHealthCondition.new
+    # @measurement = TrackedHealthCondition.new
+    @value_types = @health_condition.value_types
+    @measurements = []
+    @value_types.each do |type|
+      @measurements << TrackedHealthCondition.new(value_type_id: type.id)
+    end
   end
   def new
     @new_user_condition = current_user.health_conditions.build

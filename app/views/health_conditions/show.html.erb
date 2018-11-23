@@ -1,14 +1,18 @@
-<%= form_for [@health_condition, @measurement] do |form| %>
+<%= form_tag health_condition_tracked_health_conditions_path(@health_condition) do %>
+  <% @measurements.each do |measurement| %>
+    <div class="form-group">
+      <%= fields_for 'measurements[]', measurement do |m|%>
+        <%= m.label :severity_score, ValueType.find(measurement.value_type_id).name %>
+        <%= m.text_field :severity_score,
+            autofocus: true,
+            placeholder: "Severity Score",
+            class: "form-control",
+            required: true
+        %>
+      <% end %>
+    </div>
+  <% end %>
   <div class="form-group">
-    <%= form.label :severity_score %>
-    <%= form.text_field :severity_score,
-        autofocus: true,
-        placeholder: "Severity Score",
-        class: "form-control",
-        required: true
-    %>
-  </div>
-  <div class="form-group">
-    <%= form.submit %>
+      <%= submit_tag %>
   </div>
 <% end %>
