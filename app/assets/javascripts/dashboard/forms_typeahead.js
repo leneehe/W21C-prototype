@@ -23,7 +23,7 @@ $(function() {
     };
   };
 
-  var medications = [$('#med-names').val()]
+  var medications = JSON.parse($('#med-names').val());
 
   if (isRtl) {
     $('#typeahead-input').attr('dir', 'rtl');

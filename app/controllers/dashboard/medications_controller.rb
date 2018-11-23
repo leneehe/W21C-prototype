@@ -11,7 +11,7 @@ class Dashboard::MedicationsController < ApplicationController
   end
 
   def new
-    @medications = current_user.medications.map{|m| m.name}
+    @medications = Medication.all.map{|m| m.name}.to_json
     @medication = current_user.medications.build
   end
 
@@ -31,6 +31,9 @@ class Dashboard::MedicationsController < ApplicationController
 private
 
   def medication_params
-    params.require(:medication).permit(:name, :rx_photograph_link, :link, :strength, :description, :instruction, :condition_cure)
+    params.require(:medication).permit(:name, :rx_photograph_link, :link, :strength, :description, :instruction, :condition_cure,
+    tracked_medications_attributes: [:id,
+      :prescribed_by, :special_instruction, :dosage, :frequency, :medication_id, :_destroy
+      ])
   end
 end
