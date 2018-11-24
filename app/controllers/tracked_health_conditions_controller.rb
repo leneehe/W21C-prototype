@@ -20,7 +20,9 @@ class TrackedHealthConditionsController < ApplicationController
 
   def create
     params['measurements'].each do |measurement|
-      TrackedHealthCondition.create!(measurement_params(measurement))
+      if measurement['severity_score'].present?
+        TrackedHealthCondition.create!(measurement_params(measurement))
+      end
     end
     
     # @health_condition = current_user.health_conditions.find(params[:health_condition_id])
@@ -46,7 +48,7 @@ class TrackedHealthConditionsController < ApplicationController
   end
 
   def measurement_params(new_params)
-    new_params.permit(:name, :severity_score, :health_condition_id, :value_type_id)
+    new_params.permit(:severity_score, :value_type_id, :health_condition_id)
   end
   
   

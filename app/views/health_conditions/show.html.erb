@@ -9,6 +9,8 @@
             class: "form-control",
             required: true
         %>
+        <%= m.hidden_field :value_type_id, { :value => measurement.value_type_id } %>
+        <%= m.hidden_field :health_condition_id, { :value => measurement.health_condition_id }%>
       <% end %>
     </div>
   <% end %>

@@ -14,7 +14,11 @@ document.addEventListener("DOMContentLoaded", function(e){
       {
         labels: [],
         series: [
-          chartData
+          {
+            name: 'poop',
+            data: chartData
+          }
+          
         ],
       },
       {
@@ -25,8 +29,9 @@ document.addEventListener("DOMContentLoaded", function(e){
         },
         axisX: {
           type: Chartist.FixedScaleAxis,
-          labelInterpolationFnc: function () {
-            return moment().format('MMM D');
+          divisor: 7,
+          labelInterpolationFnc: function (Value) {
+            return moment(Value).format('MMM D');
           },
         },
       },
