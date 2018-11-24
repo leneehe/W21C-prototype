@@ -1,7 +1,7 @@
 class TrackedMedication < ApplicationRecord
   belongs_to :user
   belongs_to :medication
-
+  
   def find_name
     Medication.find(self.id).name
   end

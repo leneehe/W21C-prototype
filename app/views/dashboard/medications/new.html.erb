@@ -16,6 +16,19 @@
   <span class="text-muted font-weight-light">My Medication /</span> Add Medication
 </h4>
 <%= form_for @medication, url: dashboard_medications_path(@medication) do |f| %>
+
+  <% if @medication.errors.any? %>
+    <div id="error_explanation">
+      <h5><%= pluralize(@medication.errors.count, "error") %> prohibited this medication from being saved:</h5>
+
+      <ul>
+      <% @medication.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="card mb-4">
     <div class="card-body">
       <%= f.hidden_field "mednames", id:"med-names", value: @medications, disabled:true %>
@@ -56,7 +69,7 @@
       </div>
 
       <!-- Tracked Medications -->
-      <%= f.fields_for :tracked_medications, TrackedMedication.new do |tracked_medication| %>
+      <%= f.fields_for :tracked_medications, @tracked_medication do |tracked_medication| %>
       <!-- <div class="col-md-12"> -->
         <%= render 'medication_fields', f: tracked_medication %>
       <!-- </div> -->

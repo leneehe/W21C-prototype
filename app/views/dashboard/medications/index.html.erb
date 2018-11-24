@@ -37,7 +37,7 @@
       <% @tracked_medications.each do |tracked_medication| %>
       <tr>
         <td>
-          <%= link_to tracked_medication.find_name, dashboard_medication_path(tracked_medication) %>
+          <%= link_to tracked_medication.find_name, dashboard_medication_path(tracked_medication.medication_id) %>
         </td>
         <td>
           <%= tracked_medication.find_strength %>
