@@ -26,6 +26,9 @@
 <% end %>
 
 <div class="card mb-4">
+  <div class="card-header">
+    <div class="title-text"><i class="ion ion-md-medical text-primary"></i>&nbsp; Medication Information</div>
+  </div>
   <div class="card-body">
     <%= f.hidden_field "mednames", id:"med-names", value: medications, disabled:true %>
 
@@ -72,7 +75,7 @@
     <% end %>
 
     <div class="form-group col-md-12">
-      <%= f.submit "Submit", class:"btn btn-default" %>
+      <%= f.submit "Submit", class:"btn btn-primary" %>
     </div>
 
   </div>

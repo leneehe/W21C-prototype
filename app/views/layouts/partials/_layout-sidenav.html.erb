@@ -26,8 +26,8 @@
       <% end %>
     </li>
 
-    <li class="sidenav-item">
-      <%= link_to plan_path, class: "sidenav-link" do %>
+    <li class="sidenav-item<%= current_page_path?(dashboard_plan_path) ? ' active' : '' %>">
+      <%= link_to dashboard_plan_path, class: "sidenav-link" do %>
         <i class="sidenav-icon ion ion-md-journal"></i><div>Plan</div>
       <% end %>
     </li>

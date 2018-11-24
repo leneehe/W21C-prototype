@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   namespace :dashboard do
+    get 'plan/index'
+  end
+  namespace :dashboard do
     get 'medications/index'
     get 'medications/new'
     get 'medications/create'
@@ -13,8 +16,10 @@ Rails.application.routes.draw do
   }
   namespace :dashboard do
     get 'goals/goal_summary', to: 'goals#goal_summary', as: 'goal_summary'
+    get 'plan', to: 'plan#index'
     resources :goals
     resources :medications #, :except => :show
+
   end
 
   # get 'home', to: 'pages#index', as: 'home'
