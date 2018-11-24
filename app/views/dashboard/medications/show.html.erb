@@ -13,7 +13,7 @@
     <% end %>
     <% if @medication.link %>
     <p>
-      <%= link_to "Pharmacy link", @medication.link %>
+      <%= link_to "Pharmacy link", @medication.link, target: "_blank" %>
     </p>
     <% end %>
     <p>
@@ -54,5 +54,7 @@
 </div>
 <div class="col-sm-12">
   <br>
+  <%= button_to "Edit", edit_dashboard_medication_path(@medication), method: :get, class: "btn btn-default" %>
+  <%= button_to "Delete Medication", dashboard_medication_path(@medication), method: :delete, data: { confirm: 'Are you sure to delete this medication?' }, class: "btn btn-secondary" %>
   <%= link_to "Back", dashboard_medications_path %>
 </div>

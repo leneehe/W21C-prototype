@@ -1,12 +1,13 @@
 class Dashboard::MedicationsController < ApplicationController
   layout 'main/layout-2'
+    before_action :set_medication, only: [:show, :edit, :update, :destroy]
 
   def index
     @tracked_medications = current_user.tracked_medications
   end
 
   def show
-    @medication = current_user.medications.find(params[:id])
+
     @tracked_medication = current_user.tracked_medications.find_by(medication_id: params[:id])
   end
 
@@ -29,15 +30,34 @@ class Dashboard::MedicationsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
+
+    respond_to do |format|
+      if @medication.update(medication_params)
+        format.html { redirect_to dashboard_medication_url, notice: "Medication updated!" }
+      else
+        format.html { render :edit }
+      end
+    end
+
   end
 
   def destroy
+    @medication.destroy
+    @medication.tracked_medications.destroy_all
+    respond_to do |format|
+      format.html { redirect_to dashboard_medications_url, notice: 'Medication was successfully destroyed.' }
+    end
   end
 
 private
+
+  def set_medication
+    @medication = current_user.medications.find(params[:id])
+  end
 
   def medication_params
     params.require(:medication).except(:mednames).permit(:name, :rx_photograph_link, :link, :strength, :description, :instruction, :condition_cure,

@@ -1,2 +1,12 @@
-<h1>Dashboard::Medications#edit</h1>
-<p>Find me in app/views/dashboard/medications/edit.html.erb</p>
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">My Medication /</span> Edit Medication
+</h4>
+<%= form_for @medication, url: dashboard_medication_path(@medication) do |f| %>
+  <%= render 'form', medication: @medication, medications: @medications, f: f %>
+<% end %>
+<div class="col-sm-12">
+  <br>
+  <%= link_to "View Medication", dashboard_medication_path(@medication) %>
+   |
+  <%= link_to "Back", dashboard_medications_path %>
+</div>
