@@ -46,7 +46,7 @@ class HealthConditionsController < ApplicationController
     @value_collection = Array.new
     @value_data = Array.new
 
-     condition.tracked_health_conditions.one_day_ago.group_by(&:value_type_id).each do |key, value| 
+     condition.tracked_health_conditions.one_week_ago.group_by(&:value_type_id).each do |key, value| 
       value.each do |measurement|
         @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})  
       end  

@@ -4,22 +4,26 @@ document.addEventListener("DOMContentLoaded", function(e){
   for (let i = 0; i < allCharts.length; i++) {
     let chart = document.getElementById(`chart${i}`);
     let chartData = JSON.parse(chart.dataset.nodes);
+    console.log(chartData)
+
     // Convert the Ruby date into Javascript Date object
-    chartData = chartData.map(item => ({
-      x: new Date(item.x),
-      y: item.y,
-    }));
+    if (chartData != 0) {
+       for (let j = 0; j < chartData.length; j++) {
+        chartData[j].data = chartData[j].data.map(item => ({
+          ...item,
+          x: new Date(item.x)
+        }));
+      }
+    }
+    // chartData = chartData.map(item => ({
+    //   x: new Date(item.x),
+    //   y: item.y,
+    // }));
     // Dynamically build chart 
     new Chartist.Line(`#chart${i}`,
       {
         labels: [],
-        series: [
-          {
-            name: 'poop',
-            data: chartData
-          }
-          
-        ],
+        series: chartData,
       },
       {
         showLine: false,
@@ -30,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function(e){
         axisX: {
           type: Chartist.FixedScaleAxis,
           divisor: 7,
-          labelInterpolationFnc: function (Value) {
-            return moment(Value).format('MMM D');
+          labelInterpolationFnc: function (label) {
+            return moment(label).format('MMM D');
           },
         },
       },
