@@ -1,0 +1,60 @@
+<h1>My Medication</h1>
+<br>
+<div class="col-sm-6">
+<div class="card">
+  <div class="card-body">
+
+    <h2><%= @medication.name %></h2>
+
+    <% if @medication.rx_photograph_link %>
+    <p>
+      <%= image_tag(@medication.rx_photograph_link) %>
+    </p>
+    <% end %>
+    <% if @medication.link %>
+    <p>
+      <%= link_to "Pharmacy link", @medication.link, target: "_blank" %>
+    </p>
+    <% end %>
+    <p>
+      <b>Strength of Medication:</b> <%= @medication.strength %>
+    </p>
+    <p>
+      <b>Description of Medication:</b> <%= @medication.description %>
+    </p>
+    <p>
+      <b>How to take Medication:</b> <%= @medication.instruction %>
+    </p>
+    <p>
+      <b>What is the Medication for: </b> <%= @medication.condition_cure %>
+    </p>
+  </div>
+</div>
+</div>
+
+<div class=" col-sm-6">
+<div class="card">
+  <div class="card-body">
+    <h3>Prescription Information</h3>
+    <p>
+      <b>Prescribed by:</b> <%= @tracked_medication.prescribed_by %>
+    </p>
+    <p>
+      <b>How many to take at each dose:</b> <%= @tracked_medication.dosage %>
+    </p>
+    <p>
+      <b>Frequency:</b> <%= @tracked_medication.frequency %>
+    </p>
+    <p>
+      <b>Special Instructions:</b> <%= @tracked_medication.special_instruction %>
+    </p>
+
+  </div>
+</div>
+</div>
+<div class="col-sm-12">
+  <br>
+  <%= button_to "Edit", edit_dashboard_medication_path(@medication), method: :get, class: "btn btn-default" %>
+  <%= button_to "Delete Medication", dashboard_medication_path(@medication), method: :delete, data: { confirm: 'Are you sure to delete this medication?' }, class: "btn btn-secondary" %>
+  <%= link_to "Back", dashboard_medications_path %>
+</div>

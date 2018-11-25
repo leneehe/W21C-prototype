@@ -1,0 +1,67 @@
+<% content_for :styles do %>
+  <%= stylesheet_link_tag 'datatables/datatables.css', media: 'all' %>
+<% end %>
+
+<% content_for :scripts do %>
+  <!-- Dependencies -->
+  <%= javascript_include_tag 'datatables/datatables.js' %>
+
+  <%= javascript_include_tag 'dashboard/tables_datatables.js' %>
+<% end %>
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+<h1>My Medications</h1>
+<p>
+  <%= button_to "Add medication", new_dashboard_medication_path, method: :get, class: "btn btn-outline-primary" %>
+</p>
+<br>
+<div class="table-responsive">
+  <table class="datatables-demo table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Name of Medication</th>
+        <th>Strength of Medication</th>
+        <th>Description of Medication</th>
+        <th>How Many to Take at Each Dose</th>
+        <th>How to Take the Medication</th>
+        <th>Special Instructions</th>
+        <th>What is the Medication for?</th>
+        <th>Who Perscribed the Medication?</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tracked_medications.each do |tracked_medication| %>
+      <tr>
+        <td>
+          <%= link_to tracked_medication.find_name, dashboard_medication_path(tracked_medication.medication_id) %>
+        </td>
+        <td>
+          <%= tracked_medication.find_strength %>
+        </td>
+        <td>
+          <%= tracked_medication.find_description %>
+        </td>
+        <td class="center">
+          <%= tracked_medication.dosage %>
+        </td>
+        <td class="center">
+          <%= tracked_medication.find_instruction %>
+        </td>
+        <td>
+          <%= tracked_medication.special_instruction %>
+        </td>
+        <td class="center">
+          <%= tracked_medication.find_condition %>
+        </td>
+        <td class="center">
+          <%= tracked_medication.prescribed_by %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

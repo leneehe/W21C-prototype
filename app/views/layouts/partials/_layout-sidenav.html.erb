@@ -26,56 +26,41 @@
       <% end %>
     </li>
 
-    <li class="sidenav-item">
-      <%= link_to plan_path, class: "sidenav-link" do %>
+    <li class="sidenav-item<%= current_page_path?('/dashboard/plan') ? ' active open' : '' %>">
+      <%= link_to dashboard_plan_path, class: "sidenav-link sidenav-toggle" do %>
         <i class="sidenav-icon ion ion-md-journal"></i><div>Plan</div>
       <% end %>
+      <ul class="sidenav-menu">
+        <li class="sidenav-item<%= current_page?(dashboard_plan_path) ? ' active' : '' %>">
+          <%= link_to dashboard_plan_path, class: "sidenav-link" do %>
+            <div>Care Planner</div>
+          <% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(dashboard_plan_events_path) ? ' active' : '' %>">
+          <%= link_to dashboard_plan_events_path, class: "sidenav-link" do %>
+            <div>Keep me Organized</div>
+          <% end %>
+        </li>
+        <li class="sidenav-item">
+          <%= link_to "#", class: "sidenav-link" do %>
+            <div>Report Tool</div>
+          <% end %>
+        </li>
+      </ul>
     </li>
 
-    <li class="sidenav-item<%= current_page?(dashboard_goals_path) || current_page?(new_dashboard_goal_path) || current_page?(dashboard_goal_summary_path) || current_page?('dashboard_goal_path') ? ' active' : '' %>">
+    <li class="sidenav-item<%= current_page_path?('/dashboard/goals') ? ' active' : '' %>">
       <%= link_to dashboard_goals_path, class: "sidenav-link" do %>
         <i class="sidenav-icon ion ion-md-trophy"></i><div>Goal Centre</div>
       <% end %>
     </li>
 
-    <!-- Place holder nav menu dropdown-->
-    <li class="sidenav-item">
-      <a href="javascript:void(0)" class="sidenav-link sidenav-toggle">
-          <div>Medications</div>
-      </a>
-      <!-- Submenu -->
-      <ul class="sidenav-menu">
-        <li class="sidenav-item">
-          <a href="javascript:void(0)" class="sidenav-link sidenav-toggle">
-            <div>List of all medications</div>
-          </a>
-          <ul class="sidenav-menu">
-            <li class="sidenav-item">
-              <%= link_to plan_path, class: "sidenav-link" do %>
-                <i class="sidenav-icon ion ion-md-desktop"></i>
-                <div>Plan</div>
-              <% end %>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <!-- Submenu -->
-      <ul class="sidenav-menu">
-        <li class="sidenav-item">
-          <a href="javascript:void(0)" class="sidenav-link sidenav-toggle">
-            <div>Your medications</div>
-          </a>
-          <ul class="sidenav-menu">
-            <li class="sidenav-item">
-              <%= link_to plan_path, class: "sidenav-link" do %>
-              <i class="sidenav-icon ion ion-md-desktop"></i>
-              <div>Plan</div>
-              <% end %>
-            </li>
-          </ul>
-        </li>
-      </ul>
+    <li class="sidenav-item<%= current_page_path?('/dashboard/medications') ? ' active' : '' %>">
+      <%= link_to dashboard_medications_path, class: "sidenav-link" do %>
+        <i class="sidenav-icon ion ion-md-medical"></i><div>Medication</div>
+      <% end %>
     </li>
+
     <!-- Place holder nav menu dropdown-->
     <li class="sidenav-item">
       <a href="javascript:void(0)" class="sidenav-link sidenav-toggle">

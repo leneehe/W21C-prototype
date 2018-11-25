@@ -41,7 +41,7 @@ class Dashboard::GoalsController < ApplicationController
   def update
     respond_to do |format|
       if @goal.update(goal_params)
-        format.html { redirect_to dashboard_goal_url, notice: "goal updated!" }
+        format.html { redirect_to dashboard_goal_url, notice: "Goal updated!" }
       else
         format.html { render :edit }
       end
@@ -51,7 +51,7 @@ class Dashboard::GoalsController < ApplicationController
   def destroy
     @goal.destroy
     respond_to do |format|
-      format.html { redirect_to dashboard_goals_url, notice: 'Recipe was successfully destroyed.' }
+      format.html { redirect_to dashboard_goals_url, notice: 'Goal was successfully destroyed.' }
     end
   end
 
