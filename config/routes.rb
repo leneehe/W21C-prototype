@@ -1,15 +1,5 @@
 Rails.application.routes.draw do
-  namespace :dashboard do
-    get 'plan/index'
-  end
-  namespace :dashboard do
-    get 'medications/index'
-    get 'medications/new'
-    get 'medications/create'
-    get 'medications/edit'
-    get 'medications/update'
-    get 'medications/destroy'
-  end
+
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
@@ -19,7 +9,9 @@ Rails.application.routes.draw do
     get 'plan', to: 'plan#index'
     resources :goals
     resources :medications #, :except => :show
-
+    namespace :plan do
+      resources :events
+    end
   end
 
   # get 'home', to: 'pages#index', as: 'home'
