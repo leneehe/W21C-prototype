@@ -5,7 +5,7 @@ $(function () {
   var d = today.getDate();
 
   var eventList = [{
-    title: 'All Day Event',
+    title: 'All Day Event XXX',
     start: new Date(y, m, d - 12)
   },
   {

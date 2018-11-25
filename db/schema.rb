@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_25_042007) do
+ActiveRecord::Schema.define(version: 2018_11_25_224424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,7 +39,9 @@ ActiveRecord::Schema.define(version: 2018_11_25_042007) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "end"
+    t.bigint "user_id"
     t.index ["event_type_id"], name: "index_events_on_event_type_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "goals", force: :cascade do |t|
@@ -163,6 +165,7 @@ ActiveRecord::Schema.define(version: 2018_11_25_042007) do
     t.index ["health_condition_id"], name: "index_value_types_on_health_condition_id"
   end
 
+  add_foreign_key "events", "users"
   add_foreign_key "goals", "users"
   add_foreign_key "tracked_health_conditions", "value_types"
   add_foreign_key "value_types", "health_conditions"
