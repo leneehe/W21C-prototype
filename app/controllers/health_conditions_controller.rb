@@ -1,14 +1,23 @@
 class HealthConditionsController < ApplicationController
+  helper_method :build_data_collection
   # Used for health condition info
   layout 'main/layout-2'
   def index
     @user_conditions = current_user.health_conditions
     @severity_scores = Array.new
+    
   end
   def show
     @health_condition = HealthCondition.find(params[:id])
-    @measurement = TrackedHealthCondition.new
+    # @measurement = TrackedHealthCondition.new
+    @value_types = @health_condition.value_types
+    @measurements = []
+    @value_types.each do |type|
+      # @measurements << @health_condition.TrackedHealthCondition.new(value_type_id: type.id, health_condition_id: params[:id])
+      @measurements << @health_condition.tracked_health_conditions.build(value_type_id: type.id)
+    end
   end
+
   def new
     @new_user_condition = current_user.health_conditions.build
   end
@@ -32,6 +41,20 @@ class HealthConditionsController < ApplicationController
   def update
 
   end
+
+  def build_data_collection(condition)
+    @value_collection = Array.new
+    @value_data = Array.new
+
+     condition.tracked_health_conditions.one_week_ago.group_by(&:value_type_id).each do |key, value| 
+      value.each do |measurement|
+        @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})  
+      end  
+      @value_collection.push({ "name" => ValueType.find(key).name, "data" => @value_data})
+    end
+    return @value_collection
+  end
+  
 
 private
   def health_condition_params

@@ -16,4 +16,3 @@
 //= require activestorage
 
 //= require cocoon
-//= require_tree .
