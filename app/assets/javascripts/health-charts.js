@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function(e){
   for (let i = 0; i < allCharts.length; i++) {
     let chart = document.getElementById(`chart${i}`);
     let chartData = JSON.parse(chart.dataset.nodes);
-    console.log(chartData)
-
+    let divisors = 1;
+    let xAxisTitle = "?";
     // Convert the Ruby date into Javascript Date object
     if (chartData != 0) {
        for (let j = 0; j < chartData.length; j++) {
@@ -14,30 +14,85 @@ document.addEventListener("DOMContentLoaded", function(e){
           x: new Date(item.x)
         }));
       }
+      xAxisTitle = chartData[0].unit_of_measure;
+      divisors = 7;
     }
-    // chartData = chartData.map(item => ({
-    //   x: new Date(item.x),
-    //   y: item.y,
-    // }));
+
+    /**
+     * ChartData expected output
+     * [
+     *  {
+     *    name: 'name',
+     *    meta: 'name',
+     *    data:
+     *      [
+     *        {
+     *          x: time
+     *          y: measurement
+     *        }
+     *      ]
+     *  },
+     * ]
+     */
+
     // Dynamically build chart 
+    let ticks = []
+    for (let i = 0; i < 7; i++) {
+      ticks.push(new Date(new Date().setDate(new Date().getDate() - i)));
+    }
+    ticks.reverse();
     new Chartist.Line(`#chart${i}`,
       {
         labels: [],
         series: chartData,
       },
       {
-        showLine: false,
+        showLine: true,
         fullWidth: true,
         chartPadding: {
-          right: 40
+          left: 20
         },
         axisX: {
-          type: Chartist.FixedScaleAxis,
-          divisor: 7,
-          labelInterpolationFnc: function (label) {
+          // position: 'start',
+          type: Chartist.StepAxis,
+          // divisor: divisors,
+          ticks: ticks,
+          labelInterpolationFnc: function (label, index, chart) {
+            // console.log(chart)
             return moment(label).format('MMM D');
           },
         },
+        axisY: {
+          onlyInteger: true
+        },
+        plugins: [
+          Chartist.plugins.legend(),
+          Chartist.plugins.tooltip({
+            transformTooltipTextFnc: function (tooltip) {
+              var xy = tooltip.split(",");
+              return xy[1];
+            }
+          }),
+          Chartist.plugins.ctAxisTitle({
+            axisX: {
+              axisTitle: "Time",
+              textAnchor: "middle",
+              offset: {
+                x: 0,
+                y: 40
+              }
+            },
+            axisY: {
+              axisTitle: xAxisTitle,
+              textAnchor: 'middle',
+              offset: {
+                x: 0,
+                y: 10
+              },
+              flipTitle: true              
+            }
+          })
+        ]
       },
     );
   }
