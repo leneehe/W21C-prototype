@@ -103,7 +103,10 @@ $(function () {
     },
     editable: true,
     eventLimit: true, // allow "more" link when too many events
-    events: eventList,
+    events: {
+      url: 'events.json',
+      type: "GET"
+    },
     select: function (start, end) {
       $('#fullcalendar-default-view-modal')
         .on('shown.bs.modal', function() {
@@ -173,6 +176,11 @@ $(function () {
     navLinks: true, // can click day/week names to navigate views
     editable: true,
     eventLimit: true, // allow "more" link when too many events
-    events: eventList
+    events: {
+      url: 'events.json',
+      type: "GET"
+    }
   });
+
+
 });

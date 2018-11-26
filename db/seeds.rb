@@ -71,7 +71,7 @@ user2.tracked_medications.create(prescribed_by: "Dr. Smith", special_instruction
 event1 = EventType.create!(name: "Appointment")
 event2 = EventType.create!(name: "Medication")
 event3 = EventType.create!(name: "Personal")
-event4 = EventType.create!(name: "Exercise")
+event4 = EventType.create!(name: "Reminder")
 
 # User's Events
 user2.events.create!(name: "Dr. Duddz checkup", start: DateTime.now - 5.days, event_type_id: event1.id, frequency: "once", location: "Clinic")
