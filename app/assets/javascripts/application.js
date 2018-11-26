@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require rails-ujs
 //= require activestorage
-
+//= require_directory .
 //= require cocoon

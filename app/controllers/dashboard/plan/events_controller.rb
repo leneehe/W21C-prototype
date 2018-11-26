@@ -3,7 +3,7 @@ class Dashboard::Plan::EventsController < ApplicationController
 
   def index
     @events = current_user.events
-
+    @legends = legend_colors(@events)
     respond_to do |format|
       format.html { render :index }
       format.json { render json: calendar_json(@events) }
@@ -30,20 +30,28 @@ class Dashboard::Plan::EventsController < ApplicationController
   end
 
 private
-
-  def calendar_json(events)
+  # Assign color class to event types in legend hash
+  def legend_colors(events)
     calendar_events = []
-    @legends = {}
+    legends = {}
+
     colorClasses = [ "fc-event-success", "fc-event-info", "fc-event-warning", "fc-event-danger", "fc-event-dark" ];
     event_type_ids = events.map{|event| event.event_type_id}.uniq
 
     event_type_ids.each_with_index do |id, i|
       if colorClasses[i]
-        @legends[id] = colorClasses[i]
+        legends[id] = colorClasses[i]
       else
-        @legends[id] = "no-color"
+        legends[id] = "no-color"
       end
     end
+
+    return legends
+  end
+
+  def calendar_json(events)
+    calendar_events = []
+    legends = legend_colors(events)
 
     events.each do |event|
       e = {title: event.name, start: event.start}
@@ -53,7 +61,7 @@ private
       end
 
       # Assign colorClasses
-        e[:className] = @legends[event.id]
+        e[:className] = legends[event.id]
 
       calendar_events.push(e)
     end
