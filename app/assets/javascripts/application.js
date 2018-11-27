@@ -14,5 +14,9 @@
 //= require jquery_ujs
 //= require rails-ujs
 //= require activestorage
-
+//= require chartist/dist/chartist
+//= require chartist-plugin-axistitle/dist/chartist-plugin-axistitle
+//= require chartist-plugin-legend/chartist-plugin-legend
+//= require chartist-plugin-tooltips/dist/chartist-plugin-tooltip
+//= require chartist-plugin-accessibility/dist/chartist-plugin-accessibility
 //= require cocoon

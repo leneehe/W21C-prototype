@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_25_042007) do
+ActiveRecord::Schema.define(version: 2018_11_27_023022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -156,7 +156,7 @@ ActiveRecord::Schema.define(version: 2018_11_25_042007) do
   end
 
   create_table "value_types", force: :cascade do |t|
-    t.string "name"
+    t.string "name", default: "Amount"
     t.bigint "health_condition_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

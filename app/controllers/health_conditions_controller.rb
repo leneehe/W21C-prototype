@@ -42,15 +42,16 @@ class HealthConditionsController < ApplicationController
 
   end
 
-  def build_data_collection(condition)
+  def build_data_collection(condition, unit)
     @value_collection = Array.new
     @value_data = Array.new
 
-     condition.tracked_health_conditions.one_week_ago.group_by(&:value_type_id).each do |key, value| 
+     condition.tracked_health_conditions.one_week_ago.group_by(&:value_type_id).each do |key, value|
+      collection_name =  ValueType.find(key).name
       value.each do |measurement|
         @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})  
       end  
-      @value_collection.push({ "name" => ValueType.find(key).name, "data" => @value_data})
+      @value_collection.push({ "name" => collection_name, "meta" => collection_name, "data" => @value_data, "unit_of_measure" => unit })
     end
     return @value_collection
   end

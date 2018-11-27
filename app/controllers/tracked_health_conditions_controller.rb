@@ -24,6 +24,9 @@ class TrackedHealthConditionsController < ApplicationController
         TrackedHealthCondition.create!(measurement_params(measurement))
       end
     end
+    respond_to do |format|
+        format.html { redirect_to health_conditions_path, notice: 'Entry was added' }
+    end 
     
     # @health_condition = current_user.health_conditions.find(params[:health_condition_id])
     # # @measurement =  TrackedHealthCondition.new(severity_score: params[:severity_score], health_condition_id: params[:health_condition_id])
