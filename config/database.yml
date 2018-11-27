@@ -38,8 +38,13 @@ test:
 
 production:
   <<: *default
-  database: W21C_production
-  username: W21C
-  password: <%= ENV['W21C_DATABASE_PASSWORD'] %>
+  # database: W21C_production
+  # username: W21C
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
+  # password: <%= ENV['W21C_DATABASE_PASSWORD'] %>
 
   
