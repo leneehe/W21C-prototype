@@ -66,3 +66,24 @@ Medication.create(name: "Generic: Levothyroxine, Brand: Synthroid", strength: "1
 
 # User's Medications
 user2.tracked_medications.create(prescribed_by: "Dr. Smith", special_instruction: "Take in the morning an empty stomach", dosage: "1 tablet", frequency: "Daily", medication_id: 1)
+
+# Create Event Types
+event1 = EventType.create!(name: "Appointment")
+event2 = EventType.create!(name: "Medication")
+event3 = EventType.create!(name: "Personal")
+event4 = EventType.create!(name: "Reminder")
+
+# User's Events
+user2.events.create!(name: "Dr. Duddz checkup", start: DateTime.now - 5.days, event_type_id: event1.id, frequency: "once", location: "Clinic")
+user2.events.create!(name: "Start new medicine x", start: DateTime.now - 3.days, event_type_id: event2.id, frequency: "once")
+user2.events.create!(name: "Sleep monitoring", start: DateTime.now - 1.days - (2/24.0), end: DateTime.now - 1.days + (30/1440.0) , event_type_id: event3.id, frequency: "weekly")
+user2.events.create!(name: "Do yoga", start: DateTime.now - 2.days, end: DateTime.now - 1.days, event_type_id: event4.id, frequency: "daily", location: "World gym")
+
+# ------- Time Tip --------!
+# hours = 10
+# minutes = 5
+# seconds = 64
+#
+# hours = DateTime.now - (hours/24.0) #<DateTime: 2015-03-11T07:27:17+02:00 ((2457093j,19637s,608393383n),+7200s,2299161j)>
+# minutes = DateTime.now - (minutes/1440.0) #<DateTime: 2015-03-11T17:22:17+02:00 ((2457093j,55337s,614303598n),+7200s,2299161j)>
+# seconds = DateTime.now - (seconds/86400.0) #<DateTime: 2015-03-11T17:26:14+02:00 ((2457093j,55574s,785701811n),+7200s,2299161j)>
