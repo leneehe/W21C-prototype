@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :goals
   has_many :tracked_medications
   has_many :medications, through: :tracked_medications
+  has_many :events
 end
