@@ -30,15 +30,12 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
-
-gem 'cocoon'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 # Use cocoon for nested forms
 gem "cocoon"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'jquery-rails'
 gem 'hirb'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

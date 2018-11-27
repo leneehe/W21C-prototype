@@ -57,7 +57,7 @@ molar = blood_glucose.value_types.create!(name: "Molar Concentration")
 (1..5).each do |x|
   blood_pressure.value_types.length.times do |y|
     diastolic.tracked_health_conditions.create!(severity_score: y , health_condition_id: blood_pressure.id)
-    systolic.tracked_health_conditions.create!(severity_score: y*1.2 , health_condition_id: blood_pressure.id)
+    systolic.tracked_health_conditions.create!(severity_score: y*2 , health_condition_id: blood_pressure.id)
   end
 end
 
