@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :goals
     resources :medications #, :except => :show
     namespace :plan do
-      resources :events
+      resources :events, :except => :new
     end
   end
 
