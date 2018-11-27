@@ -4,6 +4,8 @@ class Dashboard::Plan::EventsController < ApplicationController
   def index
     @events = current_user.events
     @legends = legend_colors(@events)
+
+    @event = current_user.events.build
     respond_to do |format|
       format.html { render :index }
       format.json { render json: calendar_json(@events) }
@@ -12,9 +14,16 @@ class Dashboard::Plan::EventsController < ApplicationController
   end
 
   def create
-  end
+    @event = current_user.events.build(event_params)
 
-  def new
+    respond_to do |format|
+      # if @existing_condition
+      if @event.save
+        format.html { redirect_to dashboard_plan_events_url, notice: "Event created!" }
+      else
+        format.html { render :index }
+      end
+    end
   end
 
   def destroy
@@ -36,7 +45,7 @@ private
     legends = {}
 
     colorClasses = [ "fc-event-success", "fc-event-info", "fc-event-warning", "fc-event-danger", "fc-event-dark" ];
-    event_type_ids = events.map{|event| event.event_type_id}.uniq
+    event_type_ids = events.map{ |event| event.event_type_id }.uniq
 
     event_type_ids.each_with_index do |id, i|
       if colorClasses[i]
@@ -61,13 +70,18 @@ private
       end
 
       # Assign colorClasses
-        e[:className] = legends[event.id]
+      e[:className] = legends[event.event_type_id]
+
 
       calendar_events.push(e)
     end
 
     return calendar_events
 
+  end
+
+  def event_params
+    params.require(:event).permit(:name, :start, :end, :frequency, :location, :event_type_id, :user_id)
   end
 
 end
