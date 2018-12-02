@@ -67,7 +67,7 @@ private
     legends = legend_colors(events)
 
     events.each do |event|
-      e = {id: event.id, title: event.name, start: event.start, update_url: dashboard_plan_event_url(event, method: :patch)}
+      e = {id: event.id, title: event.name, start: event.start}
 
       if event.end
         e[:end] = event.end
