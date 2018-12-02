@@ -26,9 +26,6 @@ class Dashboard::Plan::EventsController < ApplicationController
     end
   end
 
-  def destroy
-  end
-
   def show
   end
 
@@ -36,6 +33,13 @@ class Dashboard::Plan::EventsController < ApplicationController
   end
 
   def update
+    # api get json find the event object
+    # respond_to do |format|
+    #   format.json { render json: }
+    # end
+  end
+
+  def destroy
   end
 
 private
@@ -63,7 +67,7 @@ private
     legends = legend_colors(events)
 
     events.each do |event|
-      e = {title: event.name, start: event.start}
+      e = {id: event.id, title: event.name, start: event.start, update_url: dashboard_plan_event_url(event, method: :patch)}
 
       if event.end
         e[:end] = event.end
