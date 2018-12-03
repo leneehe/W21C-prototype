@@ -11,9 +11,9 @@
   <label class="ui-todo-item custom-control custom-checkbox">
     <input type="checkbox" class="custom-control-input">
     <span class="custom-control-label"><%= journal.entry %></span>
-    <%= link_to dashboard_plan_event_checklist_path(journal.event, journal), method: :delete, data: { confirm: 'Are you sure to delete this entry?' } do %>
-    <span class="ui-todo-badge badge badge-outline-default ml-2 btn-primary">x</span>
-    <% end %>
+    <span class="ui-todo-badge badge badge-outline-default ml-2 btn-primary">
+    <%= link_to "x", dashboard_plan_event_checklist_path(journal.event, journal), method: :delete, data: { confirm: 'Are you sure to delete this entry?' } %>
+    </span>
   </label>
     <% end %>
   </div>

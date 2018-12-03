@@ -29,7 +29,6 @@ Rails.application.config.assets.precompile += [
   "normalize.css",
   "style.css",
   "responsive.css",
-  "main.css"
   ]
 
 # Precompile core javascripts
