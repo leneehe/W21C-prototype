@@ -6,7 +6,7 @@
   <!-- Loop through current user's self-tracking conditions -->
   <% @user_conditions.each_with_index do |condition, index| %>
   <!-- Build Graphing template -->
-    <%= content_tag "section", id: "chart-area-#{index}" , class: 'chart-container'do %>
+    <%= content_tag "section", id: "chart-area-#{index}" , class: 'chart-container' do %>
      <!-- Actions -->
      <h2><%= condition.condition_name %></h2>
       <%= link_to health_condition_path(condition.id) do %>

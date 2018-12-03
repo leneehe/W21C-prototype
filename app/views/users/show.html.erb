@@ -1,0 +1,23 @@
+<section>
+  <h1><%= @user.first_name%> <%= @user.last_name%></h1>
+  <p><strong>Email:</strong> <%= @user.email %></p>
+  <p><strong>Date of Birth:</strong> <%= @user.date_of_birth %></p>
+  <p><strong>Gender:</strong> <%= @user.gender %></p>
+</section>
+
+<section>
+  <%# if !@user.conditions.empty? %>
+    <h2>Conditions: </h2>
+    <ul>
+      <% @user.conditions.each do |condition| %>
+        <li><%= condition.name %></li>
+      <% end %>
+    </ul>
+  <%# end %>
+  <%= form_for @new_user_condition do |f|%>
+    <%= f.label :name %>
+    <%= f.text_field :name, :placeholder => "e.g Diabetes" %>
+    <%= f.submit "Add a new condition" %>
+  <% end%>
+  <%# link_to_add_association 'Add a new condition +', form, :value_types, 'data-association-insertion-node' => "#value-type-field ul", 'data-association-insertion-method' => "append" %>
+</section>
