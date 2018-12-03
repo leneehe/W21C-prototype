@@ -19,15 +19,15 @@ class HealthConditionsController < ApplicationController
   end
 
   def new
-    @new_user_condition = current_user.health_conditions.build
+    @new_user_health_condition = current_user.health_conditions.build
   end
 
   def create
-    @new_user_condition = current_user.health_conditions.build(health_condition_params)
+    @new_user_health_condition = current_user.health_conditions.build(health_condition_params)
     # @existing_condition = current_user.health_conditions.find_by()
     respond_to do |format|
       # if @existing_condition
-      if @new_user_condition.save
+      if @new_user_health_condition.save
         format.html { redirect_to health_conditions_path, notice: "Item created!" }
       else
         format.html { render :new }
