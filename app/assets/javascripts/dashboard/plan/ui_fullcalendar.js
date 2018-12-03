@@ -111,8 +111,12 @@ $(function () {
       $('#fullcalendar-default-view-modal')
         .on('shown.bs.modal', function() {
           $(this).find('input[type="text"]').trigger('focus');
+          document.querySelector('input[type="submit"]').removeAttribute("disabled");
           document.querySelector('input#event_start').value = start
-          document.querySelector('input#event_end').value = end
+
+          if (end - start !== 86400000) {
+            document.querySelector('input#event_end').value = end
+          }
         })
         .on('hidden.bs.modal', function() {
           $(this)
@@ -121,21 +125,23 @@ $(function () {
           $('#fullcalendar-default-view').fullCalendar('unselect');
         })
         .on('submit', function(e) {
-          // e.preventDefault();
-
-          // make the ajax callback to submit form
-          // $.ajax({
-          //   url: $(this).attr('action'),
-          //   method: $(this).attr('method'),
-          //   data: $(this).serialize(),
-          //   dataType: 'html'
-          // }).done(function(responseData) {
-          //   alert("Saved event!")
-          // }).fail(function(jqXHR, textStatus, errorThrown) {
-          //   alert("Cannot save! " + errorThrown)
-          // })
+          e.preventDefault();
 
           var title = $(this).find('input[type="text"]').val();
+
+          // make the ajax callback to submit form
+          $.ajax({
+            url: $('#fullcalendar-default-view-modal').attr('action'),
+            method: $('#fullcalendar-default-view-modal').attr('method'),
+            data: $('#fullcalendar-default-view-modal').serialize(),
+            dataType: 'html'
+          }).done(function(responseData) {
+            alert("New event " + title + " has been saved!")
+          }).fail(function(jqXHR, textStatus, errorThrown) {
+            alert("Cannot save! " + errorThrown)
+          })
+
+
           var selectBox = document.getElementById("selectBox");
           var className = selectBox.options[selectBox.selectedIndex].dataset.class || null;
           // var className = $(this).find('select').val() || null;
@@ -156,9 +162,12 @@ $(function () {
         .modal('show');
     },
     eventClick: function(calEvent, jsEvent, view) {
-      alert('Event: ' + calEvent.title);
+      window.location.href = '/dashboard/plan/events/' + calEvent.id;
     },
     eventDrop: function(calEvent, delta, revertFunc) {
+      console.log(calEvent);
+      console.log(delta);
+      console.log(revertFunc);
 
        alert(calEvent.title + " was dropped on " + calEvent.start.format());
 
@@ -169,44 +178,30 @@ $(function () {
      },
      eventResize: function(calEvent, delta, revertFunc) {
 
+       event_data = {
+         id: calEvent.id,
+         end: calEvent.end.format(),
+       }
+
         alert(calEvent.title + " end is now " + calEvent.end.format());
 
         if (!confirm("is this okay?")) {
           revertFunc();
+        } else {
+
+          // make the ajax call to edit
+          $.ajax({
+            url: calEvent.update_url,
+            method: 'PATCH',
+            data: event_data,
+            dataType: 'json'
+          }).done(function(responseData) {
+            alert("Saved changes!")
+          }).fail(function(jqXHR, textStatus, errorThrown) {
+            alert("Cannot save! " + errorThrown)
+          })
+
         }
-
-        $('#fullcalendar-default-view-modal')
-          .on('shown.bs.modal', function() {
-            $(this).find('input[type="text"]').trigger('focus');
-            document.querySelector('input#event_name').value = calEvent.title;
-            document.querySelector('input#event_start').value = calEvent.start.format()
-            document.querySelector('input#event_end').value = calEvent.end.format();
-          })
-          .on('hidden.bs.modal', function() {
-            $(this)
-              .off('shown.bs.modal hidden.bs.modal submit')
-              .find('input[type="text"], select').val('');
-            $('#fullcalendar-default-view').fullCalendar('unselect');
-          })
-          .on('submit', function(e) {
-            e.preventDefault();
-
-            // make the ajax callback to submit form
-            $.ajax({
-              url: $(this).attr('action'),
-              method: 'put',
-              data: $(this).serialize(),
-              dataType: 'json'
-            }).done(function(responseData) {
-              alert("Saved event!")
-            }).fail(function(jqXHR, textStatus, errorThrown) {
-              alert("Cannot save! " + errorThrown)
-            })
-
-
-            $(this).modal('hide');
-          })
-          .modal('show');
 
       }
   });
@@ -248,7 +243,11 @@ $(function () {
     events: {
       url: 'events.json',
       type: "GET"
+    },
+    eventClick: function(calEvent, jsEvent, view) {
+      window.location.href = '/dashboard/plan/events/' + calEvent.id;
     }
+    
   });
 
 

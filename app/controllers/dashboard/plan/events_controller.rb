@@ -1,9 +1,9 @@
 class Dashboard::Plan::EventsController < ApplicationController
   layout 'main/layout-2'
 
+  before_action :set_events_legends, only: [:index, :show]
+
   def index
-    @events = current_user.events
-    @legends = legend_colors(@events)
 
     @event = current_user.events.build
     respond_to do |format|
@@ -26,19 +26,31 @@ class Dashboard::Plan::EventsController < ApplicationController
     end
   end
 
-  def destroy
-  end
-
   def show
+    @event = current_user.events.find(params[:id])
+    @checklists = current_user.checklists
+    @entry = Checklist.new
   end
 
   def edit
   end
 
   def update
+    # api get json find the event object
+    # respond_to do |format|
+    #   format.json { render json: }
+    # end
+  end
+
+  def destroy
   end
 
 private
+
+  def set_events_legends
+    @events = current_user.events
+    @legends = legend_colors(@events)
+  end
   # Assign color class to event types in legend hash
   def legend_colors(events)
     calendar_events = []
@@ -63,7 +75,7 @@ private
     legends = legend_colors(events)
 
     events.each do |event|
-      e = {title: event.name, start: event.start}
+      e = {id: event.id, title: event.name, start: event.start}
 
       if event.end
         e[:end] = event.end

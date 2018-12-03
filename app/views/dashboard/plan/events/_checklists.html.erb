@@ -1,0 +1,36 @@
+<% if checklists.empty? %>
+  <div class="card-body">
+  You have no entries!
+  </div>
+<% else %>
+
+<div class="card-body">
+  <p class="text-muted small">To do</p>
+  <div class="custom-controls-stacked">
+    <% checklists.incomplete.each do |journal| %>
+  <label class="ui-todo-item custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input">
+    <span class="custom-control-label"><%= journal.entry %></span>
+    <%= link_to dashboard_plan_event_checklist_path(journal.event, journal), method: :delete, data: { confirm: 'Are you sure to delete this entry?' } do %>
+    <span class="ui-todo-badge badge badge-outline-default ml-2 btn-primary">x</span>
+    <% end %>
+  </label>
+    <% end %>
+  </div>
+</div>
+
+<hr class="m-0">
+
+<div class="card-body">
+  <p class="text-muted small">Completed</p>
+  <div class="custom-controls-stacked">
+    <% checklists.complete.each do |journal| %>
+    <label class="ui-todo-item custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" checked>
+      <span class="custom-control-label"><%= journal.entry %></span>
+    </label>
+    <% end %>
+  </div>
+</div>
+
+<% end %>
