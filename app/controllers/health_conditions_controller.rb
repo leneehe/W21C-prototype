@@ -52,6 +52,7 @@ class HealthConditionsController < ApplicationController
         @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})  
       end  
       @value_collection.push({ "name" => collection_name, "meta" => collection_name, "data" => @value_data, "unit_of_measure" => unit })
+      @value_data = []
     end
     return @value_collection
   end
