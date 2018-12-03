@@ -162,7 +162,7 @@ $(function () {
         .modal('show');
     },
     eventClick: function(calEvent, jsEvent, view) {
-      alert('Event: ' + calEvent.title);
+      window.location.href = '/dashboard/plan/events/' + calEvent.id;
     },
     eventDrop: function(calEvent, delta, revertFunc) {
       console.log(calEvent);
@@ -243,7 +243,11 @@ $(function () {
     events: {
       url: 'events.json',
       type: "GET"
+    },
+    eventClick: function(calEvent, jsEvent, view) {
+      window.location.href = '/dashboard/plan/events/' + calEvent.id;
     }
+    
   });
 
 

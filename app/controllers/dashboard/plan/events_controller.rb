@@ -1,9 +1,9 @@
 class Dashboard::Plan::EventsController < ApplicationController
   layout 'main/layout-2'
 
+  before_action :set_events_legends, only: [:index, :show]
+
   def index
-    @events = current_user.events
-    @legends = legend_colors(@events)
 
     @event = current_user.events.build
     respond_to do |format|
@@ -28,6 +28,8 @@ class Dashboard::Plan::EventsController < ApplicationController
 
   def show
     @event = current_user.events.find(params[:id])
+    @checklists = current_user.checklists
+    @entry = Checklist.new
   end
 
   def edit
@@ -44,6 +46,11 @@ class Dashboard::Plan::EventsController < ApplicationController
   end
 
 private
+
+  def set_events_legends
+    @events = current_user.events
+    @legends = legend_colors(@events)
+  end
   # Assign color class to event types in legend hash
   def legend_colors(events)
     calendar_events = []

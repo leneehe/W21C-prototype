@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resources :goals
     resources :medications #, :except => :show
     namespace :plan do
-      resources :events, :except => :new
+      resources :events, :except => :new do
+        resources :checklists, only: [:index, :create, :destroy]
+      end
     end
   end
 

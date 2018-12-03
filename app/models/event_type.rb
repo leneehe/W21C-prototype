@@ -1,2 +1,4 @@
 class EventType < ApplicationRecord
-end
+  has_many :events
+  # has_many :users, through: :events
+  end
