@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'conditions/new'
+  get 'conditions/create'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
+
+  resources :users, :only => [:show]
+  resources :conditions
   namespace :dashboard do
     get 'goals/goal_summary', to: 'goals#goal_summary', as: 'goal_summary'
     get 'plan', to: 'plan#index'

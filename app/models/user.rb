@@ -12,4 +12,5 @@ class User < ApplicationRecord
   has_many :events
   # has_many :event_types, through: :events
   has_many :checklists, through: :events
+  has_and_belongs_to_many :conditions
 end
