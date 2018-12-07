@@ -43,7 +43,7 @@
     <div class="card-header with-elements">
       <h3 class="card-header-title">Journal Entries</h3>
       <div class="card-header-elements ml-auto">
-        <button type="button" class="btn btn-default btn-xs md-btn-flat">View all</button>
+        <%= button_to "View all", dashboard_plan_journals_path, method: :get, class: "btn btn-default btn-xs md-btn-flat" %>
       </div>
     </div>
 

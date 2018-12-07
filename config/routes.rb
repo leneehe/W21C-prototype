@@ -16,8 +16,9 @@ Rails.application.routes.draw do
     resources :medications #, :except => :show
     namespace :plan do
       resources :events, :except => :new do
-        resources :checklists, only: [:index, :create, :update, :destroy]
+        resources :checklists, only: [:create, :update, :destroy]
       end
+      get 'journals', to: 'plan#checklists'
     end
   end
 

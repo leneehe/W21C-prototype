@@ -1,7 +1,5 @@
 class Dashboard::Plan::ChecklistsController < ApplicationController
-  def index
-  end
-
+  
   def create
     event = Event.find(params[:event_id])
     @entry = Checklist.new(checklist_params)
