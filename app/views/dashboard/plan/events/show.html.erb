@@ -1,6 +1,9 @@
 <% content_for :styles do %>
   <%= stylesheet_link_tag 'fullcalendar/fullcalendar.css', media: 'all' %>
 <% end %>
+<% content_for :scripts do %>
+  <%= javascript_include_tag 'dashboard/plan/checklists.js' %>
+<% end %>
 
 <h4 class="font-weight-bold py-3 mb-4">
   <span class="text-muted font-weight-light">Plan / Keep me Organized /</span> Event
