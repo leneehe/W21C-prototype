@@ -1,4 +1,7 @@
 class Dashboard::Plan::ChecklistsController < ApplicationController
+  def index
+  end
+  
   def create
     event = Event.find(params[:event_id])
     @entry = Checklist.new(checklist_params)
@@ -12,6 +15,9 @@ class Dashboard::Plan::ChecklistsController < ApplicationController
         format.html { redirect_to dashboard_plan_event_url(event) }
       end
     end
+  end
+
+  def update
   end
 
   def destroy

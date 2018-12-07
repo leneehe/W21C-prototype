@@ -28,7 +28,7 @@ class Dashboard::Plan::EventsController < ApplicationController
 
   def show
     @event = current_user.events.find(params[:id])
-    @checklists = current_user.checklists
+    @checklists = @event.checklists
     @entry = Checklist.new
   end
 
