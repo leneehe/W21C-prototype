@@ -165,42 +165,24 @@ $(function () {
       window.location.href = '/dashboard/plan/events/' + calEvent.id;
     },
     eventDrop: function(calEvent, delta, revertFunc) {
-      console.log(calEvent);
-      console.log(delta);
-      console.log(revertFunc);
 
        alert(calEvent.title + " was dropped on " + calEvent.start.format());
 
        if (!confirm("Are you sure about this change?")) {
          revertFunc();
+       } else {
+         updateEvent(calEvent)
        }
 
      },
      eventResize: function(calEvent, delta, revertFunc) {
 
-       event_data = {
-         id: calEvent.id,
-         end: calEvent.end.format(),
-       }
+        alert(calEvent.title + " is now ending at " + calEvent.end.format());
 
-        alert(calEvent.title + " end is now " + calEvent.end.format());
-
-        if (!confirm("is this okay?")) {
+        if (!confirm("Do you want to change to this time?")) {
           revertFunc();
         } else {
-
-          // make the ajax call to edit
-          $.ajax({
-            url: calEvent.update_url,
-            method: 'PATCH',
-            data: event_data,
-            dataType: 'json'
-          }).done(function(responseData) {
-            alert("Saved changes!")
-          }).fail(function(jqXHR, textStatus, errorThrown) {
-            alert("Cannot save! " + errorThrown)
-          })
-
+          updateEvent(calEvent)
         }
 
       }
@@ -247,7 +229,7 @@ $(function () {
     eventClick: function(calEvent, jsEvent, view) {
       window.location.href = '/dashboard/plan/events/' + calEvent.id;
     }
-    
+
   });
 
 
@@ -257,4 +239,24 @@ function changeFunc() {
  var selectBox = document.getElementById("selectBox");
  var selectedValue = selectBox.options[selectBox.selectedIndex].dataset.class;
  document.querySelector('.btn.dropdown-toggle').setAttribute("class", "btn dropdown-toggle fc-event " + selectedValue);
+}
+
+function updateEvent(calEvent) {
+  let event_data = {
+      name: calEvent.title,
+      id: calEvent.id,
+      start: calEvent.start.format(),
+      end: calEvent.end.format()
+    }
+  // make the ajax call to edit
+  $.ajax({
+    url: '/dashboard/plan/events/' + calEvent.id,
+    method: 'PUT',
+    data: event_data,
+    dataType: 'json'
+  }).done(function(responseData) {
+    alert("Saved changes!")
+  }).fail(function(jqXHR, textStatus, errorThrown) {
+    alert("Cannot save! " + errorThrown)
+  })
 }

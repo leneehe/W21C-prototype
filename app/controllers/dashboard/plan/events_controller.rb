@@ -32,14 +32,16 @@ class Dashboard::Plan::EventsController < ApplicationController
     @entry = Checklist.new
   end
 
-  def edit
-  end
 
   def update
-    # api get json find the event object
-    # respond_to do |format|
-    #   format.json { render json: }
-    # end
+    event = current_user.events.find(params[:id])
+    event.start = params[:start]
+    event.end = params[:end]
+    event.save
+    respond_to do |format|
+        format.html { redirect_to dashboard_plan_events_url, notice: "Event saved!" }
+        format.json { render json: params }
+    end
   end
 
   def destroy
