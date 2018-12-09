@@ -5,17 +5,18 @@ document.addEventListener("DOMContentLoaded", function(e){
     let chart = document.getElementById(`chart${i}`);
     let chartData = JSON.parse(chart.dataset.nodes);
     let divisors = 1;
-    let xAxisTitle = "?";
+    let xAxisTitle = chartData[0].unit_of_measure;
     // Convert the Ruby date into Javascript Date object
-    if (chartData != 0) {
+    if ("name" in chartData[0]) {
        for (let j = 0; j < chartData.length; j++) {
         chartData[j].data = chartData[j].data.map(item => ({
           ...item,
           x: new Date(item.x)
         }));
       }
-      xAxisTitle = chartData[0].unit_of_measure;
       divisors = 7;
+    } else {
+      chartData = 0;
     }
 
     /**

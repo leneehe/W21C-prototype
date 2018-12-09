@@ -12,7 +12,28 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    super
+    super do |user|
+      blood_glucose = user.health_conditions.create!(
+        condition_name: "Blood Glucose",
+        normal_range_upper: "10",
+        normal_range_lower: "20",
+        assistance_threshold: "15",
+        unit_of_measure: "mmol/L"
+      )
+
+      blood_pressure = user.health_conditions.create!(
+        condition_name: "Blood Pressure",
+        normal_range_upper: "100",
+        normal_range_lower: "50",
+        assistance_threshold: "70",
+        unit_of_measure: "mmHg"
+      )
+
+      diastolic = blood_pressure.value_types.create!(name: "Systolic")
+      systolic = blood_pressure.value_types.create!(name: "Diastolic")
+
+      molar = blood_glucose.value_types.create!(name: "Molar Concentration")
+    end
   end
 
   # GET /resource/edit

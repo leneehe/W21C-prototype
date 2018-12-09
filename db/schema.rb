@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_013105) do
 
   create_table "checklists", force: :cascade do |t|
     t.string "description"
-    t.integer "event_id"
+    t.bigint "event_id"
     t.string "entry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_013105) do
     t.datetime "start"
     t.string "frequency"
     t.string "location"
-    t.integer "event_type_id"
+    t.bigint "event_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "end"
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_013105) do
   end
 
   create_table "internal_contents", force: :cascade do |t|
-    t.integer "resource_id"
+    t.bigint "resource_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["resource_id"], name: "index_internal_contents_on_resource_id"
@@ -145,8 +145,8 @@ ActiveRecord::Schema.define(version: 2018_12_03_013105) do
     t.string "special_instruction"
     t.string "dosage"
     t.string "frequency"
-    t.integer "user_id"
-    t.integer "medication_id"
+    t.bigint "user_id"
+    t.bigint "medication_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["medication_id"], name: "index_tracked_medications_on_medication_id"
@@ -178,8 +178,13 @@ ActiveRecord::Schema.define(version: 2018_12_03_013105) do
     t.index ["health_condition_id"], name: "index_value_types_on_health_condition_id"
   end
 
+  add_foreign_key "checklists", "events"
+  add_foreign_key "events", "event_types"
   add_foreign_key "events", "users"
   add_foreign_key "goals", "users"
+  add_foreign_key "internal_contents", "resources"
   add_foreign_key "tracked_health_conditions", "value_types"
+  add_foreign_key "tracked_medications", "medications"
+  add_foreign_key "tracked_medications", "users"
   add_foreign_key "value_types", "health_conditions"
 end
