@@ -46,8 +46,8 @@
             <div>Journals</div>
           <% end %>
         </li>
-        <li class="sidenav-item">
-          <%= link_to "#", class: "sidenav-link" do %>
+        <li class="sidenav-item<%= current_page?(dashboard_plan_report_path) ? ' active' : '' %>">
+          <%= link_to dashboard_plan_report_path, class: "sidenav-link" do %>
             <div>Report Tool</div>
           <% end %>
         </li>

@@ -10,4 +10,8 @@ class Dashboard::PlanController < ApplicationController
     @entries = current_user.checklists.order('created_at DESC')
   end
 
+  def report
+    @user = current_user
+  end
+
 end

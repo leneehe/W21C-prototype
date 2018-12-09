@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get 'goals/goal_summary', to: 'goals#goal_summary', as: 'goal_summary'
     get 'plan', to: 'plan#index'
     get 'plan/journals', to: 'plan#checklists'
+    get 'plan/report', to: 'plan#report'
     resources :goals
     resources :medications #, :except => :show
     namespace :plan do

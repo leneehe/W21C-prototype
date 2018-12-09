@@ -1,4 +1,6 @@
 $(function() {
+
+// Goal setting form
   var form = $('#smartgoal');
   var btnFinish = $('<button class="btn-finish btn btn-primary hidden mr-2" type="submit">Finish</button>');
 
@@ -60,4 +62,33 @@ $(function() {
       console.log('failed to create goal.')
     })
   });
+
+  var btnCreate = $('<button class="btn-create btn btn-primary hidden mr-2" type="submit">Create Report</button>');
+
+// Report to Care Provider form
+  $('#report').smartWizard({
+      autoAdjustHeight: false,
+      backButtonSupport: false,
+      useURLhash: false,
+      showStepURLhash: true,
+      toolbarSettings: {
+        toolbarExtraButtons: [btnCreate]
+      }
+    })
+    .on('showStep', function(e, anchorObject, stepNumber, stepDirection) {
+        var btn = $('#report').find('.btn-create');
+
+        // Enable finish button only on last step
+        if (stepNumber === 7) {
+          btn.removeClass('hidden');
+        } else {
+          btn.addClass('hidden');
+        }
+    });
+
+  // Change markup
+  //
+
+  $('#report .sw-toolbar').appendTo($('#report .sw-container'));
+
 });
