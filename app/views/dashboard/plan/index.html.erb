@@ -16,7 +16,19 @@
       <div class="card-header-title"><i class="ion ion-md-calendar text-primary"></i>&nbsp; Keep Me Organized</div>
     </div>
     <div class="card-body text-center ">
-      events here
+      <% if @events %>
+      <ol>
+        <% @events.each do |event| %>
+          <li>
+            <%= link_to dashboard_plan_event_path(event) do %>
+              <%= event.name %> – <%= event.start.to_formatted_s(:long) %>
+            <% end %>
+          </li>
+        <% end %>
+      </ol>
+      <% else %>
+        You have no events yet!
+      <% end %>
     </div>
   </div>
 </div>
@@ -27,11 +39,11 @@
       <div class="card-header-title"><i class="ion ion-md-trophy text-primary"></i>&nbsp; Goals</div>
     </div>
     <div class="card-body text-center ">
-      Total Goals: xx
+      Total Goals: <b><%= @goals.length %></b>
       <br>
-      Completed Goals: xx
+      Completed Goals: <b><%= @goals.complete.length %></b>
       <br>
-      Incomplete Goals: xx
+      Incomplete Goals: <b><%= @goals.incomplete.length %></b>
     </div>
   </div>
 </div>
