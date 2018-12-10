@@ -4,6 +4,5 @@ class HealthCondition < ApplicationRecord
   belongs_to :user
   
   accepts_nested_attributes_for :tracked_health_conditions
-  accepts_nested_attributes_for :value_types, :reject_if => :all_blank,
-	:allow_destroy => true
+  accepts_nested_attributes_for :value_types
 end
