@@ -130,7 +130,7 @@
         <h3>3. Upcoming Events</h3>
         <p>The information below is from your Upcoming Appointments and activities and Keep Me Organized page.</p>
 
-          <%= render(partial: 'events') %>
+          <%= render(partial: 'events', locals:{legends: @legends}) %>
 
           <div class="card-body mb-4">
           Would you like to include this information in your report?
@@ -201,7 +201,7 @@
         <h3>Report summary</h3>
         <p>Here's a summary of everything you want to include in your report for your provider. Take a moment to scan it and make sure it has everything you want in it. When you're ready, click "Create the Report" and we'll turn it into a PDF for you to print, save, or email to your provider.</p>
 
-        <%= render(partial: 'report_summary', locals: {goals: @goals, events: @events}) %>
+        <%= render(partial: 'report_summary', locals: {legends: @legends, goals: @goals, events: @events}) %>
 
       </div>
     </div>

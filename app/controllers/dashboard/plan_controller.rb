@@ -21,6 +21,9 @@ class Dashboard::PlanController < ApplicationController
   end
 
   def display_report
+    @events = current_user.events
+    @legends = legend_colors(@events)
+    @goals = current_user.goals.incomplete
     respond_to do |format|
       format.html
       format.pdf do

@@ -3,7 +3,7 @@
 <h4 class="my-4">2. Meds Update</h4>
 <%= render(partial: 'medications') %>
 <h4 class="my-4">3. Upcoming Events</h4>
-<%= render(partial: 'events') %>
+<%= render(partial: 'events', locals: {legends: legends}) %>
 <h4 class="my-4">4. To Discuss</h4>
 <%= render(partial: 'discuss', locals: {goals: goals, events: events}) %>
 <h4 class="my-4">5. My Progress</h4>
