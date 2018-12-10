@@ -2,6 +2,7 @@
 <%= javascript_include_tag "health-charts" %>
 
 <h1>My Conditions</h1>
+<p>Weekly View</p>
 <main id="chart-area">
   <!-- Loop through current user's self-tracking conditions -->
   <% @user_conditions.each_with_index do |condition, index| %>
@@ -9,9 +10,11 @@
     <%= content_tag "section", id: "chart-area-#{index}" , class: 'chart-container' do %>
      <!-- Actions -->
      <h2><%= condition.condition_name %></h2>
-      <%= link_to health_condition_path(condition.id) do %>
-        <span>+</span> Add a record
-      <% end %>
+      <strong>
+        <%= link_to health_condition_path(condition.id) do %>
+          <span>+</span> Add a record
+        <% end %>
+      </strong>
     <!-- Build Data for graph -->
       <% if !condition.tracked_health_conditions.empty? %>
         <!-- Chart -->

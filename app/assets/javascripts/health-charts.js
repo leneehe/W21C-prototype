@@ -1,10 +1,24 @@
 document.addEventListener("DOMContentLoaded", function(e){
+  Array.prototype.unique = function () {
+    var a = this.concat();
+    for (var i = 0; i < a.length; ++i) {
+      for (var j = i + 1; j < a.length; ++j) {
+        if (a[i] === a[j])
+          a.splice(j--, 1);
+      }
+    }
+
+    return a;
+  };
+
   let allCharts = document.querySelectorAll('.chart');
   // Build charts based on how many have data
   for (let i = 0; i < allCharts.length; i++) {
     let chart = document.getElementById(`chart${i}`);
     let chartData = JSON.parse(chart.dataset.nodes);
     let divisors = 1;
+    let ticks = [];
+    let tickSet = [];
     let xAxisTitle = chartData[0].unit_of_measure;
     // Convert the Ruby date into Javascript Date object
     if ("name" in chartData[0]) {
@@ -13,8 +27,14 @@ document.addEventListener("DOMContentLoaded", function(e){
           ...item,
           x: new Date(item.x)
         }));
+
+        tickSet = chartData[j].data.map(item => {
+          return item.x;
+        });
+
+        ticks = ticks.concat(tickSet).unique();
+        divisors = chartData[j].data.length;
       }
-      divisors = 7;
     } else {
       chartData = 0;
     }
@@ -37,11 +57,8 @@ document.addEventListener("DOMContentLoaded", function(e){
      */
 
     // Dynamically build chart 
-    let ticks = []
-    for (let i = 0; i < 7; i++) {
-      ticks.push(new Date(new Date().setDate(new Date().getDate() - i)));
-    }
-    ticks.reverse();
+    
+    // ticks.reverse();
     new Chartist.Line(`#chart${i}`,
       {
         labels: [],
@@ -55,12 +72,15 @@ document.addEventListener("DOMContentLoaded", function(e){
         },
         axisX: {
           // position: 'start',
-          type: Chartist.StepAxis,
-          // divisor: divisors,
+          type: Chartist.FixedScaleAxis,
+          // divisor: 1,
           ticks: ticks,
           labelInterpolationFnc: function (label, index, chart) {
-            // console.log(chart)
-            return moment(label).format('MMM D');
+            if (label === 0) {
+              return moment().format('MMM D'); 
+            } else {
+              return moment(label).local().format('MMM D hh:MM:SS');
+            }
           },
         },
         axisY: {
@@ -70,8 +90,10 @@ document.addEventListener("DOMContentLoaded", function(e){
           Chartist.plugins.legend(),
           Chartist.plugins.tooltip({
             transformTooltipTextFnc: function (tooltip) {
-              var xy = tooltip.split(",");
-              return xy[1];
+              let xy = tooltip.split(",");
+              let formattedX = moment(parseInt(xy[0])).local().format('MMM D hh:MM:SS');
+              // console.log(formattedX);
+              return `x: ${formattedX} ,y: ${xy[1]}`;
             }
           }),
           Chartist.plugins.ctAxisTitle({
