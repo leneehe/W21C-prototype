@@ -20,6 +20,19 @@ class Dashboard::PlanController < ApplicationController
     end
   end
 
+  def display_report
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "#{current_user.first_name}_report",
+        page_size: 'A4',
+        disposition: 'inline',
+        template: "dashboard/plan/display_report.html.erb",
+        layout: "layouts/pdf.html.erb"
+      end
+    end
+  end
+
 private
   # Assign color class to event types in legend hash
   def legend_colors(events)

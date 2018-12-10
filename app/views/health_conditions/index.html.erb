@@ -2,7 +2,8 @@
 <%= javascript_include_tag "health-charts" %>
 
 <h1>My Conditions</h1>
-<p>Weekly View</p>
+<p>All View</p>
+<%= link_to "Download", health_conditions_path(format: :pdf) %>
 <main id="chart-area">
   <!-- Loop through current user's self-tracking conditions -->
   <% @user_conditions.each_with_index do |condition, index| %>
