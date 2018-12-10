@@ -1,4 +1,5 @@
 class Dashboard::Plan::ChecklistsController < ApplicationController
+  
   def create
     event = Event.find(params[:event_id])
     @entry = Checklist.new(checklist_params)
@@ -11,6 +12,15 @@ class Dashboard::Plan::ChecklistsController < ApplicationController
       else
         format.html { redirect_to dashboard_plan_event_url(event) }
       end
+    end
+  end
+
+  def update
+    @entry = Checklist.find(params[:id])
+    @entry.complete ? @entry.complete = false : @entry.complete = true
+    @entry.save
+    respond_to do |format|
+      format.html { redirect_to dashboard_plan_event_url(params[:event_id]), notice: 'Entry was successfully updated.' }
     end
   end
 

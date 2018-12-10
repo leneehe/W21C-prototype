@@ -4,33 +4,40 @@
   </div>
 <% else %>
 
-<div class="card-body">
-  <p class="text-muted small">To do</p>
-  <div class="custom-controls-stacked">
-    <% checklists.incomplete.each do |journal| %>
-  <label class="ui-todo-item custom-control custom-checkbox">
-    <input type="checkbox" class="custom-control-input">
-    <span class="custom-control-label"><%= journal.entry %></span>
-    <span class="ui-todo-badge badge badge-outline-default ml-2 btn-primary">
-    <%= link_to "x", dashboard_plan_event_checklist_path(journal.event, journal), method: :delete, data: { confirm: 'Are you sure to delete this entry?' } %>
-    </span>
-  </label>
-    <% end %>
+  <div class="card-body">
+    <p class="text-muted small">To do</p>
+    <div class="custom-controls-stacked">
+      <% checklists.incomplete.each do |journal| %>
+        <%= form_for journal, url: dashboard_plan_event_checklist_path(journal.event, journal), method: :put do |f| %>
+          <label class="ui-todo-item custom-control custom-checkbox">
+            <%= f.check_box :complete, class: "custom-control-input" %>
+            <span class="custom-control-label"><%= journal.entry %></span>
+            <span class="ui-todo-badge badge badge-outline-default ml-2 btn-primary">
+            <%= link_to "x", dashboard_plan_event_checklist_path(journal.event, journal), method: :delete, data: { confirm: 'Are you sure to delete this entry?' } %>
+            </span>
+          </label>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
 
-<hr class="m-0">
+  <hr class="m-0">
 
-<div class="card-body">
-  <p class="text-muted small">Completed</p>
-  <div class="custom-controls-stacked">
-    <% checklists.complete.each do |journal| %>
-    <label class="ui-todo-item custom-control custom-checkbox">
-      <input type="checkbox" class="custom-control-input" checked>
-      <span class="custom-control-label"><%= journal.entry %></span>
-    </label>
-    <% end %>
+  <div class="card-body">
+    <p class="text-muted small">Completed</p>
+    <div class="custom-controls-stacked">
+      <% checklists.complete.each do |journal| %>
+        <%= form_for journal, url: dashboard_plan_event_checklist_path(journal.event, journal), method: :put do |f| %>
+          <label class="ui-todo-item custom-control custom-checkbox">
+            <%= f.check_box :complete, class: "custom-control-input" %>
+            <span class="custom-control-label"><%= journal.entry %></span>
+            <span class="ui-todo-badge badge badge-outline-default ml-2 btn-primary">
+            <%= link_to "x", dashboard_plan_event_checklist_path(journal.event, journal), method: :delete, data: { confirm: 'Are you sure to delete this entry?' } %>
+            </span>
+          </label>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
 
 <% end %>

@@ -12,11 +12,13 @@ Rails.application.routes.draw do
   namespace :dashboard do
     get 'goals/goal_summary', to: 'goals#goal_summary', as: 'goal_summary'
     get 'plan', to: 'plan#index'
+    get 'plan/journals', to: 'plan#checklists'
+    get 'plan/report', to: 'plan#report'
     resources :goals
     resources :medications #, :except => :show
     namespace :plan do
-      resources :events, :except => :new do
-        resources :checklists, only: [:index, :create, :destroy]
+      resources :events, except: [:new, :edit] do
+        resources :checklists, only: [:create, :update, :destroy]
       end
     end
   end
