@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     get 'plan', to: 'plan#index'
     get 'plan/journals', to: 'plan#checklists'
     get 'plan/report', to: 'plan#report'
+    get 'plan/display_report', to: 'plan#display_report'
     resources :goals
     resources :medications #, :except => :show
     namespace :plan do

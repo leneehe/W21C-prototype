@@ -5,7 +5,18 @@ class HealthConditionsController < ApplicationController
   def index
     @user_conditions = current_user.health_conditions
     @severity_scores = Array.new
-    
+    # test pdf
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "#{current_user.first_name}_report",
+        page_size: 'A4',
+        disposition: 'inline',
+        template: "health_conditions/index.html.erb",
+        layout: "layouts/pdf.html.erb"
+      end
+    end
+    # # test pdf
   end
   def show
     @health_condition = HealthCondition.find(params[:id])

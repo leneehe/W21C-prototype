@@ -44,6 +44,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'wicked_pdf'
 # PDF Generation binaries
 gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary-edge'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
