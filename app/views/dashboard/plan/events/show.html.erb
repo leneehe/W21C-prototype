@@ -1,6 +1,9 @@
 <% content_for :styles do %>
   <%= stylesheet_link_tag 'fullcalendar/fullcalendar.css', media: 'all' %>
 <% end %>
+<% content_for :scripts do %>
+  <%= javascript_include_tag 'dashboard/plan/checklists.js' %>
+<% end %>
 
 <h4 class="font-weight-bold py-3 mb-4">
   <span class="text-muted font-weight-light">Plan / Keep me Organized /</span> Event
@@ -32,6 +35,9 @@
       </p>
 
     </div>
+    <div class="card-footer">
+      <%= button_to "Delete Goal", dashboard_plan_event_path(@event), method: :delete, data: { confirm: 'Are you sure to delete this event?' }, class: "btn btn-primary" %>
+    </div>
   </div>
 </div>
 
@@ -40,7 +46,7 @@
     <div class="card-header with-elements">
       <h3 class="card-header-title">Journal Entries</h3>
       <div class="card-header-elements ml-auto">
-        <button type="button" class="btn btn-default btn-xs md-btn-flat">View all</button>
+        <%= button_to "View all", dashboard_plan_journals_path, method: :get, class: "btn btn-default btn-xs md-btn-flat" %>
       </div>
     </div>
 

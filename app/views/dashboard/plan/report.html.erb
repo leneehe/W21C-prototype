@@ -1,0 +1,122 @@
+<!-- Smart Wizard plugin -->
+<% content_for :styles do %>
+  <%= stylesheet_link_tag 'libs/smartwizard/smartwizard.css', media: 'all' %>
+<% end %>
+<% content_for :scripts do %>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <%= javascript_include_tag 'libs/smartwizard/smartwizard.js' %>
+  <%= javascript_include_tag 'libs/validate/validate.js' %>
+  <%= javascript_include_tag 'dashboard/forms_smartwizard.js' %>
+<% end %>
+
+<h1>Helping You Make the Most of Your Care Appointments</h1>
+<br><br>
+<!-- Left -->
+<div id="report" class="smartwizard-vertical-left">
+  <ul>
+    <li><a href="#report-start" class="text-nowrap mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-md-play"></span>
+        <div class="text-muted small">GETTING</div>
+        Start
+      </a></li>
+    <li><a href="#report-step-1" class="text-nowrap mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-md-person"></span>
+        <div class="text-muted small">FIRST STEP</div>
+        About Me
+      </a></li>
+    <li><a href="#report-step-2" class="text-nowrap mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-md-medical"></span>
+        <div class="text-muted small">SECOND STEP</div>
+        Meds Update
+      </a></li>
+    <li><a href="#report-step-3" class="text-nowrap mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-md-color-wand"></span>
+        <div class="text-muted small">THIRD STEP</div>
+        Upcoming
+      </a></li>
+    <li><a href="#report-step-4" class="text-nowrap mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-md-chatbubbles"></span>
+        <div class="text-muted small">FOURTH STEP</div>
+        To Discuss
+      </a></li>
+    <li><a href="#report-step-5" class="text-nowrap mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-md-trending-up"></span>
+        <div class="text-muted small">FIFTH STEP</div>
+        My Progress
+      </a></li>
+    <li><a href="#report-step-6" class="text-nowrap mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-md-analytics"></span>
+        <div class="text-muted small">SIXTH STEP</div>
+        My Tracked Data
+      </a></li>
+    <li><a href="#report-summary" class="text-nowrap mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-md-apps"></span>
+        <div class="text-muted small">FINISH</div>
+        Summary
+      </a></li>
+  </ul>
+
+  <div class="mb-3">
+    <div id="report-start" class="card animated fadeIn mb-3">
+      <div class="card-body">
+        <p>
+          Brief content providing purpose and utility of preparing materials and summaries for your care appointment, pointing out that the care provider is going to ask for this stuff anyways, and having it succintly summarized and ready means that you get to spend more of your precious appointment time focussing on the things that matter to YOU.
+        </p>
+      </div>
+    </div>
+    <div id="report-step-1" class="card animated fadeIn mb-3">
+      <div class="card-body">
+        <h3>1. profile</h3>
+        <div class="card">
+          <div class="card-body">
+            <p><strong>Name:</strong> <%= @user.first_name%> <%= @user.last_name%></p>
+            <p><strong>Email:</strong> <%= @user.email %></p>
+            <p><strong>Date of Birth:</strong> <%= @user.date_of_birth %></p>
+            <p><strong>Gender:</strong> <%= @user.gender %></p>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+      <p>Would you like to include this information in your report?</p>
+      </div>
+    </div>
+    <div id="report-step-2" class="card animated fadeIn mb-3">
+      <div class="card-body">
+        Step Content 2
+      </div>
+    </div>
+    <div id="report-step-3" class="card animated fadeIn mb-3">
+      <div class="card-body">
+        Step Content 2
+      </div>
+    </div>
+    <div id="report-step-4" class="card animated fadeIn mb-3">
+      <div class="card-body">
+        Step Content 2
+      </div>
+    </div>
+    <div id="report-step-5" class="card animated fadeIn mb-3">
+      <div class="card-body">
+        Step Content 2
+      </div>
+    </div>
+    <div id="report-step-6" class="card animated fadeIn mb-3">
+      <div class="card-body">
+        Step Content 2
+      </div>
+    </div>
+    <div id="report-summary" class="card animated fadeIn mb-3">
+      <div class="card-body">
+        Step Content 2
+      </div>
+    </div>
+  </div>
+</div>
