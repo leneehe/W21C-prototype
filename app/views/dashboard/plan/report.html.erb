@@ -1,12 +1,15 @@
 <!-- Smart Wizard plugin -->
 <% content_for :styles do %>
   <%= stylesheet_link_tag 'libs/smartwizard/smartwizard.css', media: 'all' %>
+  <%= stylesheet_link_tag 'fullcalendar/fullcalendar.css', media: 'all' %>
 <% end %>
 <% content_for :scripts do %>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <%= javascript_include_tag 'libs/smartwizard/smartwizard.js' %>
   <%= javascript_include_tag 'libs/validate/validate.js' %>
   <%= javascript_include_tag 'dashboard/forms_smartwizard.js' %>
+  <%= javascript_include_tag 'fullcalendar/fullcalendar.js' %>
+  <%= javascript_include_tag 'dashboard/plan/ui_fullcalendar.js' %>
 <% end %>
 
 <h1>Helping You Make the Most of Your Care Appointments</h1>
@@ -67,6 +70,7 @@
   <div class="mb-3">
     <div id="report-start" class="card animated fadeIn mb-3">
       <div class="card-body">
+        <h3>Getting Started</h3>
         <p>
           Brief content providing purpose and utility of preparing materials and summaries for your care appointment, pointing out that the care provider is going to ask for this stuff anyways, and having it succintly summarized and ready means that you get to spend more of your precious appointment time focussing on the things that matter to YOU.
         </p>
@@ -74,48 +78,131 @@
     </div>
     <div id="report-step-1" class="card animated fadeIn mb-3">
       <div class="card-body">
-        <h3>1. profile</h3>
-        <div class="card">
-          <div class="card-body">
-            <p><strong>Name:</strong> <%= @user.first_name%> <%= @user.last_name%></p>
-            <p><strong>Email:</strong> <%= @user.email %></p>
-            <p><strong>Date of Birth:</strong> <%= @user.date_of_birth %></p>
-            <p><strong>Gender:</strong> <%= @user.gender %></p>
-          </div>
-        </div>
+        <h3>1. Profile</h3>
+        <%= render(partial: 'profile') %>
       </div>
-      <div class="card-body">
-      <p>Would you like to include this information in your report?</p>
+      <div class="card-body mb-4">
+      Would you like to include this information in your report?
+
+        <label class="switcher pull-right">
+          <input type="checkbox" class="switcher-input">
+          <span class="switcher-indicator">
+            <span class="switcher-yes">
+              <span class="ion ion-md-checkmark"></span>
+            </span>
+            <span class="switcher-no">
+              <span class="ion ion-md-close"></span>
+            </span>
+          </span>
+          <span class="switcher-label"> Yes</span>
+        </label>
+
       </div>
     </div>
     <div id="report-step-2" class="card animated fadeIn mb-3">
       <div class="card-body">
-        Step Content 2
+        <h3>2. My Medications</h3>
+        <p>This information is taken from your Medications List page, and we've highlighted anything you added within the past three months. Please take a moment to make sure it is up to date.</p>
+
+        <%= render(partial: 'medications') %>
+
+        <div class="card-body my-4 ">
+        Would you like to include this information in your report?
+
+          <label class="switcher pull-right">
+            <input type="checkbox" class="switcher-input">
+            <span class="switcher-indicator">
+              <span class="switcher-yes">
+                <span class="ion ion-md-checkmark"></span>
+              </span>
+              <span class="switcher-no">
+                <span class="ion ion-md-close"></span>
+              </span>
+            </span>
+            <span class="switcher-label"> Yes</span>
+          </label>
+
+        </div>
       </div>
     </div>
     <div id="report-step-3" class="card animated fadeIn mb-3">
       <div class="card-body">
-        Step Content 2
+        <h3>3. Upcoming Events</h3>
+        <p>The information below is from your Upcoming Appointments and activities and Keep Me Organized page.</p>
+
+          <%= render(partial: 'events') %>
+
+          <div class="card-body mb-4">
+          Would you like to include this information in your report?
+
+            <label class="switcher pull-right">
+              <input type="checkbox" class="switcher-input">
+              <span class="switcher-indicator">
+                <span class="switcher-yes">
+                  <span class="ion ion-md-checkmark"></span>
+                </span>
+                <span class="switcher-no">
+                  <span class="ion ion-md-close"></span>
+                </span>
+              </span>
+              <span class="switcher-label"> Yes</span>
+            </label>
+
+          </div>
       </div>
     </div>
     <div id="report-step-4" class="card animated fadeIn mb-3">
       <div class="card-body">
-        Step Content 2
+        <h3>4. To Discuss</h3>
+        <p>
+        These items are from your Tracking, Goal Centre, and Appointment Checklist pages. Please review them and decide which items you would like to prioritize for this appointment.
+        </p>
+
+        <%= render(partial: 'discuss', locals: {goals: @goals, events: @events}) %>
+
+      </div>
+      <div class="card-body my-4">
+        Would you like to include this information in your report?
+
+          <label class="switcher pull-right">
+            <input type="checkbox" class="switcher-input">
+            <span class="switcher-indicator">
+              <span class="switcher-yes">
+                <span class="ion ion-md-checkmark"></span>
+              </span>
+              <span class="switcher-no">
+                <span class="ion ion-md-close"></span>
+              </span>
+            </span>
+            <span class="switcher-label"> Yes</span>
+          </label>
       </div>
     </div>
     <div id="report-step-5" class="card animated fadeIn mb-3">
       <div class="card-body">
-        Step Content 2
+        <h3>5. My Progress</h3>
+        <p>This information is from your Tracking Insights page. It provides an overview of the things you're tracking and could help your provider fine tune your care needs.</p>
+
+        <%= render(partial: 'charts') %>
+
       </div>
     </div>
     <div id="report-step-6" class="card animated fadeIn mb-3">
       <div class="card-body">
-        Step Content 2
+        <h3>6. My Tracked Data</h3>
+        <p>Sometimes providers are used to seeing the raw data, so you might want to include some of that in your report too. This information is from your tracking data. Review what you've been tracking and decide what (if anything) you'd like to share with your provider.</p>
+
+        <%= render(partial: 'data') %>
+
       </div>
     </div>
     <div id="report-summary" class="card animated fadeIn mb-3">
       <div class="card-body">
-        Step Content 2
+        <h3>Report summary</h3>
+        <p>Here's a summary of everything you want to include in your report for your provider. Take a moment to scan it and make sure it has everything you want in it. When you're ready, click "Create the Report" and we'll turn it into a PDF for you to print, save, or email to your provider.</p>
+
+        <%= render(partial: 'report_summary', locals: {goals: @goals, events: @events}) %>
+
       </div>
     </div>
   </div>

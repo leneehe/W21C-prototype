@@ -1,0 +1,43 @@
+<div class="col-md-12 mb-4">
+  <div class="card">
+    <div class="card-header">
+      <i class="ion ion-md-trophy text-primary"></i>&nbsp; Current Goals
+    </div>
+    <div class="card-body">
+      <p>
+        <% if goals.blank? %>
+          <br>You have no current goals!<br><br>
+        <% end %>
+        <ol>
+        <% @goals.each do |goal| %>
+            <li>
+              <%= goal.specific_1 %> – <%= goal.created_at.to_formatted_s(:long)  %>
+            </li>
+        <% end %>
+        </ol>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="card mb-5">
+    <div class="card-header">
+      <i class="ion ion-md-journal text-primary"></i>&nbsp; Journals Entries
+    </div>
+    <% events.each do |event| %>
+      <% if !event.checklists.empty?  %>
+        <div class="card-body">
+          <p class="text-muted small"><%= event.name %></p>
+            <ul>
+            <% event.checklists.each do |entry| %>
+                <li>
+                  <%= entry.entry %>
+                </li>
+            <% end %>
+            </ul>
+        </div>
+        <hr class="m-0">
+      <% end %>
+    <% end %>
+  </div>
+</div>

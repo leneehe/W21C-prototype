@@ -11,7 +11,54 @@ class Dashboard::PlanController < ApplicationController
   end
 
   def report
-    @user = current_user
+    @events = current_user.events
+    @legends = legend_colors(@events)
+    @goals = current_user.goals.incomplete
+    respond_to do |format|
+      format.html { render :report }
+      format.json { render json: calendar_json(@events) }
+    end
   end
 
+private
+  # Assign color class to event types in legend hash
+  def legend_colors(events)
+    calendar_events = []
+    legends = {}
+
+    colorClasses = [ "fc-event-success", "fc-event-info", "fc-event-warning", "fc-event-danger", "fc-event-dark" ];
+    event_type_ids = events.map{ |event| event.event_type_id }.uniq
+
+    event_type_ids.each_with_index do |id, i|
+      if colorClasses[i]
+        legends[id] = colorClasses[i]
+      else
+        legends[id] = "no-color"
+      end
+    end
+
+    return legends
+  end
+
+  def calendar_json(events)
+    calendar_events = []
+    legends = legend_colors(events)
+
+    events.each do |event|
+      e = {id: event.id, title: event.name, start: event.start}
+
+      if event.end
+        e[:end] = event.end
+      end
+
+      # Assign colorClasses
+      e[:className] = legends[event.event_type_id]
+
+
+      calendar_events.push(e)
+    end
+
+    return calendar_events
+
+  end
 end
