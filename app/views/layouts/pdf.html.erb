@@ -3,6 +3,8 @@
 <head>
 <title>PDF</title>
   <%= wicked_pdf_stylesheet_link_tag "application" -%>
+  <%= wicked_pdf_stylesheet_link_tag 'chartist/chartist.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= wicked_pdf_javascript_include_tag "health-charts" %>
 </head>
 <body>
   <div class='container'>
