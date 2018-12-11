@@ -3,6 +3,7 @@ class Dashboard::PlanController < ApplicationController
   layout 'main/layout-2'
 
   def index
+    @user_conditions = current_user.health_conditions
     @goals = current_user.goals
     @events = current_user.events.order(start: :desc).limit(5)
   end

@@ -33,6 +33,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
       systolic = blood_pressure.value_types.create!(name: "Diastolic")
 
       molar = blood_glucose.value_types.create!(name: "Molar Concentration")
+
+      user.event_types.create!(name: "Appointment")
+      user.event_types.create!(name: "Medication")
+      user.event_types.create!(name: "Personal")
+      user.event_types.create!(name: "Reminder")
     end
   end
 

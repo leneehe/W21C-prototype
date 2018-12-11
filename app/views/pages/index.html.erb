@@ -53,36 +53,66 @@
               <div class="space-60"></div>
               <div class="col-xs-12 col-md-4 wow fadeInUp" data-wow-delay="0.2s">
                   <div id="tinted-image1" class="well well-hover text-center">
-                      <%= link_to plan_path do %>
-                      <p class="md-icon"><span class="ti-agenda" style="color: #B580D1"></span></p>
+                      <% if user_signed_in? %>
+                        <%= link_to dashboard_plan_path do %>
+                        <p class="md-icon"><span class="ti-agenda" style="color: #B580D1"></span></p>
+                        <% end %>
+                      <% else %>
+                        <%= link_to plan_path do %>
+                        <p class="md-icon"><span class="ti-agenda" style="color: #B580D1"></span></p>
+                        <% end %>
                       <% end %>
                       <div class="space-10"></div>
                       <h5 class="text-uppercase">
-                        <%= link_to "Helping you organize your care needs", plan_path %>
+                        <% if user_signed_in? %>
+                          <%= link_to "Helping you organize your care needs", dashboard_plan_path %>
+                        <% else %>
+                          <%= link_to "Helping you organize your care needs", plan_path %>
+                        <% end %>
                       </h5>
                       <p>Lorem ipsum dolor sit amt, sed do eiusmod tepo raraincididunt ugt labore.</p>
                   </div>
               </div>
               <div class="col-xs-12 col-md-4 wow fadeInUp" data-wow-delay="0.4s">
                   <div id="tinted-image2" class="well well-hover text-center">
-                      <%= link_to track_path do %>
-                      <p class="md-icon"><span class="ti-target" style="color: #41B6E6"></span></p>
+                      <% if user_signed_in? %>
+                        <%= link_to health_conditions_path do %>
+                        <p class="md-icon"><span class="ti-target" style="color: #41B6E6"></span></p>
+                        <% end %>
+                      <% else %>
+                        <%= link_to track_path do %>
+                        <p class="md-icon"><span class="ti-target" style="color: #41B6E6"></span></p>
+                        <% end %>
                       <% end %>
                       <div class="space-10"></div>
                       <h5 class="text-uppercase">
-                        <%= link_to "Things I'm tracking", track_path %>
+                        <% if user_signed_in? %>
+                          <%= link_to "Things I'm tracking", health_conditions_path %>
+                        <% else %>
+                          <%= link_to "Things I'm tracking", track_path %>
+                        <% end %>
                       </h5>
                       <p>Lorem ipsum dolor sit amt, consectet adop adipisicing elit, sed do eiusmod tepo raraincididunt ugt labore.</p>
                   </div>
               </div>
               <div class="col-xs-12 col-md-4 wow fadeInUp" data-wow-delay="0.6s">
                   <div id="tinted-image3" class="well well-hover text-center">
-                      <%= link_to goal_centre_path do %>
-                      <p class="md-icon"><span class="ti-cup" style="color: #E06287"></span></p>
+                      <% if user_signed_in? %>
+                        <%= link_to dashboard_goals_path do %>
+                        <p class="md-icon"><span class="ti-cup" style="color: #E06287"></span></p>
+                        <% end %>
+                      <% else %>
+                        <%= link_to goal_centre_path do %>
+                        <p class="md-icon"><span class="ti-cup" style="color: #E06287"></span></p>
+                        <% end %>
                       <% end %>
                       <div class="space-10"></div>
                       <h5 class="text-uppercase">
-                      <%= link_to "Set and Manage your goals", goal_centre_path %>
+                        <% if user_signed_in? %>
+                          <%= link_to "Set and Manage your goals", dashboard_goals_path %>
+                        <% else %>
+                          <%= link_to "Set and Manage your goals", goal_centre_path %>
+                        <% end %>
                       </h5>
                       <p>Lorem ipsum dolor sit amt, consectet adop adipisicing elit, sed do eiusmod tepo raraincididunt ugt labore.</p>
                   </div>
