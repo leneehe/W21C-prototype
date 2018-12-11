@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
 <title>Report to Care Provider PDF</title>
   <%= wicked_pdf_stylesheet_link_tag 'ionicons' -%>
 
@@ -13,6 +12,10 @@
   <%= wicked_pdf_javascript_include_tag "dashboard/forms_smartwizard" %>
   <%= wicked_pdf_javascript_include_tag "fullcalendar/fullcalendar.js" %>
   <%= wicked_pdf_javascript_include_tag "dashboard/plan/ui_fullcalendar" %>
+  
+  <%= wicked_pdf_stylesheet_link_tag 'chartist/chartist.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= wicked_pdf_javascript_include_tag "health-charts" %>
+
 </head>
 <body>
   <div class='container'>
