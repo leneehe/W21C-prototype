@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <title>Report to Care Provider PDF</title>
+  <%= wicked_pdf_javascript_include_tag 'application' %>
+  <%= wicked_pdf_javascript_include_tag 'moment.min.js' %>
   <%= wicked_pdf_stylesheet_link_tag 'ionicons' -%>
 
   <%= wicked_pdf_stylesheet_link_tag 'bootstrap' -%>
@@ -8,12 +10,12 @@
   <%= wicked_pdf_stylesheet_link_tag 'libs/smartwizard/smartwizard' -%>
   <%= wicked_pdf_stylesheet_link_tag 'fullcalendar/fullcalendar' -%>
 
-  <%= javascript_include_tag "https://code.jquery.com/jquery-3.3.1.min.js" %>
+  <%= wicked_pdf_javascript_include_tag "https://code.jquery.com/jquery-3.3.1.min.js" %>
   <%= wicked_pdf_javascript_include_tag "dashboard/forms_smartwizard" %>
   <%= wicked_pdf_javascript_include_tag "fullcalendar/fullcalendar.js" %>
   <%= wicked_pdf_javascript_include_tag "dashboard/plan/ui_fullcalendar" %>
-  
-  <%= wicked_pdf_stylesheet_link_tag 'chartist/chartist.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= wicked_pdf_stylesheet_link_tag 'application' %>
+  <%= wicked_pdf_stylesheet_link_tag 'chartist/chartist.css' %>
   <%= wicked_pdf_javascript_include_tag "health-charts" %>
 
 </head>
