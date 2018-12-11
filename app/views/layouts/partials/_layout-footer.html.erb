@@ -1,8 +1,15 @@
 <!-- Layout footer -->
 <nav class="layout-footer footer bg-footer-theme">
-  <div class="container-fluid container-p-x pb-3">
-    <a href="#" class="footer-link pt-3">Link 1</a>
-    <a href="#" class="footer-link pt-3 ml-4">Link 2</a>
+  <div class="container-fluid d-flex flex-wrap justify-content-between text-center container-p-x pb-3">
+    <div class="pt-3 mr-auto">
+      <span class="footer-text font-weight-bolder">My Care Compass</span> ©
+    </div>
+    <div>
+      <%= link_to "Home", dashboard_path, class: "footer-link pt-3" %>
+      <%= link_to "Profile", user_path(current_user), class: "footer-link pt-3 ml-4" %>
+      <%= link_to "About", about_path, class: "footer-link pt-3 ml-4" %>
+      <a href="javascript:void(0)" class="footer-link pt-3 ml-4">Terms &amp; Conditions</a>
+    </div>
   </div>
 </nav>
 <!-- / Layout footer -->
