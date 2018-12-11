@@ -46,7 +46,6 @@ class Dashboard::MedicationsController < ApplicationController
   end
 
   def destroy
-    @medication.destroy
     @medication.tracked_medications.destroy_all
     respond_to do |format|
       format.html { redirect_to dashboard_medications_url, notice: 'Medication was successfully destroyed.' }
