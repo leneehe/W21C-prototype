@@ -28,3 +28,48 @@ ul.legend {
     }
   }
 }
+
+// Report to care provider
+.switcher {
+  padding-left: 4.375rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+
+  .switcher-indicator {
+  width: 4.5rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  line-height: 4.375rem;
+  }
+
+  .switcher-yes {
+    padding-right: 2rem;
+    top: 3px;
+  }
+
+  .switcher-no {
+    padding-left: 2rem;
+    top: 3px;
+  }
+
+  .switcher-indicator::after {
+    top: -0.1rem;
+    margin: 0.25rem 0 0 0.25rem;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .switcher-input:checked ~ .switcher-indicator::after {
+    left: 2.5rem;
+  }
+}
+
+.med-header {
+  font-weight: bold;
+}
+
+.report-calendar {
+  .fc-scroller {
+    max-height:300px;
+  }
+}

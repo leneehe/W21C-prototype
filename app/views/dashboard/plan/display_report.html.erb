@@ -1,5 +1,9 @@
+
 <%= stylesheet_link_tag 'chartist/chartist.css', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag "health-charts" %>
+
+<h1>My Report</h1>
+<%= render(partial: 'report_summary', locals: {legends: @legends, goals: @goals, events: @events}) %>
 
 <main id="chart-area">
   <!-- Loop through current user's self-tracking conditions -->
@@ -21,3 +25,6 @@
     <% end %>
   <% end %>
 </main>
+
+
+
