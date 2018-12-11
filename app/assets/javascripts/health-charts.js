@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", function(e){
      * ]
      */
 
-    // Dynamically build chart 
-    
+    // Dynamically build chart
+
     // ticks.reverse();
     new Chartist.Line(`#chart${i}`,
       {
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function(e){
           ticks: ticks,
           labelInterpolationFnc: function (label, index, chart) {
             if (label === 0) {
-              return moment().format('MMM D'); 
+              return moment().format('MMM D');
             } else {
               return moment(label).local().format('MMM D hh:MM:SS');
             }
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function(e){
                 x: 0,
                 y: 10
               },
-              flipTitle: true              
+              flipTitle: true
             }
           })
         ]
