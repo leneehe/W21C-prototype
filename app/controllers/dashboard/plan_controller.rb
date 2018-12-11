@@ -12,6 +12,7 @@ class Dashboard::PlanController < ApplicationController
   end
 
   def report
+    @user_conditions = current_user.health_conditions
     @events = current_user.events
     @legends = legend_colors(@events)
     @goals = current_user.goals.incomplete
@@ -48,8 +49,8 @@ class Dashboard::PlanController < ApplicationController
      condition.tracked_health_conditions.one_week_ago.group_by(&:value_type_id).each do |key, value|
       collection_name =  ValueType.find(key).name
       value.each do |measurement|
-        @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})  
-      end  
+        @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})
+      end
       @value_collection.push({ "name" => collection_name, "meta" => collection_name, "data" => @value_data, "unit_of_measure" => unit })
       @value_data = []
     end

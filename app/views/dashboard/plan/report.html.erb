@@ -2,6 +2,7 @@
 <% content_for :styles do %>
   <%= stylesheet_link_tag 'libs/smartwizard/smartwizard.css', media: 'all' %>
   <%= stylesheet_link_tag 'fullcalendar/fullcalendar.css', media: 'all' %>
+  <%= stylesheet_link_tag 'chartist/chartist.css', media: 'all', 'data-turbolinks-track': 'reload' %>
 <% end %>
 <% content_for :scripts do %>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -10,6 +11,7 @@
   <%= javascript_include_tag 'dashboard/forms_smartwizard.js' %>
   <%= javascript_include_tag 'fullcalendar/fullcalendar.js' %>
   <%= javascript_include_tag 'dashboard/plan/ui_fullcalendar.js' %>
+  <%= javascript_include_tag "health-charts" %>
 <% end %>
 
 <h1>Helping You Make the Most of Your Care Appointments</h1>
