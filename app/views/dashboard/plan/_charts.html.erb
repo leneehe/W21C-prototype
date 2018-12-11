@@ -1,0 +1,20 @@
+<main id="chart-area">
+  <!-- Loop through current user's self-tracking conditions -->
+  <% @user_conditions.each_with_index do |condition, index| %>
+  <!-- Build Graphing template -->
+    <%= content_tag "section", id: "chart-area-#{index}" , class: 'chart-container' do %>
+     <!-- Actions -->
+     <h2><%= condition.condition_name %></h2>
+    <!-- Build Data for graph -->
+      <% if !condition.tracked_health_conditions.empty? %>
+        <!-- Chart -->
+        <%# Severity scores is an array of hashes [{x,y},{x,y}] %>
+        <%= content_tag "div", class: "chart", id: "chart#{index}", data: {nodes: build_data_collection(condition, condition.unit_of_measure) }, style: "height: 250px" do %>
+        <% end %>
+      <% else %>
+        <%= content_tag "div", class: "chart", id: "chart#{index}", data: {nodes: [{"unit_of_measure" => condition.unit_of_measure}] }, style: "height: 250px" do %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</main>
