@@ -235,6 +235,21 @@ $(function () {
 
 });
 
+// Report to care proivder list view
+$('.report-calendar').fullCalendar({
+  defaultView: 'listMonth',
+  themeSystem: 'bootstrap4',
+  header: {
+      left: 'title',
+      center: '',
+      right: ''
+  },
+  events: {
+    url: 'report.json',
+    type: "GET"
+  },
+});
+
 function changeFunc() {
  var selectBox = document.getElementById("selectBox");
  var selectedValue = selectBox.options[selectBox.selectedIndex].dataset.class;

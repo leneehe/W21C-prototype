@@ -63,7 +63,7 @@ $(function() {
     })
   });
 
-  var btnCreate = $('<button class="btn-create btn btn-primary hidden mr-2" type="submit">Create Report</button>');
+  var btnCreate = $('<button class="btn-create btn btn-primary hidden mr-2" type="submit"><a href="/dashboard/plan/display_report.pdf">Create Report</a></button>');
 
 // Report to Care Provider form
   $('#report').smartWizard({
