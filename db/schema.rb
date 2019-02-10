@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_013105) do
+ActiveRecord::Schema.define(version: 2019_02_10_183008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,18 +83,6 @@ ActiveRecord::Schema.define(version: 2018_12_03_013105) do
     t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
-  create_table "health_conditions", force: :cascade do |t|
-    t.string "condition_name"
-    t.float "normal_range_upper"
-    t.float "normal_range_lower"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.float "assistance_threshold"
-    t.bigint "user_id"
-    t.string "unit_of_measure"
-    t.index ["user_id"], name: "index_health_conditions_on_user_id"
-  end
-
   create_table "internal_contents", force: :cascade do |t|
     t.bigint "resource_id"
     t.datetime "created_at", null: false
@@ -123,21 +111,22 @@ ActiveRecord::Schema.define(version: 2018_12_03_013105) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "symptoms", force: :cascade do |t|
+    t.string "condition_name"
+    t.float "normal_range_upper"
+    t.float "normal_range_lower"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "assistance_threshold"
+    t.bigint "user_id"
+    t.string "unit_of_measure"
+    t.index ["user_id"], name: "index_symptoms_on_user_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "tracked_health_conditions", force: :cascade do |t|
-    t.float "severity_score"
-    t.datetime "last_checked"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "health_condition_id"
-    t.bigint "value_type_id"
-    t.index ["health_condition_id"], name: "index_tracked_health_conditions_on_health_condition_id"
-    t.index ["value_type_id"], name: "index_tracked_health_conditions_on_value_type_id"
   end
 
   create_table "tracked_medications", force: :cascade do |t|
@@ -151,6 +140,17 @@ ActiveRecord::Schema.define(version: 2018_12_03_013105) do
     t.datetime "updated_at", null: false
     t.index ["medication_id"], name: "index_tracked_medications_on_medication_id"
     t.index ["user_id"], name: "index_tracked_medications_on_user_id"
+  end
+
+  create_table "tracked_symptoms", force: :cascade do |t|
+    t.float "severity_score"
+    t.datetime "last_checked"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "health_condition_id"
+    t.bigint "value_type_id"
+    t.index ["health_condition_id"], name: "index_tracked_symptoms_on_health_condition_id"
+    t.index ["value_type_id"], name: "index_tracked_symptoms_on_value_type_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -183,8 +183,8 @@ ActiveRecord::Schema.define(version: 2018_12_03_013105) do
   add_foreign_key "events", "users"
   add_foreign_key "goals", "users"
   add_foreign_key "internal_contents", "resources"
-  add_foreign_key "tracked_health_conditions", "value_types"
   add_foreign_key "tracked_medications", "medications"
   add_foreign_key "tracked_medications", "users"
-  add_foreign_key "value_types", "health_conditions"
+  add_foreign_key "tracked_symptoms", "value_types"
+  add_foreign_key "value_types", "symptoms", column: "health_condition_id"
 end
