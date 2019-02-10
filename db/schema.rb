@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_10_202030) do
+ActiveRecord::Schema.define(version: 2019_02_10_201233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -185,5 +185,7 @@ ActiveRecord::Schema.define(version: 2019_02_10_202030) do
   add_foreign_key "internal_contents", "resources"
   add_foreign_key "tracked_medications", "medications"
   add_foreign_key "tracked_medications", "users"
+  add_foreign_key "tracked_symptoms", "symptoms"
   add_foreign_key "tracked_symptoms", "value_types"
+  add_foreign_key "value_types", "symptoms"
 end
