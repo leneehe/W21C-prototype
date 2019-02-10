@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_10_201233) do
+ActiveRecord::Schema.define(version: 2019_02_10_232343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,6 +111,14 @@ ActiveRecord::Schema.define(version: 2019_02_10_201233) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "suggested_symptoms", id: false, force: :cascade do |t|
+    t.bigint "condition_id", null: false
+    t.bigint "symptom_id", null: false
+    t.boolean "primary_condition", default: true
+    t.index ["condition_id"], name: "index_suggested_symptoms_on_condition_id"
+    t.index ["symptom_id"], name: "index_suggested_symptoms_on_symptom_id"
+  end
+
   create_table "symptoms", force: :cascade do |t|
     t.string "condition_name"
     t.float "normal_range_upper"
@@ -149,7 +157,9 @@ ActiveRecord::Schema.define(version: 2019_02_10_201233) do
     t.datetime "updated_at", null: false
     t.bigint "value_type_id"
     t.bigint "symptom_id"
+    t.bigint "user_id"
     t.index ["symptom_id"], name: "index_tracked_symptoms_on_symptom_id"
+    t.index ["user_id"], name: "index_tracked_symptoms_on_user_id"
     t.index ["value_type_id"], name: "index_tracked_symptoms_on_value_type_id"
   end
 
@@ -185,7 +195,6 @@ ActiveRecord::Schema.define(version: 2019_02_10_201233) do
   add_foreign_key "internal_contents", "resources"
   add_foreign_key "tracked_medications", "medications"
   add_foreign_key "tracked_medications", "users"
-  add_foreign_key "tracked_symptoms", "symptoms"
+  add_foreign_key "tracked_symptoms", "users"
   add_foreign_key "tracked_symptoms", "value_types"
-  add_foreign_key "value_types", "symptoms"
 end
