@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class HealthConditionRangeTest < ActiveSupport::TestCase
+class SymptomRangeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

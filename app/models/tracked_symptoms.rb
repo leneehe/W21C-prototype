@@ -1,5 +1,5 @@
-class TrackedHealthCondition < ApplicationRecord
-  belongs_to :health_condition
+class TrackedSymptom < ApplicationRecord
+  belongs_to :symptom
   belongs_to :value_type
 
   scope :one_week_ago, -> { where('created_at >= ?', 1.week.ago) }

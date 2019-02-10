@@ -1,6 +1,6 @@
 class ValueType < ApplicationRecord
-  belongs_to :health_condition
-  has_many :tracked_health_conditions
+  belongs_to :symptom
+  has_many :tracked_symptoms
 
   before_validation :default_amount
 

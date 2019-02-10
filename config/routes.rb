@@ -36,8 +36,8 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'dashboard#index'
 
-  resources :health_conditions do
-    resources :tracked_health_conditions
+  resources :symptoms do
+    resources :tracked_symptoms
   end
 
   root :to => 'pages#index'

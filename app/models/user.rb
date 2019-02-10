@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :email, presence: true, length: {maximum: 30}, :uniqueness => { :case_sensitive => false }
 
-  has_many :health_conditions
+  has_many :symptoms
   has_many :goals
   has_many :tracked_medications
   has_many :medications, through: :tracked_medications

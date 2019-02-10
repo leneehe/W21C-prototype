@@ -25,7 +25,7 @@ user1 = User.create(email: "lena@lena.com", password: "password", first_name: "L
 user2 = User.create(email: "dog@dog.com", password: "password", first_name: "Dog", last_name: "Kat", gender: "Male", date_of_birth: Date.new(1995,2,3) )
 
 
-blood_glucose = user.health_conditions.create!(
+blood_glucose = user.symptoms.create!(
   condition_name: "Blood Glucose",
   normal_range_upper: "10",
   normal_range_lower: "20",
@@ -33,7 +33,7 @@ blood_glucose = user.health_conditions.create!(
   unit_of_measure: "mmol/L"
 )
 
-blood_pressure = user.health_conditions.create!(
+blood_pressure = user.symptoms.create!(
   condition_name: "Blood Pressure",
   normal_range_upper: "100",
   normal_range_lower: "50",
@@ -41,7 +41,7 @@ blood_pressure = user.health_conditions.create!(
   unit_of_measure: "mmHg"
 )
 
-blood_mercury = user.health_conditions.create!(
+blood_mercury = user.symptoms.create!(
   condition_name: "Blood Mercury",
   normal_range_upper: "20",
   normal_range_lower: "5",
@@ -56,8 +56,8 @@ molar = blood_glucose.value_types.create!(name: "Molar Concentration")
 
 (1..5).each do |x|
   blood_pressure.value_types.length.times do |y|
-    diastolic.tracked_health_conditions.create!(severity_score: y , health_condition_id: blood_pressure.id)
-    systolic.tracked_health_conditions.create!(severity_score: y*2 , health_condition_id: blood_pressure.id)
+    diastolic.tracked_symptoms.create!(severity_score: y , symptom_id: blood_pressure.id)
+    systolic.tracked_symptoms.create!(severity_score: y*2 , symptom_id: blood_pressure.id)
   end
 end
 

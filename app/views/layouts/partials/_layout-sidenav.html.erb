@@ -61,7 +61,7 @@
     </li>
 
     <!-- Place holder nav menu dropdown-->
-    <li class="sidenav-item<%= current_page_path?('/dashboard/medications') || current_page_path?('/health_conditions') ? ' active open' : '' %>">
+    <li class="sidenav-item<%= current_page_path?('/dashboard/medications') || current_page_path?('/symptoms') ? ' active open' : '' %>">
       <a href="javascript:void(0)" class="sidenav-link sidenav-toggle">
         <i class="sidenav-icon ion ion-md-expand"></i><div>Help Me Track</div>
       </a>
@@ -71,18 +71,18 @@
             <i class="sidenav-icon ion ion-md-medical"></i><div>Medication</div>
           <% end %>
         </li>
-        <li class="sidenav-item<%= current_page_path?('/health_conditions') ? ' active open' : '' %>">
+        <li class="sidenav-item<%= current_page_path?('/symptoms') ? ' active open' : '' %>">
           <a href="javascript:void(0)" class="sidenav-link sidenav-toggle">
             <i class="sidenav-icon ion ion-md-heart-half"></i><div>Health Conditions</div>
           </a>
           <ul class="sidenav-menu">
-            <li class="sidenav-item<%= current_page?(health_conditions_path) ? ' active' : '' %>">
-              <%= link_to health_conditions_path, class: "sidenav-link" do %>
+            <li class="sidenav-item<%= current_page?(symptoms_path) ? ' active' : '' %>">
+              <%= link_to symptoms_path, class: "sidenav-link" do %>
                 <div>Tracked items</div>
               <% end %>
             </li>
-            <li class="sidenav-item<%= current_page?(new_health_condition_path) ? ' active' : '' %>">
-              <%= link_to new_health_condition_path, class: "sidenav-link" do %>
+            <li class="sidenav-item<%= current_page?(new_symptom_path) ? ' active' : '' %>">
+              <%= link_to new_symptom_path, class: "sidenav-link" do %>
                 <div>New Tracking</div>
               <% end %>
             </li>

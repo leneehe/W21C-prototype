@@ -13,7 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super do |user|
-      blood_glucose = user.health_conditions.create!(
+      blood_glucose = user.symptoms.create!(
         condition_name: "Blood Glucose",
         normal_range_upper: "10",
         normal_range_lower: "20",
@@ -21,7 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         unit_of_measure: "mmol/L"
       )
 
-      blood_pressure = user.health_conditions.create!(
+      blood_pressure = user.symptoms.create!(
         condition_name: "Blood Pressure",
         normal_range_upper: "100",
         normal_range_lower: "50",
