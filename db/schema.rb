@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_11_043023) do
+ActiveRecord::Schema.define(version: 2019_02_18_212533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -187,14 +187,6 @@ ActiveRecord::Schema.define(version: 2019_02_11_043023) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "value_types", force: :cascade do |t|
-    t.string "name", default: "Amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "symptom_id"
-    t.index ["symptom_id"], name: "index_value_types_on_symptom_id"
-  end
-
   add_foreign_key "checklists", "events"
   add_foreign_key "events", "event_types"
   add_foreign_key "events", "users"
@@ -202,6 +194,6 @@ ActiveRecord::Schema.define(version: 2019_02_11_043023) do
   add_foreign_key "internal_contents", "resources"
   add_foreign_key "tracked_medications", "medications"
   add_foreign_key "tracked_medications", "users"
+  add_foreign_key "tracked_symptoms", "symptoms"
   add_foreign_key "tracked_symptoms", "users"
-  add_foreign_key "tracked_symptoms", "value_types"
 end

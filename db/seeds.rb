@@ -25,23 +25,23 @@ user1 = User.create(email: "lena@lena.com", password: "password", first_name: "L
 user2 = User.create(email: "dog@dog.com", password: "password", first_name: "Dog", last_name: "Kat", gender: "Male", date_of_birth: Date.new(1995,2,3) )
 
 
-blood_glucose = user.symptoms.create!(
+blood_glucose = Symptom.create!(
   condition_name: "Blood Glucose",
-  normal_range_upper: "10",
-  normal_range_lower: "20",
-  assistance_threshold: "15",
+  normal_range_upper: "11",
+  normal_range_lower: "4",
+  assistance_threshold: "4",
   unit_of_measure: "mmol/L"
 )
 
-blood_pressure = user.symptoms.create!(
-  condition_name: "Blood Pressure",
-  normal_range_upper: "100",
-  normal_range_lower: "50",
-  assistance_threshold: "70",
+blood_pressure = Symptom.create!(
+  condition_name: "Blood Pressure Systolic",
+  normal_range_upper: "139",
+  normal_range_lower: "120",
+  assistance_threshold: "120",
   unit_of_measure: "mmHg"
 )
 
-blood_mercury = user.symptoms.create!(
+blood_mercury = Symptom.create!(
   condition_name: "Blood Mercury",
   normal_range_upper: "20",
   normal_range_lower: "5",
@@ -49,16 +49,14 @@ blood_mercury = user.symptoms.create!(
   unit_of_measure: "ng/mL"
 )
 
-diastolic = blood_pressure.value_types.create!(name: "Systolic")
-systolic = blood_pressure.value_types.create!(name: "Diastolic")
+# diastolic = blood_pressure.value_types.create!(name: "Systolic")
+# systolic = blood_pressure.value_types.create!(name: "Diastolic")
 
-molar = blood_glucose.value_types.create!(name: "Molar Concentration")
+# molar = blood_glucose.value_types.create!(name: "Molar Concentration")
 
 (1..5).each do |x|
-  blood_pressure.value_types.length.times do |y|
-    diastolic.tracked_symptoms.create!(severity_score: y , symptom_id: blood_pressure.id)
-    systolic.tracked_symptoms.create!(severity_score: y*2 , symptom_id: blood_pressure.id)
-  end
+  user.tracked_symptoms.create!(severity_score: x , symptom_id: blood_pressure.id)
+  user.tracked_symptoms.create!(severity_score: x*2 , symptom_id: blood_glucose.id)
 end
 
 # Create some Medications

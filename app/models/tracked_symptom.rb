@@ -1,6 +1,5 @@
 class TrackedSymptom < ApplicationRecord
   belongs_to :symptom
-  belongs_to :value_type
   belongs_to :user
 
   scope :one_week_ago, -> { where('created_at >= ?', 1.week.ago) }
