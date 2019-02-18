@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_18_223256) do
+ActiveRecord::Schema.define(version: 2019_02_18_225209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(version: 2019_02_18_223256) do
   end
 
   create_table "symptoms", force: :cascade do |t|
-    t.string "condition_name"
+    t.string "name"
     t.float "normal_range_upper"
     t.float "normal_range_lower"
     t.datetime "created_at", null: false

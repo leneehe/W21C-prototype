@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#----User seeds-----
 user = User.new(
     :first_name => "cat",
     :last_name => "meow",
@@ -19,41 +20,183 @@ user = User.new(
 
 user.save!
 
-# User Seeds
 user1 = User.create(email: "lena@lena.com", password: "password", first_name: "Lena", last_name: "H", gender: "Female", date_of_birth: Date.new(1990,10,24) )
 
 user2 = User.create(email: "dog@dog.com", password: "password", first_name: "Dog", last_name: "Kat", gender: "Male", date_of_birth: Date.new(1995,2,3) )
 
+#-----Prepopulate Conditions-----
+diabetes1 = Condition.create!(name:"Diabetes (Type 1)")
+diabetes2 = Condition.create!(name:"Diabetes (Type 2)")
+hypertension = Condition.create!(name:"Hypertension")
+congestive = Condition.create!(name:"Congestive Obstructive Pulmonary Disease")
+asthma = Condition.create!(name:"Asthma")
+heart_failure = Condition.create!(name:"Heart Failiure")
+ischemic = Condition.create!(name:"Ischemic Heart Disease")
+mental_health = Condition.create!(name:"Mental Health")
+obesity = Condition.create!(name:"Obesity")
 
+#-----Prepopulate Symptoms-----
 blood_glucose = Symptom.create!(
-  condition_name: "Blood Glucose",
-  normal_range_upper: "11",
-  normal_range_lower: "4",
-  assistance_threshold: "4",
+  name: "Blood Glucose",
+  normal_range_upper: 11,
+  normal_range_lower: 4,
+  assistance_threshold: 4,
   unit_of_measure: "mmol/L"
 )
 
+stress_level = Symptom.create!(
+  name: "Stress Level",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: ""
+)
+mood = Symptom.create!(
+  name: "Mood",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: ""
+)
+sleep = Symptom.create!(
+  name: "Sleep",
+  normal_range_upper: 8,
+  normal_range_lower: 7,
+  assistance_threshold: 7,
+  unit_of_measure: "hours/night"
+)
+loneliness = Symptom.create!(
+  name: "Loneliness",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: ""
+)
+
 blood_pressure = Symptom.create!(
-  condition_name: "Blood Pressure Systolic",
-  normal_range_upper: "139",
-  normal_range_lower: "120",
-  assistance_threshold: "120",
+  name: "Blood Pressure Systolic",
+  normal_range_upper: 140,
+  normal_range_lower: 120,
+  assistance_threshold: 120,
+  unit_of_measure: "mmHg"
+)
+blood_pressure = Symptom.create!(
+  name: "Blood Pressure Diastolic",
+  normal_range_upper: 90,
+  normal_range_lower: 80,
+  assistance_threshold: 80,
   unit_of_measure: "mmHg"
 )
 
+resting_heart_rate = Symptom.create!(
+  name: "Resting Heart Rate",
+  normal_range_upper: 100,
+  normal_range_lower: 40,
+  assistance_threshold: 100,
+  unit_of_measure: "BPM"
+)
+
+tiredness = Symptom.create!(
+  name: "Tiredness/Exhaustion/Energy",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: ""
+)
+edema = Symptom.create!(
+  name: "Edema (Leg/Ankle/Swelling)",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: ""
+)
+medication_taken = Symptom.create!(
+  name: "Medication Taken",
+  normal_range_upper: 1, #user 1 & 0 as binary yes/no
+  normal_range_lower: 0,
+  assistance_threshold: 1,
+  unit_of_measure: ""
+)
+smoking = Symptom.create!(
+  name: "Smoking",
+  normal_range_upper: 30, #user 1 & 0 as binary yes/no
+  normal_range_lower: 0,
+  assistance_threshold: 1,
+  unit_of_measure: "cigarettes/day"
+)
+oxygen_therapy = Symptom.create!(
+  name: "Oxygen Therapy",
+  normal_range_upper: 100,
+  normal_range_lower: 0,
+  assistance_threshold: 100,
+  unit_of_measure: "L/min"
+)
+breath = Symptom.create!(
+  name: "Shortness of Breath",
+  normal_range_upper: 100,
+  normal_range_lower: 95,
+  assistance_threshold: 95,
+  unit_of_measure: "O2 saturation (%)"
+)
+cough = Symptom.create!(
+  name: "Cough",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: ""
+)
+wheezing = Symptom.create!(
+  name: "Wheezing",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: ""
+)
+lung_capacity = Symptom.create!(
+  name: "Total Lung Capacity",
+  normal_range_upper: 4,
+  normal_range_lower: 6,
+  assistance_threshold: 4,
+  unit_of_measure: "Litres of O2"
+)
+impacted_activities = Symptom.create!(
+  name: "(Asthma) Impacted Activities",
+  normal_range_upper: 2, #0 = no, 1 = somewhat, 2 = completely
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: "No, Somewhat, Completely"
+)
+asthma_medication_taken = Symptom.create!(
+  name: "(Asthma) Medication Taken",
+  normal_range_upper: 8,
+  normal_range_lower: 0,
+  assistance_threshold: 1,
+  unit_of_measure: "Puffs per Day"
+)
+allergens = Symptom.create!(
+  name: "Allergens or Triggers Present",
+  normal_range_upper: 1, # 0 = no, 1 = yes
+  normal_range_lower: 0,
+  assistance_threshold: 1,
+  unit_of_measure: ""
+)
+bmi = Symptom.create!(
+  name: "BMI",
+  normal_range_upper: 24.9,
+  normal_range_lower: 18.5,
+  assistance_threshold: 18.5,
+  unit_of_measure: "Weight(kg)/Height(cm)^2"
+)
+
 blood_mercury = Symptom.create!(
-  condition_name: "Blood Mercury",
+  name: "Blood Mercury",
   normal_range_upper: "20",
   normal_range_lower: "5",
   assistance_threshold: "30",
   unit_of_measure: "ng/mL"
 )
 
-# diastolic = blood_pressure.value_types.create!(name: "Systolic")
-# systolic = blood_pressure.value_types.create!(name: "Diastolic")
-
-# molar = blood_glucose.value_types.create!(name: "Molar Concentration")
-
+#-----User's symptoms seeds-----
 (1..5).each do |x|
   user.tracked_symptoms.create!(severity_score: x , symptom_id: blood_pressure.id)
   user.tracked_symptoms.create!(severity_score: x*2 , symptom_id: blood_glucose.id)
