@@ -29,6 +29,7 @@ diabetes1 = Condition.create!(name:"Diabetes (Type 1)")
 diabetes2 = Condition.create!(name:"Diabetes (Type 2)")
 hypertension = Condition.create!(name:"Hypertension")
 congestive = Condition.create!(name:"Congestive Obstructive Pulmonary Disease")
+congestive = Condition.create!(name:"Congestive Obstructive Pulmonary Disease")
 asthma = Condition.create!(name:"Asthma")
 heart_failure = Condition.create!(name:"Heart Failiure")
 ischemic = Condition.create!(name:"Ischemic Heart Disease")
@@ -73,14 +74,14 @@ loneliness = Symptom.create!(
   unit_of_measure: ""
 )
 
-blood_pressure = Symptom.create!(
+blood_pressure_systolic = Symptom.create!(
   name: "Blood Pressure Systolic",
   normal_range_upper: 140,
   normal_range_lower: 120,
   assistance_threshold: 120,
   unit_of_measure: "mmHg"
 )
-blood_pressure = Symptom.create!(
+blood_pressure_diastolic = Symptom.create!(
   name: "Blood Pressure Diastolic",
   normal_range_upper: 90,
   normal_range_lower: 80,
@@ -187,18 +188,230 @@ bmi = Symptom.create!(
   assistance_threshold: 18.5,
   unit_of_measure: "Weight(kg)/Height(cm)^2"
 )
-
-blood_mercury = Symptom.create!(
-  name: "Blood Mercury",
-  normal_range_upper: "20",
-  normal_range_lower: "5",
-  assistance_threshold: "30",
-  unit_of_measure: "ng/mL"
+dry_hacking_cough = Symptom.create!(
+  name: "Dry Hacking Cough",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: ""
 )
+discomfort = Symptom.create!(
+  name: "Discomfort/Swelling in Abdomen",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: ""
+)
+dizziness = Symptom.create!(
+  name: "Dizziness",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: ""
+)
+appetite = Symptom.create!(
+  name: "Appetite",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: ""
+)
+nausea = Symptom.create!(
+  name: "Nausea",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: ""
+)
+sweatiness = Symptom.create!(
+  name: "Sweatiness/Heat",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: ""
+)
+social_activities = Symptom.create!(
+  name: "Social Activities",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: "Activities per week"
+)
+vitamin_d = Symptom.create!(
+  name: "Vitamin D",
+  normal_range_upper: 800,
+  normal_range_lower: 600,
+  assistance_threshold: 600,
+  unit_of_measure: "International Units (IU)"
+)
+
+# ------ Suggested Symptoms for conditions ------
+diabetes1.suggested_symptoms.create!(
+  symptom_id: blood_glucose.id, primary_condition: true
+)
+diabetes1.suggested_symptoms.create!(
+  symptom_id: stress_level.id, primary_condition: false
+)
+diabetes1.suggested_symptoms.create!(
+  symptom_id: mood.id, primary_condition: false
+)
+diabetes1.suggested_symptoms.create!(
+  symptom_id: sleep.id, primary_condition: false
+)
+diabetes1.suggested_symptoms.create!(
+  symptom_id: loneliness.id, primary_condition: false
+)
+
+diabetes2.suggested_symptoms.create!(
+  symptom_id: blood_glucose.id, primary_condition: true
+)
+diabetes2.suggested_symptoms.create!(
+  symptom_id: stress_level.id, primary_condition: false
+)
+diabetes2.suggested_symptoms.create!(
+  symptom_id: mood.id, primary_condition: false
+)
+diabetes2.suggested_symptoms.create!(
+  symptom_id: sleep.id, primary_condition: false
+)
+diabetes2.suggested_symptoms.create!(
+  symptom_id: loneliness.id, primary_condition: false
+)
+
+hypertension.suggested_symptoms.create!(
+  symptom_id: blood_pressure_systolic.id, primary_condition: true
+)
+hypertension.suggested_symptoms.create!(
+  symptom_id: blood_pressure_diastolic.id, primary_condition: true
+)
+hypertension.suggested_symptoms.create!(
+  symptom_id: stress_level.id, primary_condition: false
+)
+hypertension.suggested_symptoms.create!(
+  symptom_id: mood.id, primary_condition: false
+)
+hypertension.suggested_symptoms.create!(
+  symptom_id: sleep.id, primary_condition: false
+)
+
+congestive.suggested_symptoms.create!(
+  symptom_id: medication_taken.id, primary_condition: true
+)
+congestive.suggested_symptoms.create!(
+  symptom_id: smoking.id, primary_condition: false
+)
+congestive.suggested_symptoms.create!(
+  symptom_id: oxygen_therapy.id, primary_condition: false
+)
+congestive.suggested_symptoms.create!(
+  symptom_id: breath.id, primary_condition: false
+)
+congestive.suggested_symptoms.create!(
+  symptom_id: cough.id, primary_condition: false
+)
+congestive.suggested_symptoms.create!(
+  symptom_id: wheezing.id, primary_condition: false
+)
+
+asthma.suggested_symptoms.create!(
+  symptom_id: lung_capacity.id, primary_condition: true
+)
+asthma.suggested_symptoms.create!(
+  symptom_id: mood.id, primary_condition: false
+)
+asthma.suggested_symptoms.create!(
+  symptom_id: sleep.id, primary_condition: false
+)
+asthma.suggested_symptoms.create!(
+  symptom_id: stress_level.id, primary_condition: false
+)
+asthma.suggested_symptoms.create!(
+  symptom_id: breath.id, primary_condition: false
+)
+asthma.suggested_symptoms.create!(
+  symptom_id: impacted_activities.id, primary_condition: false
+)
+
+weight = heart_failure.symptoms.create!(
+  name: "Weight", normal_range_upper: 180, normal_range_lower: 120, assistance_threshold: 90, unit_of_measure: "lbs"
+)
+heart_failure.suggested_symptoms.create!(
+  symptom_id: breath.id, primary_condition: false
+)
+heart_failure.suggested_symptoms.create!(
+  symptom_id: dry_hacking_cough.id, primary_condition: false
+)
+heart_failure.suggested_symptoms.create!(
+  symptom_id: discomfort.id, primary_condition: false
+)
+heart_failure.suggested_symptoms.create!(
+  symptom_id: sleep.id, primary_condition: false
+)
+heart_failure.suggested_symptoms.create!(
+  symptom_id: dizziness.id, primary_condition: false
+)
+heart_failure.suggested_symptoms.create!(
+  symptom_id: appetite.id, primary_condition: false
+)
+
+ischemic.symptoms.create!(
+  name: "Pain", normal_range_upper: 10, normal_range_lower: 1, assistance_threshold: 1, unit_of_measure: ""
+)
+ischemic.suggested_symptoms.create!(
+  symptom_id: breath.id, primary_condition: false
+)
+ischemic.suggested_symptoms.create!(
+  symptom_id: tiredness.id, primary_condition: false
+)
+ischemic.suggested_symptoms.create!(
+  symptom_id: dizziness.id, primary_condition: false
+)
+ischemic.suggested_symptoms.create!(
+  symptom_id: nausea.id, primary_condition: false
+)
+ischemic.suggested_symptoms.create!(
+  symptom_id: sweatiness.id, primary_condition: false
+)
+
+mental_health.suggested_symptoms.create!(
+  symptom_id: mood.id, primary_condition: true
+)
+mental_health.suggested_symptoms.create!(
+  symptom_id: stress_level.id, primary_condition: false
+)
+mental_health.suggested_symptoms.create!(
+  symptom_id: sleep.id, primary_condition: false
+)
+mental_health.suggested_symptoms.create!(
+  symptom_id: social_activities.id, primary_condition: false
+)
+mental_health.suggested_symptoms.create!(
+  symptom_id: vitamin_d.id, primary_condition: false
+)
+mental_health.suggested_symptoms.create!(
+  symptom_id: loneliness.id, primary_condition: false
+)
+
+obesity.suggested_symptoms.create!(
+  symptom_id: weight.id, primary_condition: true
+)
+obesity.suggested_symptoms.create!(
+  symptom_id: stress_level.id, primary_condition: false
+)
+obesity.suggested_symptoms.create!(
+  symptom_id: sleep.id, primary_condition: false
+)
+obesity.suggested_symptoms.create!(
+  symptom_id: mood.id, primary_condition: false
+)
+obesity.suggested_symptoms.create!(
+  symptom_id: loneliness.id, primary_condition: false
+)
+
 
 #-----User's symptoms seeds-----
 (1..5).each do |x|
-  user.tracked_symptoms.create!(severity_score: x , symptom_id: blood_pressure.id)
+  user.tracked_symptoms.create!(severity_score: x * 2 + 120 , symptom_id: blood_pressure_systolic.id)
   user.tracked_symptoms.create!(severity_score: x*2 , symptom_id: blood_glucose.id)
 end
 
