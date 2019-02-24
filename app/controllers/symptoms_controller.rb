@@ -26,6 +26,7 @@ class SymptomsController < ApplicationController
     end
     # # test pdf
   end
+
   def show
     @symptom = Symptom.find(params[:id])
     # @measurement = TrackedSymptom.new
@@ -74,7 +75,7 @@ class SymptomsController < ApplicationController
 
     return @value_collection
   end
-  
+
 
 private
   def symptom_params
