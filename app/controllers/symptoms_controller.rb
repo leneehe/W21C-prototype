@@ -3,7 +3,15 @@ class SymptomsController < ApplicationController
   # Used for health condition info
   layout 'main/layout-2'
   def index
-    @user_conditions = current_user.symptoms
+    @user_conditions = current_user.conditions
+    @user_symptoms = []
+    @user_conditions.each do |condition|
+      @user_symptoms << condition.symptoms      
+    end
+    @user_symptoms = @user_symptoms.flatten.uniq
+    # Grab all conditions
+    # For each condition, list all symptoms and place them in an array
+    # Filter/uniq the symptoms
     @severity_scores = Array.new
     # test pdf
     respond_to do |format|
@@ -53,18 +61,17 @@ class SymptomsController < ApplicationController
 
   end
 
-  def build_data_collection(condition, unit)
+  def build_data_collection(symptom, unit)
     @value_collection = Array.new
     @value_data = Array.new
 
-     condition.tracked_symptoms.one_week_ago.group_by(&:value_type_id).each do |key, value|
-      collection_name =  ValueType.find(key).name
-      value.each do |measurement|
+     symptom.tracked_symptoms.one_week_ago.each do |measurement|
+      # collection_name =  ValueType.find(key).name
         @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})  
-      end  
-      @value_collection.push({ "name" => collection_name, "meta" => collection_name, "data" => @value_data, "unit_of_measure" => unit })
-      @value_data = []
     end
+
+    @value_collection.push({ "name" => symptom.name, "meta" => symptom.name, "data" => @value_data, "unit_of_measure" => unit })
+
     return @value_collection
   end
   

@@ -4,11 +4,19 @@ class ConditionsController < ApplicationController
   end
 
   def create
-    @condition = current_user.conditions.build(condition_params)
+    # params[:name].titlize
+    condition = current_user.conditions.build(condition_params)
+    found_condition = Condition.find_by(name: condition.name)
+    
     respond_to do |format|
-      if @condition.save!
-        current_user.conditions << @condition
+      if (found_condition)
+        current_user.conditions << found_condition
         format.html { redirect_to user_url(current_user.id) }
+      else
+        if condition.save!
+          current_user.conditions << condition
+          format.html { redirect_to user_url(current_user.id) }
+        end
       end
     end
   end
