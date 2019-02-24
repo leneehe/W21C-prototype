@@ -6,7 +6,7 @@ class SymptomsController < ApplicationController
     @user_conditions = current_user.conditions
     @user_symptoms = []
     @user_conditions.each do |condition|
-      @user_symptoms << condition.symptoms      
+      @user_symptoms << condition.symptoms
     end
     @user_symptoms = @user_symptoms.flatten.uniq
     # Grab all conditions
@@ -67,7 +67,7 @@ class SymptomsController < ApplicationController
 
      symptom.tracked_symptoms.one_week_ago.each do |measurement|
       # collection_name =  ValueType.find(key).name
-        @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})  
+        @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})
     end
 
     @value_collection.push({ "name" => symptom.name, "meta" => symptom.name, "data" => @value_data, "unit_of_measure" => unit })
@@ -78,8 +78,6 @@ class SymptomsController < ApplicationController
 
 private
   def symptom_params
-    params.require(:symptom).permit(:condition_name, :normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure,
-      value_types_attributes:[:id, :name])
+    params.require(:symptom).permit(:name, :normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure)
   end
 end
-
