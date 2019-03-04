@@ -13,7 +13,7 @@ class Dashboard::PlanController < ApplicationController
   end
 
   def report
-    @user_conditions = current_user.health_conditions
+    @user_symptoms = current_user.symptoms
     @events = current_user.events
     @legends = legend_colors(@events)
     @goals = current_user.goals.incomplete

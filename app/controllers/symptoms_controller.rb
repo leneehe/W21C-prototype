@@ -2,13 +2,11 @@ class SymptomsController < ApplicationController
   helper_method :build_data_collection
   # Used for health condition info
   layout 'main/layout-2'
+  before_action :set_suggested_symptoms, only: [:index, :new]
+
   def index
-    @user_conditions = current_user.conditions
-    @user_symptoms = []
-    @user_conditions.each do |condition|
-      @user_symptoms << condition.symptoms
-    end
-    @user_symptoms = @user_symptoms.flatten.uniq
+    # :set_suggested_symptoms in before action
+
     # Grab all conditions
     # For each condition, list all symptoms and place them in an array
     # Filter/uniq the symptoms
@@ -39,6 +37,8 @@ class SymptomsController < ApplicationController
   end
 
   def new
+    # :set_suggested_symptoms in before action
+
     @new_user_symptom = current_user.symptoms.build
   end
 
@@ -78,7 +78,16 @@ class SymptomsController < ApplicationController
 
 
 private
+  def set_suggested_symptoms
+    user_conditions = current_user.conditions
+    @user_symptoms = []
+    user_conditions.each do |condition|
+      @user_symptoms << condition.symptoms
+    end
+    @user_symptoms.flatten!.uniq!
+  end
+
   def symptom_params
-    params.require(:symptom).permit(:name, :normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure)
+    params.require(:symptom).permit(:name, :normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure, :above_assistance)
   end
 end
