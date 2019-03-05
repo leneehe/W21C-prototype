@@ -8,7 +8,7 @@ class Symptom < ApplicationRecord
 
   accepts_nested_attributes_for :tracked_symptoms
 
-  scope :primary, -> (condition_id) { joins(:suggested_symptoms).where(suggested_symptoms: {primary_condition: true, condition_id: condition_id}) }
+  scope :primary, -> { joins(:suggested_symptoms).where(suggested_symptoms: {primary_condition: true}) }
 
-  scope :supporting, -> (condition_id) { joins(:suggested_symptoms).where(suggested_symptoms: {primary_condition: false, condition_id: condition_id}) }
+  scope :supporting, -> { joins(:suggested_symptoms).where(suggested_symptoms: {primary_condition: false}) }
 end

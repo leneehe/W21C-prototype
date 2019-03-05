@@ -41,8 +41,8 @@ class SymptomsController < ApplicationController
     @primary_symptoms = []
     @supporting_symptoms = []
     user_conditions.each do |condition|
-      @primary_symptoms << condition.symptoms.primary(condition.id)
-      @supporting_symptoms << condition.symptoms.supporting(condition.id)
+      @primary_symptoms << condition.symptoms.primary
+      @supporting_symptoms << condition.symptoms.supporting
     end
     @primary_symptoms.flatten!.uniq!
     @supporting_symptoms.flatten!.uniq!
