@@ -2,7 +2,7 @@ class SymptomsController < ApplicationController
   helper_method :build_data_collection
   # Used for health condition info
   layout 'main/layout-2'
-  before_action :set_suggested_symptoms, only: [:index, :new]
+  before_action :set_suggested_symptoms, only: [:index]
 
   def index
     # :set_suggested_symptoms in before action
@@ -37,7 +37,15 @@ class SymptomsController < ApplicationController
   end
 
   def new
-    # :set_suggested_symptoms in before action
+    user_conditions = current_user.conditions
+    @primary_symptoms = []
+    @supporting_symptoms = []
+    user_conditions.each do |condition|
+      @primary_symptoms << condition.symptoms.primary(condition.id)
+      @supporting_symptoms << condition.symptoms.supporting(condition.id)
+    end
+    @primary_symptoms.flatten!.uniq!
+    @supporting_symptoms.flatten!.uniq!
 
     @new_user_symptom = current_user.symptoms.build
   end

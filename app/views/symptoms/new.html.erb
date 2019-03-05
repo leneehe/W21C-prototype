@@ -1,6 +1,15 @@
 <p>Based on the conditions you listed in your profile, the recommended things for you to track are listed below:</p>
+<p>Which ones do you want to track?</p>
 <ul>
-  <% @user_symptoms.each do |symptom| %>
+  <% @primary_symptoms.each do |symptom| %>
+  <li>
+    <%= symptom.name %>
+  </li>
+  <% end %>
+</ul>
+<p>Other things you might want to track are:</p>
+<ul>
+  <% @supporting_symptoms.each do |symptom| %>
   <li>
     <%= symptom.name %>
   </li>
