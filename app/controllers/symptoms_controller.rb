@@ -28,16 +28,17 @@ class SymptomsController < ApplicationController
   end
   def show
     @symptom = Symptom.find(params[:id])
+    @tracked_symptom = current_user.tracked_symptoms.build 
     # @measurement = TrackedSymptom.new
-    @value_types = @symptom.value_types
-    @measurements = []
-    @value_types.each do |type|
-      # @measurements << @symptom.TrackedSymptom.new(value_type_id: type.id, symptom_id: params[:id])
-      @measurements << @symptom.tracked_symptoms.build(value_type_id: type.id)
-    end
+    # @value_types = @symptom.value_types
+    # @measurements = []
+    # @value_types.each do |type|
+    #   @measurements << @symptom.tracked_symptoms.build(value_type_id: type.id)
+    # end
   end
 
   def new
+    # unused
     @new_user_symptom = current_user.symptoms.build
   end
 
@@ -65,7 +66,7 @@ class SymptomsController < ApplicationController
     @value_collection = Array.new
     @value_data = Array.new
 
-     symptom.tracked_symptoms.one_week_ago.each do |measurement|
+    symptom.tracked_symptoms.one_week_ago.each do |measurement|
       # collection_name =  ValueType.find(key).name
         @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})  
     end
