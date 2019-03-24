@@ -1,20 +1,17 @@
-<%= form_tag symptom_tracked_symptoms_path(@symptom) do %>
-  <% @measurements.each do |measurement| %>
+<%# No need to use fields_for due to only having to input 1 value %>
+<%# <%= form_for symptom_tracked_symptoms_path(@symptom) do |f|%>
+<%= form_for @tracked_symptom, :url => symptom_tracked_symptoms_path(@symptom) do |f|%>
+<%= console %>
     <div class="form-group">
-      <%= fields_for 'measurements[]', measurement do |m|%>
-        <%= m.label :severity_score, ValueType.find(measurement.value_type_id).name %>
-        <%= m.text_field :severity_score,
+        <%= f.label :severity_score, "Severity Score:" %>
+        <%= f.text_field :severity_score,
             autofocus: true,
             placeholder: "Severity Score",
             class: "form-control",
             required: true
         %>
-        <%= m.hidden_field :value_type_id, { :value => measurement.value_type_id } %>
-        <%= m.hidden_field :symptom_id, { :value => measurement.symptom_id }%>
-      <% end %>
-    </div>
-  <% end %>
-  <div class="form-group">
-      <%= submit_tag %>
+        <%= f.hidden_field :symptom_id,  :value => @symptom.id %>
+        <%= f.hidden_field :user_id,  :value => current_user.id %>
+      <%= f.submit "Submit" %>
   </div>
 <% end %>
