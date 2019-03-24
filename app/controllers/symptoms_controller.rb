@@ -2,15 +2,11 @@ class SymptomsController < ApplicationController
   helper_method :build_data_collection
   # Used for health condition info
   layout 'main/layout-2'
+  before_action :set_suggested_symptoms, only: [:index]
+
   def index
-    # @user_conditions = current_user.conditions
-    # @user_symptoms = []
-    # @user_conditions.each do |condition|
-    #   @user_symptoms << condition.symptoms      
-    # end
-    # @user_symptoms = @user_symptoms.flatten.uniq
     @user_symptoms = current_user.symptoms
-    
+
     # Grab all conditions
     # For each condition, list all symptoms and place them in an array
     # Filter/uniq the symptoms
@@ -28,6 +24,7 @@ class SymptomsController < ApplicationController
     end
     # # test pdf
   end
+
   def show
     @symptom = Symptom.find(params[:id])
     @tracked_symptom = current_user.tracked_symptoms.build 
@@ -40,6 +37,16 @@ class SymptomsController < ApplicationController
   end
 
   def new
+    user_conditions = current_user.conditions
+    @primary_symptoms = []
+    @supporting_symptoms = []
+    user_conditions.each do |condition|
+      @primary_symptoms << condition.symptoms.primary
+      @supporting_symptoms << condition.symptoms.supporting
+    end
+    @primary_symptoms.flatten!.uniq!
+    @supporting_symptoms.flatten!.uniq!
+
     @new_user_symptom = current_user.symptoms.build
   end
 
@@ -73,18 +80,26 @@ class SymptomsController < ApplicationController
 
     symptom.tracked_symptoms.one_week_ago.each do |measurement|
       # collection_name =  ValueType.find(key).name
-        @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})  
+        @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})
     end
 
     @value_collection.push({ "name" => symptom.name, "meta" => symptom.name, "data" => @value_data, "unit_of_measure" => unit })
 
     return @value_collection
   end
-  
+
 
 private
+  def set_suggested_symptoms
+    user_conditions = current_user.conditions
+    @user_symptoms = []
+    user_conditions.each do |condition|
+      @user_symptoms << condition.symptoms
+    end
+    @user_symptoms.flatten!.uniq!
+  end
+
   def symptom_params
-    params.require(:symptom).permit(:name, :normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure)
+    params.require(:symptom).permit(:name, :normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure, :above_assistance)
   end
 end
-
