@@ -19,17 +19,9 @@ class TrackedSymptomsController < ApplicationController
   end
 
   def create
-    # params['measurements'].each do |measurement|
-    #   if measurement['severity_score'].present?
-    #     TrackedSymptom.create!(measurement_params(measurement))
-    #   end
-    # end
-    # respond_to do |format|
-    #     format.html { redirect_to symptoms_path, notice: 'Entry was added' }
-    # end 
-    
+
     @symptom = current_user.symptoms.find(params[:symptom_id])
-    @measurement = TrackedSymptom.new(params[:tracked_symptom])
+    @measurement = TrackedSymptom.new(measurement_params)
     # @measurement =  @symptom.tracked_symptoms.build(tracked_symptoms_params)
     respond_to do |format|
       if @measurement.save!
@@ -47,9 +39,8 @@ class TrackedSymptomsController < ApplicationController
 
   end
 
-  def measurement_params(new_params)
-    new_params.permit(:severity_score, :symptom_id)
+
+  def measurement_params
+    params.require(:tracked_symptom).permit(:severity_score, :symptom_id, :user_id)
   end
-  
-  
 end

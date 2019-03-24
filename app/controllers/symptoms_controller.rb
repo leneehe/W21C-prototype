@@ -3,12 +3,14 @@ class SymptomsController < ApplicationController
   # Used for health condition info
   layout 'main/layout-2'
   def index
-    @user_conditions = current_user.conditions
-    @user_symptoms = []
-    @user_conditions.each do |condition|
-      @user_symptoms << condition.symptoms      
-    end
-    @user_symptoms = @user_symptoms.flatten.uniq
+    # @user_conditions = current_user.conditions
+    # @user_symptoms = []
+    # @user_conditions.each do |condition|
+    #   @user_symptoms << condition.symptoms      
+    # end
+    # @user_symptoms = @user_symptoms.flatten.uniq
+    @user_symptoms = current_user.symptoms
+    
     # Grab all conditions
     # For each condition, list all symptoms and place them in an array
     # Filter/uniq the symptoms
@@ -38,16 +40,19 @@ class SymptomsController < ApplicationController
   end
 
   def new
-    # unused
     @new_user_symptom = current_user.symptoms.build
   end
 
   def create
     @new_user_symptom = current_user.symptoms.build(symptom_params)
-    # @existing_condition = current_user.symptoms.find_by()
+
+    # Check if symptom already exists based on name
+    @existing_condition = Symptom.where("lower(name) = ?", symptom_params[:name].downcase).first
+
+    @new_user_symptom = @existing_condition ? @existing_condition : @new_user_symptom
+
     respond_to do |format|
-      # if @existing_condition
-      if @new_user_symptom.save
+      if current_user.symptoms << @new_user_symptom
         format.html { redirect_to symptoms_path, notice: "Item created!" }
       else
         format.html { render :new }
@@ -79,8 +84,7 @@ class SymptomsController < ApplicationController
 
 private
   def symptom_params
-    params.require(:symptom).permit(:condition_name, :normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure,
-      value_types_attributes:[:id, :name])
+    params.require(:symptom).permit(:name, :normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure)
   end
 end
 
