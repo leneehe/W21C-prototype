@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     // Convert the Ruby date into Javascript Date object
     if ("name" in chartData[0]) {
        for (let j = 0; j < chartData.length; j++) {
+         console.log(chartData[j].data);
         chartData[j].data = chartData[j].data.map(item => ({
           ...item,
           x: new Date(item.x)

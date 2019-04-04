@@ -5,7 +5,7 @@ class SymptomsController < ApplicationController
   before_action :set_suggested_symptoms, only: [:index]
 
   def index
-    # :set_suggested_symptoms in before action
+    @user_symptoms = current_user.symptoms
 
     # Grab all conditions
     # For each condition, list all symptoms and place them in an array
@@ -27,13 +27,13 @@ class SymptomsController < ApplicationController
 
   def show
     @symptom = Symptom.find(params[:id])
+    @tracked_symptom = current_user.tracked_symptoms.build 
     # @measurement = TrackedSymptom.new
-    @value_types = @symptom.value_types
-    @measurements = []
-    @value_types.each do |type|
-      # @measurements << @symptom.TrackedSymptom.new(value_type_id: type.id, symptom_id: params[:id])
-      @measurements << @symptom.tracked_symptoms.build(value_type_id: type.id)
-    end
+    # @value_types = @symptom.value_types
+    # @measurements = []
+    # @value_types.each do |type|
+    #   @measurements << @symptom.tracked_symptoms.build(value_type_id: type.id)
+    # end
   end
 
   def new
@@ -52,10 +52,14 @@ class SymptomsController < ApplicationController
 
   def create
     @new_user_symptom = current_user.symptoms.build(symptom_params)
-    # @existing_condition = current_user.symptoms.find_by()
+
+    # Check if symptom already exists based on name
+    @existing_condition = Symptom.where("lower(name) = ?", symptom_params[:name].downcase).first
+
+    @new_user_symptom = @existing_condition ? @existing_condition : @new_user_symptom
+
     respond_to do |format|
-      # if @existing_condition
-      if @new_user_symptom.save
+      if current_user.symptoms << @new_user_symptom
         format.html { redirect_to symptoms_path, notice: "Item created!" }
       else
         format.html { render :new }
@@ -74,7 +78,7 @@ class SymptomsController < ApplicationController
     @value_collection = Array.new
     @value_data = Array.new
 
-     symptom.tracked_symptoms.one_week_ago.each do |measurement|
+    symptom.tracked_symptoms.one_week_ago.each do |measurement|
       # collection_name =  ValueType.find(key).name
         @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})
     end
