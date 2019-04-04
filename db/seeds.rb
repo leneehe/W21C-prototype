@@ -29,7 +29,6 @@ diabetes1 = Condition.create!(name:"Diabetes (Type 1)")
 diabetes2 = Condition.create!(name:"Diabetes (Type 2)")
 hypertension = Condition.create!(name:"Hypertension")
 congestive = Condition.create!(name:"Congestive Obstructive Pulmonary Disease")
-congestive = Condition.create!(name:"Congestive Obstructive Pulmonary Disease")
 asthma = Condition.create!(name:"Asthma")
 heart_failure = Condition.create!(name:"Heart Failiure")
 ischemic = Condition.create!(name:"Ischemic Heart Disease")
@@ -457,15 +456,31 @@ EventType.create(name: "Personal")
 EventType.create(name: "Reminder")
 
 # User's Events
+user1.events.create!(name: "Dr. Duddz checkup", start: DateTime.now - 5.days, event_type_id: 1, frequency: "once", location: "Clinic")
+event1 = user1.events.create!(name: "Start new medicine x", start: DateTime.now - 3.days, event_type_id: 2, frequency: "once")
+user1.events.create!(name: "Sleep monitoring", start: DateTime.now - 1.days - (2/24.0), end: DateTime.now - 1.days + (30/1440.0) , event_type_id: 3, frequency: "weekly")
+user1.events.create!(name: "Do yoga", start: DateTime.now - 2.days, end: DateTime.now - 1.days, event_type_id: 4, frequency: "daily", location: "World gym")
+
 user2.events.create!(name: "Dr. Duddz checkup", start: DateTime.now - 5.days, event_type_id: 1, frequency: "once", location: "Clinic")
 event2 = user2.events.create!(name: "Start new medicine x", start: DateTime.now - 3.days, event_type_id: 2, frequency: "once")
 user2.events.create!(name: "Sleep monitoring", start: DateTime.now - 1.days - (2/24.0), end: DateTime.now - 1.days + (30/1440.0) , event_type_id: 3, frequency: "weekly")
 user2.events.create!(name: "Do yoga", start: DateTime.now - 2.days, end: DateTime.now - 1.days, event_type_id: 4, frequency: "daily", location: "World gym")
 
+user.events.create!(name: "Dr. Duddz checkup", start: DateTime.now - 5.days, event_type_id: 1, frequency: "once", location: "Clinic")
+event3 = user.events.create!(name: "Start new medicine x", start: DateTime.now - 3.days, event_type_id: 2, frequency: "once")
+user.events.create!(name: "Sleep monitoring", start: DateTime.now - 1.days - (2/24.0), end: DateTime.now - 1.days + (30/1440.0) , event_type_id: 3, frequency: "weekly")
+user.events.create!(name: "Do yoga", start: DateTime.now - 2.days, end: DateTime.now - 1.days, event_type_id: 4, frequency: "daily", location: "World gym")
+
 # Create Checklists for Event
+event1.checklists.create!(entry: "Buy Antivirus", description: "OTC label xx2xx34 from Rexall")
+event1.checklists.create!(entry: "Order Products", complete: true)
+event1.checklists.create!(entry: "Jane's Happy Anniversary", description: "Her 57'th anniversary @ St.Mary Hospital")
 event2.checklists.create!(entry: "Buy Antivirus", description: "OTC label xx2xx34 from Rexall")
 event2.checklists.create!(entry: "Order Products", complete: true)
 event2.checklists.create!(entry: "Jane's Happy Anniversary", description: "Her 57'th anniversary @ St.Mary Hospital")
+event3.checklists.create!(entry: "Buy Antivirus", description: "OTC label xx2xx34 from Rexall")
+event3.checklists.create!(entry: "Order Products", complete: true)
+event3.checklists.create!(entry: "Jane's Happy Anniversary", description: "Her 57'th anniversary @ St.Mary Hospital")
 
 # ------- Time Tip --------!
 # hours = 10

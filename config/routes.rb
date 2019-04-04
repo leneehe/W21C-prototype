@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   }
 
   resources :users, :only => [:show]
+  put 'users/:id/save_condition', to: 'users#save_condition'
   resources :conditions
   namespace :dashboard do
     get 'goals/goal_summary', to: 'goals#goal_summary', as: 'goal_summary'

@@ -1,23 +1,38 @@
+<% content_for :scripts do %>
+  <%= javascript_include_tag 'conditions.js' %>
+<% end %>
 <section>
-  <h1><%= @user.first_name%> <%= @user.last_name%></h1>
+  <h2>Hello, <%= @user.first_name%> <%= current_user.last_name%></h2>
   <p><strong>Email:</strong> <%= @user.email %></p>
   <p><strong>Date of Birth:</strong> <%= @user.date_of_birth %></p>
   <p><strong>Gender:</strong> <%= @user.gender %></p>
 </section>
 
-<section>
-  <%# if !@user.conditions.empty? %>
-    <h2>Conditions: </h2>
-    <ul>
-      <% @user.conditions.each do |condition| %>
-        <li><%= condition.name %></li>
-      <% end %>
-    </ul>
-  <%# end %>
-  <%= form_for @new_user_condition do |f|%>
-    <%= f.label :name %>
-    <%= f.text_field :name, :placeholder => "e.g Diabetes" %>
-    <%= f.submit "Add a new condition" %>
-  <% end%>
+<section class="card">
+    <div class="card-header">
+      <div class="card-header-title">
+        <h4>My Conditions: </h4>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="custom-controls-stacked">
+        <% Condition.all.each do |condition| %>
+          <%= form_tag({action: 'save_condition'}, method: 'put') do %>
+            <label class="ui-todo-item custom-control custom-checkbox">
+              <%= check_box_tag :checked, @user.conditions.exists?(id: condition.id), @user.conditions.exists?(id: condition.id), class: "custom-control-input"  %>
+              <span class="custom-control-label"><%= condition.name %></span>
+              <br>
+            </label>
+            <%= hidden_field_tag :condition_id, condition.id %>
+          <% end %>
+        <% end %>
+      </div>
+
+    <%= form_for @new_user_condition do |f|%>
+      <%= f.label :name %>
+      <%= f.text_field :name, :placeholder => "e.g Diabetes" %>
+      <%= f.submit "Add a new condition" %>
+    <% end%>
+  </div>
   <%# link_to_add_association 'Add a new condition +', form, :value_types, 'data-association-insertion-node' => "#value-type-field ul", 'data-association-insertion-method' => "append" %>
 </section>
