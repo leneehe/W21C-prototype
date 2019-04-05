@@ -13,9 +13,7 @@ class UsersController < ApplicationController
       @user.conditions << Condition.find(params[:condition_id])
     else
       # delete user's condition
-      condition_name = @user.conditions.find(params[:condition_id]).name
       @user.conditions.delete(Condition.find(params[:condition_id]))
-      # Condition.create(name: condition_name)
     end
   end
 
