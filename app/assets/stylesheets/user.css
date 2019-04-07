@@ -2,3 +2,17 @@
   text-decoration: none !important;
   color: #606060 !important;
 }
+
+.condition-list {
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+}
+
+#editConditions {
+  display: none;
+}
+
+#displayConditions h4 {
+  margin-right: 10px;
+}

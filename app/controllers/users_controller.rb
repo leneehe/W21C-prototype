@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :set_user_condition, only: [:show, :save_condition]
 
   def show
-
+    @new_user_condition = @user.conditions.build()
   end
 
   def save_condition
@@ -20,6 +20,5 @@ class UsersController < ApplicationController
   private
   def set_user_condition
     @user = User.find(params[:id])
-    @new_user_condition = @user.conditions.build()
   end
 end

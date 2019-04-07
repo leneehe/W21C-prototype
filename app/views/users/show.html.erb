@@ -4,21 +4,46 @@
 <% content_for :scripts do %>
   <%= javascript_include_tag 'conditions.js' %>
 <% end %>
-<section>
+<section class="card-body">
   <h2>Hello, <%= @user.first_name%> <%= current_user.last_name%></h2>
   <p><strong>Email:</strong> <%= @user.email %></p>
   <p><strong>Date of Birth:</strong> <%= @user.date_of_birth %></p>
   <p><strong>Gender:</strong> <%= @user.gender %></p>
 </section>
 
-<section class="card">
-    <div class="card-header">
+<section  id="displayConditions">
+  <div class="card-header with-elements">
+    <div class="card-header-title">
+      <h4>My Conditions:</h4>
+    </div>
+    <div class="card-header-elements">
+      <%= link_to "Add/Edit", "#", onclick:"editConditions()", :class => "btn btn-outline-primary" %>
+    </div>
+  </div>
+  <div class="card-body condition-list">
+    <% @user.conditions.each do |condition| %>
+    <label>
+      <span class="custom-control-label"><%= condition.name %></span>
+    </label>
+      <br>
+    <% end %>
+  </div>
+  <div class="">
+
+  </div>
+</section>
+
+<section class="card" id="editConditions">
+    <div class="card-header with-elements">
       <div class="card-header-title">
         <h4>My Conditions: </h4>
       </div>
+      <div class="card-header-elements ml-auto">
+        <%= link_to "x", "#", onclick:"closeEdit()", :class => "btn btn-outline-primary" %>
+      </div>
     </div>
     <div class="card-body">
-      <div class="custom-controls-stacked">
+      <div class="custom-controls-stacked condition-list">
         <% Condition.all.each do |condition| %>
           <%= form_tag({action: 'save_condition'}, method: 'put') do %>
             <label class="ui-todo-item custom-control custom-checkbox">
@@ -30,7 +55,7 @@
           <% end %>
         <% end %>
       </div>
-
+    <br>
     <%= form_for @new_user_condition do |f|%>
       <%= f.label :name %>
       <%= f.text_field :name, :placeholder => "e.g Diabetes" %>

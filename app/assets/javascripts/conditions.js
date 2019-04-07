@@ -14,4 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 
   })
+
+editConditions = () => {
+    $('#displayConditions').hide();
+    $('#editConditions').show();
+  }
+
+closeEdit = () => {
+    $('#displayConditions').show();
+    $('#editConditions').hide();
+  }
 })
