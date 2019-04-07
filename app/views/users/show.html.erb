@@ -23,7 +23,7 @@
   <div class="card-body condition-list">
     <% @user.conditions.each do |condition| %>
     <label>
-      <span class="custom-control-label"><%= condition.name %></span>
+      <span class="custom-control-label">&bull; <%= condition.name %></span>
     </label>
       <br>
     <% end %>
@@ -39,7 +39,7 @@
         <h4>My Conditions: </h4>
       </div>
       <div class="card-header-elements ml-auto">
-        <%= link_to "x", "#", onclick:"closeEdit()", :class => "btn btn-outline-primary" %>
+        <%= link_to "x", user_path(@user), :class => "btn btn-outline-primary" %>
       </div>
     </div>
     <div class="card-body">
@@ -56,10 +56,16 @@
         <% end %>
       </div>
     <br>
+  </div>
+  <div class="card-footer">
     <%= form_for @new_user_condition do |f|%>
-      <%= f.label :name %>
-      <%= f.text_field :name, :placeholder => "e.g Diabetes" %>
-      <%= f.submit "Add a new condition" %>
+    <%= f.label :name, "Add New Condition"%>
+    <div class="input-group col-4">
+      <%= f.text_field :name, :placeholder => "e.g. Mental Health", class: "form-control" %>
+      <div class="input-group-append">
+        <%= f.submit "Add", class: "btn btn-primary" %>
+      </div>
+    </div>
     <% end%>
   </div>
   <%# link_to_add_association 'Add a new condition +', form, :value_types, 'data-association-insertion-node' => "#value-type-field ul", 'data-association-insertion-method' => "append" %>
