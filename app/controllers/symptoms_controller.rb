@@ -44,22 +44,26 @@ class SymptomsController < ApplicationController
       @primary_symptoms << condition.symptoms.primary
       @supporting_symptoms << condition.symptoms.supporting
     end
-    @primary_symptoms.flatten!.uniq!
-    @supporting_symptoms.flatten!.uniq!
+    # @primary_symptoms.flatten!.uniq!
+    # @supporting_symptoms.flatten!.uniq!
 
     @new_user_symptom = current_user.symptoms.build
+    # build join table to allow accepts_nested_attributes_for
+    @new_user_symptom.symptoms_users.build
   end
 
   def create
-    @new_user_symptom = current_user.symptoms.build(symptom_params)
-
+    @new_user_symptom = current_user.symptoms.build(name: symptom_params[:name])
     # Check if symptom already exists based on name
     @existing_condition = Symptom.where("lower(name) = ?", symptom_params[:name].downcase).first
 
     @new_user_symptom = @existing_condition ? @existing_condition : @new_user_symptom
 
     respond_to do |format|
-      if current_user.symptoms << @new_user_symptom
+      if @new_user_symptom.save!
+        symptom_info = SymptomsUser.find_by(user_id: current_user.id, symptom_id: @new_user_symptom.id)
+        symptom_info.update(symptom_params[:symptoms_users])
+
         format.html { redirect_to symptoms_path, notice: "Item created!" }
       else
         format.html { render :new }
@@ -96,10 +100,12 @@ private
     user_conditions.each do |condition|
       @user_symptoms << condition.symptoms
     end
-    @user_symptoms.flatten!.uniq!
+    # @user_symptoms.flatten!.uniq!
   end
 
   def symptom_params
-    params.require(:symptom).permit(:name, :normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure, :above_assistance)
+    # params.require(:symptom).permit(:name, :normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure, :above_assistance)
+    params.require(:symptom).permit(:name,
+      symptoms_users: [:normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure, :above_assistance])
   end
 end

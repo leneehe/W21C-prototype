@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_24_211504) do
+ActiveRecord::Schema.define(version: 2019_04_08_030820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -130,9 +130,14 @@ ActiveRecord::Schema.define(version: 2019_03_24_211504) do
     t.boolean "above_assistance", default: true
   end
 
-  create_table "symptoms_users", id: false, force: :cascade do |t|
+  create_table "symptoms_users", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "symptom_id", null: false
+    t.float "normal_range_upper"
+    t.float "normal_range_lower"
+    t.float "assistance_threshold"
+    t.string "unit_of_measure"
+    t.boolean "above_assistance", default: true
     t.index ["user_id", "symptom_id"], name: "index_symptoms_users_on_user_id_and_symptom_id"
   end
 
