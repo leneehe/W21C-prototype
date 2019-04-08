@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_08_030820) do
+ActiveRecord::Schema.define(version: 2019_04_08_032642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -121,13 +121,8 @@ ActiveRecord::Schema.define(version: 2019_04_08_030820) do
 
   create_table "symptoms", force: :cascade do |t|
     t.string "name"
-    t.float "normal_range_upper"
-    t.float "normal_range_lower"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "assistance_threshold"
-    t.string "unit_of_measure"
-    t.boolean "above_assistance", default: true
   end
 
   create_table "symptoms_users", force: :cascade do |t|
