@@ -16,7 +16,7 @@
   <% end %>
 </ul>
 
-<h1>Track a New Condition</h1>
+<h1>Track a Symptom</h1>
 <%= form_for @new_user_symptom do |form| %>
   <div class="form-group">
     <%= form.label :name %>
@@ -27,38 +27,41 @@
         required: true
     %>
   </div>
-  <div class="form-group">
-    <%= form.label :normal_range_upper %>
-    <%= form.text_field :normal_range_upper,
-        placeholder: "Upper Range",
-        class: "form-control",
-        required: true
-    %>
-  </div>
-  <div class="form-group">
-    <%= form.label :normal_range_lower %>
-    <%= form.text_field :normal_range_lower,
-        placeholder: "Lower Range",
-        class: "form-control",
-        required: true
-    %>
-  </div>
-  <div class="form-group">
-    <%= form.label :assistance_threshold %>
-    <%= form.text_field :assistance_threshold,
-        class: "form-control",
-        required: true
-    %>
-  </div>
 
-  <div class="form-group">
-    <%= form.label :unit_of_measure %>
-    <%= form.text_field :unit_of_measure,
-        placeholder: "e.g mL",
-        class: "form-control",
-        required: true
-    %>
-  </div>
+  <%= form.fields_for :symptoms_users do |m| %>
+    <div class="form-group">
+      <%= m.label :normal_range_upper %>
+      <%= m.text_field :normal_range_upper,
+          placeholder: "Upper Range",
+          class: "form-control",
+          required: true
+      %>
+    </div>
+    <div class="form-group">
+      <%= m.label :normal_range_lower %>
+      <%= m.text_field :normal_range_lower,
+          placeholder: "Lower Range",
+          class: "form-control",
+          required: true
+      %>
+    </div>
+    <div class="form-group">
+      <%= m.label :assistance_threshold %>
+      <%= m.text_field :assistance_threshold,
+          class: "form-control",
+          required: true
+      %>
+    </div>
+
+    <div class="form-group">
+      <%= m.label :unit_of_measure %>
+      <%= m.text_field :unit_of_measure,
+          placeholder: "e.g mL",
+          class: "form-control",
+          required: true
+      %>
+    </div>
+  <% end %>
 
   <div class="form-group" style="margin-top: 2rem;">
     <%= form.submit class:"btn btn-outline-primary" %>
