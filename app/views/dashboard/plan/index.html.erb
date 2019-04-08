@@ -31,7 +31,7 @@
         <% @events.each do |event| %>
           <% if event.start %>
           <li>
-            <%= link_to dashboard_plan_event_path(event) do %>
+            <%= link_to dashboard_organize_event_path(event) do %>
               <%= event.name %> – <%= event.start.to_formatted_s(:long) %>
             <% end %>
           </li>

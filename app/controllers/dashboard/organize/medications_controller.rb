@@ -1,4 +1,4 @@
-class Dashboard::MedicationsController < ApplicationController
+class Dashboard::Organize::MedicationsController < ApplicationController
   layout 'main/layout-2'
     before_action :set_medication, only: [:show, :edit, :update, :destroy]
 
@@ -22,7 +22,7 @@ class Dashboard::MedicationsController < ApplicationController
 
     respond_to do |format|
       if @medication.save
-        format.html { redirect_to dashboard_medications_url, notice: "New Medication added"}
+        format.html { redirect_to dashboard_organize_medications_url, notice: "New Medication added"}
       else
         format.html { render :new }
       end
@@ -37,7 +37,7 @@ class Dashboard::MedicationsController < ApplicationController
 
     respond_to do |format|
       if @medication.update(medication_params)
-        format.html { redirect_to dashboard_medication_url, notice: "Medication updated!" }
+        format.html { redirect_to dashboard_organize_medication_url, notice: "Medication updated!" }
       else
         format.html { render :edit }
       end
@@ -48,7 +48,7 @@ class Dashboard::MedicationsController < ApplicationController
   def destroy
     @medication.tracked_medications.destroy_all
     respond_to do |format|
-      format.html { redirect_to dashboard_medications_url, notice: 'Medication was successfully destroyed.' }
+      format.html { redirect_to dashboard_organize_medications_url, notice: 'Medication was successfully destroyed.' }
     end
   end
 

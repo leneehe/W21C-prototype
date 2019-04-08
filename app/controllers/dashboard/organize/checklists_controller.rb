@@ -1,5 +1,5 @@
-class Dashboard::Plan::ChecklistsController < ApplicationController
-  
+class Dashboard::Organize::ChecklistsController < ApplicationController
+
   def create
     event = Event.find(params[:event_id])
     @entry = Checklist.new(checklist_params)
@@ -7,10 +7,10 @@ class Dashboard::Plan::ChecklistsController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to dashboard_plan_event_url(event), notice: 'Entry has been successfully created.'  }
+        format.html { redirect_to dashboard_organize_event_url(event), notice: 'Entry has been successfully created.'  }
         # format.html {render partial: '/dashboard/plan/events/checklists', locals: {checklists: event.checklists} }
       else
-        format.html { redirect_to dashboard_plan_event_url(event) }
+        format.html { redirect_to dashboard_organize_event_url(event) }
       end
     end
   end
@@ -20,7 +20,7 @@ class Dashboard::Plan::ChecklistsController < ApplicationController
     @entry.complete ? @entry.complete = false : @entry.complete = true
     @entry.save
     respond_to do |format|
-      format.html { redirect_to dashboard_plan_event_url(params[:event_id]), notice: 'Entry was successfully updated.' }
+      format.html { redirect_to dashboard_organize_event_url(params[:event_id]), notice: 'Entry was successfully updated.' }
     end
   end
 
@@ -28,7 +28,7 @@ class Dashboard::Plan::ChecklistsController < ApplicationController
     @entry = Checklist.find(params[:id])
     @entry.destroy
     respond_to do |format|
-      format.html { redirect_to dashboard_plan_event_url(params[:event_id]), notice: 'Entry was successfully deleted.' }
+      format.html { redirect_to dashboard_organize_event_url(params[:event_id]), notice: 'Entry was successfully deleted.' }
     end
   end
 

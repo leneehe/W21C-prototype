@@ -32,10 +32,10 @@
       <% @entries.each do |entry| %>
       <tr>
         <td>
-          <%= link_to entry.entry, dashboard_plan_event_path(entry.event) %>
+          <%= link_to entry.entry, dashboard_organize_event_path(entry.event) %>
         </td>
         <td>
-          <%= link_to entry.event.name, dashboard_plan_event_path(entry.event) %>
+          <%= link_to entry.event.name, dashboard_organize_event_path(entry.event) %>
         </td>
         <td>
           <%= entry.created_at.to_formatted_s(:long) %>

@@ -162,7 +162,7 @@ $(function () {
         .modal('show');
     },
     eventClick: function(calEvent, jsEvent, view) {
-      window.location.href = '/dashboard/plan/events/' + calEvent.id;
+      window.location.href = '/dashboard/organize/events/' + calEvent.id;
     },
     eventDrop: function(calEvent, delta, revertFunc) {
 
@@ -227,7 +227,7 @@ $(function () {
       type: "GET"
     },
     eventClick: function(calEvent, jsEvent, view) {
-      window.location.href = '/dashboard/plan/events/' + calEvent.id;
+      window.location.href = '/dashboard/organize/events/' + calEvent.id;
     }
 
   });
@@ -265,7 +265,7 @@ function updateEvent(calEvent) {
     }
   // make the ajax call to edit
   $.ajax({
-    url: '/dashboard/plan/events/' + calEvent.id,
+    url: '/dashboard/organize/events/' + calEvent.id,
     method: 'PUT',
     data: event_data,
     dataType: 'json'

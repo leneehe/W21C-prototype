@@ -9,7 +9,7 @@
   <%= javascript_include_tag 'moment/moment.js' %>
   <%= javascript_include_tag 'fullcalendar/fullcalendar.js' %>
 
-  <%= javascript_include_tag 'dashboard/plan/ui_fullcalendar.js' %>
+  <%= javascript_include_tag 'dashboard/organize/ui_fullcalendar.js' %>
   <%= javascript_include_tag 'bootstrap-select/bootstrap-select.js' %>
   <%= javascript_include_tag 'select2/select2.js' %>
 <% end %>
@@ -23,7 +23,7 @@
 
 <!-- Event modal -->
 <!-- Add Event  -->
-<%= form_for @event, url: dashboard_plan_events_path(@event), :html => { :id => "fullcalendar-default-view-modal", class:"modal modal-top fade" } do |f| %>
+<%= form_for @event, url: dashboard_organize_events_path(@event), :html => { :id => "fullcalendar-default-view-modal", class:"modal modal-top fade" } do |f| %>
   <%= render 'form', f: f %>
 <% end %>
 

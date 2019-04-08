@@ -1,4 +1,4 @@
-class Dashboard::Plan::EventsController < ApplicationController
+class Dashboard::Organize::EventsController < ApplicationController
   layout 'main/layout-2'
 
   before_action :set_events_legends, only: [:index, :show]
@@ -20,7 +20,7 @@ class Dashboard::Plan::EventsController < ApplicationController
     respond_to do |format|
       # if @existing_condition
       if @event.save
-        format.html { redirect_to dashboard_plan_events_url, notice: "Event created!" }
+        format.html { redirect_to dashboard_organize_events_url, notice: "Event created!" }
       else
         format.html { render :index }
       end
@@ -39,7 +39,7 @@ class Dashboard::Plan::EventsController < ApplicationController
     event.end = params[:end]
     event.save
     respond_to do |format|
-        format.html { redirect_to dashboard_plan_events_url, notice: "Event saved!" }
+        format.html { redirect_to dashboard_organize_events_url, notice: "Event saved!" }
         format.json { render json: params }
     end
   end
@@ -47,7 +47,7 @@ class Dashboard::Plan::EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to dashboard_plan_events_url, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to dashboard_organize_events_url, notice: 'Event was successfully destroyed.' }
     end
   end
 
