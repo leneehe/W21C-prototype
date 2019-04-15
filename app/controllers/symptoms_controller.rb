@@ -27,7 +27,7 @@ class SymptomsController < ApplicationController
 
   def show
     @symptom = Symptom.find(params[:id])
-    @tracked_symptom = current_user.tracked_symptoms.build 
+    @tracked_symptom = current_user.tracked_symptoms.build
     # @measurement = TrackedSymptom.new
     # @value_types = @symptom.value_types
     # @measurements = []
@@ -38,15 +38,16 @@ class SymptomsController < ApplicationController
 
   def new
     user_conditions = current_user.conditions
-    @primary_symptoms = []
-    @supporting_symptoms = []
-    user_conditions.each do |condition|
-      @primary_symptoms << condition.symptoms.primary
-      @supporting_symptoms << condition.symptoms.supporting
+      @primary_symptoms = []
+      @supporting_symptoms = []
+      user_conditions.each do |condition|
+        @primary_symptoms << condition.symptoms.primary
+        @supporting_symptoms << condition.symptoms.supporting
+      end
+    if user_conditions != []
+      @primary_symptoms.flatten!.uniq!
+      @supporting_symptoms.flatten!.uniq!
     end
-    # @primary_symptoms.flatten!.uniq!
-    # @supporting_symptoms.flatten!.uniq!
-
     @new_user_symptom = current_user.symptoms.build
     # build join table to allow accepts_nested_attributes_for
     @new_user_symptom.symptoms_users.build
@@ -62,7 +63,7 @@ class SymptomsController < ApplicationController
     respond_to do |format|
       if @new_user_symptom.save
         symptom_info = SymptomsUser.create(user_id: current_user.id, symptom_id: @new_user_symptom.id)
-        symptom_info.update(symptom_params[:symptoms_users])
+        symptom_info.update(symptom_params[:symptoms_users_attributes]["0"])
 
         format.html { redirect_to symptoms_path, notice: "Item created!" }
       else
@@ -106,6 +107,6 @@ private
   def symptom_params
     # params.require(:symptom).permit(:name, :normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure, :above_assistance)
     params.require(:symptom).permit(:name,
-      symptoms_users: [:normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure, :above_assistance])
+      symptoms_users_attributes: [:normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure, :above_assistance])
   end
 end

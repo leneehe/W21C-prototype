@@ -1,22 +1,27 @@
-<p>Based on the conditions you listed in your profile, the recommended things for you to track are listed below:</p>
-<p>Which ones do you want to track?</p>
-<ul>
-  <% @primary_symptoms.each do |symptom| %>
-  <li>
-    <%= symptom.name %>
-  </li>
-  <% end %>
-</ul>
-<p>Other things you might want to track are:</p>
-<ul>
-  <% @supporting_symptoms.each do |symptom| %>
-  <li>
-    <%= symptom.name %>
-  </li>
-  <% end %>
-</ul>
+<h1>Helping Yourself - Set up Self-tracking</h1>
+<% if current_user.conditions != [] %>
+  <p>Based on the conditions you listed in your profile, the recommended things for you to track are listed below:</p>
+  <p>Which ones do you want to track?</p>
+  <ul>
+    <% @primary_symptoms.each do |symptom| %>
+    <li>
+      <%= symptom.name %>
+    </li>
+    <% end %>
+  </ul>
+  <p>Other things you might want to track are:</p>
+  <ul>
+    <% @supporting_symptoms.each do |symptom| %>
+    <li>
+      <%= symptom.name %>
+    </li>
+    <% end %>
+  </ul>
+  <p>Want to track something that isn't here?</p>
+<% end %>
+- Track a new symptom
 
-<h1>Track a Symptom</h1>
+<h2>Track a Symptom</h2>
 <%= form_for @new_user_symptom do |form| %>
   <div class="form-group">
     <%= form.label :name %>

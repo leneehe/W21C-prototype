@@ -22,10 +22,12 @@
   </div>
   <div class="card-body condition-list">
     <% @user.conditions.each do |condition| %>
+      <% if condition.id != nil %>
     <label>
       <span class="custom-control-label">&bull; <%= condition.name %></span>
     </label>
-      <%# <br> %>
+      <br>
+      <% end %>
     <% end %>
   </div>
   <%# <div class="">
