@@ -27,7 +27,7 @@ class SymptomsController < ApplicationController
 
   def show
     @symptom = Symptom.find(params[:id])
-    @tracked_symptom = current_user.tracked_symptoms.build 
+    @tracked_symptom = current_user.tracked_symptoms.build
     # @measurement = TrackedSymptom.new
     # @value_types = @symptom.value_types
     # @measurements = []
@@ -38,15 +38,16 @@ class SymptomsController < ApplicationController
 
   def new
     user_conditions = current_user.conditions
-    @primary_symptoms = []
-    @supporting_symptoms = []
-    user_conditions.each do |condition|
-      @primary_symptoms << condition.symptoms.primary
-      @supporting_symptoms << condition.symptoms.supporting
+      @primary_symptoms = []
+      @supporting_symptoms = []
+      user_conditions.each do |condition|
+        @primary_symptoms << condition.symptoms.primary
+        @supporting_symptoms << condition.symptoms.supporting
+      end
+    if user_conditions != []
+      @primary_symptoms.flatten!.uniq!
+      @supporting_symptoms.flatten!.uniq!
     end
-    # @primary_symptoms.flatten!.uniq!
-    # @supporting_symptoms.flatten!.uniq!
-
     @new_user_symptom = current_user.symptoms.build
     # build join table to allow accepts_nested_attributes_for
     @new_user_symptom.symptoms_users.build
