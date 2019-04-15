@@ -60,8 +60,8 @@ class SymptomsController < ApplicationController
     @new_user_symptom = @existing_condition ? @existing_condition : @new_user_symptom
 
     respond_to do |format|
-      if @new_user_symptom.save!
-        symptom_info = SymptomsUser.find_by(user_id: current_user.id, symptom_id: @new_user_symptom.id)
+      if @new_user_symptom.save
+        symptom_info = SymptomsUser.create(user_id: current_user.id, symptom_id: @new_user_symptom.id)
         symptom_info.update(symptom_params[:symptoms_users])
 
         format.html { redirect_to symptoms_path, notice: "Item created!" }
@@ -96,7 +96,7 @@ class SymptomsController < ApplicationController
 private
   def set_suggested_symptoms
     user_conditions = current_user.conditions
-    @user_symptoms = []
+    @user_symptoms = current_user.symptoms
     user_conditions.each do |condition|
       @user_symptoms << condition.symptoms
     end
