@@ -8,16 +8,18 @@
   <!-- Loop through current user's self-tracking conditions -->
   <% @user_symptoms.each_with_index do |symptom, index| %>
   <!-- Build Graphing template -->
+    <% symptom_info = SymptomsUser.find_by(user_id: current_user.id, symptom_id: symptom.id) %>
     <%= content_tag "section", id: "chart-area-#{index}" , class: 'chart-container' do %>
      <!-- Actions -->
-     <h2><%= symptom.name %></h2>
+      <h2><%= symptom.name %></h2>
       <strong>
         <%= link_to symptom_path(symptom.id) do %>
           <span>+</span> Add a record
         <% end %>
       </strong>
     <!-- Build Data for graph -->
-      <% unit_of_measure = SymptomsUser.find_by(user_id: current_user.id, symptom_id: symptom.id).unit_of_measure %>
+
+      <% unit_of_measure = symptom_info.unit_of_measure %>
       <% if !symptom.tracked_symptoms.empty? %>
         <!-- Chart -->
         <%# Severity scores is an array of hashes [{x,y},{x,y}] %>
@@ -28,9 +30,13 @@
         <%= content_tag "div", class: "chart", id: "chart#{index}", data: {nodes: [{"unit_of_measure" => unit_of_measure}] }, style: "height: 250px" do %>
         <% end %>
       <% end %>
-     
 
-      
     <% end %>
+
+    <% if symptom_info.assistance_threshold %>
+       <p>Please seek assistance if your current measurement is <%= symptom_info.above_assistance ? "above" : "below" %> <%= symptom_info.assistance_threshold %>.</p>   
+    <% end %>
+
   <% end %>
 </main>
+<%= console %>

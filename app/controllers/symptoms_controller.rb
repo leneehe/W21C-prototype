@@ -61,9 +61,9 @@ class SymptomsController < ApplicationController
     @new_user_symptom = @existing_condition ? @existing_condition : @new_user_symptom
 
     respond_to do |format|
-      if @new_user_symptom.save!
-        symptom_info = SymptomsUser.find_by(user_id: current_user.id, symptom_id: @new_user_symptom.id)
-        symptom_info.update(symptom_params[:symptoms_users])
+      if @new_user_symptom.save
+        symptom_info = SymptomsUser.create(user_id: current_user.id, symptom_id: @new_user_symptom.id)
+        symptom_info.update(symptom_params[:symptoms_users_attributes]["0"])
 
         format.html { redirect_to symptoms_path, notice: "Item created!" }
       else
@@ -97,7 +97,7 @@ class SymptomsController < ApplicationController
 private
   def set_suggested_symptoms
     user_conditions = current_user.conditions
-    @user_symptoms = []
+    @user_symptoms = current_user.symptoms
     user_conditions.each do |condition|
       @user_symptoms << condition.symptoms
     end
@@ -107,6 +107,6 @@ private
   def symptom_params
     # params.require(:symptom).permit(:name, :normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure, :above_assistance)
     params.require(:symptom).permit(:name,
-      symptoms_users: [:normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure, :above_assistance])
+      symptoms_users_attributes: [:normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure, :above_assistance])
   end
 end

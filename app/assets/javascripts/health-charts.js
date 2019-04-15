@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     // Dynamically build chart
 
     // ticks.reverse();
-    new Chartist.Line(`#chart${i}`,
+     let chartDisplay = new Chartist.Line(`#chart${i}`,
       {
         labels: [],
         series: chartData,
@@ -117,7 +117,14 @@ document.addEventListener("DOMContentLoaded", function(e){
             }
           })
         ]
-      },
+      }
     );
+    // Chartist call back for draw events
+    chartDisplay.on('draw',function(context) {
+      console.log(context);
+      if (context.type === 'grid') {
+
+      }
+    });
   }
 });
