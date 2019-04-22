@@ -19,6 +19,7 @@
     "chartist-plugin-accessibility": "0.0.5",
     "chartist-plugin-axistitle": "0.0.4",
     "chartist-plugin-legend": "^0.6.2",
+    "chartist-plugin-targetline": "^1.0.1",
     "chartist-plugin-tooltips": "0.0.17",
     "chartist-plugin-tooltips-updated": "0.0.20",
     "cropper": "~4.0.0-beta",
