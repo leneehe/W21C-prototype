@@ -79,7 +79,7 @@ class SymptomsController < ApplicationController
 
   end
 
-  def build_data_collection(symptom, unit)
+  def build_data_collection(symptom, unit, symptom_info)
     @value_collection = Array.new
     @value_data = Array.new
 
@@ -88,7 +88,14 @@ class SymptomsController < ApplicationController
         @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})
     end
 
-    @value_collection.push({ "name" => symptom.name, "meta" => symptom.name, "data" => @value_data, "unit_of_measure" => unit })
+    @value_collection.push({ 
+      "name" => symptom.name,
+      "meta" => symptom.name,
+      "data" => @value_data,
+      "unit_of_measure" => unit,
+      "assistance_threshold" =>  symptom_info.assistance_threshold,
+      "above_assistance" => symptom_info.above_assistance
+    })
 
     return @value_collection
   end
