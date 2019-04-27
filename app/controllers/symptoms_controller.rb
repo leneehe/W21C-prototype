@@ -11,7 +11,7 @@ class SymptomsController < ApplicationController
     # For each condition, list all symptoms and place them in an array
     # Filter/uniq the symptoms
     @severity_scores = Array.new
-    # test pdf
+    # test pdfs
     respond_to do |format|
       format.html
       format.pdf do

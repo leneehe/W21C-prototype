@@ -16,6 +16,11 @@ class PagesController < ApplicationController
   def learn
     @title = 'Learn'
   end
+
+  def learn_show
+    @title = 'Learn'
+  end
+
   def resources
     @title = 'Resources'
   end

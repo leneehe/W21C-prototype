@@ -1,0 +1,86 @@
+<!--Header-Area-->
+<header class="blue-bg relative fix" id="home">
+  <div class="section-bg overlay-bg ripple ">
+    <div class="parallax-image">
+      <%= image_tag("learn-bg.jpg")  %>
+    </div>
+  </div>
+
+  <!--Mainmenu/-->
+  <div class="space-100"></div>
+  <div class="space-20 hidden-xs"></div>
+  <!--Header-Text-->
+  <div class="container text-white">
+    <div class="row text-center">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <div class="space-60"></div>
+        <%= image_tag("icon/learn.png") %>
+        <h1>Learning Opportunities</h1>
+        <%# <div class="space-100"></div> %>
+      </div>
+    </div>
+    <div class="space-80"></div>
+  </div>
+  <!--Header-Text/-->
+</header>
+
+<section id="blog">
+  <div class="space-40"></div>
+  <div class="container">
+    <div class="row wow fadeInUp">
+      <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
+        <p>Helping you help yourself on your care journey.</p>
+      </div>
+    </div>
+
+    <section class="row">
+      <div class="input-group col-sm-10 col-md-offset-1">
+        <input type="text" class="form-control resources__search-bar" id="mc-email"
+          placeholder="What can we help you find today? (Search by name, keywords, condition, tags, etc)">
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-info">Search</button>
+        </div>
+      </div>
+      <!-- <div class="col-sm-10 resources__search-bar-container">
+              <input class="resources__search-bar"type="text" name="search" placeholder="What can we help you find today? (Search by name, keywords, condition, tags, etc)">
+            </div>
+            <div class="col-sm-1">
+              <button type="button">
+
+              </button>
+            </div> -->
+      <div class="space-40"></div>
+    </section>
+
+    <div class="space-60"></div>
+    <!-- Section -->
+    <% @internal_resources.each_slice(3) do |articles| %>
+      <div class="row">
+        <% articles.each do |article|%>
+            <div class="col-xs-12 col-sm-6 col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="panel text-center single-blog">
+                <div class="padding-20">
+                  <ul class="list-unstyled list-inline">
+                    <li><span class="ti-user"></span> By: Admin</li>
+                    <li><span class="ti-calendar"></span> <%= article.created_at.strftime("%B %d, %Y") %></li>
+                  </ul>
+                  <div class="space-10"></div>
+                  <%= link_to article_url(article) do %>
+                    <h4><%= article.title%></h4>
+                  <% end %>
+                  <div class="space-15"></div>
+                  <p><%= article.description %></p>
+                  <div class="space-20"></div>
+                  <%= link_to "Read More", article_url(article), class: "btn btn-link" %>
+                  <div class="space-20"></div>
+                </div>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    <% end %>
+    
+    
+  </div>
+</section>
+<!--Blog-Section/-->
