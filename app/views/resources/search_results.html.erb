@@ -34,26 +34,19 @@
     </div>
 
     <section class="row">
-      <%= form_tag url_for(:controller => 'resources', :action => 'search_results'), :method => "get" do %>
+      <%= form_tag(article_search_path, :method => "get") do %>
         <div class="input-group col-sm-10 col-md-offset-1">
-            <%= text_field_tag :search, params[:search], placeholder: "What can we help you find today? (Search by name, keywords, condition, tags, etc)", class: "form-control resources__search-bar" %>
-            <div class="input-group-btn">
-              <%= submit_tag "Search", class: "btn btn-info" %>
-            </div>      
+          <%= text_field_tag :search, params[:search], placeholder: "What can we help you find today? (Search by name, keywords, condition, tags, etc)", class: "form-control resources__search-bar" %>
+          <div class="input-group-btn">
+            <%= submit_tag "Search", class: "btn btn-info" %>
+          </div>      
         </div>
       <% end %>
-      <!-- <div class="col-sm-10 resources__search-bar-container">
-              <input class="resources__search-bar"type="text" name="search" placeholder="What can we help you find today? (Search by name, keywords, condition, tags, etc)">
-            </div>
-            <div class="col-sm-1">
-              <button type="button">
-
-              </button>
-            </div> -->
       <div class="space-40"></div>
     </section>
 
-    <div class="space-60"></div>
+    <h2>Returned <%= @internal_resources.length %> result(s)</h2>
+    <div class="space-20"></div>
     <!-- Section -->
     <% @internal_resources.each_slice(3) do |articles| %>
       <div class="row">

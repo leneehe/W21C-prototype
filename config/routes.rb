@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   get 'goal-centre', to: 'pages#goal_centre', as: 'goal_centre'
   get 'track', to: 'pages#track', as: 'track'
   get 'learn', to: 'resources#index', as: 'learn'
+  get 'learn/search', to: 'resources#search_results', as: 'article_search' 
   get 'learn/:id', to: 'resources#show', as: 'article'
   get 'resources', to: 'pages#resources', as: 'resources'
   get 'about', to: 'pages#about', as: 'about'
