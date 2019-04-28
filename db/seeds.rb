@@ -582,6 +582,7 @@ event3.checklists.create!(entry: "Jane's Happy Anniversary", description: "Her 5
 # seconds = DateTime.now - (seconds/86400.0) #<DateTime: 2015-03-11T17:26:14+02:00 ((2457093j,55574s,785701811n),+7200s,2299161j)>
 
 Resource.create!(title: "COPD (Chronic obstructive pulmonary disease) Overview",
+            description: "Chronic obstructive pulmonary disease (COPD) refers to two lung diseases: emphysema and chronic bronchitis.",
              content_page: %{<p>Chronic obstructive pulmonary disease (COPD) refers to two lung diseases: emphysema and chronic bronchitis. Even though
               COPD cannot be cured, the right treatment can help you feel better and live longer. Consider ways to avoid cigarette
               smoke and air pollution, get regular exercise, and eat a balanced diet.</p>
@@ -594,6 +595,8 @@ Resource.create!(title: "COPD (Chronic obstructive pulmonary disease) Overview",
                   href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw32559&#hw32561">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw32559&#hw32561</a>.
                 Accessed 2018 Oct 05.</p>})
 Resource.create!(title: "High Blood Pressure Overview",
+  description: "High blood pressure is also known as hypertension. High blood pressure is unique, because it doesn’t often cause obvious
+              symptoms.",
               content_page: %{<p>High blood pressure is also known as hypertension. High blood pressure is unique, because it doesn’t often cause obvious
               symptoms. You may have found out you have high blood pressure after you visited the doctor for a different reason.
               Doctors don’t always know the exact cause of high blood pressure.</p>
@@ -612,6 +615,7 @@ Resource.create!(title: "High Blood Pressure Overview",
                   https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw62787</a>
                   . Accessed 2018 Oct 11.</p>})
 Resource.create!(title: "Type 1 Diabetes Overview",
+  description: "Type 1 diabetes is a disease that happens if your pancreas does not make a hormone called insulin.",
               content_page: %{<p>Type 1 diabetes is a disease that happens if your pancreas does not make a hormone called insulin. Most of the time,
               people with Type 1 diabetes were born with it. In any case, without insulin, your body cannot properly control its blood
               sugar levels. Sugar is produced by your body or taken in through food. If sugar builds up in your body, it can be
@@ -637,6 +641,7 @@ Resource.create!(title: "Type 1 Diabetes Overview",
                 . Accessed 2018 Oct 11.
               </p>})
 Resource.create!(title: "Type 2 Diabetes Overview",
+  description: "Type 2 diabetes is different from type 1 diabetes. In type 1 diabetes, your body can’t produce insulin at all. In type 2 diabetes, your body produces some insulin, but doesn’t use it correctly.",
               content_page: %{<p>Type 2 diabetes is different from type 1 diabetes. In type 1 diabetes, your body can’t produce insulin at all. In type 2
               diabetes, your body produces some insulin, but doesn’t use it correctly. The most important part about managing type 2
               diabetes is keeping your blood sugar levels in your target range. If you have type 2 diabetes, your doctor will work
@@ -655,6 +660,7 @@ Resource.create!(title: "Type 2 Diabetes Overview",
                   . Accessed 2018 Oct 11.
               </p>})
 Resource.create!(title: "Chronic Kidney Disease Overview",
+  description: "Chronic kidney disease (CKD) happens when your kidneys are damaged over many years.",
   content_page: %{<p>Chronic kidney disease (CKD) happens when your kidneys are damaged over many years. For example, uncontrolled high blood
               pressure or blood glucose eventually damages your kidneys. Your kidneys could be failing for more than 30 years before
               you start having symptoms. Symptoms include urinating less than normal, puffiness, weight gain, and lethargy, or losing
@@ -673,6 +679,7 @@ Resource.create!(title: "Chronic Kidney Disease Overview",
                   . Accessed 2018 Oct 11.
               </p>})
 Resource.create!(title: "Helping Myself - Mental Health",
+  description: "Mental health issues are more common than you might think, because they can be quite invisible to those around you.",
   content_page: %{<p>Mental health issues are more common than you might think, because they can be quite invisible to those around you. Lots
               of people struggle with illnesses like depression, anxiety, and bipolar disorder, and there are a variety of ways to
               treat each of these illnesses. If you struggle with mental health, know that you are not alone, it is not your fault,
@@ -710,6 +717,7 @@ Resource.create!(title: "Helping Myself - Mental Health",
                 </a>
               </p>})
 Resource.create!(title: "Stress Management",
+  description: "Stress is what you feel when you suddenly have to deal with more than you are used to dealing with.",
   content_page: %{<p>Stress is what you feel when you suddenly have to deal with more than you are used to dealing with. Some stress is
               normal and at times, even helpful if you need to react fast or work hard for something. Too much stress at once or
               stress that lasts too long can be harmful, causing things like stomach upsets, headaches, pain, or sleep problems.</p>
@@ -783,6 +791,7 @@ Resource.create!(title: "Stress Management",
                 </a>
               </p>})
 Resource.create!(title: "Helping Myself - Dealing with Insomnia",
+  description: "Insomnia can become a problem for different people for different reasons.",
   content_page: %{<p>Insomnia can become a problem for different people for different reasons. Most of the time, simple changes in your
               daytime habits can result in the little shifts that are needed to get a good night’s sleep. Maybe you used to have good
               sleep habits, but your chronic care needs have disrupted them. Maybe you’ve had to make changes that aren’t helping your
@@ -891,6 +900,7 @@ Resource.create!(title: "Helping Myself - Dealing with Insomnia",
                 </a>
               </p>})
 Resource.create!(title: "Staying Healthy - The Importance of Social Health and Finding Social Supports",
+  description: "Living with a chronic condition can be stressful at times.",
   content_page: %{<p>Living with a chronic condition can be stressful at times. You can increase your ability to deal with these stressful
               situations by having a strong network of friends and/or family that you can lean on. Your network can be big or
               small–whatever works for you. The important thing is that you are there for each other, help each other when things
@@ -903,6 +913,7 @@ Resource.create!(title: "Staying Healthy - The Importance of Social Health and F
                   href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=abk9962&#abk9963">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=abk9962&#abk9963</a>
               </p>})
 Resource.create!(title: "Anxiety Overview",
+  description: "Anxiety presents itself in many ways, both physical and emotional. It is normal to feel worried or stressed out sometimes.",
   content_page: %{<p>Anxiety presents itself in many ways, both physical and emotional. It is normal to feel worried or stressed out
               sometimes. It is not normal, though, to have anxious feelings that interfere with your life. Emotional symptoms of
               anxiety include feelings of doom, difficulty concentrating, or worrying excessively. Physical symptoms includes feelings
@@ -926,6 +937,7 @@ Resource.create!(title: "Anxiety Overview",
               MyHealth.Alberta.ca. Anxiety – Topic Overview.
               <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=anxty&#hw257184">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=anxty&#hw257184</a>. Accessed 2018 Oct 05.</p>})
 Resource.create!(title: "Medical Uncertainty",
+  description: "With chronic conditions, it is common to have experiences where your care team is unsure of what step to take next. This is especially the case if you haven’t received a diagnosis, or perhaps, you haven’t found a treatment plan that works for you yet.",
   content_page: %{<p>With chronic conditions, it is common to have experiences where your care team is unsure of what step to take next. This
               is especially the case if you haven’t received a diagnosis, or perhaps, you haven’t found a treatment plan that works
               for you yet. Remember, everyone is different and responds to things differently. “Wait and see” is okay. Finding the
@@ -938,6 +950,7 @@ Resource.create!(title: "Medical Uncertainty",
                   href="https://multiplesclerosis.net/living-with-ms/what-is-it-like-to-not-be-diagnosed/">https://multiplesclerosis.net/living-with-ms/what-is-it-like-to-not-be-diagnosed/</a>
               </p>})
 Resource.create!(title: "Depression Overview",
+  description: "Depression is also known as major depressive disorder. It can make you feel sad, tired, worthless, unfocused, and even suicidal.",
   content_page: %{<p>Depression is also known as major depressive disorder. It can make you feel sad, tired, worthless, unfocused, and even
               suicidal. People with depression can experience these symptoms for two weeks or more. Depression can affect anyone. Some
               people, though, are more at risk than others. Risk factors for depression include a family history of depression,
@@ -958,6 +971,7 @@ Resource.create!(title: "Depression Overview",
               <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw30709&#hw30711">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw30709&#hw30711</a>. Accessed
               2018 Oct 05.</p>})
 Resource.create!(title: "Role of Exercise in Self-management",
+  description: "Exercise has many physical and emotional benefits. It can help with weight loss, improve your emotional wellbeing, and increase the health of your muscles, joints, lungs, and heart.",
   content_page: %{<p>Exercise has many physical and emotional benefits. It can help with weight loss, improve your emotional wellbeing, and
               increase the health of your muscles, joints, lungs, and heart. Most importantly, exercise can help you prevent or manage
               chronic illness. Getting regular exercise is an important part of managing any chronic condition.</p>
@@ -981,6 +995,7 @@ Resource.create!(title: "Role of Exercise in Self-management",
                   href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=ta2537">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=ta2537</a>
               </p>})
 Resource.create!(title: "Weight Management",
+  description: "Staying at a healthy weight helps manage every kind of chronic condition.",
   content_page: %{<p>Staying at a healthy weight helps manage every kind of chronic condition. A healthy weight is not about being thin. A
               healthy weight is the result of a healthy lifestyle that has regular exercise and a balanced diet. Try to think about
               things you can add to your life to reach a healthy weight, like adding in exercise to your daily routine, or adding in
@@ -1009,6 +1024,7 @@ Resource.create!(title: "Weight Management",
               MyHealth.Alberta.ca. Weight Management – Overview. <a href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=aa122915">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=aa122915</a>. Accessed
               2018 Oct 11.</p>})
 Resource.create!(title: "Nutrition",
+  description: "Eating a nutritious diet has many benefits.",
   content_page: %{<p>Eating a nutritious diet has many benefits. Nutritious eating lowers your risk of diseases, improves your overall
               health, and increases your daily energy levels. Everyone can take steps to improve their own health by making small
               changes to their diet.</p>
@@ -1124,6 +1140,7 @@ Resource.create!(title: "Nutrition",
                   href="http://www.who.int/dietphysicalactivity/publications/trs916/summary/en/">http://www.who.int/dietphysicalactivity/publications/trs916/summary/en/</a>
               </p>})
 Resource.create!(title: "Internet/Information Literacy Overview",
+  description: "When you’re looking online for health information, it can feel overwhelming. Who do you trust? Here are some tips for success",
   content_page: %{<p>The internet contains a lot of information. When you’re looking online for health information, it can feel overwhelming.
               Who do you trust? Here are some tips for success (adapted from Johns Hopkins Bayview Medical Centre):</p>
               <ul>
@@ -1160,6 +1177,7 @@ Resource.create!(title: "Internet/Information Literacy Overview",
               <h3>References</h3>
               <p>Johns Hopkins Bayview Medical Center. Finding Reliable Health Information Online. Website: <a href="https://www.hopkinsmedicine.org/johns_hopkins_bayview/patient_visitor_amenities/community_health_library/finding_reliable_health_information_online.html">https://www.hopkinsmedicine.org/johns_hopkins_bayview/patient_visitor_amenities/community_health_library/finding_reliable_health_information_online.html</a></p>})
 Resource.create!(title: "Self-Tracking – Importance of Self-Tracking",
+  description: "Depending on your chronic care needs, you might need to track diet, carbohydrates, exercise, water intake, weight, mood, blood sugar, blood pressure, or something else that your doctor recommends.",
   content_page: %{<p>Depending on your chronic care needs, you might need to track diet, carbohydrates, exercise, water intake, weight, mood,
               blood sugar, blood pressure, or something else that your doctor recommends. You already have a lot to keep track of in
               your day-to-day life. Why should you start tracking health things on top of it all?</p>
@@ -1173,12 +1191,14 @@ Resource.create!(title: "Self-Tracking – Importance of Self-Tracking",
               <h3>For more information on self-tracking and some paper-based forms you can try, please see:</h3>
               <p><a href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=bs1005">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=bs1005</a></p>})
 Resource.create!(title: "Reminders – How they Work and What They’re for",
+  description: "When you have chronic care needs, there may be extra things you need to keep track of, like appointments, lab work, or daily medications.",
   content_page: %{<p>When you have chronic care needs, there may be extra things you need to keep track of, like appointments, lab work, or
               daily medications. If you try to keep it all in your head, you might forget something important (like taking your
               medications), or forget to get lab work done ahead of your next doctor’s appointment.</p>
               <p>Setting timely reminders to complete these activities can alleviate many of these issues, help you put your chronic care
               needs into the background of your life, and let you focus on the things that are important to YOU!</p>})
 Resource.create!(title: "Goals and Goal Setting",
+  description: "Maybe you’ve decided to make a change. Maybe you’re still thinking about it. Whether you’re looking to improve your current health, prevent future issues, or just feel better, setting SMART goals can help you turn those ideas into a plan.",
   content_page: %{<p>Maybe you’ve decided to make a change. Maybe you’re still thinking about it. Whether you’re looking to improve your
               current health, prevent future issues, or just feel better, setting SMART goals can help you turn those ideas into a
               plan, or help you work through the details of making that change.</p>

@@ -62,7 +62,7 @@
                 <div class="padding-20">
                   <ul class="list-unstyled list-inline">
                     <li><span class="ti-user"></span> By: Admin</li>
-                    <li><span class="ti-calendar"></span> <%= article.created_at.strftime("%B %d, %Y") %></li>
+                    <li><span class="ti-calendar"></span> <%= article.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y") %></li>
                   </ul>
                   <div class="space-10"></div>
                   <%= link_to article_url(article) do %>
