@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 2019_05_08_025817) do
     t.string "content_page"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
   end
 
   create_table "suggested_symptoms", id: false, force: :cascade do |t|
