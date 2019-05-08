@@ -5,7 +5,7 @@ class SymptomsController < ApplicationController
   before_action :set_suggested_symptoms, only: [:index]
 
   def index
-    @user_symptoms = current_user.symptoms
+    @user_symptoms = Symptom.user_tracked(current_user.id)
 
     # Grab all conditions
     # For each condition, list all symptoms and place them in an array
@@ -75,6 +75,7 @@ class SymptomsController < ApplicationController
   def edit
 
   end
+
   def update
 
   end
@@ -88,7 +89,7 @@ class SymptomsController < ApplicationController
         @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})
     end
 
-    @value_collection.push({ 
+    @value_collection.push({
       "name" => symptom.name,
       "meta" => symptom.name,
       "data" => @value_data,

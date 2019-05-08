@@ -13,4 +13,6 @@ class Symptom < ApplicationRecord
   scope :primary, -> { joins(:suggested_symptoms).where(suggested_symptoms: {primary_condition: true}) }
 
   scope :supporting, -> { joins(:suggested_symptoms).where(suggested_symptoms: {primary_condition: false}) }
+
+  scope :user_tracked, -> (user_id) { joins(:symptoms_users).where(symptoms_users: {user_tracked: true, user_id: user_id}) }
 end

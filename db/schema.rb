@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_08_032642) do
+ActiveRecord::Schema.define(version: 2019_05_08_025817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -133,6 +133,7 @@ ActiveRecord::Schema.define(version: 2019_04_08_032642) do
     t.float "assistance_threshold"
     t.string "unit_of_measure"
     t.boolean "above_assistance", default: true
+    t.boolean "user_tracked", default: false
     t.index ["user_id", "symptom_id"], name: "index_symptoms_users_on_user_id_and_symptom_id"
   end
 

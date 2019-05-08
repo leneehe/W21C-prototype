@@ -7,7 +7,7 @@ class ConditionsController < ApplicationController
     # params[:name].titlize
     condition = current_user.conditions.build(condition_params)
     found_condition = Condition.find_by(name: condition.name)
-    
+
     respond_to do |format|
       if (found_condition)
         current_user.conditions << found_condition

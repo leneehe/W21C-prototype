@@ -3,13 +3,13 @@ class Dashboard::PlanController < ApplicationController
   layout 'main/layout-2'
 
   def index
-    @user_symptoms = current_user.symptoms
+    @user_symptoms = Symptom.user_tracked(current_user.id)
     @goals = current_user.goals
     @events = current_user.events.order(start: :desc).limit(5)
   end
 
   def report
-    @user_symptoms = current_user.symptoms
+    @user_symptoms = Symptom.user_tracked(current_user.id)
     @events = current_user.events
     @legends = legend_colors(@events)
     @goals = current_user.goals.incomplete
@@ -48,7 +48,7 @@ class Dashboard::PlanController < ApplicationController
         @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})
     end
 
-    @value_collection.push({ 
+    @value_collection.push({
       "name" => symptom.name,
       "meta" => symptom.name,
       "data" => @value_data,

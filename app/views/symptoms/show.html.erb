@@ -1,7 +1,6 @@
 <%# No need to use fields_for due to only having to input 1 value %>
 <%# <%= form_for symptom_tracked_symptoms_path(@symptom) do |f|%>
 <%= form_for @tracked_symptom, :url => symptom_tracked_symptoms_path(@symptom) do |f|%>
-<%= console %>
     <div class="form-group">
         <%= f.label :severity_score, "Severity Score:" %>
         <%= f.text_field :severity_score,

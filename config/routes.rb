@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
   get 'organize/index'
-  get 'conditions/new'
-  get 'conditions/create'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
