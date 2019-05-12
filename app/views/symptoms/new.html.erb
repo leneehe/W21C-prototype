@@ -75,8 +75,7 @@
 
           <% @primary_symptoms.each do |symptom| %>
           <div>
-            <strong><%= symptom.name %></strong>
-
+            <strong><%= link_to symptom.name, edit_symptom_path(symptom.id) %></strong>
           </div>
           <% end %>
 
@@ -84,7 +83,7 @@
 
           <% @supporting_symptoms.each do |symptom| %>
           <div>
-            <strong><%= symptom.name %></strong>
+            <strong><%= link_to symptom.name, edit_symptom_path(symptom.id) %></strong>
           </div>
           <% end %>
 
@@ -94,13 +93,83 @@
           <p>Please go to your
           <%= link_to "Profile", user_path(current_user) %> to add the conditions first.</p>
         <% end %>
-        - Track a new symptom
+        <strong><%= link_to "Track a new symptom", 'new#symptoms-step-2', target: '_self' %></strong> (Click Next)
 
       </div>
     </div>
     <div id="symptoms-step-2" class="card animated fadeIn">
       <div class="card-body">
-        Step Content 2
+        <h3>Track a new symptom</h3>
+        <p>You selected a "custom" symptom or measure that you want to track. Fill in the details here:</p>
+
+        <%= form_for @new_user_symptom do |form| %>
+          <div class="form-group row">
+            <%= form.label :name, "Give it a Name:", class: "col-form-label col-sm-4 text-md-right" %>
+            <div class="col-sm-6">
+              <%= form.text_field :name,
+                  autofocus: true,
+                  placeholder: "Symptom",
+                  class: "form-control",
+                  required: true
+              %>
+            </div>
+          </div>
+
+          <%= form.fields_for :symptoms_users do |m| %>
+            <%= m.hidden_field :user_tracked, value: true %>
+
+            <div class="form-group row">
+              <%= m.label :unit_of_measure, "What is it Measured in:", class: "col-form-label col-sm-4 text-md-right" %>
+              <div class="col-sm-4">
+                <%= m.text_field :unit_of_measure,
+                    placeholder: "e.g mL",
+                    class: "form-control",
+                    required: true
+                %>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <%= m.label :normal_range_upper, "Normal Range Upper Bounds:", class: "col-form-label col-sm-4 text-md-right" %>
+              <div class="col-sm-4">
+                <%= m.number_field :normal_range_upper,
+                    placeholder: "e.g 7",
+                    class: "form-control",
+                    required: true
+                %>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= m.label :normal_range_lower, "Normal Range Lower Bounds:", class: "col-form-label col-sm-4 text-md-right" %>
+              <div class="col-sm-4">
+                <%= m.number_field :normal_range_lower,
+                    placeholder: "e.g 2",
+                    class: "form-control",
+                    required: true
+                %>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= m.label :assistance_threshold, "When to Seek Assistance:", class: "col-form-label col-sm-4 text-md-right" %>
+              <div class="col-sm-2">
+                <%= m.select(:above_assistance, [["Above", true], ["Below", false]], {index: nil}) %>
+              </div>
+              <div class="col-sm-2">
+                <%= m.number_field :assistance_threshold,
+                    placeholder: "e.g 5",
+                    class: "form-control",
+                    required: true
+                %>
+              </div>
+            </div>
+
+          <% end %>
+          <div class="form-group row">
+            <div class="col-sm-10 ml-md-auto">
+              <%= form.submit class:"btn btn-outline-primary" %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
     <div id="symptoms-step-3" class="card animated fadeIn">
@@ -111,11 +180,11 @@
   </div>
 </div>
 
-<h2>Track a Symptom</h2>
-<%= form_for @new_user_symptom do |form| %>
+<!-- <h2>Track a Symptom</h2>
+<%# <%= form_for @new_user_symptom do |form| %> %>
   <div class="form-group">
-    <%= form.label :name %>
-    <%= form.text_field :name,
+    <%# <%= form.label :name %> %>
+    <%# <%= form.text_field :name, %>
         autofocus: true,
         placeholder: "Symptom",
         class: "form-control",
@@ -123,42 +192,42 @@
     %>
   </div>
 
-  <%= form.fields_for :symptoms_users do |m| %>
+  <%# <%= form.fields_for :symptoms_users do |m| %> %>
     <div class="form-group">
-      <%= m.label :normal_range_upper %>
-      <%= m.text_field :normal_range_upper,
+      <%# <%= m.label :normal_range_upper %> %>
+      <%# <%= m.text_field :normal_range_upper, %>
           placeholder: "Upper Range",
           class: "form-control",
           required: true
       %>
     </div>
     <div class="form-group">
-      <%= m.label :normal_range_lower %>
-      <%= m.text_field :normal_range_lower,
+      <%# <%= m.label :normal_range_lower %> %>
+      <%# <%= m.text_field :normal_range_lower, %>
           placeholder: "Lower Range",
           class: "form-control",
           required: true
       %>
     </div>
     <div class="form-group">
-      <%= m.label :assistance_threshold %>
-      <%= m.text_field :assistance_threshold,
+      <%# <%= m.label :assistance_threshold %> %>
+      <%# <%= m.text_field :assistance_threshold, %>
           class: "form-control",
           required: true
       %>
     </div>
 
     <div class="form-group">
-      <%= m.label :unit_of_measure %>
-      <%= m.text_field :unit_of_measure,
+      <%# <%= m.label :unit_of_measure %> %>
+      <%# <%= m.text_field :unit_of_measure, %>
           placeholder: "e.g mL",
           class: "form-control",
           required: true
       %>
     </div>
-  <% end %>
+  <%# <% end %> %>
 
   <div class="form-group" style="margin-top: 2rem;">
-    <%= form.submit class:"btn btn-outline-primary" %>
-  </div>
-<% end %>
+    <%# <%= form.submit class:"btn btn-outline-primary" %> %>
+  </div> -->
+<%# <% end %>  %>

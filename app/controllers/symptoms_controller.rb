@@ -73,7 +73,7 @@ class SymptomsController < ApplicationController
   end
 
   def edit
-
+    @symptom = Symptom.find(params[:id])
   end
 
   def update
@@ -115,6 +115,6 @@ private
   def symptom_params
     # params.require(:symptom).permit(:name, :normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure, :above_assistance)
     params.require(:symptom).permit(:name,
-      symptoms_users_attributes: [:normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure, :above_assistance])
+      symptoms_users_attributes: [:normal_range_upper, :normal_range_lower, :assistance_threshold, :unit_of_measure, :above_assistance, :user_tracked])
   end
 end
