@@ -67,7 +67,7 @@
                 <div>Tracked items</div>
               <% end %>
             </li>
-            <li class="sidenav-item<%= current_page?(new_symptom_path) ? ' active' : '' %>">
+            <li class="sidenav-item<%= current_page?(new_symptom_path) || current_page?(symptoms_summary_path)  ? ' active' : '' %>">
               <%= link_to new_symptom_path, class: "sidenav-link" do %>
                 <div>New Tracking</div>
               <% end %>
