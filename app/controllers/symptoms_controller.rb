@@ -2,12 +2,11 @@ class SymptomsController < ApplicationController
   helper_method :build_data_collection
   # Used for health condition info
   layout 'main/layout-2'
-  # before_action :set_suggested_symptoms, only: [:index]
+  before_action :set_user_symptoms, only: %i[index]
   before_action :set_symptom, only: [:edit, :update]
   before_action :set_primary_secondary_symptoms, only: %i[new edit]
 
   def index
-    @user_symptoms = Symptom.user_tracked(current_user.id)
 
     # Grab all conditions
     # For each condition, list all symptoms and place them in an array
@@ -25,6 +24,10 @@ class SymptomsController < ApplicationController
       end
     end
     # # test pdf
+  end
+
+  def summary
+    @user_symptoms = current_user.symptoms_users.where(user_tracked:true)
   end
 
   def show
@@ -56,7 +59,7 @@ class SymptomsController < ApplicationController
         symptom_info = SymptomsUser.create(user_id: current_user.id, symptom_id: @new_user_symptom.id)
         symptom_info.update(symptom_params[:symptoms_users_attributes]["0"])
 
-        format.html { redirect_to symptoms_path, notice: "Item created!" }
+        format.html { redirect_to symptoms_summary_path, notice: "Item created!" }
       else
         format.html { render :new }
       end
@@ -64,15 +67,26 @@ class SymptomsController < ApplicationController
   end
 
   def edit
-    @symptom_attributes = SymptomsUser.find(@symptom.id)
+    @symptom_attributes = SymptomsUser.find_by(symptom_id: @symptom.id)
+    if @symptom.name == "Blood Pressure Systolic"
+      @symptom2 = Symptom.find_by(name: "Blood Pressure Diastolic")
+    elsif @symptom.name == "Blood Pressure Diastolic"
+      @symptom2 = Symptom.find_by(name: "Blood Pressure Systolic")
+    end
   end
 
   def update
     respond_to do |format|
       if @symptom.save
+
         symptom_info = current_user.symptoms_users.find_by(symptom_id: params[:id])
         symptom_info.update(symptom_params[:symptoms_users_attributes]["0"])
-        format.html { redirect_to symptoms_path, notice: "Symptom tracked!" }
+        if @symptom2
+          symptom_info = current_user.symptoms_users.find_by(symptom_id: @symptom2.id)
+          symptom_info.update(symptom_params[:symptoms_users_attributes]["0"])
+        end
+
+        format.html { redirect_to symptoms_summary_path, notice: "Symptom tracked!" }
       else
         format.html { render :edit }
       end
@@ -102,6 +116,10 @@ class SymptomsController < ApplicationController
 
 
 private
+  def set_user_symptoms
+    @user_symptoms = Symptom.user_tracked(current_user.id)
+  end
+
   def set_symptom
     @symptom = Symptom.find(params[:id])
   end
@@ -120,15 +138,6 @@ private
       @primary_symptoms.flatten!.uniq!
       @supporting_symptoms.flatten!.uniq!
     end
-  end
-
-  def set_suggested_symptoms
-    user_conditions = current_user.conditions
-    @user_symptoms = current_user.symptoms
-    user_conditions.each do |condition|
-      @user_symptoms << condition.symptoms
-    end
-    # @user_symptoms.flatten!.uniq!
   end
 
   def symptom_params

@@ -2,11 +2,14 @@
 <%= javascript_include_tag "health-charts" %>
 
 <h1>Symptoms</h1>
-<p>All View</p>
+<p>All View |
+  <%= link_to "Track Summary", symptoms_summary_path %>
+</p>
 
 <main id="chart-area">
   <!-- Loop through current user's self-tracking conditions -->
   <% @user_symptoms.each_with_index do |symptom, index| %>
+  <%= content_tag :span, nil, id: symptom.name %>
   <!-- Build Graphing template -->
     <% symptom_info = SymptomsUser.find_by(user_id: current_user.id, symptom_id: symptom.id) %>
     <%= content_tag "section", id: "chart-area-#{index}" , class: 'chart-container' do %>
@@ -34,7 +37,7 @@
     <% end %>
 
     <% if symptom_info.assistance_threshold %>
-       <p>Please seek assistance if your current measurement is <%= symptom_info.above_assistance ? "above" : "below" %> <%= symptom_info.assistance_threshold %>.</p>   
+       <p>Please seek assistance if your current measurement is <%= symptom_info.above_assistance ? "above" : "below" %> <%= symptom_info.assistance_threshold %>.</p>
     <% end %>
 
   <% end %>

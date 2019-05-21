@@ -1,0 +1,128 @@
+<!-- Smart Wizard plugin -->
+<% content_for :styles do %>
+  <%= stylesheet_link_tag 'libs/smartwizard/smartwizard.css', media: 'all' %>
+
+  <%= stylesheet_link_tag 'datatables/datatables.css', media: 'all' %>
+<% end %>
+<% content_for :scripts do %>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <%= javascript_include_tag 'libs/smartwizard/smartwizard.js' %>
+  <%= javascript_include_tag 'libs/validate/validate.js' %>
+  <%= javascript_include_tag 'dashboard/forms_wizard_symptoms.js' %>
+
+  <%= javascript_include_tag 'datatables/datatables.js' %>
+  <%= javascript_include_tag 'dashboard/tables_datatables.js' %>
+<% end %>
+
+<h1>Helping Yourself - Set up Self-tracking</h1>
+<div id="summary">
+
+  <ul class="card px-4 pt-3 mb-3">
+    <li>
+      <a href="#symptoms-step-0" class="mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-ios-play"></span>
+        <div class="text-muted small">GETTING STARTED</div>
+        Start
+      </a>
+    </li>
+    <li>
+      <a href="#symptoms-step-1" class="mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-number">1</span>
+        <div class="text-muted small">FIRST STEP</div>
+        What to Track
+      </a>
+    </li>
+    <li>
+      <a href="#symptoms-step-2" class="mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-number">2</span>
+        <div class="text-muted small">SECOND STEP</div>
+        Customize
+      </a>
+    </li>
+    <li>
+      <a href="#symptoms-step-3" class="mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-number">3</span>
+        <div class="text-muted small">SUMMARY</div>
+        Summary
+      </a>
+    </li>
+  </ul>
+
+  <div class="mb-3">
+    <div id="symptoms-step-0" class="card animated fadeIn">
+      <div class="card-body">
+
+      </div>
+    </div>
+    <div id="symptoms-step-1" class="card animated fadeIn">
+      <div class="card-body">
+
+      </div>
+    </div>
+    <div id="symptoms-step-2" class="card animated fadeIn">
+      <div class="card-body">
+        <h3>Track a new symptom</h3>
+
+      </div>
+    </div>
+    <div id="symptoms-step-3" class="card animated fadeIn">
+      <div class="card-body">
+        <div class="col-sm-12">
+
+        <h3>Your Tracking Summary</h3>
+        <table class="datatables-symptoms table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Symptom/Item</th>
+              <th>Measured in</th>
+              <th>Normal Range Upper</th>
+              <th>Normal Range Lower</th>
+              <th>When to Seek Help</th>
+              <th>Make Changes?</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @user_symptoms.each do |symptom| %>
+              <tr>
+                <td>
+                  <%= link_to symptom.find_name, symptoms_path(anchor: symptom.find_name) %>
+                </td>
+                <td>
+                  <%= symptom.unit_of_measure %>
+                </td>
+                <td>
+                  <%= symptom.normal_range_upper %> <%= symptom.unit_of_measure %>
+                </td>
+                <td>
+                  <%= symptom.normal_range_lower %> <%= symptom.unit_of_measure %>
+                </td>
+                <td>
+                  <% if symptom.above_assistance %>
+                    >
+                  <% else %>
+                    <
+                  <% end %>
+                  <%= symptom.assistance_threshold %> <%= symptom.unit_of_measure %>
+                </td>
+                <td>
+                  <%= button_to "Edit", edit_symptom_path(symptom.symptom_id), method: :get, class:"btn-submit btn btn-primary ml-2" %>
+                  <!-- <button class="btn-submit btn btn-primary mr-2" type="button" name="edit">Edit</button> -->
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+
+        </table>
+
+        <%= button_to "Add an Item", new_symptom_path, method: :get, class:"btn-submit btn btn-primary pull-right mb-4"  %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

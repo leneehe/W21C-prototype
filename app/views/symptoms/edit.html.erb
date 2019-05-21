@@ -98,8 +98,15 @@
     </div>
     <div id="symptoms-step-2" class="card animated fadeIn">
       <div class="card-body">
-        <h3>Track <%= @symptom.name %></h3>
-        <p>You chose <%= @symptom.name %> as something you want to track.</p>
+
+        <% if @symptom2 %>
+          <h3>Track Blood Pressure</h3>
+          <p>You chose Blood Pressure as something you want to track.</p>
+          <p>Blood Pressure is measured as a combination of two pressures - systolic pressure and diastolic pressure.</p>
+        <% else %>
+          <h3>Track <%= @symptom.name %></h3>
+          <p>You chose <%= @symptom.name %> as something you want to track.</p>
+        <% end %>
         <p>Typical ranges for <%= @symptom.name %> are: </p>
 
           <%= form_for @symptom, html: {id: "symptomATracking"} do |form| %>
@@ -156,10 +163,74 @@
 
           <% end %>
           <div class="form-group row">
-            <div class="col-sm-10 ml-md-auto">
-              <%= form.submit class:"btn btn-outline-primary" %>
+            <div class="col-sm-12 ml-md-auto">
+              <%= form.submit "Track Symptom", class:"btn btn-outline-primary pull-right" %>
             </div>
           </div>
+          <% end %>
+
+
+          <% if @symptom2 %>
+          <p>Typical ranges for <%= @symptom2.name %> are: </p>
+            <%= form_for @symptom2, html: {id: "symptomBTracking"} do |form| %>
+
+            <%= form.fields_for :symptoms_users do |m| %>
+              <%= m.hidden_field :user_tracked, value: true %>
+              <%= m.hidden_field :user_id, value: current_user.id %>
+
+              <div class="form-group row">
+                <%= m.label :normal_range_upper, "Normal Range Upper Bounds:", class: "col-form-label col-sm-4 text-md-right" %>
+                <div class="col-sm-8">
+                  <div class="col-sm-6">
+                    <%= m.number_field :normal_range_upper,
+                        class: "form-control",
+                        required: true
+                    %>
+                  </div>
+                  <div class="col-sm-2">
+                    <%= @symptom_attributes.unit_of_measure %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <%= m.label :normal_range_lower, "Normal Range Lower Bounds:", class: "col-form-label col-sm-4 text-md-right" %>
+                <div class="col-sm-8">
+                  <div class="col-sm-6">
+                    <%= m.number_field :normal_range_lower,
+                    class: "form-control",
+                    required: true
+                    %>
+                  </div>
+                  <div class="col-sm-2">
+                    <%= @symptom_attributes.unit_of_measure %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <%= m.label :assistance_threshold, "When to Seek Assistance:", class: "col-form-label col-sm-4 text-md-right" %>
+                <div class="col-sm-8">
+                  <div class="col-sm-2">
+                    <%= m.select(:above_assistance, [["Above", true], ["Below", false]], {index: nil}) %>
+                  </div>
+                  <div class="col-sm-4">
+                    <%= m.number_field :assistance_threshold,
+                    class: "form-control",
+                    required: true
+                    %>
+                  </div>
+                  <div class="col-sm-2">
+                    <%= @symptom_attributes.unit_of_measure %>
+                  </div>
+                </div>
+              </div>
+
+            <% end %>
+            <div class="form-group row">
+              <div class="col-sm-12 ml-md-auto">
+                <%= form.submit "Track Symptom", class:"btn btn-outline-primary pull-right" %>
+              </div>
+            </div>
+            <% end %>
           <% end %>
       </div>
     </div>

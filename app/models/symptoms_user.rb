@@ -4,4 +4,8 @@ class SymptomsUser < ApplicationRecord
   validates :above_assistance, inclusion: { in: [true, false] }
   belongs_to :user
   belongs_to :symptom
+
+  def find_name
+    Symptom.find(self.symptom_id).name
+  end
 end

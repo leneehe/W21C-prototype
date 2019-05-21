@@ -386,10 +386,9 @@ asthma.suggested_symptoms.create!(
 )
 
 weight = heart_failure.symptoms.create!(
-  name: "Weight"
-)
-weight.symptoms_users.update(
-  normal_range_upper: 180, normal_range_lower: 120, assistance_threshold: 90, unit_of_measure: "lbs", user_id: user.id
+  name: "Weight",
+  symptoms_users_attributes: [
+  normal_range_upper: 180, normal_range_lower: 120, assistance_threshold: 90, unit_of_measure: "lbs", user_id: user.id]
 )
 
 heart_failure.suggested_symptoms.create!(
@@ -412,10 +411,8 @@ heart_failure.suggested_symptoms.create!(
 )
 
 pain = ischemic.symptoms.create!(
-  name: "Pain"
-)
-pain.symptoms_users.update(
-   normal_range_upper: 10, normal_range_lower: 1, assistance_threshold: 1, unit_of_measure: "", user_id: user.id
+  name: "Pain", symptoms_users_attributes: [
+   normal_range_upper: 10, normal_range_lower: 1, assistance_threshold: 1, unit_of_measure: "", user_id: user.id]
 )
 ischemic.suggested_symptoms.create!(
   symptom_id: breath.id, primary_condition: false

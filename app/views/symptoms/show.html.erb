@@ -1,9 +1,12 @@
 <%# No need to use fields_for due to only having to input 1 value %>
 <%# <%= form_for symptom_tracked_symptoms_path(@symptom) do |f|%>
-<%= form_for @tracked_symptom, :url => symptom_tracked_symptoms_path(@symptom) do |f|%>
-    <div class="form-group">
-        <%= f.label :severity_score, "Severity Score:" %>
-        <%= f.text_field :severity_score,
+<h3>Add A Record</h3>
+<div class="col-sm-4">
+  <h5><i><%= @symptom.name %></i></h5>
+  <%= form_for @tracked_symptom, :url => symptom_tracked_symptoms_path(@symptom) do |f|%>
+      <%= f.label :severity_score, "Severity Score:" %>
+      <div class="input-group">
+        <%= f.number_field :severity_score,
             autofocus: true,
             placeholder: "Severity Score",
             class: "form-control",
@@ -11,6 +14,9 @@
         %>
         <%= f.hidden_field :symptom_id,  :value => @symptom.id %>
         <%= f.hidden_field :user_id,  :value => current_user.id %>
-      <%= f.submit "Submit" %>
-  </div>
-<% end %>
+        <div class="input-group-append">
+          <%= f.submit "Add", class:"btn-submit btn btn-primary" %>
+        </div>
+    </div>
+  <% end %>
+</div>
