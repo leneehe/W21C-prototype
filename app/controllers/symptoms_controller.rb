@@ -2,7 +2,9 @@ class SymptomsController < ApplicationController
   helper_method :build_data_collection
   # Used for health condition info
   layout 'main/layout-2'
-  before_action :set_suggested_symptoms, only: [:index]
+  # before_action :set_suggested_symptoms, only: [:index]
+  before_action :set_symptom, only: [:edit, :update]
+  before_action :set_primary_secondary_symptoms, only: %i[new edit]
 
   def index
     @user_symptoms = Symptom.user_tracked(current_user.id)
@@ -37,17 +39,6 @@ class SymptomsController < ApplicationController
   end
 
   def new
-    user_conditions = current_user.conditions
-      @primary_symptoms = []
-      @supporting_symptoms = []
-      user_conditions.each do |condition|
-        @primary_symptoms << condition.symptoms.primary
-        @supporting_symptoms << condition.symptoms.supporting
-      end
-    if user_conditions != []
-      @primary_symptoms.flatten!.uniq!
-      @supporting_symptoms.flatten!.uniq!
-    end
     @new_user_symptom = current_user.symptoms.build
     # build join table to allow accepts_nested_attributes_for
     @new_user_symptom.symptoms_users.build
@@ -56,9 +47,9 @@ class SymptomsController < ApplicationController
   def create
     @new_user_symptom = current_user.symptoms.build(name: symptom_params[:name])
     # Check if symptom already exists based on name
-    @existing_condition = Symptom.where("lower(name) = ?", symptom_params[:name].downcase).first
+    @existing_symptom = Symptom.where("lower(name) = ?", symptom_params[:name].downcase).first
 
-    @new_user_symptom = @existing_condition ? @existing_condition : @new_user_symptom
+    @new_user_symptom = @existing_symptom ? @existing_symptom : @new_user_symptom
 
     respond_to do |format|
       if @new_user_symptom.save
@@ -73,11 +64,19 @@ class SymptomsController < ApplicationController
   end
 
   def edit
-    @symptom = Symptom.find(params[:id])
+    @symptom_attributes = SymptomsUser.find(@symptom.id)
   end
 
   def update
-
+    respond_to do |format|
+      if @symptom.save
+        symptom_info = current_user.symptoms_users.find_by(symptom_id: params[:id])
+        symptom_info.update(symptom_params[:symptoms_users_attributes]["0"])
+        format.html { redirect_to symptoms_path, notice: "Symptom tracked!" }
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   def build_data_collection(symptom, unit, symptom_info)
@@ -103,6 +102,26 @@ class SymptomsController < ApplicationController
 
 
 private
+  def set_symptom
+    @symptom = Symptom.find(params[:id])
+  end
+
+  def set_primary_secondary_symptoms
+    user_conditions = current_user.conditions
+    @primary_symptoms = []
+    @supporting_symptoms = []
+
+    user_conditions.each do |condition|
+      @primary_symptoms << condition.symptoms.primary
+      @supporting_symptoms << condition.symptoms.supporting
+    end
+
+    if user_conditions != []
+      @primary_symptoms.flatten!.uniq!
+      @supporting_symptoms.flatten!.uniq!
+    end
+  end
+
   def set_suggested_symptoms
     user_conditions = current_user.conditions
     @user_symptoms = current_user.symptoms

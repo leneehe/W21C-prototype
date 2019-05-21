@@ -1,4 +1,9 @@
 class Symptom < ApplicationRecord
+  validates :name, presence: true
+  validates_each :symptoms_users do |record, attr, value|
+    record.errors.add(attr, "Can't be blank") if value == ''
+  end
+
   has_many :tracked_symptoms
 
   has_many :symptoms_users
@@ -8,7 +13,7 @@ class Symptom < ApplicationRecord
   has_many :conditions, through: :suggested_symptoms
 
   accepts_nested_attributes_for :tracked_symptoms
-  accepts_nested_attributes_for :symptoms_users
+  accepts_nested_attributes_for :symptoms_users, :reject_if => :all_blank
 
   scope :primary, -> { joins(:suggested_symptoms).where(suggested_symptoms: {primary_condition: true}) }
 

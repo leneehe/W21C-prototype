@@ -10,7 +10,8 @@
 <% end %>
 
 <h1>Helping Yourself - Set up Self-tracking</h1>
-<div id="symptomsTracking">
+<%= form_for @new_user_symptom, html: {id: "symptomsTracking"} do |form| %>
+<%# csrf_meta_tags %>
   <ul class="card px-4 pt-3 mb-3">
     <li>
       <a href="#symptoms-step-0" class="mb-3">
@@ -93,7 +94,7 @@
           <p>Please go to your
           <%= link_to "Profile", user_path(current_user) %> to add the conditions first.</p>
         <% end %>
-        <strong><%= link_to "Track a new symptom", 'new#symptoms-step-2', target: '_self' %></strong> (Click Next)
+        <strong><%= link_to "Track a new symptom", '/symptoms/new#symptoms-step-2', target: '_self' %></strong> (Click Next)
 
       </div>
     </div>
@@ -102,7 +103,6 @@
         <h3>Track a new symptom</h3>
         <p>You selected a "custom" symptom or measure that you want to track. Fill in the details here:</p>
 
-        <%= form_for @new_user_symptom do |form| %>
           <div class="form-group row">
             <%= form.label :name, "Give it a Name:", class: "col-form-label col-sm-4 text-md-right" %>
             <div class="col-sm-6">
@@ -117,6 +117,7 @@
 
           <%= form.fields_for :symptoms_users do |m| %>
             <%= m.hidden_field :user_tracked, value: true %>
+            <%= m.hidden_field :user_id, value: current_user.id %>
 
             <div class="form-group row">
               <%= m.label :unit_of_measure, "What is it Measured in:", class: "col-form-label col-sm-4 text-md-right" %>
@@ -166,10 +167,9 @@
           <% end %>
           <div class="form-group row">
             <div class="col-sm-10 ml-md-auto">
-              <%= form.submit class:"btn btn-outline-primary" %>
+              <%# form.submit class:"btn btn-outline-primary" %>
             </div>
           </div>
-        <% end %>
       </div>
     </div>
     <div id="symptoms-step-3" class="card animated fadeIn">
@@ -178,56 +178,4 @@
       </div>
     </div>
   </div>
-</div>
-
-<!-- <h2>Track a Symptom</h2>
-<%# <%= form_for @new_user_symptom do |form| %> %>
-  <div class="form-group">
-    <%# <%= form.label :name %> %>
-    <%# <%= form.text_field :name, %>
-        autofocus: true,
-        placeholder: "Symptom",
-        class: "form-control",
-        required: true
-    %>
-  </div>
-
-  <%# <%= form.fields_for :symptoms_users do |m| %> %>
-    <div class="form-group">
-      <%# <%= m.label :normal_range_upper %> %>
-      <%# <%= m.text_field :normal_range_upper, %>
-          placeholder: "Upper Range",
-          class: "form-control",
-          required: true
-      %>
-    </div>
-    <div class="form-group">
-      <%# <%= m.label :normal_range_lower %> %>
-      <%# <%= m.text_field :normal_range_lower, %>
-          placeholder: "Lower Range",
-          class: "form-control",
-          required: true
-      %>
-    </div>
-    <div class="form-group">
-      <%# <%= m.label :assistance_threshold %> %>
-      <%# <%= m.text_field :assistance_threshold, %>
-          class: "form-control",
-          required: true
-      %>
-    </div>
-
-    <div class="form-group">
-      <%# <%= m.label :unit_of_measure %> %>
-      <%# <%= m.text_field :unit_of_measure, %>
-          placeholder: "e.g mL",
-          class: "form-control",
-          required: true
-      %>
-    </div>
-  <%# <% end %> %>
-
-  <div class="form-group" style="margin-top: 2rem;">
-    <%# <%= form.submit class:"btn btn-outline-primary" %> %>
-  </div> -->
-<%# <% end %>  %>
+<% end %>

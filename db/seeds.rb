@@ -36,324 +36,266 @@ mental_health = Condition.create!(name:"Mental Health")
 obesity = Condition.create!(name:"Obesity")
 
 #-----Prepopulate Symptoms-----
-blood_glucose = user.symptoms.create!(
-  name: "Blood Glucose"
-)
-blood_glucose.symptoms_users.update(
+blood_glucose = Symptom.create!(
+  name: "Blood Glucose", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 11,
   normal_range_lower: 4,
   assistance_threshold: 4,
   unit_of_measure: "mmol/L",
-  above_assistance: false
+  above_assistance: false]
 )
 
-stress_level = user.symptoms.create!(
-  name: "Stress Level"
-)
-stress_level.symptoms_users.update(
+stress_level = Symptom.create!(
+  name: "Stress Level", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
   unit_of_measure: "",
   above_assistance: true
-)
+])
 
-mood = user.symptoms.create!(
-  name: "Mood"
-)
-mood.symptoms_users.update(
+mood = Symptom.create!(
+  name: "Mood", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
   unit_of_measure: "",
-  above_assistance: true
+  above_assistance: true]
 )
 
-sleep = user.symptoms.create!(
-  name: "Sleep"
-)
-sleep.symptoms_users.update(
+sleep = Symptom.create!(
+  name: "Sleep", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 8,
   normal_range_lower: 7,
   assistance_threshold: 7,
   unit_of_measure: "hours/night",
-  above_assistance: false
+  above_assistance: false]
 )
 
-loneliness = user.symptoms.create!(
-  name: "Loneliness"
-)
-loneliness.symptoms_users.update(
+loneliness = Symptom.create!(
+  name: "Loneliness", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
   unit_of_measure: "",
-  above_assistance: true
+  above_assistance: true]
 )
 
-blood_pressure_systolic = user.symptoms.create!(
-  name: "Blood Pressure Systolic"
-)
-blood_pressure_systolic.symptoms_users.update(
+blood_pressure_systolic = Symptom.create!(
+  name: "Blood Pressure Systolic", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 140,
   normal_range_lower: 120,
   assistance_threshold: 120,
   unit_of_measure: "mmHg",
-  above_assistance: false
+  above_assistance: false]
 )
 
 
-blood_pressure_diastolic = user.symptoms.create!(
-  name: "Blood Pressure Diastolic"
-)
-blood_pressure_diastolic.symptoms_users.update(
+blood_pressure_diastolic = Symptom.create!(
+  name: "Blood Pressure Diastolic", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 90,
   normal_range_lower: 80,
   assistance_threshold: 80,
   unit_of_measure: "mmHg",
-  above_assistance: false
+  above_assistance: false]
 )
 
-resting_heart_rate = user.symptoms.create!(
-  name: "Resting Heart Rate"
-)
-resting_heart_rate.symptoms_users.update(
+resting_heart_rate = Symptom.create!(
+  name: "Resting Heart Rate", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 100,
   normal_range_lower: 40,
   assistance_threshold: 100,
   unit_of_measure: "BPM",
-  above_assistance: true
+  above_assistance: true]
 )
 
-tiredness = user.symptoms.create!(
-  name: "Tiredness/Exhaustion/Energy"
-)
-tiredness.symptoms_users.update(
+tiredness = Symptom.create!(
+  name: "Tiredness/Exhaustion/Energy", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
   unit_of_measure: "",
-  above_assistance: true
+  above_assistance: true]
 )
 
-edema = user.symptoms.create!(
-  name: "Edema (Leg/Ankle/Swelling)"
-)
-edema.symptoms_users.update(
+edema = Symptom.create!(
+  name: "Edema (Leg/Ankle/Swelling)", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
   unit_of_measure: "",
-  above_assistance: true
+  above_assistance: true]
 )
 
-medication_taken = user.symptoms.create!(
-  name: "Medication Taken"
-)
-medication_taken.symptoms_users.update(
+medication_taken = Symptom.create!(
+  name: "Medication Taken", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 1, #user 1 & 0 as binary yes/no
   normal_range_lower: 0,
   assistance_threshold: 1,
   unit_of_measure: "",
-  above_assistance: false
+  above_assistance: false]
 )
 
-smoking = user.symptoms.create!(
-  name: "Smoking"
-)
-smoking.symptoms_users.update(
+smoking = Symptom.create!(
+  name: "Smoking", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 30,
   normal_range_lower: 0,
   assistance_threshold: 0,
   unit_of_measure: "cigarettes/day",
-  above_assistance: true
+  above_assistance: true]
 )
 
-oxygen_therapy = user.symptoms.create!(
-  name: "Oxygen Therapy"
-)
-oxygen_therapy.symptoms_users.update(
+oxygen_therapy = Symptom.create!(
+  name: "Oxygen Therapy", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 100,
   normal_range_lower: 0,
   assistance_threshold: 2,
   unit_of_measure: "L/min",
-  above_assistance: false
+  above_assistance: false]
 )
 
-breath = user.symptoms.create!(
-  name: "Shortness of Breath"
-)
-breath.symptoms_users.update(
+breath = Symptom.create!(
+  name: "Shortness of Breath", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 100,
   normal_range_lower: 95,
   assistance_threshold: 95,
   unit_of_measure: "O2 saturation (%)",
-  above_assistance: false
+  above_assistance: false]
 )
 
-cough = user.symptoms.create!(
-  name: "Cough"
-)
-cough.symptoms_users.update(
+cough = Symptom.create!(
+  name: "Cough", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
   unit_of_measure: "",
-  above_assistance: true
+  above_assistance: true]
 )
 
-wheezing = user.symptoms.create!(
-  name: "Wheezing"
-)
-wheezing.symptoms_users.update(
+wheezing = Symptom.create!(
+  name: "Wheezing", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
   unit_of_measure: "",
-  above_assistance: true
+  above_assistance: true]
 )
 
-lung_capacity = user.symptoms.create!(
-  name: "Total Lung Capacity"
-)
-lung_capacity.symptoms_users.update(
+lung_capacity = Symptom.create!(
+  name: "Total Lung Capacity", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 6,
   normal_range_lower: 4,
   assistance_threshold: 4,
   unit_of_measure: "Litres of O2",
-  above_assistance: false
+  above_assistance: false]
 )
 
-impacted_activities = user.symptoms.create!(
-  name: "(Asthma) Impacted Activities"
-)
-impacted_activities.symptoms_users.update(
+impacted_activities = Symptom.create!(
+  name: "(Asthma) Impacted Activities", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 2, #0 = no, 1 = somewhat, 2 = completely
   normal_range_lower: 1,
   assistance_threshold: 0,
   unit_of_measure: "No, Somewhat, Completely",
-  above_assistance: true
+  above_assistance: true]
 )
 
-asthma_medication_taken = user.symptoms.create!(
-  name: "(Asthma) Medication Taken"
-)
-asthma_medication_taken.symptoms_users.update(
+asthma_medication_taken = Symptom.create!(
+  name: "(Asthma) Medication Taken", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 8,
   normal_range_lower: 0,
   assistance_threshold: 1,
   unit_of_measure: "Puffs per Day",
-  above_assistance: false
+  above_assistance: false]
 )
 
-allergens = user.symptoms.create!(
-  name: "Allergens or Triggers Present"
-)
-allergens.symptoms_users.update(
+allergens = Symptom.create!(
+  name: "Allergens or Triggers Present", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 1, # 0 = no, 1 = yes
   normal_range_lower: 0,
   assistance_threshold: 0,
   unit_of_measure: "",
-  above_assistance: true
+  above_assistance: true]
 )
 
-bmi = user.symptoms.create!(
-  name: "BMI"
-)
-bmi.symptoms_users.update(
+bmi = Symptom.create!(
+  name: "BMI", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 24.9,
   normal_range_lower: 18.5,
   assistance_threshold: 18.5,
   unit_of_measure: "Weight(kg)/Height(cm)^2",
-  above_assistance: false
+  above_assistance: false]
 )
 
-dry_hacking_cough = user.symptoms.create!(
-  name: "Dry Hacking Cough"
-)
-dry_hacking_cough.symptoms_users.update(
+dry_hacking_cough = Symptom.create!(
+  name: "Dry Hacking Cough", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
   unit_of_measure: "",
-  above_assistance: true
+  above_assistance: true]
 )
 
-discomfort = user.symptoms.create!(
-  name: "Discomfort/Swelling in Abdomen"
-)
-discomfort.symptoms_users.update(
+discomfort = Symptom.create!(
+  name: "Discomfort/Swelling in Abdomen", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
   unit_of_measure: "",
-  above_assistance: true
+  above_assistance: true]
 )
 
-dizziness = user.symptoms.create!(
-  name: "Dizziness"
-)
-dizziness.symptoms_users.update(
+dizziness = Symptom.create!(
+  name: "Dizziness", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
   unit_of_measure: "",
-  above_assistance: true
+  above_assistance: true]
 )
 
-appetite = user.symptoms.create!(
-  name: "Appetite"
-)
-appetite.symptoms_users.update(
+appetite = Symptom.create!(
+  name: "Appetite", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
   unit_of_measure: "",
-  above_assistance: false
+  above_assistance: false]
 )
 
-nausea = user.symptoms.create!(
-  name: "Nausea"
-)
-nausea.symptoms_users.update(
+nausea = Symptom.create!(
+  name: "Nausea", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
   unit_of_measure: "",
-  above_assistance: true
+  above_assistance: true]
 )
 
-sweatiness = user.symptoms.create!(
-  name: "Sweatiness/Heat"
-)
-sweatiness.symptoms_users.update(
+sweatiness = Symptom.create!(
+  name: "Sweatiness/Heat", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
   unit_of_measure: "",
-  above_assistance: true
+  above_assistance: true]
 )
 
-social_activities = user.symptoms.create!(
-  name: "Social Activities"
-)
-social_activities.symptoms_users.update(
+social_activities = Symptom.create!(
+  name: "Social Activities", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
   unit_of_measure: "Activities per week",
-  above_assistance: false
+  above_assistance: false]
 )
 
-vitamin_d = user.symptoms.create!(
-  name: "Vitamin D"
-)
-vitamin_d.symptoms_users.update(
+vitamin_d = Symptom.create!(
+  name: "Vitamin D", symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 800,
   normal_range_lower: 600,
   assistance_threshold: 600,
   unit_of_measure: "International Units (IU)",
-  above_assistance: false
+  above_assistance: false]
 )
 
 # ------ Suggested Symptoms for conditions ------
@@ -610,7 +552,7 @@ Resource.create!(title: "High Blood Pressure Overview",
               <p>Link: <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw62787">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw62787</a></p>
               <div class="space-30"></div>
               <h3>References:</h3>
-              <p>MyHealth.Alberta.ca. High Blood Pressure – Topic Overview. 
+              <p>MyHealth.Alberta.ca. High Blood Pressure – Topic Overview.
                 <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw62787">
                   https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw62787</a>
                   . Accessed 2018 Oct 11.</p>})
@@ -1215,7 +1157,7 @@ Resource.create!(title: "Goals and Goal Setting",
               <div class="space-30"></div>
               <h3>For more information on goals and goal setting, talk to your doctor, or visit MyHealth.Alberta.ca:</h3>
               <p><a href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=abk7429">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=abk7429</a></p>
-              <p><a href="https://myhealth.alberta.ca/Alberta/Pages/Setting-smart-goals.aspx">https://myhealth.alberta.ca/Alberta/Pages/Setting-smart-goals.aspx</a></p>   
+              <p><a href="https://myhealth.alberta.ca/Alberta/Pages/Setting-smart-goals.aspx">https://myhealth.alberta.ca/Alberta/Pages/Setting-smart-goals.aspx</a></p>
               <div class="space-30"></div>
               <h3>Communicating your goals with your care providers</h3>
               <p>Whether the idea for a health-related change came from you or from a care provider, it’s a good idea for you to tell
