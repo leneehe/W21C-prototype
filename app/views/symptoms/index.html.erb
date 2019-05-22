@@ -26,7 +26,7 @@
       <% if !symptom.tracked_symptoms.empty? %>
         <!-- Chart -->
         <%# Severity scores is an array of hashes [{x,y},{x,y}] %>
-        <%= content_tag "div", class: "chart", id: "chart#{index}", data: {nodes: build_data_collection(symptom, unit_of_measure, symptom_info) }, style: "height: 250px; width: 95%;" do %>
+        <%= content_tag "div", class: "chart", id: "chart#{index}", data: {nodes: build_data_collection(symptom, unit_of_measure, symptom_info) }, style: "height: 250px; width: 95%; position: relative" do %>
         <% end %>
 
       <% else %>
