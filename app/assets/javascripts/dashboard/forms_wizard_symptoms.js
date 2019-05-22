@@ -4,6 +4,7 @@ $(function() {
     var form3 = $('#summary');
     var btnSubmit = $('<button class="btn-submit btn btn-primary hidden mr-2" type="submit">Create Symptom</button>');
     var btnSubmit2 = $('<button class="btn-submit btn btn-primary mr-2" type="submit">Create Symptom</button>');
+    var btn3 = $('<button class="btn-submit btn btn-outline-primary mr-2" type="submit">Back to Symptom Tracking</button>');
 
     form.smartWizard({
       selected: 0,  // Initial selected step, 0 = first step
@@ -46,13 +47,17 @@ $(function() {
         method: 'POST',
         data: $(this).serialize()
       }).done(function() {
-        window.location = '/symptoms/summary';
+          window.location = '/symptoms/summary';
         console.log('New symptom created!')
       }).fail(function(jqXHR, textStatus, errorThrown) {
         console.log('Failed to create symptom.', errorThrown)
       })
     })
     */
+
+    btn3.on('click', function() {
+      window.location = '/symptoms';
+    })
 
     form2.smartWizard({
       selected: 2,  // Initial selected step, 0 = first step
@@ -96,7 +101,7 @@ $(function() {
       toolbarSettings: {
         showNextButton: false, // show/hide a Next button
         showPreviousButton: false, // show/hide a Previous button
-        // toolbarExtraButtons: [btnSubmit2]
+        toolbarExtraButtons: [btn3]
       },
       anchorSettings: {
         anchorClickable: false

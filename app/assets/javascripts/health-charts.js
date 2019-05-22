@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     let ticks = [];
     let tickSet = [];
     let xAxisTitle = chartData[0].unit_of_measure;
-    
+
     // Convert the Ruby date into Javascript Date object
     if ("name" in chartData[0]) {
        for (let j = 0; j < chartData.length; j++) {
@@ -143,18 +143,18 @@ document.addEventListener("DOMContentLoaded", function(e){
 
       console.log(context)
       if (context.type === 'point') {
-        
+
         // console.log(chartData[0])
         if (chartData[0].above_assistance) {
           if (context.value['y'] >= chartData[0].assistance_threshold) {
             context.element.attr({
-              style: `stroke: #931c41`
+              style: `stroke: #d7191c`
             });
           }
         } else {
           if (context.value['y'] <= chartData[0].assistance_threshold) {
             context.element.attr({
-              style: `stroke: #931c41;`
+              style: `stroke: #d7191c;`
             });
           }
         }

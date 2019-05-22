@@ -100,6 +100,12 @@
       </ul>
     </li>
 
+    <li class="sidenav-item<%= current_page?(learn_path) ? ' active' : '' %>">
+      <%= link_to learn_path, class: "sidenav-link" do %>
+        <i class="sidenav-icon ion ion-md-book" style="color: #26D07C"></i><div>Learning/Resources</div>
+      <% end %>
+    </li>
+
     <li class="sidenav-item<%= current_page?(user_path(current_user)) ? ' active' : '' %>">
       <%= link_to user_path(current_user), class: "sidenav-link" do %>
         <i class="sidenav-icon ion ion-md-person"></i><div>All About Me</div>
