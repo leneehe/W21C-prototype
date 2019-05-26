@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
 
     end
 
-    def measurements
+    def resources
 
     end
 end

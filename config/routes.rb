@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'dashboard#index'
 
   get 'symptoms/summary', to: 'symptoms#summary', as: 'symptoms_summary'
+  get 'dashboard/resources', to: 'dashboard#resources'
   resources :symptoms do
     resources :tracked_symptoms
   end
