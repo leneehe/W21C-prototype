@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   get 'signup', to: 'pages#signup', as: 'signup'
   get 'login', to: 'pages#login', as: 'login'
 
-  get 'dashboard', to: 'dashboard#index'
+  get 'dashboard', to: 'dashboard/plan#index'
 
   get 'symptoms/summary', to: 'symptoms#summary', as: 'symptoms_summary'
   get 'dashboard/resources', to: 'dashboard#resources'

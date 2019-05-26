@@ -54,6 +54,10 @@ a {
     /* color: #303030; */
 }
 
+.sw-theme-default a, .sw-theme-default a:hover {
+  color: #FFF;
+}
+
 .btn.focus,
 .btn:focus,
 .btn:hover,

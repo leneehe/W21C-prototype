@@ -17,7 +17,7 @@
 <h1>Helping You Make the Most of Your Care Appointments</h1>
 <br><br>
 <!-- Left -->
-<div id="report" class="smartwizard-vertical-left">
+<div id="report">
   <ul>
     <li><a href="#report-start" class="text-nowrap mb-3">
         <span class="sw-done-icon ion ion-md-checkmark"></span>
@@ -83,23 +83,6 @@
         <h3>1. Profile</h3>
         <%= render(partial: 'profile') %>
       </div>
-      <div class="card-body mb-4">
-      Would you like to include this information in your report?
-
-        <label class="switcher pull-right">
-          <input type="checkbox" class="switcher-input">
-          <span class="switcher-indicator">
-            <span class="switcher-yes">
-              <span class="ion ion-md-checkmark"></span>
-            </span>
-            <span class="switcher-no">
-              <span class="ion ion-md-close"></span>
-            </span>
-          </span>
-          <span class="switcher-label"> Yes</span>
-        </label>
-
-      </div>
     </div>
     <div id="report-step-2" class="card animated fadeIn mb-3">
       <div class="card-body">
@@ -108,23 +91,6 @@
 
         <%= render(partial: 'medications') %>
 
-        <div class="card-body my-4 ">
-        Would you like to include this information in your report?
-
-          <label class="switcher pull-right">
-            <input type="checkbox" class="switcher-input">
-            <span class="switcher-indicator">
-              <span class="switcher-yes">
-                <span class="ion ion-md-checkmark"></span>
-              </span>
-              <span class="switcher-no">
-                <span class="ion ion-md-close"></span>
-              </span>
-            </span>
-            <span class="switcher-label"> Yes</span>
-          </label>
-
-        </div>
       </div>
     </div>
     <div id="report-step-3" class="card animated fadeIn mb-3">
@@ -134,23 +100,6 @@
 
           <%= render(partial: 'events', locals:{legends: @legends}) %>
 
-          <div class="card-body mb-4">
-          Would you like to include this information in your report?
-
-            <label class="switcher pull-right">
-              <input type="checkbox" class="switcher-input">
-              <span class="switcher-indicator">
-                <span class="switcher-yes">
-                  <span class="ion ion-md-checkmark"></span>
-                </span>
-                <span class="switcher-no">
-                  <span class="ion ion-md-close"></span>
-                </span>
-              </span>
-              <span class="switcher-label"> Yes</span>
-            </label>
-
-          </div>
       </div>
     </div>
     <div id="report-step-4" class="card animated fadeIn mb-3">
@@ -163,22 +112,7 @@
         <%= render(partial: 'discuss', locals: {goals: @goals, events: @events}) %>
 
       </div>
-      <div class="card-body my-4">
-        Would you like to include this information in your report?
 
-          <label class="switcher pull-right">
-            <input type="checkbox" class="switcher-input">
-            <span class="switcher-indicator">
-              <span class="switcher-yes">
-                <span class="ion ion-md-checkmark"></span>
-              </span>
-              <span class="switcher-no">
-                <span class="ion ion-md-close"></span>
-              </span>
-            </span>
-            <span class="switcher-label"> Yes</span>
-          </label>
-      </div>
     </div>
     <div id="report-step-5" class="card animated fadeIn mb-3">
       <div class="card-body">

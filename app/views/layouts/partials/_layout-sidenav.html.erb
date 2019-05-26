@@ -26,6 +26,11 @@
         <i class="sidenav-icon ion ion-md-home"></i><div>My Care Planner</div>
       <% end %>
       <ul class="sidenav-menu">
+        <li class="sidenav-item<%= current_page?(dashboard_plan_path) ? ' active' : '' %>">
+          <%= link_to dashboard_plan_path, class: "sidenav-link" do %>
+            <div>Care Planner</div>
+          <% end %>
+        </li>
         <li class="sidenav-item<%= current_page?(dashboard_plan_report_path) ? ' active' : '' %>">
           <%= link_to dashboard_plan_report_path, class: "sidenav-link" do %>
             <div>Report for Provider</div>
@@ -122,80 +127,6 @@
       <%= link_to user_path(current_user), class: "sidenav-link" do %>
         <i class="sidenav-icon ion ion-md-person"></i><div>All About Me</div>
       <% end %>
-    </li>
-
-    ---<br>
-    <!-- Old Navigation items -->
-    <li class="sidenav-item<%= current_page?('/dashboard') || request.path == '/' ? ' active open' : '' %>">
-      <%= link_to dashboard_path, class: "sidenav-link" do %>
-      <i class="sidenav-icon ion ion-ios-desktop"></i><div>Dashboard</div>
-      <% end %>
-    </li>
-
-    <li class="sidenav-item<%= current_page_path?('/dashboard/plan') ? ' active open' : '' %>">
-      <%= link_to dashboard_plan_path, class: "sidenav-link sidenav-toggle" do %>
-        <i class="sidenav-icon ion ion-md-journal"></i><div>Plan</div>
-      <% end %>
-      <ul class="sidenav-menu">
-        <li class="sidenav-item<%= current_page?(dashboard_plan_path) ? ' active' : '' %>">
-          <%= link_to dashboard_plan_path, class: "sidenav-link" do %>
-            <i class="sidenav-icon ion ion-md-folder-open"></i><div>Care Planner</div>
-          <% end %>
-        </li>
-        <li class="sidenav-item<%= current_page?(dashboard_organize_events_path) ? ' active' : '' %>">
-          <%= link_to dashboard_organize_events_path, class: "sidenav-link" do %>
-            <i class="sidenav-icon ion ion-md-calendar"></i><div>Keep me Organized</div>
-          <% end %>
-        </li>
-        <li class="sidenav-item<%= current_page?(dashboard_track_journals_path) ? ' active' : '' %>">
-          <%= link_to dashboard_track_journals_path, class: "sidenav-link" do %>
-            <i class="sidenav-icon ion ion-md-create"></i><div>Journals</div>
-          <% end %>
-        </li>
-        <li class="sidenav-item<%= current_page?(dashboard_plan_report_path) ? ' active' : '' %>">
-          <%= link_to dashboard_plan_report_path, class: "sidenav-link" do %>
-            <i class="sidenav-icon ion ion-md-document"></i><div>Report Tool</div>
-          <% end %>
-        </li>
-      </ul>
-    </li>
-
-    <li class="sidenav-item<%= current_page_path?('/dashboard/goals') ? ' active' : '' %>">
-      <%= link_to dashboard_goals_path, class: "sidenav-link" do %>
-        <i class="sidenav-icon ion ion-md-trophy"></i><div>Goal Centre</div>
-      <% end %>
-    </li>
-
-    <!-- Place holder nav menu dropdown-->
-    <li class="sidenav-item<%= current_page_path?('/dashboard/medications') || current_page_path?('/symptoms') ? ' active open' : '' %>">
-      <a href="javascript:void(0)" class="sidenav-link sidenav-toggle">
-        <i class="sidenav-icon ion ion-md-expand"></i><div>Help Me Track</div>
-      </a>
-      <ul class="sidenav-menu">
-        <li class="sidenav-item<%= current_page_path?('/dashboard/medications') ? ' active' : '' %>">
-          <%= link_to dashboard_organize_medications_path, class: "sidenav-link" do %>
-            <i class="sidenav-icon ion ion-md-medical"></i><div>Medication</div>
-          <% end %>
-        </li>
-        <li class="sidenav-item<%= current_page_path?('/symptoms') ? ' active open' : '' %>">
-          <a href="javascript:void(0)" class="sidenav-link sidenav-toggle">
-            <i class="sidenav-icon ion ion-md-heart-half"></i><div>Symptoms</div>
-          </a>
-          <ul class="sidenav-menu">
-            <li class="sidenav-item<%= current_page?(symptoms_path) ? ' active' : '' %>">
-              <%= link_to symptoms_path, class: "sidenav-link" do %>
-                <div>Tracked items</div>
-              <% end %>
-            </li>
-            <li class="sidenav-item<%= current_page?(new_symptom_path) ? ' active' : '' %>">
-              <%= link_to new_symptom_path, class: "sidenav-link" do %>
-                <div>New Tracking</div>
-              <% end %>
-            </li>
-          </ul>
-        </li>
-
-      </ul>
     </li>
 
   </ul>

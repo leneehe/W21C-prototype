@@ -5,7 +5,7 @@ class Dashboard::PlanController < ApplicationController
   def index
     @user_symptoms = Symptom.user_tracked(current_user.id)
     @goals = current_user.goals
-    @events = current_user.events.order(start: :desc).limit(5)
+    @events = current_user.events.order(start: :asc).limit(5)
   end
 
   def report
@@ -21,7 +21,7 @@ class Dashboard::PlanController < ApplicationController
 
   def display_report
 
-    @user_conditions = current_user.health_conditions
+    @user_symptoms = current_user.symptoms
     @events = current_user.events
     @legends = legend_colors(@events)
     @goals = current_user.goals.incomplete
