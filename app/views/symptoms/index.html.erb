@@ -14,6 +14,26 @@
     <% symptom_info = SymptomsUser.find_by(user_id: current_user.id, symptom_id: symptom.id) %>
     <%= content_tag "section", id: "chart-area-#{index}" , class: 'chart-container' do %>
      <!-- Actions -->
+      <div class="col-md-4" style="float:right">
+        <div class="card">
+          <h6 class="card-header border-0">Legend</h6>
+          <div class="card-body p-1">
+            <ul class="legend-chart">
+              <li class="default-style">
+                <div class="symptom-legend" style="background-color: #E06287!important">
+                </div>
+                Normal
+              </li>
+              <li class="default-style">
+                <div class="symptom-legend" style="background-color: #41B6E6!important">
+                </div>
+                Abnormal
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <h2><%= symptom.name %></h2>
       <strong>
         <%= link_to symptom_path(symptom.id) do %>

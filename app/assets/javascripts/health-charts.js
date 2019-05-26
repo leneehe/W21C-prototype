@@ -141,20 +141,19 @@ document.addEventListener("DOMContentLoaded", function(e){
     // Chartist call back for draw events
     chartDisplay.on('draw',function(context) {
 
-      console.log(context)
       if (context.type === 'point') {
 
         // console.log(chartData[0])
         if (chartData[0].above_assistance) {
           if (context.value['y'] >= chartData[0].assistance_threshold) {
             context.element.attr({
-              style: `stroke: #d7191c`
+              style: `stroke: #E06287`
             });
           }
         } else {
           if (context.value['y'] <= chartData[0].assistance_threshold) {
             context.element.attr({
-              style: `stroke: #d7191c;`
+              style: `stroke: #E06287;`
             });
           }
         }
