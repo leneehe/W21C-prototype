@@ -51,6 +51,10 @@ class Dashboard::Organize::EventsController < ApplicationController
     end
   end
 
+  def checklists
+    @entries = current_user.checklists.order('created_at DESC')
+  end
+
 private
   def set_event
     @event = current_user.events.find(params[:id])
