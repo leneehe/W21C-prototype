@@ -15,9 +15,11 @@
         <ol>
         <% @goals.each do |goal| %>
             <li>
-              <%= link_to dashboard_goal_path(goal) do %>
-                <%= goal.specific_1%> – <%= goal.created_at.to_formatted_s(:long)  %>
-              <% end %>
+              <p>
+                <%= goal.specific_1%> (created <%= goal.created_at.to_formatted_s(:short_ordinal)  %>)
+              <br><%= goal.specific_2 %>
+              <br><%= link_to "More goal details", dashboard_goal_path(goal) %>
+              </p>
             </li>
         <% end %>
         </ol>
@@ -32,6 +34,19 @@
       <div class="title-text"><i class="ion ion-md-arrow-round-up text-primary"></i>&nbsp; Upcoming Milestones/Targets</div>
     </div>
     <div class="card-body">
+      <% if @goals.blank? %>
+        You have no upcoming goals!<br>
+      <% end %>
+      <ol>
+      <% @goals.first(3).each do |goal| %>
+          <li>
+            <p>
+              <%= goal.specific_1%> (created <%= goal.created_at.to_formatted_s(:short_ordinal)  %>)
+            <br><%= goal.specific_2 %>
+            <br><%= link_to "More goal details", dashboard_goal_path(goal) %>
+            </p>
+          </li>
+      <% end %>
     </div>
   </div>
   <div class="card mb-4">
@@ -39,13 +54,18 @@
       <div class="title-text"><i class="ion ion-md-checkmark-circle-outline text-primary"></i>&nbsp; Complete Goals</div>
     </div>
     <div class="card-body">
+      <% if @complete_goals.blank? %>
+        You have no completed goals!<br>
+      <% end %>
       <ol>
       <% @complete_goals.each do |goal| %>
-          <li>
-            <%= link_to dashboard_goal_path(goal) do %>
-              <%= goal.specific_1%> - <%= goal.created_at.to_formatted_s(:long)  %>
-            <% end %>
-          </li>
+        <li>
+          <p>
+            <%= goal.specific_1%> (created <%= goal.created_at.to_formatted_s(:short_ordinal)  %>)
+          <br><%= goal.specific_2 %>
+          <br><%= link_to "More goal details", dashboard_goal_path(goal) %>
+          </p>
+        </li>
       <% end %>
       </ol>
     </div>

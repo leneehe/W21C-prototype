@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function(e){
               let xy = tooltip.split(",");
               let formattedX = moment(parseInt(xy[0])).local().format('MMM D hh:MM:SS');
               // console.log(formattedX);
-              return `x: ${formattedX} ,y: ${xy[1]}`;
+              return `x: ${formattedX}<br> y: ${xy[1]}`;
             }
           }),
           Chartist.plugins.ctAxisTitle({

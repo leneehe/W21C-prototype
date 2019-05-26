@@ -1,6 +1,11 @@
 <h1>Edit Goal # <%= @goal.id %></h1>
 <br><br>
 <%= form_for @goal, url: dashboard_goal_path(@goal) do |g| %>
+<h3>Goal Completed?</h3>
+<div class="form-group">
+  <%= g.check_box :complete %> <%= g.label :complete, "Completed" %>
+</div>
+
 <h3>1. Be Specific</h3>
 
 <div class="form-group">
@@ -73,8 +78,10 @@
 <h3>3. Make it Attainable</h3>
 <div class="form-group">
   <%= g.label :attainable_1, "How are you going to measure progress?" %>
+  <span class="text-danger">*</span>
   <%= g.text_field :attainable_1,
-      class: "form-control"
+      class: "form-control",
+      required: true
   %>
 </div>
 <div class="form-group">
@@ -105,46 +112,53 @@
 <h3>4. Make it Rewarding</h3>
 <div class="form-group">
   <%= g.label :rewarding_1, "How will you feel when you reach this goal?" %>
+  <span class="text-danger">*</span>
   <%= g.text_field :rewarding_1,
-      class: "form-control"
+      class: "form-control",
+      required: true
   %>
 </div>
 <div class="form-group">
   <%= g.label :rewarding_2, "What benefits will reaching this goal have for you?" %>
+  <span class="text-danger">*</span>
   <%= g.text_field :rewarding_2,
-      class: "form-control"
+      class: "form-control",
+      required: true
   %>
 </div>
 <div class="form-group">
   <%= g.label :rewarding_3, "Did you set this goal for yourself?" %>
+  <span class="text-danger">*</span>
   <%= g.text_field :rewarding_3,
-      class: "form-control"
+      class: "form-control",
+      required: true
   %>
 </div>
 <div class="form-group">
   <%= g.label :rewarding_4, "Is this something you want to do?" %>
+  <span class="text-danger">*</span>
   <%= g.text_field :rewarding_4,
-      class: "form-control"
+      class: "form-control",
+      required: true
   %>
 </div>
 
 <h3>5. Keep it Timely</h3>
 <div class="form-group">
   <%= g.label :timely_1, "When will you start working towards your goal?" %>
+  <span class="text-danger">*</span>
   <%= g.text_field :timely_1,
-      class: "form-control"
+      class: "form-control",
+      required: true
   %>
 </div>
 <div class="form-group">
   <%= g.label :timely_2, "How you chosen a start date that's comfortable but soon?" %>
+  <span class="text-danger">*</span>
   <%= g.text_field :timely_2,
-      class: "form-control"
+      class: "form-control",
+      required: true
   %>
-</div>
-
-<h3>Goal Completed?</h3>
-<div class="form-group">
-  <%= g.check_box :complete %> <%= g.label :complete, "Completed" %>
 </div>
 
 <div class="form-group">

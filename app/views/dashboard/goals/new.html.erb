@@ -203,8 +203,10 @@
 
             <div class="form-group">
               <%= g.label :attainable_1, "How are you going to measure progress?" %>
+              <span class="text-danger">*</span>
               <%= g.text_field :attainable_1,
-                  class: "form-control"
+                  class: "form-control",
+                  required: true
               %>
             </div>
             <div class="form-group">
@@ -264,26 +266,34 @@
 
             <div class="form-group">
               <%= g.label :rewarding_1, "How will you feel when you reach this goal?" %>
+              <span class="text-danger">*</span>
               <%= g.text_field :rewarding_1,
-                  class: "form-control"
+                  class: "form-control",
+                  required: true
               %>
             </div>
             <div class="form-group">
               <%= g.label :rewarding_2, "What benefits will reaching this goal have for you?" %>
+              <span class="text-danger">*</span>
               <%= g.text_field :rewarding_2,
-                  class: "form-control"
+                  class: "form-control",
+                  required: true
               %>
             </div>
             <div class="form-group">
               <%= g.label :rewarding_3, "Did you set this goal for yourself?" %>
+              <span class="text-danger">*</span>
               <%= g.text_field :rewarding_3,
-                  class: "form-control"
+                  class: "form-control",
+                  required: true
               %>
             </div>
             <div class="form-group">
               <%= g.label :rewarding_4, "Is this something you want to do?" %>
+              <span class="text-danger">*</span>
               <%= g.text_field :rewarding_4,
-                  class: "form-control"
+                  class: "form-control",
+                  required: true
               %>
             </div>
 
@@ -313,14 +323,18 @@
 
             <div class="form-group">
               <%= g.label :timely_1, "When will you start working towards your goal?" %>
+              <span class="text-danger">*</span>
               <%= g.text_field :timely_1,
-                  class: "form-control"
+                  class: "form-control",
+                  required: true
               %>
             </div>
             <div class="form-group">
               <%= g.label :timely_2, "How you chosen a start date that's comfortable but soon?" %>
+              <span class="text-danger">*</span>
               <%= g.text_field :timely_2,
-                  class: "form-control"
+                  class: "form-control",
+                  required: true
               %>
             </div>
 

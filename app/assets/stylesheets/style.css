@@ -50,7 +50,8 @@ a {
     outline: none;
     -webkit-transition: 0.3s;
     transition: 0.3s;
-    color: #303030;
+    color: #26B4FF;
+    /* color: #303030; */
 }
 
 .btn.focus,
@@ -62,7 +63,8 @@ a:focus,
 a:hover {
     text-decoration: none;
     outline: none;
-    color: inherit;
+    color: #73ceff;
+    /* color: inherit; */
 }
 
 img {
