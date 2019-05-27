@@ -234,12 +234,12 @@ Angle-background
 }
 
 .single_screen_slide {
-    background: rgba(0, 0, 0, 0) url("screen/phone.png") no-repeat scroll center center;
+    /* background: rgba(0, 0, 0, 0) url("screen/phone.png") no-repeat scroll center center; */
     padding: 66px 70px 70px 71px;
 }
 
 .list_screen_slide:after {
-    content: url("screen/phone.png");
+    /* content: url("screen/phone.png"); */
     left: 50%;
     position: absolute;
     top: 50%;
