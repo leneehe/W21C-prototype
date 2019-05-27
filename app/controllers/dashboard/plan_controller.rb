@@ -27,9 +27,11 @@ class Dashboard::PlanController < ApplicationController
     @events = current_user.events
     @legends = legend_colors(@events)
     @goals = current_user.goals.incomplete
-
+    
     respond_to do |format|
-      format.html
+      format.html do
+        render layout: 'main/layout-blank2'
+      end
       format.pdf do
         render pdf: "#{current_user.first_name}_report",
         page_size: 'A4',

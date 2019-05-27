@@ -31,7 +31,7 @@
             <div>Care Planner</div>
           <% end %>
         </li>
-        <li class="sidenav-item<%= current_page?(dashboard_plan_report_path) ? ' active' : '' %>">
+        <li class="sidenav-item<%= current_page?(dashboard_plan_report_path) || current_page?(dashboard_plan_display_report_path) || current_page_path?('/dashboard/plan/display_report.html') ? ' active' : '' %>">
           <%= link_to dashboard_plan_report_path, class: "sidenav-link" do %>
             <div>Report for Provider</div>
           <% end %>

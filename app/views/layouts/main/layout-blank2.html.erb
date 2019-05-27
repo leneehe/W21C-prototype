@@ -1,0 +1,35 @@
+<%= stylesheet_link_tag 'bootstrap.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<% content_for :content do %>
+  <!-- Layout wrapper -->
+  <div class="layout-wrapper layout-2">
+    <div class="layout-inner">
+
+      <!-- Layout sidenav -->
+
+      <!-- Layout container -->
+      <div class="layout-container">
+        <!-- Layout navbar -->
+
+        <!-- Layout content -->
+        <div class="layout-content">
+
+          <!-- Content -->
+          <div class="container-fluid flex-grow-1 container-p-y">
+            <%= yield %>
+          </div>
+          <!-- / Content -->
+
+        </div>
+        <!-- Layout content -->
+
+      </div>
+      <!-- / Layout container -->
+
+    </div>
+
+    <!-- Overlay -->
+  </div>
+  <!-- / Layout wrapper -->
+<% end %>
+<%= render template: "layouts/application" %>
