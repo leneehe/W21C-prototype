@@ -75,6 +75,9 @@
       Completed Goals: <b><%= @goals.complete.length %></b>
       <br>
       Incomplete Goals: <b><%= @goals.incomplete.length %></b>
+      <p>
+        <%= button_to "View Goals", dashboard_goals_path, method: :get, class: "btn btn-outline-primary" %>
+      </p>
     </div>
   </div>
 </div>

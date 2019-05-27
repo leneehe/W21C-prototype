@@ -16,7 +16,8 @@
         <div class="space-60"></div>
         <%= image_tag("icon/learn.png") %>
         <h1>Learning Opportunities</h1>
-        <%# <div class="space-100"></div> %>
+        <div class="space-40"></div>
+        <p style="text-shadow: 1px 1px 2px #303030,0 0 1em #41B6E6;">The more you know about your chronic care needs, the better equipped you are to take care of yourself and to make decisions about your care journey. My Health Alberta has a huge library of quality information and resources to help you learn about your care needs. We’ve selected a handful of what’s there (and elsewhere on the Web) to help you get started.</p>
       </div>
     </div>
     <div class="space-80"></div>
@@ -29,6 +30,8 @@
   <div class="container">
     <div class="row wow fadeInUp">
       <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
+        <h3 class="text-uppercase">KNOW YOUR HEALTH</h3>
+        <div class="space-20"></div>
         <p>Helping you help yourself on your care journey.</p>
       </div>
     </div>
@@ -39,7 +42,7 @@
             <%= text_field_tag :search, params[:search], placeholder: "What can we help you find today? (Search by name, keywords, condition, tags, etc)", class: "form-control resources__search-bar" %>
             <div class="input-group-btn">
               <%= submit_tag "Search", class: "btn btn-info" %>
-            </div>      
+            </div>
         </div>
       <% end %>
       <!-- <div class="col-sm-10 resources__search-bar-container">
@@ -50,7 +53,7 @@
 
               </button>
             </div> -->
-      <div class="space-40"></div>
+      <!-- <div class="space-40"></div> -->
     </section>
 
     <div class="space-60"></div>
@@ -80,8 +83,8 @@
         <% end %>
       </div>
     <% end %>
-    
-    
+
+
   </div>
 </section>
 <!--Blog-Section/-->
