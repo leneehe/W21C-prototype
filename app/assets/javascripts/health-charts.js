@@ -159,7 +159,14 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
       }
     });
+
+    $('#report').on('showStep', function(e, anchorObject, stepNumber, stepDirection) {
+        if (stepNumber === 5 || stepNumber === 7) {
+          chartDisplay.update()
+        }
+    });
   }
+
 });
 
 // function projectY(chartRect, bounds, value) {

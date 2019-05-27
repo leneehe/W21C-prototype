@@ -1,0 +1,41 @@
+<div class="col-sm-12">
+  <table class="datatables-report table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Symptom Name</th>
+        <th>Measured in</th>
+        <th>Normal Range Upper</th>
+        <th>Normal Range Lower</th>
+        <th>When to Seek Help</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @symptoms.each do |symptom| %>
+        <tr>
+          <td>
+            <%= symptom.find_name %>
+          </td>
+          <td>
+            <%= symptom.unit_of_measure %>
+          </td>
+          <td>
+            <%= symptom.normal_range_upper %> <%= symptom.unit_of_measure %>
+          </td>
+          <td>
+            <%= symptom.normal_range_lower %> <%= symptom.unit_of_measure %>
+          </td>
+          <td>
+            <% if symptom.above_assistance %>
+              >
+            <% else %>
+              <
+            <% end %>
+            <%= symptom.assistance_threshold %> <%= symptom.unit_of_measure %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+</div>

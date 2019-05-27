@@ -6,4 +6,8 @@ $(function() {
   $('.datatables-symptoms').dataTable({
     paging: false
   });
+  $('.datatables-report').dataTable({
+    paging: false,
+    searching: false
+  });
 });

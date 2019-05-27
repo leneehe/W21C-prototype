@@ -54,7 +54,7 @@ a {
     /* color: #303030; */
 }
 
-.sw-theme-default a, .sw-theme-default a:hover {
+#report.sw-theme-default .btn-create a, #report.sw-theme-default .btn-create a:hover {
   color: #FFF;
 }
 

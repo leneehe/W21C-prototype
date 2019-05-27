@@ -10,6 +10,7 @@ class Dashboard::PlanController < ApplicationController
 
   def report
     @user_symptoms = Symptom.user_tracked(current_user.id)
+    @symptoms = current_user.symptoms_users.where(user_tracked:true)
     @events = current_user.events
     @legends = legend_colors(@events)
     @goals = current_user.goals.incomplete
@@ -21,7 +22,8 @@ class Dashboard::PlanController < ApplicationController
 
   def display_report
 
-    @user_symptoms = current_user.symptoms
+    @user_symptoms = Symptom.user_tracked(current_user.id)
+    @symptoms = current_user.symptoms_users.where(user_tracked:true)
     @events = current_user.events
     @legends = legend_colors(@events)
     @goals = current_user.goals.incomplete
