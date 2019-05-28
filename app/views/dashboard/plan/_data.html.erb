@@ -1,4 +1,4 @@
-<div class="col-sm-12">
+<div class="col-sm-12 mb-5">
   <table class="datatables-report table table-striped table-bordered">
     <thead>
       <tr>
@@ -39,3 +39,50 @@
 
   </table>
 </div>
+<% @user_symptoms.each do |symptom| %>
+<div class="col-sm-12 col-md-6 mb-4">
+  <h5> <%= symptom.name %></h5>
+  <div class="px-3">
+
+  <table class="datatables-report table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Datetime</th>
+        <th>Severity score</th>
+        <th>Normal</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% symptom.tracked_symptoms.each do |track| %>
+        <tr>
+          <td>
+            <%= track.updated_at.to_formatted_s(:short) %>
+          </td>
+          <td>
+            <%= track.severity_score %> <%= symptom.symptoms_users.first.unit_of_measure %>
+          </td>
+          <td>
+            <% if symptom.symptoms_users.first.above_assistance %>
+              <% if track.severity_score > symptom.symptoms_users.first.assistance_threshold %>
+                High <span class="ion ion-md-alert" style="color:#E06287"></span>
+                <% else %>
+                  <span class="ion ion-md-checkmark" style="color:#41b6e6"></span>
+              <% end %>
+            <% else %>
+              <% if track.severity_score < symptom.symptoms_users.first.assistance_threshold %>
+                Low <span class="ion ion-md-alert" style="color:#E06287"></span>
+              <% else %>
+                <span class="ion ion-md-checkmark" style="color:#41b6e6"></span>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+  </div>
+</div>
+<% end %>

@@ -6,7 +6,7 @@ class ConditionsController < ApplicationController
   def create
     # params[:name].titlize
     condition = current_user.conditions.build(condition_params)
-    found_condition = Condition.find_by(name: condition.name)
+    found_condition = Condition.find_by("lower(name) = ?", condition.name.downcase)
 
     respond_to do |format|
       if (found_condition)
