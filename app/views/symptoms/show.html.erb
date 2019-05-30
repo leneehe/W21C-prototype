@@ -4,7 +4,7 @@
 <div class="col-sm-4">
   <h5><i><%= @symptom.name %></i></h5>
   <p>
-  <b>Range:</b> <%= @symptom_info.normal_range_upper %> ~
+  <b>Normal Range:</b> <%= @symptom_info.normal_range_upper %> ~
   <%= @symptom_info.normal_range_lower %> <i><%= @symptom_info.unit_of_measure %></i>
   </p>
   <%= form_for @tracked_symptom, :url => symptom_tracked_symptoms_path(@symptom) do |f|%>

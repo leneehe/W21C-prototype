@@ -80,7 +80,7 @@
             <div>Symptoms</div>
           </a>
           <ul class="sidenav-menu">
-            <li class="sidenav-item<%= current_page?(symptoms_path) ? ' active' : '' %>">
+            <li class="sidenav-item<%= current_page?(symptoms_path) || current_page_path?('/symptoms') && !current_page?(new_symptom_path) && !current_page?(symptoms_summary_path) ? ' active' : '' %>">
               <%= link_to symptoms_path, class: "sidenav-link" do %>
                 <div>Tracked items</div>
               <% end %>
