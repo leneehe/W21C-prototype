@@ -238,7 +238,7 @@ $(function () {
 
 // Report to care proivder list view
 $('.report-calendar').fullCalendar({
-  defaultView: 'listMonth',
+  defaultView: 'listYear',
   themeSystem: 'bootstrap4',
   header: {
       left: 'title',

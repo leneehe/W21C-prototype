@@ -67,7 +67,7 @@
               <% if track.severity_score > symptom.symptoms_users.first.assistance_threshold %>
                 High <span class="ion ion-md-alert" style="color:#E06287"></span>
                 <% else %>
-                  <span class="ion ion-md-checkmark" style="color:#41b6e6"></span>
+                  <span class="ion ion-md-checkmark text-primary"></span>
               <% end %>
             <% else %>
               <% if track.severity_score < symptom.symptoms_users.first.assistance_threshold %>
