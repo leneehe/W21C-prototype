@@ -92,9 +92,6 @@ $(function() {
         btnNext.attr("disabled", false)
       }
     })
-    .on('load', function() {
-      alert('Hello');
-    });
 
     form3.smartWizard({
       selected: 3,  // Initial selected step, 0 = first step

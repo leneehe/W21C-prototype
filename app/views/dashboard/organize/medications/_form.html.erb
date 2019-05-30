@@ -34,37 +34,37 @@
 
     <div class="form-group col-md-12">
       <%= f.label :name, "Enter your medication name", class: "form-label" %>
-      <%= f.text_field :name, id: "typeahead-input", class: "form-control", autocomplete: "off" %>
+      <%= f.text_field :name, id: "typeahead-input", class: "form-control", autocomplete: "off", placeholder: "E.g.,Levothyroxine" %>
     </div>
 
     <div class="form-group col-md-6">
       <%= f.label :rx_photograph_link, "RX photograph url", class: "form-label" %>
-      <%= f.text_field :rx_photograph_link, class: "form-control", placeholder: "http://google.ca/image.jpg" %>
+      <%= f.text_field :rx_photograph_link, class: "form-control", placeholder: "E.g.,http://google.ca/image.jpg" %>
     </div>
 
     <div class="form-group col-md-6">
       <%= f.label :link, "Link url", class: "form-label" %>
-      <%= f.text_field :link, class: "form-control", placeholder: "http://" %>
+      <%= f.text_field :link, class: "form-control", placeholder: "http://", value: "http://" %>
     </div>
 
     <div class="form-group col-md-6">
       <%= f.label :strength, "Strength of medication", class: "form-label" %>
-      <%= f.text_field :strength, class: "form-control", placeholder: "110 mcg" %>
+      <%= f.text_field :strength, class: "form-control", placeholder: "E.g.,110 mcg" %>
     </div>
 
     <div class="form-group col-md-12">
       <%= f.label :description, "Description of medication", class: "form-label" %>
-      <%= f.text_field :description, class: "form-control", placeholder: "Pink oblong tablet" %>
+      <%= f.text_field :description, class: "form-control", placeholder: "E.g.,Pink oblong tablet" %>
     </div>
 
     <div class="form-group col-md-12">
       <%= f.label :instruction, "How to take the medication", class: "form-label" %>
-      <%= f.text_field :instruction, class: "form-control", placeholder: "1 tablet by mouth every day" %>
+      <%= f.text_field :instruction, class: "form-control", placeholder: "E.g.,1 tablet by mouth every day" %>
     </div>
 
     <div class="form-group col-md-6">
       <%= f.label :condition_cure, "What is the medication for?", class: "form-label" %>
-      <%= f.text_field :condition_cure, class: "form-control", placeholder: "Thyroid" %>
+      <%= f.text_field :condition_cure, class: "form-control", placeholder: "E.g.,Thyroid" %>
     </div>
 
     <!-- Tracked Medications -->
