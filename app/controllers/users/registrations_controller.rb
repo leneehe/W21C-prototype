@@ -63,7 +63,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         normal_range_lower: 7,
         assistance_threshold: 7,
         unit_of_measure: "hours/night",
-        above_assistance: false]
+        above_assistance: false
       )
 
       loneliness = Symptom.find_by(
@@ -135,7 +135,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
       medication_taken = Symptom.find_by(
         name: "Medication Taken")
-      medication.symptoms_users.create!(
+      medication_taken.symptoms_users.create!(
         user_id: user.id,
         normal_range_upper: 1, #user 1 & 0 as binary yes/no
         normal_range_lower: 0,
@@ -295,7 +295,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         normal_range_lower: 1,
         assistance_threshold: 1,
         unit_of_measure: "",
-        above_assistance: false]
+        above_assistance: false
       )
 
       nausea = Symptom.find_by(
@@ -355,7 +355,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       pain = Symptom.find_by(
         name: "Pain")
       pain.symptoms_users.create!(
-        user_id: user.id
+        user_id: user.id,
         normal_range_upper: 10,
         normal_range_lower: 1,
         assistance_threshold: 1,
