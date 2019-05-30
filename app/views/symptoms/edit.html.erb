@@ -111,7 +111,7 @@
 
           <%= form_for @symptom, html: {id: "symptomATracking"} do |form| %>
 
-          <%= form.fields_for :symptoms_users do |m| %>
+          <%= form.fields_for :symptoms_users, @symptom.symptoms_users.find_by(user_id: current_user) do |m| %>
             <%= m.hidden_field :user_tracked, value: true %>
             <%= m.hidden_field :user_id, value: current_user.id %>
 
@@ -174,7 +174,7 @@
           <p>Typical ranges for <%= @symptom2.name %> are: </p>
             <%= form_for @symptom2, html: {id: "symptomBTracking"} do |form| %>
 
-            <%= form.fields_for :symptoms_users do |m| %>
+            <%= form.fields_for :symptoms_users, @symptom2.symptoms_users.find_by(user_id: current_user) do |m| %>
               <%= m.hidden_field :user_tracked, value: true %>
               <%= m.hidden_field :user_id, value: current_user.id %>
 

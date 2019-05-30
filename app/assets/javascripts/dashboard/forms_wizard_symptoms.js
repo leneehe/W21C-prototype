@@ -17,7 +17,8 @@ $(function() {
       // },
       anchorSettings: {
         anchorClickable: false
-      }
+      },
+      disabledSteps: [3]
     })
     .on('showStep', function(e, anchorObject, stepNumber, stepDirection) {
         var btn = form.find('.btn-submit');
@@ -76,20 +77,23 @@ $(function() {
       disabledSteps: [3]
     })
     .on('showStep', function(e, anchorObject, stepNumber, stepDirection) {
-        var btn = form.find('.btn-submit');
-        var btnNext = form.find('.sw-btn-next');
+      var btn = form2.find('.btn-submit');
+      var btnNext = form2.find('.sw-btn-next');
 
-        // Enable finish button only on last step
-        if (stepNumber === 2) {
-          btn.removeClass('hidden');
-          btnNext.addClass('disabled');
-          btnNext.attr("disabled", true);
+      // Enable finish button only on last step
+      if (stepNumber === 2) {
+        btn.removeClass('hidden');
+        btnNext.addClass('disabled');
+        btnNext.attr("disabled", true);
 
-        } else {
-          btn.addClass('hidden');
-          btnNext.removeClass('disabled');
-          btnNext.attr("disabled", false)
-        }
+      } else {
+        btn.addClass('hidden');
+        btnNext.removeClass('disabled');
+        btnNext.attr("disabled", false)
+      }
+    })
+    .on('load', function() {
+      alert('Hello');
     });
 
     form3.smartWizard({
