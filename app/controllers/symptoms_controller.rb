@@ -7,7 +7,10 @@ class SymptomsController < ApplicationController
   before_action :set_primary_secondary_symptoms, only: %i[new edit]
 
   def index
-
+    unless current_user
+      redirect_to new_user_session_path, notice: 'you have to sign in first.'
+      return
+    end
     # Grab all conditions
     # For each condition, list all symptoms and place them in an array
     # Filter/uniq the symptoms
@@ -118,7 +121,9 @@ class SymptomsController < ApplicationController
 
 private
   def set_user_symptoms
-    @user_symptoms = Symptom.user_tracked(current_user.id)
+    if current_user
+      @user_symptoms = Symptom.user_tracked(current_user.id)
+    end
   end
 
   def set_symptom

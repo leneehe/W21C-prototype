@@ -23,21 +23,16 @@
           <div class="collapse navbar-collapse navbar-right" id="mainmenu">
               <ul class="nav navbar-nav">
                   <li><%= link_to "Home", root_path %></li>
-                  <% if user_signed_in? %>
-                    <li><%= link_to "Plan", dashboard_plan_path %></li>
-                  <% else %>
-                    <li><%= link_to "Plan", plan_path %></li>
-                  <% end %>
-                  <% if user_signed_in? %>
-                    <li><%= link_to "Goal Centre", dashboard_goals_path %></li>
-                  <% else %>
-                    <li><%= link_to "Goal Centre", goal_centre_path %></li>
-                  <% end %>
-                  <% if user_signed_in? %>
-                    <li><%= link_to "Track", symptoms_path %></li>
-                  <% else %>
-                    <li><%= link_to "Track", track_path %></li>
-                  <% end %>
+
+                  <li><%= link_to "Plan", dashboard_plan_path %></li>
+                  <!-- <li><%# link_to "Plan", plan_path %></li> -->
+
+                  <li><%= link_to "Goal Centre", dashboard_goals_path %></li>
+                  <!-- <li><%# link_to "Goal Centre", goal_centre_path %></li> -->
+
+                  <li><%= link_to "Track", symptoms_path %></li>
+                  <!-- <li><%# link_to "Track", track_path %></li> -->
+
                   <li><%= link_to "Learn", learn_path %></li>
                   <% if user_signed_in? %>
                     <li><%= link_to "Resources", dashboard_resources_path %></li>

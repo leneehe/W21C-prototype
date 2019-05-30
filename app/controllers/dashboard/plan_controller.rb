@@ -3,6 +3,11 @@ class Dashboard::PlanController < ApplicationController
   layout 'main/layout-2'
 
   def index
+    unless current_user
+      redirect_to new_user_session_path, notice: 'you have to sign in first.'
+      return
+    end
+
     @user_symptoms = Symptom.user_tracked(current_user.id)
     @goals = current_user.goals
     @events = current_user.events.order(start: :asc).limit(5)
@@ -27,7 +32,7 @@ class Dashboard::PlanController < ApplicationController
     @events = current_user.events
     @legends = legend_colors(@events)
     @goals = current_user.goals.incomplete
-    
+
     respond_to do |format|
       format.html do
         render layout: 'main/layout-blank2'

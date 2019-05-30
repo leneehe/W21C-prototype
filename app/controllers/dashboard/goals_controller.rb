@@ -3,6 +3,11 @@ class Dashboard::GoalsController < ApplicationController
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
 
   def index
+    unless current_user
+      redirect_to new_user_session_path, notice: 'you have to sign in first.'
+      return
+    end
+    
     @goals = current_user.goals.incomplete
     @complete_goals = current_user.goals.complete
   end
