@@ -137,6 +137,7 @@ $(function () {
             dataType: 'html'
           }).done(function(responseData) {
             alert("New event " + title + " has been saved!")
+            window.location = '/dashboard/organize/events';
           }).fail(function(jqXHR, textStatus, errorThrown) {
             alert("Cannot save! " + errorThrown)
           })
