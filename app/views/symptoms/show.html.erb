@@ -3,12 +3,16 @@
 <h3>Add A Record</h3>
 <div class="col-sm-4">
   <h5><i><%= @symptom.name %></i></h5>
+  <p>
+  <b>Range:</b> <%= @symptom_info.normal_range_upper %> ~
+  <%= @symptom_info.normal_range_lower %> <i><%= @symptom_info.unit_of_measure %></i>
+  </p>
   <%= form_for @tracked_symptom, :url => symptom_tracked_symptoms_path(@symptom) do |f|%>
       <%= f.label :severity_score, "Severity Score:" %>
       <div class="input-group">
         <%= f.number_field :severity_score,
             autofocus: true,
-            placeholder: "Severity Score",
+            placeholder: "Severity Score in #{@symptom_info.unit_of_measure}",
             class: "form-control",
             required: true
         %>

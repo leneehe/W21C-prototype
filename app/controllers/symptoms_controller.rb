@@ -32,6 +32,7 @@ class SymptomsController < ApplicationController
 
   def show
     @symptom = Symptom.find(params[:id])
+    @symptom_info = @symptom.symptoms_users.find_by(user_id: current_user)
     @tracked_symptom = current_user.tracked_symptoms.build
     # @measurement = TrackedSymptom.new
     # @value_types = @symptom.value_types
