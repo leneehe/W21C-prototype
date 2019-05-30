@@ -529,9 +529,9 @@ Resource.create!(title: "COPD (Chronic obstructive pulmonary disease) Overview",
               doctor if you have any of these symptoms.</p>
               <div class="space-30"></div>
               <h3>References:</h3>
-              <p>COPD Foundation. What is COPD? Website: <a href="https://www.copdfoundation.org/What-is-COPD/Understanding-COPD/What-is-COPD.aspx">https://www.copdfoundation.org/What-is-COPD/Understanding-COPD/What-is-COPD.aspx</a>. Accessed 2018 Oct 05.</p>
+              <p>COPD Foundation. What is COPD? Website: <a href="https://www.copdfoundation.org/What-is-COPD/Understanding-COPD/What-is-COPD.aspx" target="_blank">https://www.copdfoundation.org/What-is-COPD/Understanding-COPD/What-is-COPD.aspx</a>. Accessed 2018 Oct 05.</p>
               <p>MyHealth.Alberta.ca. COPD (Chronic Obstructive Pulmonary Disease) Overview. Website:<a
-                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw32559&#hw32561">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw32559&#hw32561</a>.
+                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw32559&#hw32561" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw32559&#hw32561</a>.
                 Accessed 2018 Oct 05.</p>})
 Resource.create!(title: "High Blood Pressure Overview",
   description: "High blood pressure is also known as hypertension. High blood pressure is unique, because it doesn’t often cause obvious
@@ -546,11 +546,11 @@ Resource.create!(title: "High Blood Pressure Overview",
               exercising regularly, and cutting back on alcohol, you can help prevent or reverse high blood pressure.</p>
               <div class="space-30"></div>
               <h3>For more information, visit MyHealth.Alberta.ca:</h3>
-              <p>Link: <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw62787">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw62787</a></p>
+              <p>Link: <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw62787" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw62787</a></p>
               <div class="space-30"></div>
               <h3>References:</h3>
               <p>MyHealth.Alberta.ca. High Blood Pressure – Topic Overview.
-                <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw62787">
+                <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw62787" target="_blank">
                   https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw62787</a>
                   . Accessed 2018 Oct 11.</p>})
 Resource.create!(title: "Type 1 Diabetes Overview",
@@ -564,17 +564,17 @@ Resource.create!(title: "Type 1 Diabetes Overview",
               you notice any of these symptoms, visit your doctor right away.</p>
               <div class="space-30"></div>
               <h3>For more information, visit MyHealth.Alberta.ca:</h3>
-              <p>Link: <a href="https://myhealth.alberta.ca/Health/Pages/conditions.aspx?hwid=hw34303&#hw34305">https://myhealth.alberta.ca/Health/Pages/conditions.aspx?hwid=hw34303&#hw34305</a></p>
+              <p>Link: <a href="https://myhealth.alberta.ca/Health/Pages/conditions.aspx?hwid=hw34303&#hw34305" target="_blank">https://myhealth.alberta.ca/Health/Pages/conditions.aspx?hwid=hw34303&#hw34305</a></p>
               <div class="space-30"></div>
               <h3>Resources:</h3>
               <p>Diabetes Canada. Living with type 1 diabetes. Website:
-                <a href="https://www.diabetes.ca/diabetes-and-you/living-with-type-1-diabetes">
+                <a href="https://www.diabetes.ca/diabetes-and-you/living-with-type-1-diabetes" target="_blank">
                   https://www.diabetes.ca/diabetes-and-you/living-with-type-1-diabetes
                 </a>
                   . Accessed 2018 Oct 11.
               </p>
               <p>MyHealth.Alberta.ca. Type 1 Diabetes – Topic Overview. Website:
-                <a href="https://myhealth.alberta.ca/Health/Pages/conditions.aspx?hwid=hw34303&#hw34305">
+                <a href="https://myhealth.alberta.ca/Health/Pages/conditions.aspx?hwid=hw34303&#hw34305" target="_blank">
                   https://myhealth.alberta.ca/Health/Pages/conditions.aspx?hwid=hw34303&#hw34305
                 </a>
                 . Accessed 2018 Oct 11.
@@ -589,11 +589,11 @@ Resource.create!(title: "Type 2 Diabetes Overview",
               <p>If you think you may be at risk for type 2 diabetes, speak to your doctor.</p>
               <div class="space-30"></div>
               <h3>For more information, visit MyHealth.Alberta.ca:</h3>
-              <p>Link: <a href="https://myhealth.alberta.ca/Health/Pages/conditions.aspx?hwid=hw135189&#hw135192">https://myhealth.alberta.ca/Health/Pages/conditions.aspx?hwid=hw135189&#hw135192</a></p>
+              <p>Link: <a href="https://myhealth.alberta.ca/Health/Pages/conditions.aspx?hwid=hw135189&#hw135192" target="_blank">https://myhealth.alberta.ca/Health/Pages/conditions.aspx?hwid=hw135189&#hw135192</a></p>
               <div class="space-30"></div>
               <h3>References:</h3>
               <p>MyHealth.Alberta.ca. Type 2 Diabetes – Overview. Website:
-                <a href="https://myhealth.alberta.ca/Health/Pages/conditions.aspx?hwid=hw135189&#hw135192">
+                <a href="https://myhealth.alberta.ca/Health/Pages/conditions.aspx?hwid=hw135189&#hw135192" target="_blank">
                   https://myhealth.alberta.ca/Health/Pages/conditions.aspx?hwid=hw135189&#hw135192
                 </a>
                   . Accessed 2018 Oct 11.
@@ -608,11 +608,11 @@ Resource.create!(title: "Chronic Kidney Disease Overview",
               <p>If you experience any of the symptoms listed, see your doctor.</p>
               <div class="space-30"></div>
               <h3>For more information, visit MyHealth.Alberta.ca:</h3>
-              <p>Link: <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=aa65427">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=aa65427</a></p>
+              <p>Link: <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=aa65427" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=aa65427</a></p>
               <div class="space-30"></div>
               <h3>References:</h3>
               <p>MyHealth.Alberta.ca. Chronic Kidney Disease – Topic Overview. Website:
-                <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=aa65427">
+                <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=aa65427" target="_blank">
                   https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=aa65427
                 </a>
                   . Accessed 2018 Oct 11.
@@ -628,30 +628,30 @@ Resource.create!(title: "Helping Myself - Mental Health",
               like eating a healthy diet, getting more exercise, or spending time with family.</p>
               <div class="space-30"></div>
               <h3>AHS Addiction and Mental Health Resources:</h3>
-              <p><a href="https://www.albertahealthservices.ca/amh/amh.aspx">https://www.albertahealthservices.ca/amh/amh.aspx</a></p>
+              <p><a href="https://www.albertahealthservices.ca/amh/amh.aspx" target="_blank">https://www.albertahealthservices.ca/amh/amh.aspx</a></p>
               <div class="space-30"></div>
               <h3>Other Resources:</h3>
-              <p><a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=center1028">
+              <p><a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=center1028" target="_blank">
                   https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=center1028
                 </a>
               </p>
-              <p><a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=aa79756">
+              <p><a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=aa79756" target="_blank">
                   https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=aa79756
                 </a>
               </p>
-              <p><a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=ad1040spec">
+              <p><a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=ad1040spec" target="_blank">
                   https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=ad1040spec
                 </a>
               </p>
-              <p><a href="https://myhealth.alberta.ca/health/AfterCareInformation/pages/conditions.aspx?hwid=ut3330">
+              <p><a href="https://myhealth.alberta.ca/health/AfterCareInformation/pages/conditions.aspx?hwid=ut3330" target="_blank">
                   https://myhealth.alberta.ca/health/AfterCareInformation/pages/conditions.aspx?hwid=ut3330
                 </a>
               </p>
-              <p><a href="https://myhealth.alberta.ca/health/AfterCareInformation/pages/conditions.aspx?hwid=abk6308">
+              <p><a href="https://myhealth.alberta.ca/health/AfterCareInformation/pages/conditions.aspx?hwid=abk6308" target="_blank">
                   https://myhealth.alberta.ca/health/AfterCareInformation/pages/conditions.aspx?hwid=abk6308
                 </a>
               </p>
-              <p><a href="https://myhealth.alberta.ca/health/AfterCareInformation/pages/conditions.aspx?hwid=abk6226">
+              <p><a href="https://myhealth.alberta.ca/health/AfterCareInformation/pages/conditions.aspx?hwid=abk6226" target="_blank">
                   https://myhealth.alberta.ca/health/AfterCareInformation/pages/conditions.aspx?hwid=abk6226
                 </a>
               </p>})
@@ -687,45 +687,45 @@ Resource.create!(title: "Stress Management",
               </ol>
               <div class="space-30"></div>
               <h3>For more information on ways to deal with stress, please see:</h3>
-              <p>Stress Management Overview: <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=rlxsk">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=rlxsk</a></p>
+              <p>Stress Management Overview: <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=rlxsk" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=rlxsk</a></p>
               <p>Stress Management – Breathing Exercises: <a
-                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=ug1812">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=ug1812</a>
+                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=ug1812" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=ug1812</a>
               </p>
               <p>Stress Management – Breathing Exercises for Relaxation: <a
-                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2255">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2255</a>
+                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2255" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2255</a>
               </p>
-              <p><a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2270">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2270</a></p>
+              <p><a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2270" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2270</a></p>
               <p>Progressive Muscle Relaxation: <a
-                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2225">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2225</a>
+                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2225" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2225</a>
               </p>
               <p>Meditation: <a
-                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2240">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2240</a>
+                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2240" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2240</a>
               </p>
               <p>Imagery Exercises: <a
-                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=ta5531">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=ta5531</a>
+                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=ta5531" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=ta5531</a>
               </p>
               <p>Yoga: <a
-                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2286">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2286</a>
+                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2286" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2286</a>
               </p>
               <p>Reducing Stress by Being Assertive: <a
-                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=av2095">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=av2095</a>
+                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=av2095" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=av2095</a>
               </p>
               <p>Relaxing Your Mind and Body: <a
-                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2209">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2209</a>
+                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2209" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=uz2209</a>
               </p>
               <p>Stress Relief and Relaxation: <a
-                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=af1003spec">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=af1003spec</a>
+                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=af1003spec" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=af1003spec</a>
               </p>
               <p>Five tips to help manage stress (APA): <a
-                  href="https://www.apa.org/helpcenter/manage-stress.aspx">https://www.apa.org/helpcenter/manage-stress.aspx</a>
+                  href="https://www.apa.org/helpcenter/manage-stress.aspx" target="_blank">https://www.apa.org/helpcenter/manage-stress.aspx</a>
               </p>
               <div class="space-30"></div>
               <h3>References:</h3>
-              <p><a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=rlxsk">
+              <p><a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=rlxsk" target="_blank">
                   https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=rlxsk
                 </a>
               </p>
-              <p><a href="https://www.webmd.com/pain-management/coping-strategies_for-chronic-illness">
+              <p><a href="https://www.webmd.com/pain-management/coping-strategies_for-chronic-illness" target="_blank">
                   https://www.webmd.com/pain-management/coping-strategies_for-chronic-illness
                 </a>
               </p>})
@@ -818,23 +818,23 @@ Resource.create!(title: "Helping Myself - Dealing with Insomnia",
               and are still having problems sleeping, talk to your doctor.</p>
               <div class="space-30"></div>
               <h3>For more information, please see:</h3>
-              <p>Insomnia: Improving Your Sleep <a href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=zq1031">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=zq1031</a></p>
+              <p>Insomnia: Improving Your Sleep <a href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=zq1031" target="_blank">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=zq1031</a></p>
               <p>Insomnia Care Instructions: <a
-                  href="https://myhealth.alberta.ca/health/AfterCareInformation/pages/conditions.aspx?HwId=zc2584">https://myhealth.alberta.ca/health/AfterCareInformation/pages/conditions.aspx?HwId=zc2584</a>
+                  href="https://myhealth.alberta.ca/health/AfterCareInformation/pages/conditions.aspx?HwId=zc2584" target="_blank">https://myhealth.alberta.ca/health/AfterCareInformation/pages/conditions.aspx?HwId=zc2584</a>
               </p>
               <div class="space-30"></div>
               <h3>References:</h3>
-              <p>Twelve Simple Tips to Improve Your Sleep (Harvard Medicine) <a href="http://healthysleep.med.harvard.edu/healthy/getting/overcoming/tips">
+              <p>Twelve Simple Tips to Improve Your Sleep (Harvard Medicine) <a href="http://healthysleep.med.harvard.edu/healthy/getting/overcoming/tips" target="_blank">
                   http://healthysleep.med.harvard.edu/healthy/getting/overcoming/tips
                 </a>
               </p>
-              <p>Getting a Good Night’s Sleep – Sleep Hygiene (Anxiety BC). <a href="https://www.anxietycanada.com/sites/default/files/SleepHygiene.pdf">
+              <p>Getting a Good Night’s Sleep – Sleep Hygiene (Anxiety BC). <a href="https://www.anxietycanada.com/sites/default/files/SleepHygiene.pdf" target="_blank">
                   https://www.anxietycanada.com/sites/default/files/SleepHygiene.pdf
                 </a>
               </p>
               <p>DeBoer, T. (2018). Sleep homeostasis and the circadian clock: Do the circadian pacemaker and sleep homeostat influence
               each other’s functioning? <a
-                  href="https://www.sciencedirect.com/science/article/pii/S2451994417300068">
+                  href="https://www.sciencedirect.com/science/article/pii/S2451994417300068" target="_blank">
                   https://www.sciencedirect.com/science/article/pii/S2451994417300068
                 </a>
               </p>})
@@ -847,9 +847,9 @@ Resource.create!(title: "Staying Healthy - The Importance of Social Health and F
               <p>With the support from your social connections, stressful situations can seem less overwhelming and easier to overcome.</p>
               <div class="space-30"></div>
               <h3>For more information on social health and social support networks, please see:</h3>
-              <p><a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=abl0295">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=abl0295</a></p>
+              <p><a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=abl0295" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=abl0295</a></p>
               <p><a
-                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=abk9962&#abk9963">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=abk9962&#abk9963</a>
+                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=abk9962&#abk9963" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=abk9962&#abk9963</a>
               </p>})
 Resource.create!(title: "Anxiety Overview",
   description: "Anxiety presents itself in many ways, both physical and emotional. It is normal to feel worried or stressed out sometimes.",
@@ -862,19 +862,19 @@ Resource.create!(title: "Anxiety Overview",
               <p>If you think you might have anxiety, talk to your doctor. They can connect you with the support you need.</p>
               <div class="space-30"></div>
               <h3>For more information, visit MyHealth.Alberta.ca:</h3>
-              <p><a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=anxty&#hw257184">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=anxty&#hw257184</a></p>
+              <p><a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=anxty&#hw257184" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=anxty&#hw257184</a></p>
               <div class="space-30"></div>
               <h3>References</h3>
               <p>
-              Canadian Mental Health Association. Anxiety Disorders. Website: <a href-"https://cmha.ca/documents/anxiety-disorders">https://cmha.ca/documents/anxiety-disorders</a>. Accessed
+              Canadian Mental Health Association. Anxiety Disorders. Website: <a href-"https://cmha.ca/documents/anxiety-disorders" target="_blank">https://cmha.ca/documents/anxiety-disorders</a>. Accessed
               2018 Oct 05.</p>
               <p>
               Mayo Clinic. Generalized anxiety disorder. Website:
-              <a href="https://www.mayoclinic.org/diseases-conditions/generalized-anxiety-disorder/diagnosis-treatment/drc-20361045">https://www.mayoclinic.org/diseases-conditions/generalized-anxiety-disorder/diagnosis-treatment/drc-20361045</a>. Accessed
+              <a href="https://www.mayoclinic.org/diseases-conditions/generalized-anxiety-disorder/diagnosis-treatment/drc-20361045" target="_blank">https://www.mayoclinic.org/diseases-conditions/generalized-anxiety-disorder/diagnosis-treatment/drc-20361045</a>. Accessed
               2018 Oct 11.</p>
               <p>
               MyHealth.Alberta.ca. Anxiety – Topic Overview.
-              <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=anxty&#hw257184">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=anxty&#hw257184</a>. Accessed 2018 Oct 05.</p>})
+              <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=anxty&#hw257184" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=anxty&#hw257184</a>. Accessed 2018 Oct 05.</p>})
 Resource.create!(title: "Medical Uncertainty",
   description: "With chronic conditions, it is common to have experiences where your care team is unsure of what step to take next. This is especially the case if you haven’t received a diagnosis, or perhaps, you haven’t found a treatment plan that works for you yet.",
   content_page: %{<p>With chronic conditions, it is common to have experiences where your care team is unsure of what step to take next. This
@@ -884,9 +884,9 @@ Resource.create!(title: "Medical Uncertainty",
               you and wants to give you answers. Sometimes, it just takes time.</p>
               <div class="space-30"></div>
               <h3>For more information, check out these resources:</h3>
-              <p>When you can’t get a diagnosis: <a href="https://www.verywellhealth.com/when-you-cant-get-a-diagnosis-2615487">https://www.verywellhealth.com/when-you-cant-get-a-diagnosis-2615487</a></p>
+              <p>When you can’t get a diagnosis: <a href="https://www.verywellhealth.com/when-you-cant-get-a-diagnosis-2615487" target="_blank">https://www.verywellhealth.com/when-you-cant-get-a-diagnosis-2615487</a></p>
               <p>What is it like to not be diagnosed with MS?: <a
-                  href="https://multiplesclerosis.net/living-with-ms/what-is-it-like-to-not-be-diagnosed/">https://multiplesclerosis.net/living-with-ms/what-is-it-like-to-not-be-diagnosed/</a>
+                  href="https://multiplesclerosis.net/living-with-ms/what-is-it-like-to-not-be-diagnosed/" target="_blank">https://multiplesclerosis.net/living-with-ms/what-is-it-like-to-not-be-diagnosed/</a>
               </p>})
 Resource.create!(title: "Depression Overview",
   description: "Depression is also known as major depressive disorder. It can make you feel sad, tired, worthless, unfocused, and even suicidal.",
@@ -898,16 +898,16 @@ Resource.create!(title: "Depression Overview",
               <p>Talk to your doctor if you think you may be at risk for depression.</p>
               <div class="space-30"></div>
               <h3>For more information, visit MyHealth.Alberta.ca:</h3>
-              <p><a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw30709&#hw30711">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw30709&#hw30711</a></p>
+              <p><a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw30709&#hw30711" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw30709&#hw30711</a></p>
               <div class="space-30"></div>
               <h3>References</h3>
               <p>
               <p>
-              Canadian Mental Health Association. Anxiety Disorders. Website: <a href="https://www.psychiatry.org/patients-families/depression/what-is-depression">https://www.psychiatry.org/patients-families/depression/what-is-depression</a>. Accessed
+              Canadian Mental Health Association. Anxiety Disorders. Website: <a href="https://www.psychiatry.org/patients-families/depression/what-is-depression" target="_blank">https://www.psychiatry.org/patients-families/depression/what-is-depression</a>. Accessed
               2018 Oct 05.</p>
               <p>
               MyHealth.Alberta.ca. Depression – Topic Overview. Website:
-              <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw30709&#hw30711">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw30709&#hw30711</a>. Accessed
+              <a href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw30709&#hw30711" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=hw30709&#hw30711</a>. Accessed
               2018 Oct 05.</p>})
 Resource.create!(title: "Role of Exercise in Self-management",
   description: "Exercise has many physical and emotional benefits. It can help with weight loss, improve your emotional wellbeing, and increase the health of your muscles, joints, lungs, and heart.",
@@ -920,18 +920,18 @@ Resource.create!(title: "Role of Exercise in Self-management",
               an exercise program that is right for you.</p>
               <div class="space-30"></div>
               <h3>For more information, visit MyHealth.Alberta.ca:</h3>
-              <p>Getting and Staying Active: <a href="https://myhealth.alberta.ca/health/pages/conditions.aspx?hwid=ftpln&#hw155909">https://myhealth.alberta.ca/health/pages/conditions.aspx?hwid=ftpln&#hw155909</a></p>
+              <p>Getting and Staying Active: <a href="https://myhealth.alberta.ca/health/pages/conditions.aspx?hwid=ftpln&#hw155909" target="_blank">https://myhealth.alberta.ca/health/pages/conditions.aspx?hwid=ftpln&#hw155909</a></p>
               <p>Fitting Physical Activity into Your Day: <a
-                  href="https://myhealth.alberta.ca/health/pages/conditions.aspx?hwid=zx3485&#zx3486">https://myhealth.alberta.ca/health/pages/conditions.aspx?hwid=zx3485&#zx3486</a>
+                  href="https://myhealth.alberta.ca/health/pages/conditions.aspx?hwid=zx3485&#zx3486" target="_blank">https://myhealth.alberta.ca/health/pages/conditions.aspx?hwid=zx3485&#zx3486</a>
               </p>
               <p>How to Start Being Active:<a
-                  href="https://myhealth.alberta.ca/Alberta/Pages/physical-activity-and-exercise.aspx">https://myhealth.alberta.ca/Alberta/Pages/physical-activity-and-exercise.aspx</a>
+                  href="https://myhealth.alberta.ca/Alberta/Pages/physical-activity-and-exercise.aspx" target="_blank">https://myhealth.alberta.ca/Alberta/Pages/physical-activity-and-exercise.aspx</a>
               </p>
               <p>Tips for People Who Don’t Like to Exercise:<a
-                  href="https://myhealth.alberta.ca/Alberta/Pages/tips-do-not-like-exercise.aspx">https://myhealth.alberta.ca/Alberta/Pages/tips-do-not-like-exercise.aspx</a>
+                  href="https://myhealth.alberta.ca/Alberta/Pages/tips-do-not-like-exercise.aspx" target="_blank">https://myhealth.alberta.ca/Alberta/Pages/tips-do-not-like-exercise.aspx</a>
               </p>
               <p>Getting Around Barriers to Exercise:<a
-                  href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=ta2537">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=ta2537</a>
+                  href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=ta2537" target="_blank">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=ta2537</a>
               </p>})
 Resource.create!(title: "Weight Management",
   description: "Staying at a healthy weight helps manage every kind of chronic condition.",
@@ -944,23 +944,23 @@ Resource.create!(title: "Weight Management",
               who want to help you get to a healthy weight.</p>
               <div class="space-30"></div>
               <h3>For more information, visit MyHealth.Alberta.ca:</h3>
-              <p>Healthy Weight: What Works (video only): <a href="https://myhealth.alberta.ca/health/Pages/HealthVideoPlayer.aspx?xCat=HCNutrition#">https://myhealth.alberta.ca/health/Pages/HealthVideoPlayer.aspx?xCat=HCNutrition#</a></p>
+              <p>Healthy Weight: What Works (video only): <a href="https://myhealth.alberta.ca/health/Pages/HealthVideoPlayer.aspx?xCat=HCNutrition#" target="_blank">https://myhealth.alberta.ca/health/Pages/HealthVideoPlayer.aspx?xCat=HCNutrition#</a></p>
               <p>Fitting Physical Activity into Your Day: <a
-                  href="https://myhealth.alberta.ca/health/pages/conditions.aspx?hwid=zx3485&#zx3486">https://myhealth.alberta.ca/health/pages/conditions.aspx?hwid=zx3485&#zx3486</a>
+                  href="https://myhealth.alberta.ca/health/pages/conditions.aspx?hwid=zx3485&#zx3486" target="_blank">https://myhealth.alberta.ca/health/pages/conditions.aspx?hwid=zx3485&#zx3486</a>
               </p>
               <p>Your Best Health: Adult Weight Management (Learning Module):<a
-                  href="https://myhealth.alberta.ca/Alberta/Pages/physical-activity-and-exercise.aspx">https://myhealth.alberta.ca/Alberta/Pages/physical-activity-and-exercise.aspx</a>
+                  href="https://myhealth.alberta.ca/Alberta/Pages/physical-activity-and-exercise.aspx" target="_blank">https://myhealth.alberta.ca/Alberta/Pages/physical-activity-and-exercise.aspx</a>
               </p>
               <p>Weight Management: Stop Negative Thoughts: <a
-                  href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=uf9874">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=uf9874</a>
+                  href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=uf9874" target="_blank">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=uf9874</a>
               </p>
               <p>Exercise and Physical Activity Ideas:<a
-                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=aa165656">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=aa165656</a>
+                  href="https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=aa165656" target="_blank">https://myhealth.alberta.ca/health/Pages/conditions.aspx?hwid=aa165656</a>
               </p>
               <div class="space-30"></div>
               <h3>References</h3>
               <p>
-              MyHealth.Alberta.ca. Weight Management – Overview. <a href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=aa122915">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=aa122915</a>. Accessed
+              MyHealth.Alberta.ca. Weight Management – Overview. <a href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=aa122915" target="_blank">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=aa122915</a>. Accessed
               2018 Oct 11.</p>})
 Resource.create!(title: "Nutrition",
   description: "Eating a nutritious diet has many benefits.",
@@ -1057,26 +1057,26 @@ Resource.create!(title: "Nutrition",
               </ol>
               <div class="space-30"></div>
               <h3>For more information, visit MyHealth.Alberta.ca:</h3>
-              <p>Getting started on healthy eating: <a href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=nutri">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=nutri</a></p>
+              <p>Getting started on healthy eating: <a href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=nutri" target="_blank">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=nutri</a></p>
               <p>Changing your eating habits:<a
-                  href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=ad1169">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=ad1169</a>
+                  href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=ad1169" target="_blank">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=ad1169</a>
               </p>
               <p>Making healthy choices when you shop:<a
-                  href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=uz2171">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=uz2171</a>
+                  href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=uz2171" target="_blank">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=uz2171</a>
               </p>
               <p>Influences on eating behavior:<a
-                  href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=uz2171">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=uz2171</a>
+                  href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=uz2171" target="_blank">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=uz2171</a>
               </p>
               <div class="space-30"></div>
               <h3>References</h3>
-              <p>Government of Canada (2016). Canada’s food guides (website). Accessed July 17, 2018.<a href="https://www.canada.ca/en/health-canada/services/food-nutrition/canada-food-guide/maintaining-healthy-habits/overcome-barriers.html">https://www.canada.ca/en/health-canada/services/food-nutrition/canada-food-guide/maintaining-healthy-habits/overcome-barriers.html</a></p>
+              <p>Government of Canada (2016). Canada’s food guides (website). Accessed July 17, 2018.<a href="https://www.canada.ca/en/health-canada/services/food-nutrition/canada-food-guide/maintaining-healthy-habits/overcome-barriers.html" target="_blank">https://www.canada.ca/en/health-canada/services/food-nutrition/canada-food-guide/maintaining-healthy-habits/overcome-barriers.html</a></p>
               <p>Ministry of Health of Brazil (2015). Dietary Guidelines for the Brazilian Population (2015). Virtual Library of Ministry
               of Health of Brazil. Accessed July 17, 2018.<a
-                  href="http://bvsms.saude.gov.br/bvs/publicacoes/dietary_guidelines_brazilian_population.pdf">http://bvsms.saude.gov.br/bvs/publicacoes/dietary_guidelines_brazilian_population.pdf</a>
+                  href="http://bvsms.saude.gov.br/bvs/publicacoes/dietary_guidelines_brazilian_population.pdf" target="_blank">http://bvsms.saude.gov.br/bvs/publicacoes/dietary_guidelines_brazilian_population.pdf</a>
               </p>
               <p>World Health Organization (2004). Diet, nutrition, and the prevention of chronic diseases. Report of the joint WHO/FAO
               expert consultation. WHO Technical Report Series, No. 916 (TRS 916). Accessed July 17, 2018.<a
-                  href="http://www.who.int/dietphysicalactivity/publications/trs916/summary/en/">http://www.who.int/dietphysicalactivity/publications/trs916/summary/en/</a>
+                  href="http://www.who.int/dietphysicalactivity/publications/trs916/summary/en/" target="_blank">http://www.who.int/dietphysicalactivity/publications/trs916/summary/en/</a>
               </p>})
 Resource.create!(title: "Internet/Information Literacy Overview",
   description: "When you’re looking online for health information, it can feel overwhelming. Who do you trust? Here are some tips for success",
@@ -1105,16 +1105,16 @@ Resource.create!(title: "Internet/Information Literacy Overview",
               any questions about health information you’ve found online, check with your doctor.</p>
               <div class="space-30"></div>
               <h3>For more information, check out these resources:</h3>
-              <p>Digital Literacy Resources: <a href="https://digitalliteracy.gov/resources-by-term/62">https://digitalliteracy.gov/resources-by-term/62</a></p>
+              <p>Digital Literacy Resources: <a href="https://digitalliteracy.gov/resources-by-term/62" target="_blank">https://digitalliteracy.gov/resources-by-term/62</a></p>
               <p>Finding Reliable Health Information Online: <a
-                  href="https://www.hopkinsmedicine.org/johns_hopkins_bayview/patient_visitor_amenities/community_health_library/finding_reliable_health_information_online.html">https://www.hopkinsmedicine.org/johns_hopkins_bayview/patient_visitor_amenities/community_health_library/finding_reliable_health_information_online.html</a>
+                  href="https://www.hopkinsmedicine.org/johns_hopkins_bayview/patient_visitor_amenities/community_health_library/finding_reliable_health_information_online.html" target="_blank">https://www.hopkinsmedicine.org/johns_hopkins_bayview/patient_visitor_amenities/community_health_library/finding_reliable_health_information_online.html</a>
               </p>
               <p>Evaluating Consumer Health Websites (slideshow presentation): <a
-                  href="https://www.slideshare.net/JHBMC_CHL/evaluating-consumer-health-websites">https://www.slideshare.net/JHBMC_CHL/evaluating-consumer-health-websites</a>
+                  href="https://www.slideshare.net/JHBMC_CHL/evaluating-consumer-health-websites" target="_blank">https://www.slideshare.net/JHBMC_CHL/evaluating-consumer-health-websites</a>
               </p>
               <div class="space-30"></div>
               <h3>References</h3>
-              <p>Johns Hopkins Bayview Medical Center. Finding Reliable Health Information Online. Website: <a href="https://www.hopkinsmedicine.org/johns_hopkins_bayview/patient_visitor_amenities/community_health_library/finding_reliable_health_information_online.html">https://www.hopkinsmedicine.org/johns_hopkins_bayview/patient_visitor_amenities/community_health_library/finding_reliable_health_information_online.html</a></p>})
+              <p>Johns Hopkins Bayview Medical Center. Finding Reliable Health Information Online. Website: <a href="https://www.hopkinsmedicine.org/johns_hopkins_bayview/patient_visitor_amenities/community_health_library/finding_reliable_health_information_online.html" target="_blank">https://www.hopkinsmedicine.org/johns_hopkins_bayview/patient_visitor_amenities/community_health_library/finding_reliable_health_information_online.html</a></p>})
 Resource.create!(title: "Self-Tracking – Importance of Self-Tracking",
   description: "Depending on your chronic care needs, you might need to track diet, carbohydrates, exercise, water intake, weight, mood, blood sugar, blood pressure, or something else that your doctor recommends.",
   content_page: %{<p>Depending on your chronic care needs, you might need to track diet, carbohydrates, exercise, water intake, weight, mood,
@@ -1128,7 +1128,7 @@ Resource.create!(title: "Self-Tracking – Importance of Self-Tracking",
               smartphone or other devices to get the information you need.</p>
               <div class="space-30"></div>
               <h3>For more information on self-tracking and some paper-based forms you can try, please see:</h3>
-              <p><a href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=bs1005">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=bs1005</a></p>})
+              <p><a href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=bs1005" target="_blank">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=bs1005</a></p>})
 Resource.create!(title: "Reminders – How they Work and What They’re for",
   description: "When you have chronic care needs, there may be extra things you need to keep track of, like appointments, lab work, or daily medications.",
   content_page: %{<p>When you have chronic care needs, there may be extra things you need to keep track of, like appointments, lab work, or
@@ -1153,8 +1153,8 @@ Resource.create!(title: "Goals and Goal Setting",
               on the progress you’ve made.</p>
               <div class="space-30"></div>
               <h3>For more information on goals and goal setting, talk to your doctor, or visit MyHealth.Alberta.ca:</h3>
-              <p><a href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=abk7429">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=abk7429</a></p>
-              <p><a href="https://myhealth.alberta.ca/Alberta/Pages/Setting-smart-goals.aspx">https://myhealth.alberta.ca/Alberta/Pages/Setting-smart-goals.aspx</a></p>
+              <p><a href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=abk7429" target="_blank">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=abk7429</a></p>
+              <p><a href="https://myhealth.alberta.ca/Alberta/Pages/Setting-smart-goals.aspx" target="_blank">https://myhealth.alberta.ca/Alberta/Pages/Setting-smart-goals.aspx</a></p>
               <div class="space-30"></div>
               <h3>Communicating your goals with your care providers</h3>
               <p>Whether the idea for a health-related change came from you or from a care provider, it’s a good idea for you to tell
@@ -1173,8 +1173,8 @@ Resource.create!(title: "Goals and Goal Setting",
               <div class="space-30"></div>
               <h3>Want more information?</h3>
               <p>Setting Smart Goals:<a
-                  href="https://myhealth.alberta.ca/Alberta/Pages/Setting-smart-goals.aspx">https://myhealth.alberta.ca/Alberta/Pages/Setting-smart-goals.aspx</a>
+                  href="https://myhealth.alberta.ca/Alberta/Pages/Setting-smart-goals.aspx" target="_blank">https://myhealth.alberta.ca/Alberta/Pages/Setting-smart-goals.aspx</a>
               </p>
               <p>Change a Habit by Setting Goals:<a
-                  href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=abk7429">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=abk7429</a>
+                  href="https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=abk7429" target="_blank">https://myhealth.alberta.ca/health/pages/conditions.aspx?Hwid=abk7429</a>
               </p>})
