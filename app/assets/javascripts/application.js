@@ -10,7 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require jquery_ujs
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
-//= require_tree .
+//= require chartist/dist/chartist
+//= require chartist-plugin-axistitle/dist/chartist-plugin-axistitle
+//= require chartist-plugin-targetline/chartist-plugin-targetline
+//= require chartist-plugin-legend/chartist-plugin-legend
+//= require chartist-plugin-tooltips/dist/chartist-plugin-tooltip
+//= require chartist-plugin-accessibility/dist/chartist-plugin-accessibility
+//= require cocoon

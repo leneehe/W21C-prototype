@@ -1,0 +1,20 @@
+<%= f.hidden_field :user_id, value: current_user.id %>
+<div class="form-group col-md-6">
+  <%= f.label :prescribed_by, "Prescribed by", class: "form-label" %>
+  <%= f.text_field :prescribed_by, class: "form-control", placeholder: "E.g.,Dr. Martinaz Jr." %>
+</div>
+
+<div class="form-group col-md-3">
+  <%= f.label :dosage, "How many to take at each dose?", class: "form-label" %>
+  <%= f.text_field :dosage, class: "form-control", placeholder: "E.g.,2 tablets" %>
+</div>
+
+<div class="form-group col-md-3">
+  <%= f.label :frequency, "How often to take each dose?", class: "form-label" %>
+  <%= f.text_field :frequency, class: "form-control", placeholder: "E.g.,Everyday AM & PM" %>
+</div>
+
+<div class="form-group col-md-12">
+  <%= f.label :special_instruction, "Special Instructions", class: "form-label" %>
+  <%= f.text_field :special_instruction, class: "form-control", placeholder: "E.g.,Take with meal in the morning and at night." %>
+</div>

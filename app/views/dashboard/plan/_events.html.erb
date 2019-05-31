@@ -1,0 +1,22 @@
+<div class="card-body mb-4">
+  <!-- Event legend start -->
+  <div class="col-md-5 pull-right">
+    <div class="card">
+      <h6 class="card-header border-0">Event Types</h6>
+      <div class="card-body p-1">
+        <ul class="legend">
+          <% @legends.each do |id, class_name| %>
+          <li class="default-style">
+            <div class="fc-event <%= class_name %>">
+            </div>
+            <%= EventType.find(id).name %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- end of event legend -->
+
+  <div class='report-calendar'></div>
+</div>

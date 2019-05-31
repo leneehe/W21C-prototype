@@ -1,0 +1,178 @@
+<!-- Smart Wizard plugin -->
+<% content_for :styles do %>
+  <%= stylesheet_link_tag 'libs/smartwizard/smartwizard.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'fullcalendar/fullcalendar.css', media: 'all' %>
+  <%= stylesheet_link_tag 'chartist/chartist.css', media: 'all' %>
+  <%= stylesheet_link_tag 'datatables/datatables.css', media: 'all' %>
+<% end %>
+<% content_for :scripts do %>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <%= javascript_include_tag 'libs/smartwizard/smartwizard.js' %>
+  <%= javascript_include_tag 'libs/validate/validate.js' %>
+  <%= javascript_include_tag 'dashboard/forms_smartwizard.js' %>
+  <%= javascript_include_tag 'fullcalendar/fullcalendar.js' %>
+  <%= javascript_include_tag 'dashboard/organize/ui_fullcalendar.js' %>
+  <%= javascript_include_tag "health-charts" %>
+  <%= javascript_include_tag 'datatables/datatables.js' %>
+  <%= javascript_include_tag 'dashboard/tables_datatables.js' %>
+<% end %>
+
+<h1>Helping You Make the Most of Your Care Appointments</h1>
+<br><br>
+<!-- Left -->
+<div id="report">
+  <ul>
+    <li><a href="#report-start" class="text-nowrap mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-md-play"></span>
+        <div class="text-muted small">GETTING</div>
+        Start
+      </a></li>
+    <li><a href="#report-step-1" class="text-nowrap mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-md-person"></span>
+        <div class="text-muted small">FIRST STEP</div>
+        About Me
+      </a></li>
+    <li><a href="#report-step-2" class="text-nowrap mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-md-medical"></span>
+        <div class="text-muted small">SECOND STEP</div>
+        Meds Update
+      </a></li>
+    <li><a href="#report-step-3" class="text-nowrap mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-md-color-wand"></span>
+        <div class="text-muted small">THIRD STEP</div>
+        Upcoming
+      </a></li>
+    <li><a href="#report-step-4" class="text-nowrap mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-md-chatbubbles"></span>
+        <div class="text-muted small">FOURTH STEP</div>
+        To Discuss
+      </a></li>
+    <li><a href="#report-step-5" class="text-nowrap mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-md-trending-up"></span>
+        <div class="text-muted small">FIFTH STEP</div>
+        My Progress
+      </a></li>
+    <li><a href="#report-step-6" class="text-nowrap mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-md-analytics"></span>
+        <div class="text-muted small">SIXTH STEP</div>
+        My Tracked Data
+      </a></li>
+    <li><a href="#report-summary" class="text-nowrap mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-md-apps"></span>
+        <div class="text-muted small">FINISH</div>
+        Summary
+      </a></li>
+  </ul>
+
+  <div class="mb-3">
+    <div id="report-start" class="card animated fadeIn mb-3">
+      <div class="card-body">
+        <h3>Getting Started</h3>
+        <div class="col-sm-12 col-md-5 mb-4">
+          <%= image_tag("dashboard/patient-provider.jpg") %>
+        </div>
+        <div class="col-sm-12 col-md-7">
+        <p>
+          When you have a chronic condition, you may see your care providers more often than other people might. You might even be seeing this provider for many years to come. So, it’s important that your relationship with your provider to be a positive one.
+        </p>
+        <p>
+          At each appointment, your time with your provider is short, and you might have a lot you want to discuss or ask about. At the same time, your provider is probably going to want to ask you about the things you’re tracking, go over your blood work with you, and a few other housekeeping items. Before you know it, your time is up and your issues haven’t really been addressed.
+        </p>
+        <p>
+          This tool is meant to help you get the housekeeping items out of the way, and help your provider be aware of the things you’re doing to help yourself, and also let them be aware of what matters to you so that you can discuss the real stuff with your provider.
+        </p>
+        </div>
+      </div>
+    </div>
+    <div id="report-step-1" class="card animated fadeIn mb-3">
+      <div class="card-body">
+        <h3>1. Profile</h3>
+        <%= render(partial: 'profile') %>
+      </div>
+    </div>
+    <div id="report-step-2" class="card animated fadeIn mb-3">
+      <div class="card-body">
+        <h3>2. My Medications</h3>
+        <p>This information is taken from your Medications List page, and we've highlighted anything you added within the past three months. Please take a moment to make sure it is up to date.</p>
+
+        <%= render(partial: 'medications') %>
+
+      </div>
+    </div>
+    <div id="report-step-3" class="card animated fadeIn mb-3">
+      <div class="card-body">
+        <h3>3. Upcoming Events</h3>
+        <p>The information below is from your Upcoming Appointments and activities and Keep Me Organized page.</p>
+
+          <%= render(partial: 'events', locals:{legends: @legends}) %>
+
+      </div>
+    </div>
+    <div id="report-step-4" class="card animated fadeIn mb-3">
+      <div class="card-body">
+        <h3>4. To Discuss</h3>
+        <p>
+        These items are from your Tracking, Goal Centre, and Appointment Checklist pages. Please review them and decide which items you would like to prioritize for this appointment.
+        </p>
+
+        <%= render(partial: 'discuss', locals: {goals: @goals, events: @events}) %>
+
+      </div>
+
+    </div>
+    <div id="report-step-5" class="card animated fadeIn mb-3">
+      <div class="card-body">
+        <h3>5. My Progress</h3>
+        <div class="col-md-4 pr-0" style="float:right">
+          <div class="card">
+            <h6 class="card-header border-0">Legend</h6>
+            <div class="card-body p-1">
+              <ul class="legend-chart">
+                <li class="default-style">
+                  <div class="symptom-legend" style="background-color: #41B6E6!important">
+                  </div>
+                  Normal
+                </li>
+                <li class="default-style">
+                  <div class="symptom-legend" style="background-color: #E06287!important">
+                  </div>
+                  Abnormal
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p>This information is from your Tracking Insights page. It provides an overview of the things you're tracking and could help your provider fine tune your care needs.</p>
+
+        <%= render(partial: 'charts') %>
+
+      </div>
+    </div>
+    <div id="report-step-6" class="card animated fadeIn mb-3">
+      <div class="card-body">
+        <h3>6. My Tracked Data</h3>
+        <p>Sometimes providers are used to seeing the raw data, so you might want to include some of that in your report too. This information is from your tracking data. Review what you've been tracking and decide what (if anything) you'd like to share with your provider.</p>
+
+        <%= render(partial: 'data') %>
+
+      </div>
+    </div>
+    <div id="report-summary" class="card animated fadeIn mb-3">
+      <div class="card-body">
+        <h3>Report summary</h3>
+        <p>Here's a summary of everything you want to include in your report for your provider. Take a moment to scan it and make sure it has everything you want in it. When you're ready, click "Create the Report" and we'll turn it into a PDF for you to print, save, or email to your provider.</p>
+
+        <%= render(partial: 'report_summary', locals: {legends: @legends, goals: @goals, events: @events}) %>
+
+      </div>
+    </div>
+  </div>
+</div>

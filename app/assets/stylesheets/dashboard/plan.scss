@@ -1,0 +1,75 @@
+// Place all the styles related to the dashboard/Plan controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul.legend {
+  list-style-type: none;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+
+  li{
+    display: inline-block;
+    -webkit-column-width: 150px;
+    -moz-column-width: 150px;
+    -o-column-width: 150px;
+    -ms-column-width: 150px;
+    column-width: 150px;
+
+    -webkit-column-rule-style: solid;
+    -moz-column-rule-style: solid;
+    -o-column-rule-style: solid;
+    -ms-column-rule-style: solid;
+    column-rule-style: solid;
+    .fc-event {
+      display: inline-block;
+      height: 15px;
+      width: 15px;
+    }
+  }
+}
+
+// Report to care provider
+.switcher {
+  padding-left: 4.375rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+
+  .switcher-indicator {
+  width: 4.5rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  line-height: 4.375rem;
+  }
+
+  .switcher-yes {
+    padding-right: 2rem;
+    top: 3px;
+  }
+
+  .switcher-no {
+    padding-left: 2rem;
+    top: 3px;
+  }
+
+  .switcher-indicator::after {
+    top: -0.1rem;
+    margin: 0.25rem 0 0 0.25rem;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .switcher-input:checked ~ .switcher-indicator::after {
+    left: 2.5rem;
+  }
+}
+
+.med-header {
+  font-weight: bold;
+}
+
+.report-calendar {
+  .fc-scroller {
+    max-height:300px;
+  }
+}

@@ -1,18 +1,139 @@
 <!-- Layout sidenav -->
 <div id="layout-sidenav" class="<% if local_assigns[:horizontal] == true %>layout-sidenav-horizontal sidenav-horizontal container-p-x flex-grow-0<% else %>layout-sidenav sidenav-vertical<% end %> sidenav bg-sidenav-theme">
 
+  <% if local_assigns[:horizontal] != true %>
+  <!-- Brand demo (see assets/css/demo/demo.css) -->
+  <div class="app-brand demo">
+    <span class="app-brand-logo demo">
+      <%= image_tag("MCC_logo_50x50w.png", size: "32") %>
+    </span>
+    <a href="/" class="app-brand-text demo sidenav-text font-weight-normal ml-2">MCC</a>
+    <a href="javascript:void(0)" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
+      <i class="ion ion-md-menu align-middle"></i>
+    </a>
+  </div>
+
+  <div class="sidenav-divider mt-0"></div>
+  <% end %>
+
+
   <!-- Inner -->
   <ul class="sidenav-inner<% if local_assigns[:horizontal] != true %> py-1<% end %>">
 
-    <li class="sidenav-item<%= current_page?(root_path) ? ' active' : '' %>">
-      <%= link_to root_path, class: "sidenav-link" do %>
-        <i class="sidenav-icon ion ion-ios-contact"></i><div>Home</div>
+    <!-- New Navigation items -->
+    <li class="sidenav-item<%= current_page_path?('/dashboard/plan') ? ' active open' : '' %>">
+      <%= link_to dashboard_plan_path, class: "sidenav-link sidenav-toggle" do %>
+        <i class="sidenav-icon ion ion-md-home"></i><div>My Care Planner</div>
       <% end %>
+      <ul class="sidenav-menu">
+        <li class="sidenav-item<%= current_page?(dashboard_plan_path) ? ' active' : '' %>">
+          <%= link_to dashboard_plan_path, class: "sidenav-link" do %>
+            <div>Care Planner</div>
+          <% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(dashboard_plan_report_path) || current_page?(dashboard_plan_display_report_path) || current_page_path?('/dashboard/plan/display_report.html') ? ' active' : '' %>">
+          <%= link_to dashboard_plan_report_path, class: "sidenav-link" do %>
+            <div>Report for Provider</div>
+          <% end %>
+        </li>
+      </ul>
     </li>
 
-    <li class="sidenav-item<%= current_page?(page2_path) ? ' active' : '' %>">
-      <%= link_to page2_path, class: "sidenav-link" do %>
-        <i class="sidenav-icon ion ion-md-desktop"></i><div>Page 2</div>
+    <li class="sidenav-item<%= current_page_path?('/dashboard/organize') ? ' active open' : '' %>">
+      <%= link_to dashboard_organize_events_path, class: "sidenav-link sidenav-toggle" do %>
+        <i class="sidenav-icon ion ion-md-calendar" style="color: #B580D1"></i><div>Keep Me Organized</div>
+      <% end %>
+      <ul class="sidenav-menu">
+        <li class="sidenav-item<%= current_page_path?('/dashboard/organize/events') ? ' active open' : '' %>">
+          <a href="javascript:void(0)" class="sidenav-link sidenav-toggle">
+            <div>Calendar</div>
+          </a>
+          <ul class="sidenav-menu">
+
+            <li class="sidenav-item<%= current_page?(dashboard_organize_events_path) || current_page_path?('/dashboard/organize/events') && !current_page?(dashboard_organize_events_checklists_path) ? ' active' : '' %>">
+              <%= link_to dashboard_organize_events_path, class: "sidenav-link" do %>
+                <div>Event Calendar</div>
+              <% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(dashboard_organize_events_checklists_path) ? ' active' : '' %>">
+              <%= link_to dashboard_organize_events_checklists_path, class: "sidenav-link" do %>
+                <div>Appointment Notes</div>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+        <li class="sidenav-item<%= current_page_path?('/dashboard/organize/medications') ? ' active' : '' %>">
+          <%= link_to dashboard_organize_medications_path, class: "sidenav-link" do %>
+            <div>Medication</div>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="sidenav-item<%= current_page_path?('/dashboard/track') || current_page_path?('/symptoms') ? ' active open' : '' %>">
+      <a href="javascript:void(0)" class="sidenav-link sidenav-toggle">
+        <i class="sidenav-icon ion ion-md-expand" style="color: #41B6E6"></i><div>Help Me Track</div>
+      </a>
+      <ul class="sidenav-menu">
+        <li class="sidenav-item<%= current_page_path?('/symptoms') ? ' active open' : '' %>">
+          <a href="javascript:void(0)" class="sidenav-link sidenav-toggle">
+            <div>Symptoms</div>
+          </a>
+          <ul class="sidenav-menu">
+            <li class="sidenav-item<%= current_page?(symptoms_path) || current_page_path?('/symptoms') && !current_page?(new_symptom_path) && !current_page?(symptoms_summary_path) ? ' active' : '' %>">
+              <%= link_to symptoms_path, class: "sidenav-link" do %>
+                <div>Tracked items</div>
+              <% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(new_symptom_path) || current_page?(symptoms_summary_path)  ? ' active' : '' %>">
+              <%= link_to new_symptom_path, class: "sidenav-link" do %>
+                <div>New Tracking</div>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li class="sidenav-item<%= current_page_path?('/dashboard/goals') ? ' active open' : '' %>">
+      <%= link_to dashboard_goals_path, class: "sidenav-link sidenav-toggle" do %>
+        <i class="sidenav-icon ion ion-md-trophy" style="color: #E06287"></i><div>Goal Centre</div>
+      <% end %>
+      <ul class="sidenav-menu">
+        <li class="sidenav-item<%= current_page?(dashboard_goals_path) || current_page_path?('/dashboard/goals') && !current_page?(new_dashboard_goal_path) ? ' active' : '' %>">
+        <%= link_to dashboard_goals_path, class: "sidenav-link" do %>
+          <div>Goals</div>
+        <% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(new_dashboard_goal_path) ? ' active' : '' %>">
+        <%= link_to new_dashboard_goal_path, class: "sidenav-link" do %>
+          <div>Create a New Goal</div>
+        <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="sidenav-item<%= current_page?(learn_path) || current_page?(dashboard_resources_path) ? ' active open' : '' %>">
+      <%= link_to learn_path, class: "sidenav-link sidenav-toggle" do %>
+        <i class="sidenav-icon ion ion-md-book" style="color: #26D07C"></i><div>Learn/Resources</div>
+      <% end %>
+      <ul class="sidenav-menu">
+        <li class="sidenav-item<%= current_page?(learn_path) ? ' active' : '' %>">
+        <%= link_to learn_path, class: "sidenav-link" do %>
+          <div>Learn</div>
+        <% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(dashboard_resources_path) ? ' active' : '' %>">
+        <%= link_to dashboard_resources_path, class: "sidenav-link" do %>
+          <div>Resources</div>
+        <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="sidenav-item<%= current_page?(user_path(current_user)) ? ' active' : '' %>">
+      <%= link_to user_path(current_user), class: "sidenav-link" do %>
+        <i class="sidenav-icon ion ion-md-person"></i><div>All About Me</div>
       <% end %>
     </li>
 

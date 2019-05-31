@@ -1,0 +1,30 @@
+<div class="card mb-4">
+  <div class="card-header med-header">
+    <div class="col-sm-4">
+      Medication Name
+    </div>
+    <div class="col-sm-4">
+      Dosage
+    </div>
+    <div class="col-sm-4">
+      Instructions
+    </div>
+  </div>
+  <div class="card-body">
+    <ol class="med-body col-sm-12">
+      <% current_user.tracked_medications.each do |tracked_medication| %>
+        <li>
+          <div class="col-sm-4">
+            <%= tracked_medication.find_name %>
+          </div>
+          <div class="col-sm-4">
+            <%= tracked_medication.dosage %>
+          </div>
+          <div class="col-sm-4">
+            <%= tracked_medication.find_instruction %>
+          </div>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+</div>

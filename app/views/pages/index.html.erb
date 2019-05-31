@@ -1,4 +1,5 @@
   <!--Header-Area-->
+
   <header class="blue-bg relative fix" id="home">
       <div class="section-bg overlay-bg angle-bg ripple ">
           <div id="home-parallax-image">
@@ -45,45 +46,75 @@
       <div class="container">
         <div class="row wow fadeInUp">
             <div class="col-xs-12 col-md-10 col-md-offset-1 text-center">
-                <h3>Sign up today for FREE access to personalized supports</h3>
+                <h3>Sign up today for FREE access to personalized tools to help you on your care journey.</h3>
             </div>
         </div>
           <div class="row">
               <div class="space-60"></div>
               <div class="col-xs-12 col-md-4 wow fadeInUp" data-wow-delay="0.2s">
                   <div id="tinted-image1" class="well well-hover text-center">
-                      <%= link_to plan_path do %>
-                      <p class="md-icon"><span class="ti-agenda" style="color: #B580D1"></span></p>
+                      <% if user_signed_in? %>
+                        <%= link_to dashboard_plan_path do %>
+                        <p class="md-icon"><span class="ti-agenda" style="color: #B580D1"></span></p>
+                        <% end %>
+                      <% else %>
+                        <%= link_to plan_path do %>
+                        <p class="md-icon"><span class="ti-agenda" style="color: #B580D1"></span></p>
+                        <% end %>
                       <% end %>
                       <div class="space-10"></div>
-                      <h5 class="text-uppercase">
-                        <%= link_to "Helping you organize your care needs", plan_path %>
+                      <h5>
+                        <% if user_signed_in? %>
+                          <%= link_to "Helping you organize your care needs", dashboard_plan_path %>
+                        <% else %>
+                          <%= link_to "Helping you organize your care needs", plan_path %>
+                        <% end %>
                       </h5>
-                      <p>Lorem ipsum dolor sit amt, sed do eiusmod tepo raraincididunt ugt labore.</p>
+                      <p>Keeping track of all your appointments, medications, and relevant information should be easier. Our tools can help you stay organized.</p>
                   </div>
               </div>
               <div class="col-xs-12 col-md-4 wow fadeInUp" data-wow-delay="0.4s">
                   <div id="tinted-image2" class="well well-hover text-center">
-                      <%= link_to track_path do %>
-                      <p class="md-icon"><span class="ti-target" style="color: #41B6E6"></span></p>
+                      <% if user_signed_in? %>
+                        <%= link_to symptoms_path do %>
+                        <p class="md-icon"><span class="ti-target" style="color: #41B6E6"></span></p>
+                        <% end %>
+                      <% else %>
+                        <%= link_to track_path do %>
+                        <p class="md-icon"><span class="ti-target" style="color: #41B6E6"></span></p>
+                        <% end %>
                       <% end %>
                       <div class="space-10"></div>
-                      <h5 class="text-uppercase">
-                        <%= link_to "Things I'm tracking", track_path %>
+                      <h5>
+                        <% if user_signed_in? %>
+                          <%= link_to "Things I'm tracking", symptoms_path %>
+                        <% else %>
+                          <%= link_to "Things I'm tracking", track_path %>
+                        <% end %>
                       </h5>
-                      <p>Lorem ipsum dolor sit amt, consectet adop adipisicing elit, sed do eiusmod tepo raraincididunt ugt labore.</p>
+                      <p>A big part of managing your day-to-day chronic care needs is self-tracking. Our visualizations of your data might provide new insight into making those days the best they can be within your context.</p>
                   </div>
               </div>
               <div class="col-xs-12 col-md-4 wow fadeInUp" data-wow-delay="0.6s">
                   <div id="tinted-image3" class="well well-hover text-center">
-                      <%= link_to goal_centre_path do %>
-                      <p class="md-icon"><span class="ti-cup" style="color: #E06287"></span></p>
+                      <% if user_signed_in? %>
+                        <%= link_to dashboard_goals_path do %>
+                        <p class="md-icon"><span class="ti-cup" style="color: #E06287"></span></p>
+                        <% end %>
+                      <% else %>
+                        <%= link_to goal_centre_path do %>
+                        <p class="md-icon"><span class="ti-cup" style="color: #E06287"></span></p>
+                        <% end %>
                       <% end %>
                       <div class="space-10"></div>
-                      <h5 class="text-uppercase">
-                      <%= link_to "Set and Manage your goals", goal_centre_path %>
+                      <h5>
+                        <% if user_signed_in? %>
+                          <%= link_to "Set and Manage your goals", dashboard_goals_path %>
+                        <% else %>
+                          <%= link_to "Set and Manage your goals", goal_centre_path %>
+                        <% end %>
                       </h5>
-                      <p>Lorem ipsum dolor sit amt, consectet adop adipisicing elit, sed do eiusmod tepo raraincididunt ugt labore.</p>
+                      <p>Setting SMART goals is a great way to successfully get to where you want to be. We’ve put together a guided step-by-step guides to help you reach your goals.</p>
                   </div>
               </div>
           </div>
@@ -96,8 +127,8 @@
       <div class="container">
           <div class="row wow fadeInUp">
               <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
-                  <h3 class="text-uppercase">How it works?</h3>
-                  <p>Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor coli incididunt ut labore Lorem ipsum madolor sit amet.</p>
+                  <h3 class="text-uppercase">How it works</h3>
+                  <p>Managing long term health care needs can feel overwhelming or like a full time job at times. We’re building tools for patients just like you to make that job just a little bit easier.</p>
               </div>
           </div>
           <div class="space-60"></div>
@@ -105,31 +136,31 @@
               <div class="col-xs-12 col-sm-6 col-md-3 text-center wow fadeInUp" data-wow-delay="0.2s">
                   <div class="hover-shadow">
                       <div class="space-60">
-                          <%= image_tag ("icon/icon1.png") %>
+                          <%= image_tag ("icon/icon5.png") %>
                       </div>
                       <div class="space-20"></div>
-                      <h5 class="text-uppercase">LOREM IPSUM</h5>
-                      <p>Lorem ipsum dolor sit ameteped consecteadop adipisicing elitab sed eiusmod temporara incident</p>
+                      <h5 class="text-uppercase">We Talked to Patients Like You</h5>
+                      <p>We listened to groups of patients with (sometimes multiple) chronic conditions to find out what challenges and issues they deal with on a day-to-day basis.</p>
                   </div>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-3 text-center wow fadeInUp" data-wow-delay="0.4s">
                   <div class="hover-shadow">
                       <div class="space-60">
-                          <%= image_tag("icon/icon2.png") %>
+                          <%= image_tag("icon/icon1.png") %>
                       </div>
                       <div class="space-20"></div>
-                      <h5 class="text-uppercase">LOREM IPSUM</h5>
-                      <p>Lorem ipsum dolor sit ameteped consecteadop adipisicing elitab sed eiusmod temporara incident</p>
+                      <h5 class="text-uppercase">We Met with Care Providers</h5>
+                      <p>We also talked to health care providers to understand their perspectives on those same challenges and issues.</p>
                   </div>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-3 text-center wow fadeInUp" data-wow-delay="0.6s">
                   <div class="hover-shadow">
                       <div class="space-60">
-                          <%= image_tag("icon/icon3.png") %>
+                          <%= image_tag("icon/icon2.png") %>
                       </div>
                       <div class="space-20"></div>
-                      <h5 class="text-uppercase">LOREM IPSUM</h5>
-                      <p>Lorem ipsum dolor sit ameteped consecteadop adipisicing elitab sed eiusmod temporara incident</p>
+                      <h5 class="text-uppercase">We Worked with Designers and Developers</h5>
+                      <p>Together with a group of forward-thinking Canadian developers, we’re building a suite of tools and supports to make your job easier.</p>
                   </div>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-3 text-center wow fadeInUp" data-wow-delay="0.8s">
@@ -138,160 +169,29 @@
                           <%= image_tag("icon/icon4.png") %>
                       </div>
                       <div class="space-20"></div>
-                      <h5 class="text-uppercase">LOREM IPSUM</h5>
-                      <p>Lorem ipsum dolor sit ameteped consecteadop adipisicing elitab sed eiusmod temporara incident</p>
+                      <h5 class="text-uppercase">Our Vision</h5>
+                      <p>Our vision is for these tools to become part of a seamless ecosystem where you and your care providers can work together to make living with chronic care needs easier for all you and everyone who helps you on that journey.</p>
                   </div>
               </div>
           </div>
           <div class="space-60"></div>
           <div class="row">
               <div class="col-xs-12 col-md-8 col-md-offset-2 text-center wow fadeInUp">
-                  <div class="down-offset ">
-                      <%= image_tag("mobile1.png") %>
+                  <div class="up-offset ">
+                      <%= image_tag("home-feat1.jpg") %>
                   </div>
               </div>
           </div>
       </div>
   </section>
   <!--Work-Section/-->
-  <!--Feature-Section-->
-  <section class="fix">
-      <div class="space-60"></div>
-      <div class="container" id="feature">
-          <div class="space-100"></div>
-          <div class="row wow fadeInUp">
-              <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
-                  <h3 class="text-uppercase">Special Features</h3>
-                  <p>Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor coli incididunt ut labore Lorem ipsum madolor sit amet.</p>
-              </div>
-          </div>
-          <div class="space-60"></div>
-          <div class="row feature-area">
-              <div class="col-xs-12 col-sm-6 col-md-4 wow fadeInLeft">
-                  <div class="space-30"></div>
-                  <a href="#feature1" data-toggle="tab">
-                      <div class="media single-feature">
-                          <div class="media-body text-right">
-                              <h5>LOREM IPSUM</h5>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididugnt ut labore</p>
-                          </div>
-                          <div class="media-right">
-                              <div class="border-icon">
-                                  <span class="ti-light-bulb"></span>
-                              </div>
-                          </div>
-                      </div>
-                  </a>
-                  <div class="space-30"></div>
-                  <a href="#feature2" data-toggle="tab">
-                      <div class="media single-feature">
-                          <div class="media-body text-right">
-                              <h5>LOREM IPSUM</h5>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididugnt ut labore</p>
-                          </div>
-                          <div class="media-right">
-                              <div class="border-icon">
-                                  <span class="ti-cup"></span>
-                              </div>
-                          </div>
-                      </div>
-                  </a>
-                  <div class="space-30"></div>
-                  <a href="#feature3" data-toggle="tab">
-                      <div class="media single-feature">
-                          <div class="media-body text-right">
-                              <h5>LOREM IPSUM</h5>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididugnt ut labore</p>
-                          </div>
-                          <div class="media-right">
-                              <div class="border-icon">
-                                  <span class="ti-comments"></span>
-                              </div>
-                          </div>
-                      </div>
-                  </a>
-                  <div class="space-30"></div>
-              </div>
-              <div class="hidden-xs hidden-sm col-md-4 text-center fix wow fadeIn">
-                  <div class="down-offset relative ">
-                      <%= image_tag "mobile2.png" %>
-                      <div class="screen_image tab-content">
-                          <div id="feature1" class="tab-pane fade in active">
-                              <%= image_tag "feature/1.jpg" %>
-                          </div>
-                          <div id="feature2" class="tab-pane fade">
-                              <%= image_tag "feature/6.jpg" %>
-                          </div>
-                          <div id="feature3" class="tab-pane fade">
-                              <%= image_tag "feature/3.jpg" %>
-                          </div>
-                          <div id="feature4" class="tab-pane fade">
-                              <%= image_tag "feature/4.jpg" %>
-                          </div>
-                          <div id="feature5" class="tab-pane fade">
-                              <%= image_tag "feature/5.jpg" %>
-                          </div>
-                          <div id="feature6" class="tab-pane fade">
-                              <%= image_tag "feature/2.jpg" %>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-4 wow fadeInRight">
-                  <div class="space-30"></div>
-                  <a href="#feature4" data-toggle="tab">
-                      <div class="media single-feature">
-                          <div class="media-left">
-                              <div class="border-icon">
-                                  <span class="ti-eye"></span>
-                              </div>
-                          </div>
-                          <div class="media-body">
-                              <h5>LOREM IPSUM</h5>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididugnt ut labore</p>
-                          </div>
-                      </div>
-                  </a>
-                  <div class="space-30"></div>
-                  <a href="#feature5" data-toggle="tab">
-                      <div class="media single-feature">
-                          <div class="media-left">
-                              <div class="border-icon">
-                                  <span class="ti-shine"></span>
-                              </div>
-                          </div>
-                          <div class="media-body">
-                              <h5>LOREM IPSUM</h5>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididugnt ut labore</p>
-                          </div>
-                      </div>
-                  </a>
-                  <div class="space-30"></div>
-                  <a href="#feature6" data-toggle="tab">
-                      <div class="media single-feature">
-                          <div class="media-left">
-                              <div class="border-icon">
-                                  <span class="ti-layout-slider"></span>
-                              </div>
-                          </div>
-                          <div class="media-body">
-                              <h5>LOREM IPSUM</h5>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididugnt ut labore</p>
-                          </div>
-                      </div>
-                  </a>
-                  <div class="space-30"></div>
-              </div>
-          </div>
-      </div>
-  </section>
-  <!--Feature-Section-->
+
   <!--Video-Section-->
   <section class="section-video relative fix">
       <div class="section-bg overlay-bg alpha">
       </div>
       <video class="ivideo" id="cvideo">
-          <source src="http://intimissibd.com/video/background-video.webm" type="video/webm">
+          <!-- <source src="http://intimissibd.com/video/background-video.webm" type="video/webm">-->
       </video>
       <div class="section-video-text text-center">
           <button type="button" id="vbutton" class="video-button"><span class="ti-control-play"></span></button>
@@ -367,4 +267,3 @@
       </div>
       <div class="space-80"></div>
   </section>
-  <!--Screenshot-Section/-->

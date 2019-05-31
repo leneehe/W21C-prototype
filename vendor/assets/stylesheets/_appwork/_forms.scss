@@ -120,8 +120,8 @@ select.form-control-lg[size="0"]:not([multiple]) {
 .col-form-label,
 .col-form-legend {
   margin-bottom: if($input-btn-border-width != 0px, calc(#{$input-btn-padding-y} - #{$input-btn-border-width * 2}), $input-btn-padding-y);
-  font-weight: $label-font-weight;
-  font-size: $label-font-size;
+  // font-weight: $label-font-weight;
+  font-size: $label-font-size + 0.5rem;
 }
 
 .col-form-label,

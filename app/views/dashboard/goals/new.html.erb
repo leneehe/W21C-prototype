@@ -1,0 +1,358 @@
+<!-- Smart Wizard plugin -->
+<% content_for :styles do %>
+  <%= stylesheet_link_tag 'libs/smartwizard/smartwizard.css', media: 'all' %>
+<% end %>
+<% content_for :scripts do %>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <%= javascript_include_tag 'libs/smartwizard/smartwizard.js' %>
+  <%= javascript_include_tag 'libs/validate/validate.js' %>
+  <%= javascript_include_tag 'dashboard/forms_smartwizard.js' %>
+<% end %>
+
+<h1>Setting SMART Goals</h1>
+  <%= form_for @goal, url: dashboard_goals_path(@goal), html: {id: "smartgoal"} do |g| %>
+    <%= csrf_meta_tags %>
+    <ul class="card px-4 pt-3 mb-3">
+      <li>
+        <a href="#smartgoal-step-0" class="mb-3">
+          <span class="sw-done-icon ion ion-md-checkmark"></span>
+          <span class="sw-icon ion ion-ios-play"></span>
+          <div class="text-muted small">GETTING STARTED</div>
+          Start
+        </a>
+      </li>
+      <li>
+        <a href="#smartgoal-step-1" class="mb-3">
+          <span class="sw-done-icon ion ion-md-checkmark"></span>
+          <span class="sw-number">1</span>
+          <div class="text-muted small">FIRST STEP</div>
+          Specific
+        </a>
+      </li>
+      <li>
+        <a href="#smartgoal-step-2" class="mb-3">
+          <span class="sw-done-icon ion ion-md-checkmark"></span>
+          <span class="sw-number">2</span>
+          <div class="text-muted small">SECOND STEP</div>
+          Measurable
+        </a>
+      </li>
+      <li>
+        <a href="#smartgoal-step-3" class="mb-3">
+          <span class="sw-done-icon ion ion-md-checkmark"></span>
+          <span class="sw-number">3</span>
+          <div class="text-muted small">THIRD STEP</div>
+          Attainable
+        </a>
+      </li>
+      <li>
+        <a href="#smartgoal-step-4" class="mb-3">
+          <span class="sw-done-icon ion ion-md-checkmark"></span>
+          <span class="sw-number">4</span>
+          <div class="text-muted small">FOURTH STEP</div>
+          Rewarding
+        </a>
+      </li>
+      <li>
+        <a href="#smartgoal-step-5" class="mb-3">
+          <span class="sw-done-icon ion ion-md-checkmark"></span>
+          <span class="sw-number">5</span>
+          <div class="text-muted small">FIFTH STEP</div>
+          Timely
+        </a>
+      </li>
+    </ul>
+
+    <div class="mb-3">
+      <!-- Start - set goal content -->
+      <div id="smartgoal-step-0" class="card animated fadeIn">
+        <div class="card-body">
+          <div class="col-sm-12 col-md-8">
+            <p>
+              <%= image_tag("dashboard/SMART-goals.png") %>
+            </p>
+          </div>
+          <div class="card bg-goal col-sm-12 col-md-4 mb-4 p-4">
+            <h3 class="text-white">SMART Goals Guide</h3>
+            Goal setting is an important step that you can take to help yourself. No matter what you want to achieve as part of your journey, this guide is intended to help you set SMART goals - goals that are Specific, Measureable, Attainable, Rewarding, and Timely, so that your chances of success are best supported.
+          </div>
+        </div>
+      </div>
+
+      <!-- 1. Be Specific -->
+      <div id="smartgoal-step-1" class="card animated fadeIn">
+        <div class="card-body">
+          <div class="col-sm-12 col-md-8 pr-5">
+            <h3>Be Specific</h3>
+
+            <div class="form-group">
+              <%= g.label :specific_1, "What do you want to achieve? (be as specific as possible)" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :specific_1,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :specific_2, "How will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :specific_2,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :specific_3, "When will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :specific_3,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :specific_4, "Where will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :specific_4,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+
+          </div>
+          <div class="card bg-goal col-sm-12 col-md-4 mb-4 p-4">
+            <h3 class="text-white">SMART Goals Guide</h3>
+            <p>
+              Let's start with being specific. Goals that are written clearly are easier to focus on, act on, and follow.
+            </p>
+            <p>
+              As an example to help get you started:
+            </p>
+            <p>
+              <b>WHAT:</b> I will eat 7 servings of vegetables and fruit each day.
+            </p>
+            <p>
+              <b>HOW:</b> Eat one piece of fruit at breakfast, 10am, and 4pm (3 servings total). I will eat 1 cup of vegetables at lunch and 1 cup at dinner (total 4 servings).
+            </p>
+            <p>
+              <b>WHEN:</b> At meal and snack times, as specified above.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Make it Measurable -->
+      <div id="smartgoal-step-2" class="card animated fadeIn">
+        <div class="card-body">
+          <div class="col-sm-12 col-md-8 pr-5">
+            <h3>Make it Measurable</h3>
+
+            <div class="form-group">
+              <%= g.label :measurable_1, "How are you going to measure progress?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :measurable_1,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :measurable_2, "What defines 'success' for each instance?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :measurable_2,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :measurable_3, "When will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :measurable_3,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :measurable_4, "Where will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :measurable_4,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+
+          </div>
+          <div class="card bg-goal col-sm-12 col-md-4 mb-4 p-4">
+            <h3 class="text-white">SMART Goals Guide</h3>
+            <p>
+            Next let's decide on how you're going to measure progress towards your goal, or how you'll define success for each occurance.
+            </p>
+            <p> As an example to help get you started:</p>
+            <p>MEASURE:</p>
+            <p>RECORD:</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Make it Attainable -->
+      <div id="smartgoal-step-3" class="card animated fadeIn">
+        <div class="card-body">
+          <div class="col-sm-12 col-md-8 pr-5">
+            <h3>Make it Attainable</h3>
+
+            <div class="form-group">
+              <%= g.label :attainable_1, "What challenges might prevent you from reaching this goal?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :attainable_1,
+                  class: "form-control",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :attainable_2, "What steps can you take to help guarantee success?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :attainable_2,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :attainable_3, "When will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :attainable_3,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :attainable_4, "Where will you do this?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :attainable_4,
+                  class: "form-control required",
+                  required: true
+              %>
+            </div>
+
+          </div>
+          <div class="card bg-goal col-sm-12 col-md-4 mb-4 p-4">
+            <h3 class="text-white">SMART Goals Guide</h3>
+            <p>
+              Every change you make will encounter some challenges or maybe you'll have to shift some habits to guarantee success.
+            </p>
+            <p>
+              In our example:
+            </p>
+            <p>
+              <b>CHALLENGES:</b> Before I can plan my meals, I'll need to make sure I have 7 servings of fruits and vegetables available to eat.
+            </p>
+            <p>
+              <b>STEPS TO TAKE:</b> I will plan to buy enough vegetables and fruits when I do the grocery shopping each week.
+            </p>
+            <p>
+              <b>WHEN:</b> I'll make a list before I leave the house to go to the grocery store, I will make sure I have added enough vegetables/fruits to my list.
+            </p>
+            <p>
+              <b>WHERE:</b> When I go to the grocery store.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- 4. Make it Rewarding -->
+      <div id="smartgoal-step-4" class="card animated fadeIn">
+        <div class="card-body">
+          <div class="col-sm-12 col-md-8 pr-5">
+            <h3>Make it Rewarding</h3>
+
+            <div class="form-group">
+              <%= g.label :rewarding_1, "How will you feel when you reach this goal?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :rewarding_1,
+                  class: "form-control",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :rewarding_2, "What benefits will reaching this goal have for you?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :rewarding_2,
+                  class: "form-control",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :rewarding_3, "Did you set this goal for yourself?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :rewarding_3,
+                  class: "form-control",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :rewarding_4, "Is this something you want to do?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :rewarding_4,
+                  class: "form-control",
+                  required: true
+              %>
+            </div>
+
+          </div>
+          <div class="card bg-goal col-sm-12 col-md-4 mb-4 p-4">
+            <h3 class="text-white">SMART Goals Guide</h3>
+            <p>
+              To help you focus on why this goal is important to you, and to help motivate you, this step asks you to think about what positive outcomes you can look forward to when you reach this goal.
+            </p>
+            <p>
+              In our example:
+            </p>
+            <p>
+              <b>FEEL:</b> When I eat more vegetables and fruits each day, I will feel like I'm doing something to help myself.
+            </p>
+            <p>
+              <b>BENEFITS:</b> I'll be eating better foods and this will help me avoid the foods that are not as good for me.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- 5. Keep it Timely -->
+      <div id="smartgoal-step-5" class="card animated fadeIn">
+        <div class="card-body">
+          <div class="col-sm-12 col-md-8 pr-5">
+            <h3>Keep it Timely</h3>
+
+            <div class="form-group">
+              <%= g.label :timely_1, "When will you start working towards your goal?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :timely_1,
+                  class: "form-control",
+                  required: true
+              %>
+            </div>
+            <div class="form-group">
+              <%= g.label :timely_2, "Have you chosen a start date that's comfortable but soon?" %>
+              <span class="text-danger">*</span>
+              <%= g.text_field :timely_2,
+                  class: "form-control",
+                  required: true
+              %>
+            </div>
+
+          </div>
+          <div class="card bg-goal col-sm-12 col-md-4 mb-4 p-4">
+            <h3 class="text-white">SMART Goals Guide</h3>
+            <p>
+              To help you focus on why this goal is important to you, and to help motivate you, this step asks you to think about what positive outcomes you can look forward to when you reach this goal.
+            </p>
+            <p>
+              In our example:
+            </p>
+            <p>
+              <b>FEEL:</b> When I eat more vegetables and fruits each day, I will feel like I'm doing something to help myself.
+            </p>
+            <p>
+              <b>BENEFITS:</b> I'll be eating better foods and this will help me avoid the foods that are not as good for me.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  <% end %>

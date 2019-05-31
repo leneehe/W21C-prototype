@@ -111,7 +111,7 @@ hr.fc-divider {
 .fc td {
   padding: 0;
   vertical-align: top;
-  
+
   &.fc-today {
     border-style: double;
 
@@ -160,7 +160,7 @@ a[data-goto] {
     border-right: 0 hidden transparent;
     border-bottom: 0 hidden transparent;
   }
-  
+
   &:first-child table {
     border-top: 0 hidden transparent;
   }
@@ -197,7 +197,7 @@ a[data-goto] {
       border-color: transparent;
     }
   }
-    
+
   .fc-content-skeleton {
     position: relative;
     z-index: 4;
@@ -238,7 +238,7 @@ a[data-goto] {
 
 .fc-scroller {
   -webkit-overflow-scrolling: touch;
-  
+
   > .fc-day-grid,
   > .fc-time-grid {
     position: relative;
@@ -298,7 +298,7 @@ a[data-goto] {
 
 .fc-event.fc-selected .fc-resizer {
   display: block;
-  
+
   &:before {
     content: "";
     position: absolute;
@@ -507,7 +507,7 @@ a.fc-more {
       padding: 0;
     }
   }
-  
+
   .fc-time-grid .fc-slats table {
     background: none;
   }
@@ -676,7 +676,7 @@ a.fc-more {
 
 .fc-basic-view td.fc-week-number {
   text-align: center;
-  
+
   > * {
     display: inline-block;
     min-width: 1.25em;
@@ -1063,12 +1063,12 @@ html:not([dir=rtl]) .fc-list-item-marker {
 
   .fc-event {
     color: $body-color !important;
-    font-size: $font-size-sm;
+    font-size: 1.2rem;
     line-height: $line-height-sm;
   }
 
   .fc-toolbar .btn {
-    font-size: $font-size-sm !important;
+    font-size: 1.3rem !important;
     line-height: $line-height-sm !important;
   }
 

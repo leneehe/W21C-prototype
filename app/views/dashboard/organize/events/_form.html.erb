@@ -1,0 +1,37 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Add an event</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <%= f.label :name, "Title", class: "form-label" %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="form-group default-style">
+        <%= f.label :event_type_id, "Type", class: "form-label" %>
+        <%= f.select(:event_type_id, options_for_select(@legends, ""), {}, {class:"selectpicker", id:"selectBox", onchange:"changeFunc()"}) do %>
+          <%= content_tag(:option, "Please Select:", value: "", data: {class: "white"}) %>
+          <% @legends.each do |id, class_name| %>
+            <%= content_tag(:option, EventType.find(id).name, value: id, data: {class: class_name}) %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="form-group">
+        <%= f.label :frequency, "Repeat Event", class: "form-label" %>
+        <%= f.select :frequency, options_for_select(["Daily", "Weekly", "Bi-weekly", "Monthly", "Do not repeat"], "Do not repeat"), {}, class:"selectpicker" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :location, class: "form-label" %>
+        <%= f.text_field :location, class: "form-control" %>
+      </div>
+      <%= f.hidden_field :start %>
+      <%= f.hidden_field :end %>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default md-btn-flat" data-dismiss="modal">Close</button>
+      <%= f.submit "Save", class:"btn btn-primary md-btn-flat" %>
+    </div>
+  </div>
+</div>

@@ -86,8 +86,7 @@ Header-Background
 }
 
 .overlay-bg {
-    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(left, #1e5799 0%, #3ccdbb 0%, #16c9f6 100%) repeat scroll 0 0;
-    background: rgba(0, 0, 0, 0) linear-gradient(to right, #1e5799 0%, #3ccdbb 0%, #16c9f6 100%) repeat scroll 0 0;
+    background: #8CC7DF
 }
 
 .dewo:after {
@@ -234,12 +233,12 @@ Angle-background
 }
 
 .single_screen_slide {
-    background: rgba(0, 0, 0, 0) url("screen/phone.png") no-repeat scroll center center;
+    /* background: rgba(0, 0, 0, 0) url("screen/phone.png") no-repeat scroll center center; */
     padding: 66px 70px 70px 71px;
 }
 
 .list_screen_slide:after {
-    content: url("screen/phone.png");
+    /* content: url("screen/phone.png"); */
     left: 50%;
     position: absolute;
     top: 50%;
@@ -472,9 +471,9 @@ address {
 }
 
 .mainmenu-area.affix {
-    background: #1e5799;
-    background: -webkit-linear-gradient(left, #1e5799 0%, #26D07C 0%, #41B6E6 100%);
-    background: linear-gradient(to right, #1e5799 0%, #26D07C 0%, #41B6E6 100%);
+    background: rgba(153, 153, 153, 0.7);
+    /* background: -webkit-linear-gradient(left, #1e5799 0%, #26D07C 0%, #41B6E6 100%);
+    background: linear-gradient(to right, #1e5799 0%, #26D07C 0%, #41B6E6 100%); */
     filter: "progid: DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#41B6E6', GradientType=1)";
     box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
     padding: 0;
@@ -496,6 +495,7 @@ address {
 }
 
 #mainmenu li a {
+    font-weight: 700;
     color: #FFF;
 }
 

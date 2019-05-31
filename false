@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20181015015243_change_admin_column_type.rb

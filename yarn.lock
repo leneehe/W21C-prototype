@@ -5,44 +5,54 @@
 "@claviska/jquery-minicolors@~2.2.6":
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/@claviska/jquery-minicolors/-/jquery-minicolors-2.2.6.tgz#00b4c1e4e31e4da483501785d5c2ed3fccfdedc9"
+  integrity sha1-ALTB5OMeTaSDUBeF1cLtP8z97ck=
   dependencies:
     jquery ">= 1.7.x"
 
 almond@~0.3.1:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/almond/-/almond-0.3.3.tgz#a0e7c95ac7624d6417b4494b1e68bff693168a20"
+  integrity sha1-oOfJWsdiTWQXtElLHmi/9pMWiiA=
 
 animate.css@~3.6.1:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.6.1.tgz#4ea8a48556378bc8d7535224296c4c0dac9229de"
+  integrity sha512-xEIzzKyQvQSIldgrtC2d/qptAEQLVlMb6xQrjQ6HU6NyGhF7LAIivRZVmhSAg4EICRASNiS+A1G+wvAKTCoC7A==
 
 atoa@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/atoa/-/atoa-1.0.0.tgz#0cc0e91a480e738f923ebc103676471779b34a49"
+  integrity sha1-DMDpGkgOc4+SPrwQNnZHF3mzSkk=
 
 blueimp-gallery@~2.33.0:
   version "2.33.0"
   resolved "https://registry.yarnpkg.com/blueimp-gallery/-/blueimp-gallery-2.33.0.tgz#f897912a1bbf65be904454d5990be6155799dd45"
+  integrity sha512-gz++nODmcJkENLXizdazy4z4EqoJCXyOisrH6M/fR3JE507yO+tPgoEsRCBggGwMAmQsu6kWACfldlq7RIa+Lg==
 
 bootstrap-duallistbox@~3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/bootstrap-duallistbox/-/bootstrap-duallistbox-3.0.6.tgz#b276303d6ad86fa76b4d64e0273eb297aab99fd0"
+  integrity sha1-snYwPWrYb6drTWTgJz6yl6q5n9A=
 
 bootstrap-markdown@~2.10.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/bootstrap-markdown/-/bootstrap-markdown-2.10.0.tgz#65234277840454ee1adc7482b2f4a5e3975dace5"
+  integrity sha1-ZSNCd4QEVO4a3HSCsvSl45ddrOU=
 
 bootstrap-multiselect@~0.9.13-1:
   version "0.9.13-1"
   resolved "https://registry.yarnpkg.com/bootstrap-multiselect/-/bootstrap-multiselect-0.9.13-1.tgz#2c57cee260b18d7f01a4edd9d65f25df0425fd2a"
+  integrity sha1-LFfO4mCxjX8BpO3Z1l8l3wQl/So=
 
 bootstrap-select@~1.13.1:
   version "1.13.1"
   resolved "https://registry.yarnpkg.com/bootstrap-select/-/bootstrap-select-1.13.1.tgz#f59c02926fb5ac6356b9d1cdbc5384c2f013d9ba"
+  integrity sha1-9ZwCkm+1rGNWudHNvFOEwvAT2bo=
 
 bootstrap-slider@~10.0.0:
   version "10.0.2"
   resolved "https://registry.yarnpkg.com/bootstrap-slider/-/bootstrap-slider-10.0.2.tgz#442d84293aea248a31b1a3f976ac3737a7362a62"
+  integrity sha1-RC2EKTrqJIoxsaP5dqw3N6c2KmI=
 
 "bootstrap-sortable@git+https://github.com/drvic10k/bootstrap-sortable.git":
   version "1.11.2"
@@ -51,6 +61,7 @@ bootstrap-slider@~10.0.0:
 bootstrap-table@~1.12.1:
   version "1.12.1"
   resolved "https://registry.yarnpkg.com/bootstrap-table/-/bootstrap-table-1.12.1.tgz#c9c3973067842a937c05d8639ecccb02abd6ba65"
+  integrity sha1-ycOXMGeEKpN8BdhjnszLAqvWumU=
 
 "bootstrap-tour@git+https://github.com/sorich87/bootstrap-tour.git#master":
   version "0.12.0"
@@ -63,14 +74,54 @@ bootstrap-table@~1.12.1:
 bootstrap@>=4.0.0-beta, bootstrap@~4.1.1:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.1.2.tgz#aee2a93472e61c471fc79fb475531dcbc87de326"
+  integrity sha512-3bP609EdMc/8EwgGp8KgpN8HwnR4V4lZ9CTi5pImMrXNxpkw7dK1B05aMwQWpG1ZWmTLlBSN/uzkuz5GsmQNFA==
 
-chartist@~0.11.0:
+bootstrap@^4.0.0:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.1.3.tgz#0eb371af2c8448e8c210411d0cb824a6409a12be"
+  integrity sha512-rDFIzgXcof0jDyjNosjv4Sno77X4KuPeFxG2XZZv1/Kc8DRVGVADdoQyyOVDwPqL36DDmtCQbrpMCqvpPLJQ0w==
+
+chartist-plugin-accessibility@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/chartist-plugin-accessibility/-/chartist-plugin-accessibility-0.0.5.tgz#0d9883cff4b8c0cc4ca547c81ecaed31480c3d20"
+  integrity sha512-TwY5UQqHjmvq3aj4L1+X4CP7cuuY71/efKWmkCnZMyR7aqIODnOfesfUfQWi1Txg5xRBL2uIoUZXxv44VQztiA==
+
+chartist-plugin-axistitle@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/chartist-plugin-axistitle/-/chartist-plugin-axistitle-0.0.4.tgz#102d7b84260061292dff666b918fedc955deb144"
+  integrity sha512-yMZYXMfU0qibE0mt+8wXl44WdttjpcgTOAeCYlSdMwbLmlGaVLpPBl44fvMumaxuE34JGLNjWJ6twxoPUxITNg==
+
+chartist-plugin-legend@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/chartist-plugin-legend/-/chartist-plugin-legend-0.6.2.tgz#53bf2771ddc1dc288c8abc16c151788f0b750244"
+  integrity sha1-U78ncd3B3CiMirwWwVF4jwt1AkQ=
+
+chartist-plugin-targetline@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/chartist-plugin-targetline/-/chartist-plugin-targetline-1.0.1.tgz#db30d01c16c6787eae125be549848429cb833627"
+  integrity sha1-2zDQHBbGeH6uElvlSYSEKcuDNic=
+
+chartist-plugin-tooltips-updated@0.0.20:
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/chartist-plugin-tooltips-updated/-/chartist-plugin-tooltips-updated-0.0.20.tgz#2791804784a8d76f7140582cf502f6fc8ad146bb"
+  integrity sha1-J5GAR4So129xQFgs9QL2/IrRRrs=
+  dependencies:
+    chartist "~0.11.0"
+
+chartist-plugin-tooltips@0.0.17:
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/chartist-plugin-tooltips/-/chartist-plugin-tooltips-0.0.17.tgz#fc1a98eb5d3771235b6e08cd1c18cc96c2110660"
+  integrity sha1-/BqY6103cSNbbgjNHBjMlsIRBmA=
+
+chartist@^0.11.0, chartist@~0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/chartist/-/chartist-0.11.0.tgz#84ba5e05490d096d93dcfa9343ebc31ef6a3bd28"
+  integrity sha1-hLpeBUkNCW2T3PqTQ+vDHvajvSg=
 
 contra@1.9.4:
   version "1.9.4"
   resolved "https://registry.yarnpkg.com/contra/-/contra-1.9.4.tgz#f53bde42d7e5b5985cae4d99a8d610526de8f28d"
+  integrity sha1-9TveQtfltZhcrk2ZqNYQUm3o8o0=
   dependencies:
     atoa "1.0.0"
     ticky "1.0.1"
@@ -78,26 +129,31 @@ contra@1.9.4:
 cropper@~4.0.0-beta:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/cropper/-/cropper-4.0.0.tgz#77a0c1f8989049f6b9a9137acb865dca5a1e9f62"
+  integrity sha512-l0RVf5hHww+iSIJ5ZQRwRRljYjvxA4Rt4qUICR/MjCReif7mW/S68RekM7X2+mip0mG9XQ1oMY9o0v6wi59ftw==
   dependencies:
     cropperjs "^1.3.4"
 
 cropperjs@^1.3.4:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/cropperjs/-/cropperjs-1.4.1.tgz#41d9fcd87f9d9cd2e1dcf27c36680cac7a48cd6b"
+  integrity sha512-PzKN8nVbFCxw5vp4nLMtsMcBcRtBJzliPZMr9HpbJ75vZuTK3mSbimKEfmxXmJwiF+ngp/JVd1wh5F7z3h4lUg==
 
 crossvent@1.5.4:
   version "1.5.4"
   resolved "https://registry.yarnpkg.com/crossvent/-/crossvent-1.5.4.tgz#da2c4f8f40c94782517bf2beec1044148194ab92"
+  integrity sha1-2ixPj0DJR4JRe/K+7BBEFIGUq5I=
   dependencies:
     custom-event "1.0.0"
 
 custom-event@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/custom-event/-/custom-event-1.0.0.tgz#2e4628be19dc4b214b5c02630c5971e811618062"
+  integrity sha1-LkYovhncSyFLXAJjDFlx6BFhgGI=
 
 datatables.net-bs4@~1.10.16:
   version "1.10.19"
   resolved "https://registry.yarnpkg.com/datatables.net-bs4/-/datatables.net-bs4-1.10.19.tgz#0608dff22008cf3c7b8a68b1bc702ed255b404fb"
+  integrity sha512-pgeP17w4aPR7HIxIwuJghfqXULjdg1K6xMUUKDyCERJRSNNK4MRToFfELtIsluLNN555YBK4Kx8nihX5/ZT1Fw==
   dependencies:
     datatables.net "1.10.19"
     jquery ">=1.7"
@@ -105,18 +161,21 @@ datatables.net-bs4@~1.10.16:
 datatables.net@1.10.19:
   version "1.10.19"
   resolved "https://registry.yarnpkg.com/datatables.net/-/datatables.net-1.10.19.tgz#97a1ed41c85e62d61040603481b59790a172dd1f"
+  integrity sha512-+ljXcI6Pj3PTGy5pesp3E5Dr3x3AV45EZe0o1r0gKENN2gafBKXodVnk2ypKwl2tTmivjxbkiqoWnipTefyBTA==
   dependencies:
     jquery ">=1.7"
 
 dom7@^2.0.6:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/dom7/-/dom7-2.0.7.tgz#43940bff361cc0e5f38c349b055fd60c10309b89"
+  integrity sha512-1M6HYWK1NZR3JyrRYy1JjFc0U+eB+OqzPjeAB05TlY87RDo1XJHS1NdUoNGPwDfZqKyCRTO4NkyCosUsyLiKGQ==
   dependencies:
     ssr-window "^1.0.0"
 
 dragula@~3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/dragula/-/dragula-3.7.2.tgz#4a35c9d3981ffac1a949c29ca7285058e87393ce"
+  integrity sha1-SjXJ05gf+sGpScKcpyhQWOhzk84=
   dependencies:
     contra "1.9.4"
     crossvent "1.5.4"
@@ -124,65 +183,87 @@ dragula@~3.7.2:
 jquery-mousewheel@~3.1.13:
   version "3.1.13"
   resolved "https://registry.yarnpkg.com/jquery-mousewheel/-/jquery-mousewheel-3.1.13.tgz#06f0335f16e353a695e7206bf50503cb523a6ee5"
+  integrity sha1-BvAzXxbjU6aV5yBr9QUDy1I6buU=
 
 jquery.growl@~1.3.5:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/jquery.growl/-/jquery.growl-1.3.5.tgz#fa1c4d758e0d7686551e15896b1aaac2bb1af7f1"
+  integrity sha1-+hxNdY4NdoZVHhWJaxqqwrsa9/E=
 
-"jquery@>= 1.7.x", jquery@>=1.12.0, jquery@>=1.7, jquery@>=1.9.1, jquery@^3.0.0:
+"jquery@>= 1.7.x", jquery@>=1.12.0, jquery@>=1.7, jquery@>=1.9.1, jquery@^3.0.0, jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
+  integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==
 
 jstree@~3.3.5:
   version "3.3.5"
   resolved "https://registry.yarnpkg.com/jstree/-/jstree-3.3.5.tgz#9c578db32d0a643775cddd8020ad5992f4119c13"
+  integrity sha1-nFeNsy0KZDd1zd2AIK1ZkvQRnBM=
   dependencies:
     jquery ">=1.9.1"
 
 ladda@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/ladda/-/ladda-2.0.1.tgz#523bb026dfbc804bb37615a08189405406198732"
+  integrity sha512-ynRaMdW9y9ABRdTUWa60HSQjtTkoEZMiQDzzYsX8yxIEm7mxL/sxpvoLutYox1XluRif3DxLDg+3Dl1wurjnJg==
   dependencies:
     spin.js "^4.0.0"
 
 perfect-scrollbar@~1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/perfect-scrollbar/-/perfect-scrollbar-1.4.0.tgz#5d014ef9775e1f43058a1dbae9ed1daf0e7091f1"
+  integrity sha512-/2Sk/khljhdrsamjJYS5NjrH+GKEHEwh7zFSiYyxROyYKagkE4kSn2zDQDRTOMo8mpT2jikxx6yI1dG7lNP/hw==
 
 photoswipe@~4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/photoswipe/-/photoswipe-4.1.2.tgz#95c20a75cea23b70d6299641cad82e03cae7f797"
+  integrity sha1-lcIKdc6iO3DWKZZBytguA8rn95c=
 
 plyr@~2.0.18:
   version "2.0.18"
   resolved "https://registry.yarnpkg.com/plyr/-/plyr-2.0.18.tgz#91ebb7ffe6a61f4517a8c88ed04036fe95101f4f"
+  integrity sha512-PRRSk7zFGai4tq8hlMgS+s8dKQpaOHFi+BkTa+Fb23co3APBb3wNiyPZ9cFPRx8ALfrittfpoaEAyOBKEvsLHQ==
 
 popper.js@^1.12.3:
   version "1.14.3"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.3.tgz#1438f98d046acf7b4d78cd502bf418ac64d4f095"
+  integrity sha1-FDj5jQRqz3tNeM1QK/QYrGTU8JU=
 
 select2@~4.0.6-rc.1:
   version "4.0.6-rc.1"
   resolved "https://registry.yarnpkg.com/select2/-/select2-4.0.6-rc.1.tgz#aa6c3038a7f0f2e91ffade38f0a21c15e1813276"
+  integrity sha1-qmwwOKfw8ukf+t448KIcFeGBMnY=
   dependencies:
     almond "~0.3.1"
     jquery-mousewheel "~3.1.13"
 
+smartwizard@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/smartwizard/-/smartwizard-4.3.1.tgz#118b69eb2a19724f88e0c72487ff666cda5ed8eb"
+  integrity sha512-C7gWnPwcLOi18kANTnCHYCMMo8LgZTcbMMXm6Q4bjUeY6ZaYGKXalaDjnTG6dSShEDmb50V6FeDHIZrXXiy0Hw==
+  dependencies:
+    bootstrap "^4.0.0"
+    jquery "^3.3.1"
+
 spin.js@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/spin.js/-/spin.js-4.0.0.tgz#d6643232cc20b8d2c1b3ab6f0661178145b4dde8"
+  integrity sha512-uJN9Q4/I4I7PRZAp1c5reoY89thAfvFB5thbJncAwkPjPhqCfUrCooJc8GMN8q8WKFGIMy+JMf477RW7deCInA==
 
 spinkit@~1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/spinkit/-/spinkit-1.2.5.tgz#90f9f466a20e8e39ef24da959c1e611c2a30dd54"
+  integrity sha1-kPn0ZqIOjjnvJNqVnB5hHCow3VQ=
 
 ssr-window@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-1.0.0.tgz#8ed1b6beaa0a371ba7e74d6515d584c3f1cf973c"
+  integrity sha512-WHFyFLegz/NOgwdlFTw93Wd4c/gQ5hkv6amtdK/K0atfZvr28vwfEV7MR3NtWek+gnpiSd/tKXHQVfQRtA6OJg==
 
 swiper@~4.3.3:
   version "4.3.3"
   resolved "https://registry.yarnpkg.com/swiper/-/swiper-4.3.3.tgz#92e39c806ead23a18e5c3251dfba1ae9ce76270e"
+  integrity sha512-hLjeei+E2EioFUBI4XzqUDkvZu9d6TAOWVFbrCXSrOhY9bzgXYC28dfMRHOs8IgU5WAZ7bbMR8lF706TzKf9nw==
   dependencies:
     dom7 "^2.0.6"
     ssr-window "^1.0.0"
@@ -190,13 +271,16 @@ swiper@~4.3.3:
 ticky@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/ticky/-/ticky-1.0.1.tgz#b7cfa71e768f1c9000c497b9151b30947c50e46d"
+  integrity sha1-t8+nHnaPHJAAxJe5FRswlHxQ5G0=
 
 toastr@~2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/toastr/-/toastr-2.1.4.tgz#8b43be64fb9d0c414871446f2db8e8ca4e95f181"
+  integrity sha1-i0O+ZPudDEFIcURvLbjoyk6V8YE=
   dependencies:
     jquery ">=1.12.0"
 
 vegas@~2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/vegas/-/vegas-2.4.0.tgz#9d768b56e1cf952198d24eab135469bd29f227a7"
+  integrity sha1-nXaLVuHPlSGY0k6rE1RpvSnyJ6c=

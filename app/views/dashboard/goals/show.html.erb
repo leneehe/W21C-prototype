@@ -1,0 +1,9 @@
+<h1>Goal # <%= @goal_number %> - <%= @goal.specific_1 %></h1>
+<b>Status: </b>
+<% if @goal.complete %>
+  Complete
+<% else %>
+  Not Complete
+<% end %>
+<br><br>
+<%= render(partial: 'new_goal_summary', goal: @goal) %>

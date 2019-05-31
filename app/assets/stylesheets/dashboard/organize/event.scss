@@ -1,0 +1,77 @@
+// Place all the styles related to the dashboard/plan/Event controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.no-color {
+  background: rgba(0, 0, 255, 0.15) !important;
+}
+
+.white {
+  background: #fff !important;
+}
+
+// display dot color based on event types
+.fc-event-dot {
+  .fc-event-success & {
+    background: rgba(2, 188, 119, 0.15) !important;
+  }
+  .fc-event-info & {
+    background: rgba(40, 195, 215, 0.15) !important;
+  }
+  .fc-event-danger & {
+    background: rgba(217, 83, 79, 0.15) !important;
+  }
+  .fc-event-warning & {
+    background: rgba(255, 217, 80, 0.15) !important;
+  }
+  .fc-event-dark & {
+    background: rgba(24, 28, 33, 0.15) !important;
+  }
+  .no-color & {
+    background: rgba(0, 0, 255, 0.15) !important;
+  }
+}
+
+// Add journal entry input
+.input-group {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}
+
+.input-group > .form-control, .input-group > .custom-select, .input-group > .custom-file {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 1%;
+}
+
+.btn-primary {
+    border-color: transparent;
+    background: #26B4FF;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    border-color: transparent;
+    background: #24abf2;
+    color: #fff;
+}
+.btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
+    border-color: transparent;
+    background: #219dde;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    color: #fff;
+    background-color: #219dde;
+    border-color: #219dde;
+}

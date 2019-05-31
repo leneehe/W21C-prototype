@@ -1,0 +1,110 @@
+<h1 class="d-inline">Goal Centre</h1>
+<%= button_to "Add a new goal", new_dashboard_goal_path, :method => :get, :class => "btn btn-outline-primary", :form_class => "d-inline" %>
+<p>Setting SMART Goals</p>
+<!-- current Goals -->
+<div class="col-lg-8">
+  <div class="card mb-4">
+    <div class="card-header">
+      <div class="title-text"><i class="ion ion-md-trophy text-primary"></i>&nbsp; Current Goals</div>
+    </div>
+    <div class="card-body text-center ">
+      <p>
+        <% if @goals.blank? %>
+          <br>You have no current goals!<br><br>
+        <% end %>
+        <ol>
+        <% @goals.each do |goal| %>
+            <li>
+              <p>
+                <%= goal.specific_1%> (created <%= goal.created_at.to_formatted_s(:short_ordinal)  %>)
+              <br><%= goal.specific_2 %>
+              <br><%= link_to "More goal details", dashboard_goal_path(goal) %>
+              </p>
+            </li>
+        <% end %>
+        </ol>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Upcoming Milestones/Targets -->
+<div class="col-lg-4">
+  <div class="card mb-4">
+    <div class="card-header">
+      <div class="title-text"><i class="ion ion-md-arrow-round-up text-primary"></i>&nbsp; Upcoming Milestones/Targets</div>
+    </div>
+    <div class="card-body">
+      <% if @goals.blank? %>
+        You have no upcoming goals!<br>
+      <% end %>
+      <ol>
+      <% @goals.first(3).each do |goal| %>
+          <li>
+            <p>
+              <%= goal.specific_1%> (created <%= goal.created_at.to_formatted_s(:short_ordinal)  %>)
+            <br><%= goal.specific_2 %>
+            <br><%= link_to "More goal details", dashboard_goal_path(goal) %>
+            </p>
+          </li>
+      <% end %>
+    </div>
+  </div>
+  <div class="card mb-4">
+    <div class="card-header">
+      <div class="title-text"><i class="ion ion-md-checkmark-circle-outline text-primary"></i>&nbsp; Complete Goals</div>
+    </div>
+    <div class="card-body">
+      <% if @complete_goals.blank? %>
+        You have no completed goals!<br>
+      <% end %>
+      <ol>
+      <% @complete_goals.each do |goal| %>
+        <li>
+          <p>
+            <%= goal.specific_1%> (created <%= goal.created_at.to_formatted_s(:short_ordinal)  %>)
+          <br><%= goal.specific_2 %>
+          <br><%= link_to "More goal details", dashboard_goal_path(goal) %>
+          </p>
+        </li>
+      <% end %>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- Row 2 -->
+<div class="col-lg-8">
+  <div class="card mb-4">
+    <div class="card-header">
+      <div class="title-text">details?</div>
+    </div>
+    <div class="card-body">
+    </div>
+  </div>
+</div>
+<!-- Guides and Supports -->
+<div class="col-lg-4">
+  <div class="card mb-4">
+    <div class="card-header">
+      <div class="title-text">Guides and Supports</div>
+    </div>
+    <div class="card-body">
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">
+      <div class="title-text">Imports</div>
+    </div>
+    <div class="card-body">
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">
+      <div class="title-text">More Resources</div>
+    </div>
+    <div class="card-body">
+    </div>
+  </div>
+</div>

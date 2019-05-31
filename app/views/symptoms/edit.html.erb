@@ -1,0 +1,243 @@
+<!-- Smart Wizard plugin -->
+<% content_for :styles do %>
+  <%= stylesheet_link_tag 'libs/smartwizard/smartwizard.css', media: 'all' %>
+<% end %>
+<% content_for :scripts do %>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <%= javascript_include_tag 'libs/smartwizard/smartwizard.js' %>
+  <%= javascript_include_tag 'libs/validate/validate.js' %>
+  <%= javascript_include_tag 'dashboard/forms_wizard_symptoms.js' %>
+<% end %>
+<h1>Helping Yourself - Set up Self-tracking</h1>
+<div id="symptomATracking">
+  <ul class="card px-4 pt-3 mb-3">
+    <li>
+      <a href="#symptoms-step-0" class="mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-icon ion ion-ios-play"></span>
+        <div class="text-muted small">GETTING STARTED</div>
+        Start
+      </a>
+    </li>
+    <li>
+      <a href="#symptoms-step-1" class="mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-number">1</span>
+        <div class="text-muted small">FIRST STEP</div>
+        What to Track
+      </a>
+    </li>
+    <li>
+      <a href="#symptoms-step-2" class="mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-number">2</span>
+        <div class="text-muted small">SECOND STEP</div>
+        Customize
+      </a>
+    </li>
+    <li>
+      <a href="#symptoms-step-3" class="mb-3">
+        <span class="sw-done-icon ion ion-md-checkmark"></span>
+        <span class="sw-number">3</span>
+        <div class="text-muted small">SUMMARY</div>
+        Summary
+      </a>
+    </li>
+  </ul>
+
+  <div class="mb-3">
+    <div id="symptoms-step-0" class="card animated fadeIn">
+      <div class="card-body">
+        <div class="col-sm-12 col-md-8">
+          <p>
+            Depending on your chronic care needs, you might need to track diet, carbohydrates, exercise, water intake, weight, mood, blood sugar, blood pressure, or maybe even something else that your doctor recommends. You already have a lot to keep track of in your day-to-day life, so why should you start tracking health things on top of it all?
+          </p>
+          <p>
+            Believe it or not, by tracking specific pieces of information like the ones listed above, either you or your care providers can gain insight into how well your chronic care needs are being addressed. You might even be able to make adjustments to your diet, exercise, activities, or medications that could help you feel even better.
+          </p>
+          <p>
+            To help you figure out what you should track, we’ve created a Tracking Tool with some specially designed visual aids to promote data insights to get you started. Depending on what you need to track, you might also be able to use a smartphone or other devices to get the information you need.
+          </p>
+        </div>
+        <div class="card col-sm-12 col-md-4 mb-4 p-4">
+          <%= image_tag("tracking/self-tracking.jpg", class:"img-full")%>
+        </div>
+      </div>
+    </div>
+    <div id="symptoms-step-1" class="card animated fadeIn">
+      <div class="card-body">
+        <% if current_user.conditions != [] %>
+          <p>Based on the conditions you listed in your
+            <%= link_to "Profile", user_path(current_user) %>
+            , the recommended things for you to track are listed below:</p>
+          <p>Which ones do you want to track?</p>
+
+          <% @primary_symptoms.each do |symptom| %>
+          <div>
+            <strong><%= link_to symptom.name, edit_symptom_path(symptom.id) %></strong>
+          </div>
+          <% end %>
+
+          <p>Other things you might want to track are:</p>
+
+          <% @supporting_symptoms.each do |symptom| %>
+          <div>
+            <strong><%= link_to symptom.name, edit_symptom_path(symptom.id) %></strong>
+          </div>
+          <% end %>
+
+          <p>Want to track something that isn't here?</p>
+        <% else %>
+          <p>You don't have any conditions added yet to have recommended symptoms.</p>
+          <p>Please go to your
+          <%= link_to "Profile", user_path(current_user) %> to add the conditions first.</p>
+        <% end %>
+        <strong><%= link_to "Track a new symptom", '/symptoms/new#symptoms-step-2', target: '_self' %></strong>
+
+      </div>
+    </div>
+    <div id="symptoms-step-2" class="card animated fadeIn">
+      <div class="card-body">
+
+        <% if @symptom2 %>
+          <h3>Track Blood Pressure</h3>
+          <p>You chose Blood Pressure as something you want to track.</p>
+          <p><b><i>Blood Pressure is measured as a combination of two pressures - systolic pressure and diastolic pressure.</i></b></p><br>
+        <% else %>
+          <h3>Track <%= @symptom.name %></h3>
+          <p>You chose <%= @symptom.name %> as something you want to track.</p>
+        <% end %>
+        <p>Typical ranges for <%= @symptom.name %> are: </p>
+
+          <%= form_for @symptom, html: {id: "symptomATracking"} do |form| %>
+
+          <%= form.fields_for :symptoms_users, @symptom.symptoms_users.find_by(user_id: current_user) do |m| %>
+            <%= m.hidden_field :user_tracked, value: true %>
+            <%= m.hidden_field :user_id, value: current_user.id %>
+
+            <div class="form-group row">
+              <%= m.label :normal_range_upper, "Normal Range Upper Bounds:", class: "col-form-label col-sm-4 text-md-right" %>
+              <div class="col-sm-8">
+                <div class="col-sm-6">
+                  <%= m.number_field :normal_range_upper,
+                      class: "form-control",
+                      required: true
+                  %>
+                </div>
+                <div class="col-sm-2">
+                  <%= @symptom_attributes.unit_of_measure %>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= m.label :normal_range_lower, "Normal Range Lower Bounds:", class: "col-form-label col-sm-4 text-md-right" %>
+              <div class="col-sm-8">
+                <div class="col-sm-6">
+                  <%= m.number_field :normal_range_lower,
+                  class: "form-control",
+                  required: true
+                  %>
+                </div>
+                <div class="col-sm-2">
+                  <%= @symptom_attributes.unit_of_measure %>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= m.label :assistance_threshold, "When to Seek Assistance:", class: "col-form-label col-sm-4 text-md-right" %>
+              <div class="col-sm-8">
+                <div class="col-sm-2">
+                  <%= m.select(:above_assistance, [["Above", true], ["Below", false]], {index: nil}) %>
+                </div>
+                <div class="col-sm-4">
+                  <%= m.number_field :assistance_threshold,
+                  class: "form-control",
+                  required: true
+                  %>
+                </div>
+                <div class="col-sm-2">
+                  <%= @symptom_attributes.unit_of_measure %>
+                </div>
+              </div>
+            </div>
+
+          <% end %>
+          <div class="form-group row">
+            <div class="col-sm-12 ml-md-auto">
+              <%= form.submit "Track Symptom", class:"btn btn-outline-primary pull-right" %>
+            </div>
+          </div>
+          <% end %>
+
+
+          <% if @symptom2 %>
+          <p>Typical ranges for <%= @symptom2.name %> are: </p>
+            <%= form_for @symptom2, html: {id: "symptomBTracking"} do |form| %>
+
+            <%= form.fields_for :symptoms_users, @symptom2.symptoms_users.find_by(user_id: current_user) do |m| %>
+              <%= m.hidden_field :user_tracked, value: true %>
+              <%= m.hidden_field :user_id, value: current_user.id %>
+
+              <div class="form-group row">
+                <%= m.label :normal_range_upper, "Normal Range Upper Bounds:", class: "col-form-label col-sm-4 text-md-right" %>
+                <div class="col-sm-8">
+                  <div class="col-sm-6">
+                    <%= m.number_field :normal_range_upper,
+                        class: "form-control",
+                        required: true
+                    %>
+                  </div>
+                  <div class="col-sm-2">
+                    <%= @symptom_attributes.unit_of_measure %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <%= m.label :normal_range_lower, "Normal Range Lower Bounds:", class: "col-form-label col-sm-4 text-md-right" %>
+                <div class="col-sm-8">
+                  <div class="col-sm-6">
+                    <%= m.number_field :normal_range_lower,
+                    class: "form-control",
+                    required: true
+                    %>
+                  </div>
+                  <div class="col-sm-2">
+                    <%= @symptom_attributes.unit_of_measure %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <%= m.label :assistance_threshold, "When to Seek Assistance:", class: "col-form-label col-sm-4 text-md-right" %>
+                <div class="col-sm-8">
+                  <div class="col-sm-2">
+                    <%= m.select(:above_assistance, [["Above", true], ["Below", false]], {index: nil}) %>
+                  </div>
+                  <div class="col-sm-4">
+                    <%= m.number_field :assistance_threshold,
+                    class: "form-control",
+                    required: true
+                    %>
+                  </div>
+                  <div class="col-sm-2">
+                    <%= @symptom_attributes.unit_of_measure %>
+                  </div>
+                </div>
+              </div>
+
+            <% end %>
+            <div class="form-group row">
+              <div class="col-sm-12 ml-md-auto">
+                <%= form.submit "Track Symptom", class:"btn btn-outline-primary pull-right" %>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+    <div id="symptoms-step-3" class="card animated fadeIn">
+      <div class="card-body">
+        Step Content 3
+      </div>
+    </div>
+  </div>
+</div>

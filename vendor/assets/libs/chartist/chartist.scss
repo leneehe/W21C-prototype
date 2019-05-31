@@ -2,6 +2,10 @@
 
 $ct-text-size: 11px;
 $ct-series-colors: (
+  #41b6e6,
+  #f4c63d,
+  #d17905,
+  #d70206,
   #647c8a,
   #3f51b5,
   #2196f3,
@@ -18,6 +22,8 @@ $ct-series-colors: (
   #FCEE4B,
   #FEFCFA
 );
+
+
 $ct-line-width: 1px;
 $ct-point-size: 7px;
 
@@ -419,3 +425,141 @@ $ct-point-size: 7px;
     }
   }
 }
+
+// .ct-legend {
+//     position: relative;
+//     z-index: 10;
+
+//     li {
+//         position: relative;
+//         padding-left: 23px;
+//         margin-bottom: 3px;
+//         list-style-type: none;
+//     }
+
+//     li:before {
+//         width: 12px;
+//         height: 12px;
+//         position: absolute;
+//         left: 0;
+//         content: '';
+//         border: 3px solid transparent;
+//         border-radius: 2px;
+//     }
+
+//     li.inactive:before {
+//         background: transparent;
+//     }
+
+//     &.ct-legend-inside {
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//     }
+
+//     @for $i from 0 to length($ct-series-colors) {
+//         .ct-series-#{$i}:before {
+//             background-color: nth($ct-series-colors, $i + 1);
+//             border-color: nth($ct-series-colors, $i + 1);
+//         }
+//     }
+// }
+
+// CT LEGEND CUSTOM STYLING
+.ct-legend {
+  position: relative;
+  z-index: 10;
+  list-style: none;
+  text-align: center;
+  li {
+    position: relative;
+    padding-left: 23px;
+    margin-right: 10px;
+    margin-bottom: 3px;
+    cursor: pointer;
+    display: inline-block;
+    &:before {
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      left: 0;
+      content: '';
+      border: 3px solid transparent;
+      border-radius: 2px;
+    }
+    &.inactive:before {
+      background: transparent;
+    }
+  }
+  &.ct-legend-inside {
+    position: absolute;
+    top: 0;
+    right: 0;
+    li {
+      display: block;
+      margin: 0;
+    }
+  }
+  .ct-series-0:before {
+    background-color: #f05b4f;
+    border-color: #f05b4f;
+  }
+  .ct-series-1:before {
+    background-color: #f4c63d;
+    border-color: #f4c63d;
+  }
+  .ct-series-2:before {
+    background-color: #d17905;
+    border-color: #d17905;
+  }
+  .ct-series-3:before {
+    background-color: #d70206;
+    border-color: #d70206;
+  }
+}
+// Tooltip styling
+.chartist-tooltip {
+  position: absolute;
+  display: inline-block;
+  opacity: 0;
+  min-width: 5em;
+  padding: .5em;
+  background: #F4C63D;
+  color: #453D3F;
+  font-family: Oxygen,Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  text-align: center;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-transition: opacity .2s linear;
+  -moz-transition: opacity .2s linear;
+  -o-transition: opacity .2s linear;
+  transition: opacity .2s linear; }
+  .chartist-tooltip:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -15px;
+    border: 15px solid transparent;
+    border-top-color: #F4C63D; }
+  .chartist-tooltip.tooltip-show {
+    opacity: 1; }
+
+.ct-area, .ct-line {
+  pointer-events: none; }
+
+.ct-chart-line{
+  overflow: visible !important;
+}
+.ct-axis-title {
+  font-weight: bold;
+  letter-spacing: 0.25rem;
+}
+.ct-target-line {
+  stroke: #d7191c;
+  stroke-width: 2px;
+}
+/*# sourceMappingURL=chartist-plugin-tooltip.css.map */
