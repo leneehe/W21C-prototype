@@ -1,0 +1,12 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">My Medication /</span> Edit Medication
+</h4>
+<%= form_for @medication, url: dashboard_organize_medication_path(@medication) do |f| %>
+  <%= render 'form', medication: @medication, medications: @medications, f: f %>
+<% end %>
+<div class="col-sm-12">
+  <br>
+  <%= link_to "View Medication", dashboard_organize_medication_path(@medication) %>
+   |
+  <%= link_to "Back", dashboard_organize_medications_path %>
+</div>

@@ -3,17 +3,19 @@ class Dashboard::PlanController < ApplicationController
   layout 'main/layout-2'
 
   def index
-    @user_conditions = current_user.health_conditions
-    @goals = current_user.goals
-    @events = current_user.events.order(start: :desc).limit(5)
-  end
+    unless current_user
+      redirect_to new_user_session_path, notice: 'you have to sign in first.'
+      return
+    end
 
-  def checklists
-    @entries = current_user.checklists.order('created_at DESC')
+    @user_symptoms = Symptom.user_tracked(current_user.id)
+    @goals = current_user.goals
+    @events = current_user.events.order(start: :asc).limit(5)
   end
 
   def report
-    @user_conditions = current_user.health_conditions
+    @user_symptoms = Symptom.user_tracked(current_user.id)
+    @symptoms = current_user.symptoms_users.where(user_tracked:true)
     @events = current_user.events
     @legends = legend_colors(@events)
     @goals = current_user.goals.incomplete
@@ -25,13 +27,16 @@ class Dashboard::PlanController < ApplicationController
 
   def display_report
 
-    @user_conditions = current_user.health_conditions
+    @user_symptoms = Symptom.user_tracked(current_user.id)
+    @symptoms = current_user.symptoms_users.where(user_tracked:true)
     @events = current_user.events
     @legends = legend_colors(@events)
     @goals = current_user.goals.incomplete
 
     respond_to do |format|
-      format.html
+      format.html do
+        render layout: 'main/layout-blank2'
+      end
       format.pdf do
         render pdf: "#{current_user.first_name}_report",
         page_size: 'A4',
@@ -43,18 +48,24 @@ class Dashboard::PlanController < ApplicationController
   end
 
 
-  def build_data_collection(condition, unit)
+  def build_data_collection(symptom, unit, symptom_info)
     @value_collection = Array.new
     @value_data = Array.new
 
-     condition.tracked_health_conditions.one_week_ago.group_by(&:value_type_id).each do |key, value|
-      collection_name =  ValueType.find(key).name
-      value.each do |measurement|
+    symptom.tracked_symptoms.one_week_ago.each do |measurement|
+      # collection_name =  ValueType.find(key).name
         @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})
-      end
-      @value_collection.push({ "name" => collection_name, "meta" => collection_name, "data" => @value_data, "unit_of_measure" => unit })
-      @value_data = []
     end
+
+    @value_collection.push({
+      "name" => symptom.name,
+      "meta" => symptom.name,
+      "data" => @value_data,
+      "unit_of_measure" => unit,
+      "assistance_threshold" =>  symptom_info.assistance_threshold,
+      "above_assistance" => symptom_info.above_assistance
+    })
+
     return @value_collection
   end
 

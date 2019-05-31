@@ -6,21 +6,40 @@
 <% end %>
 
 <h1>My Care Planner</h1>
-<div class="col-sm-6 mb-4">
+<div class="col-sm-8 mb-4">
   <div class="card">
     <div class="card-header">
       <div class="title-text"><i class="ion ion-md-stats text-primary"></i>&nbsp; How I'm Doing</div>
     </div>
-    <div class="card-body text-center ">
-      Visualization showing "How I'm doing/Tracking overview with goals integration"
+    <div class="card-body">
 
+      <div class="col-md-5 pr-0" style="float:right">
+        <div class="card">
+          <h6 class="card-header border-0">Legend</h6>
+          <div class="card-body p-1">
+            <ul class="legend-chart">
+              <li class="default-style">
+                <div class="symptom-legend" style="background-color: #41B6E6!important">
+                </div>
+                Normal
+              </li>
+              <li class="default-style">
+                <div class="symptom-legend" style="background-color: #E06287!important">
+                </div>
+                Abnormal
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <%= button_to "View all symptoms", symptoms_path, method: :get, class: "btn btn-outline-primary" %>
       <%= render(partial: 'charts') %>
 
     </div>
   </div>
 </div>
 
-<div class="col-sm-6 mb-4">
+<div class="col-sm-4 mb-4">
   <div class="card">
     <div class="card-header with-elements">
       <div class="card-header-title"><i class="ion ion-md-calendar text-primary"></i>&nbsp; Keep Me Organized</div>
@@ -31,8 +50,8 @@
         <% @events.each do |event| %>
           <% if event.start %>
           <li>
-            <%= link_to dashboard_plan_event_path(event) do %>
-              <%= event.name %> – <%= event.start.to_formatted_s(:long) %>
+            <%= link_to dashboard_organize_event_path(event) do %>
+              <%= event.name %> – <%= event.start.to_formatted_s(:short_ordinal) %>
             <% end %>
           </li>
           <% end %>
@@ -45,7 +64,7 @@
   </div>
 </div>
 
-<div class="col-sm-6 mb-4">
+<div class="col-sm-4 mb-4">
   <div class="card">
     <div class="card-header with-elements">
       <div class="card-header-title"><i class="ion ion-md-trophy text-primary"></i>&nbsp; Goals</div>
@@ -56,11 +75,14 @@
       Completed Goals: <b><%= @goals.complete.length %></b>
       <br>
       Incomplete Goals: <b><%= @goals.incomplete.length %></b>
+      <p>
+        <%= button_to "View Goals", dashboard_goals_path, method: :get, class: "btn btn-outline-primary" %>
+      </p>
     </div>
   </div>
 </div>
 
-<div class="col-sm-6 mb-4">
+<div class="col-sm-4 mb-4">
   <div class="card">
     <div class="card-header with-elements">
       <div class="card-header-title"><i class="ion ion-md-document text-primary"></i>&nbsp; Report Tool</div>

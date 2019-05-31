@@ -1,2 +1,0 @@
-class ValueTypesController < ApplicationController
-end

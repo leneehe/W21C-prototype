@@ -2,7 +2,7 @@
 
 $ct-text-size: 11px;
 $ct-series-colors: (
-  #f05b4f,
+  #41b6e6,
   #f4c63d,
   #d17905,
   #d70206,
@@ -557,5 +557,9 @@ $ct-point-size: 7px;
 .ct-axis-title {
   font-weight: bold;
   letter-spacing: 0.25rem;
+}
+.ct-target-line {
+  stroke: #d7191c;
+  stroke-width: 2px;
 }
 /*# sourceMappingURL=chartist-plugin-tooltip.css.map */

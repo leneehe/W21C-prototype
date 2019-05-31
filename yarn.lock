@@ -96,6 +96,11 @@ chartist-plugin-legend@^0.6.2:
   resolved "https://registry.yarnpkg.com/chartist-plugin-legend/-/chartist-plugin-legend-0.6.2.tgz#53bf2771ddc1dc288c8abc16c151788f0b750244"
   integrity sha1-U78ncd3B3CiMirwWwVF4jwt1AkQ=
 
+chartist-plugin-targetline@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/chartist-plugin-targetline/-/chartist-plugin-targetline-1.0.1.tgz#db30d01c16c6787eae125be549848429cb833627"
+  integrity sha1-2zDQHBbGeH6uElvlSYSEKcuDNic=
+
 chartist-plugin-tooltips-updated@0.0.20:
   version "0.0.20"
   resolved "https://registry.yarnpkg.com/chartist-plugin-tooltips-updated/-/chartist-plugin-tooltips-updated-0.0.20.tgz#2791804784a8d76f7140582cf502f6fc8ad146bb"

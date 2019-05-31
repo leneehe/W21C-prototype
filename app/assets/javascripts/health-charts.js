@@ -20,9 +20,11 @@ document.addEventListener("DOMContentLoaded", function(e){
     let ticks = [];
     let tickSet = [];
     let xAxisTitle = chartData[0].unit_of_measure;
+
     // Convert the Ruby date into Javascript Date object
     if ("name" in chartData[0]) {
        for (let j = 0; j < chartData.length; j++) {
+        //  console.log(chartData[j].data);
         chartData[j].data = chartData[j].data.map(item => ({
           ...item,
           x: new Date(item.x)
@@ -38,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function(e){
     } else {
       chartData = 0;
     }
-
     /**
      * ChartData expected output
      * [
@@ -59,12 +60,16 @@ document.addEventListener("DOMContentLoaded", function(e){
     // Dynamically build chart
 
     // ticks.reverse();
-    new Chartist.Line(`#chart${i}`,
+     let chartDisplay = new Chartist.Line(`#chart${i}`,
       {
         labels: [],
         series: chartData,
       },
       {
+        // targetLine: {
+        //   value: chartData != 0 ? chartData[0].assistance_threshold : null,
+        //   class: 'ct-target-line'
+        // },
         showLine: true,
         fullWidth: true,
         chartPadding: {
@@ -87,13 +92,16 @@ document.addEventListener("DOMContentLoaded", function(e){
           onlyInteger: true
         },
         plugins: [
-          Chartist.plugins.legend(),
+          // Chartist.plugins.ctTargetLine({
+          //   value: chartData != 0 ? chartData[0].assistance_threshold : null
+          // }),
+          // Chartist.plugins.legend(),
           Chartist.plugins.tooltip({
             transformTooltipTextFnc: function (tooltip) {
               let xy = tooltip.split(",");
               let formattedX = moment(parseInt(xy[0])).local().format('MMM D hh:MM:SS');
               // console.log(formattedX);
-              return `x: ${formattedX} ,y: ${xy[1]}`;
+              return `x: ${formattedX}<br> y: ${xy[1]}`;
             }
           }),
           Chartist.plugins.ctAxisTitle({
@@ -116,7 +124,51 @@ document.addEventListener("DOMContentLoaded", function(e){
             }
           })
         ]
-      },
+      }
     );
+    // targetline drawing
+    chartDisplay.on('created', function(context){
+      // Searches for targetline option
+      // let targetLineY = projectY(context.chartRect, context.bounds, context.options.targetLine.value);
+      // context.svg.elem('line', {
+      //   x1: context.chartRect.x1,
+      //   x2: context.chartRect.x2,
+      //   y1: targetLineY,
+      //   y2: targetLineY
+      // }, context.options.targetLine.class);
+    });
+
+    // Chartist call back for draw events
+    chartDisplay.on('draw',function(context) {
+
+      if (context.type === 'point') {
+
+        // console.log(chartData[0])
+        if (chartData[0].above_assistance) {
+          if (context.value['y'] >= chartData[0].assistance_threshold) {
+            context.element.attr({
+              style: `stroke: #E06287`
+            });
+          }
+        } else {
+          if (context.value['y'] <= chartData[0].assistance_threshold) {
+            context.element.attr({
+              style: `stroke: #E06287;`
+            });
+          }
+        }
+      }
+    });
+
+    $('#report').on('showStep', function(e, anchorObject, stepNumber, stepDirection) {
+        if (stepNumber === 5 || stepNumber === 7) {
+          chartDisplay.update()
+        }
+    });
   }
+
 });
+
+// function projectY(chartRect, bounds, value) {
+//   return chartRect.y1 - (125 / bounds.max * value)
+// }

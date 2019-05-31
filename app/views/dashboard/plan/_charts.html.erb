@@ -1,18 +1,20 @@
 <main id="chart-area">
   <!-- Loop through current user's self-tracking conditions -->
-  <% @user_conditions.each_with_index do |condition, index| %>
+  <% @user_symptoms.each_with_index do |symptom, index| %>
   <!-- Build Graphing template -->
+    <% symptom_info = SymptomsUser.find_by(user_id: current_user.id, symptom_id: symptom.id) %>
     <%= content_tag "section", id: "chart-area-#{index}" , class: 'chart-container' do %>
      <!-- Actions -->
-     <h2><%= condition.condition_name %></h2>
+     <h2><%= symptom.name %></h2>
     <!-- Build Data for graph -->
-      <% if !condition.tracked_health_conditions.empty? %>
+    <% unit_of_measure = symptom_info.unit_of_measure %>
+      <% if !symptom.tracked_symptoms.empty? %>
         <!-- Chart -->
         <%# Severity scores is an array of hashes [{x,y},{x,y}] %>
-        <%= content_tag "div", class: "chart", id: "chart#{index}", data: {nodes: build_data_collection(condition, condition.unit_of_measure) }, style: "height: 250px" do %>
+        <%= content_tag "div", class: "chart", id: "chart#{index}", data: {nodes: build_data_collection(symptom, unit_of_measure, symptom_info) }, style: "height: 250px;  width: 95%; position: relative" do %>
         <% end %>
       <% else %>
-        <%= content_tag "div", class: "chart", id: "chart#{index}", data: {nodes: [{"unit_of_measure" => condition.unit_of_measure}] }, style: "height: 250px" do %>
+        <%= content_tag "div", class: "chart", id: "chart#{index}", data: {nodes: [{"unit_of_measure" => unit_of_measure}] }, style: "height: 250px; width: 95%;" do %>
         <% end %>
       <% end %>
     <% end %>

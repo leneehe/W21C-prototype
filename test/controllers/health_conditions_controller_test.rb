@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class HealthConditionsControllerTest < ActionDispatch::IntegrationTest
+class SymptomsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

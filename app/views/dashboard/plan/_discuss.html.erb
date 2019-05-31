@@ -10,9 +10,11 @@
         <% end %>
         <ol>
         <% @goals.each do |goal| %>
-            <li>
-              <%= goal.specific_1 %> – <%= goal.created_at.to_formatted_s(:long)  %>
-            </li>
+          <li>
+          <p>
+            <%= goal.specific_1%> (created <%= goal.created_at.to_formatted_s(:short_ordinal)  %>)
+          <br><%= goal.specific_2 %>
+          </li>
         <% end %>
         </ol>
       </p>
@@ -22,15 +24,20 @@
 <div class="col-md-12">
   <div class="card mb-5">
     <div class="card-header">
-      <i class="ion ion-md-journal text-primary"></i>&nbsp; Journals Entries
+      <i class="ion ion-md-journal text-primary"></i>&nbsp; Appointment Notes
     </div>
     <% events.each do |event| %>
       <% if !event.checklists.empty?  %>
         <div class="card-body">
-          <p class="text-muted small"><%= event.name %></p>
-            <ul>
+          <p class="text-muted small"><%= event.name %> - <%= event.created_at.to_formatted_s(:short_ordinal)  %></p>
+            <ul style="list-style:none">
             <% event.checklists.each do |entry| %>
                 <li>
+                  <% if entry.complete %>
+                    <span class="ion ion-md-checkbox text-primary"></span>
+                  <% else %>
+                    <span class="ion ion-md-square text-primary"></span>
+                  <% end %>
                   <%= entry.entry %>
                 </li>
             <% end %>

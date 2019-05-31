@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_013105) do
+ActiveRecord::Schema.define(version: 2019_05_08_025817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,18 +83,6 @@ ActiveRecord::Schema.define(version: 2018_12_03_013105) do
     t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
-  create_table "health_conditions", force: :cascade do |t|
-    t.string "condition_name"
-    t.float "normal_range_upper"
-    t.float "normal_range_lower"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.float "assistance_threshold"
-    t.bigint "user_id"
-    t.string "unit_of_measure"
-    t.index ["user_id"], name: "index_health_conditions_on_user_id"
-  end
-
   create_table "internal_contents", force: :cascade do |t|
     t.bigint "resource_id"
     t.datetime "created_at", null: false
@@ -121,23 +109,39 @@ ActiveRecord::Schema.define(version: 2018_12_03_013105) do
     t.string "content_page"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
+  end
+
+  create_table "suggested_symptoms", id: false, force: :cascade do |t|
+    t.bigint "condition_id", null: false
+    t.bigint "symptom_id", null: false
+    t.boolean "primary_condition", default: true
+    t.index ["condition_id"], name: "index_suggested_symptoms_on_condition_id"
+    t.index ["symptom_id"], name: "index_suggested_symptoms_on_symptom_id"
+  end
+
+  create_table "symptoms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "symptoms_users", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "symptom_id", null: false
+    t.float "normal_range_upper"
+    t.float "normal_range_lower"
+    t.float "assistance_threshold"
+    t.string "unit_of_measure"
+    t.boolean "above_assistance", default: true
+    t.boolean "user_tracked", default: false
+    t.index ["user_id", "symptom_id"], name: "index_symptoms_users_on_user_id_and_symptom_id"
   end
 
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "tracked_health_conditions", force: :cascade do |t|
-    t.float "severity_score"
-    t.datetime "last_checked"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "health_condition_id"
-    t.bigint "value_type_id"
-    t.index ["health_condition_id"], name: "index_tracked_health_conditions_on_health_condition_id"
-    t.index ["value_type_id"], name: "index_tracked_health_conditions_on_value_type_id"
   end
 
   create_table "tracked_medications", force: :cascade do |t|
@@ -151,6 +155,19 @@ ActiveRecord::Schema.define(version: 2018_12_03_013105) do
     t.datetime "updated_at", null: false
     t.index ["medication_id"], name: "index_tracked_medications_on_medication_id"
     t.index ["user_id"], name: "index_tracked_medications_on_user_id"
+  end
+
+  create_table "tracked_symptoms", force: :cascade do |t|
+    t.float "severity_score"
+    t.datetime "last_checked"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "value_type_id"
+    t.bigint "symptom_id"
+    t.bigint "user_id"
+    t.index ["symptom_id"], name: "index_tracked_symptoms_on_symptom_id"
+    t.index ["user_id"], name: "index_tracked_symptoms_on_user_id"
+    t.index ["value_type_id"], name: "index_tracked_symptoms_on_value_type_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -170,21 +187,13 @@ ActiveRecord::Schema.define(version: 2018_12_03_013105) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "value_types", force: :cascade do |t|
-    t.string "name", default: "Amount"
-    t.bigint "health_condition_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["health_condition_id"], name: "index_value_types_on_health_condition_id"
-  end
-
   add_foreign_key "checklists", "events"
   add_foreign_key "events", "event_types"
   add_foreign_key "events", "users"
   add_foreign_key "goals", "users"
   add_foreign_key "internal_contents", "resources"
-  add_foreign_key "tracked_health_conditions", "value_types"
   add_foreign_key "tracked_medications", "medications"
   add_foreign_key "tracked_medications", "users"
-  add_foreign_key "value_types", "health_conditions"
+  add_foreign_key "tracked_symptoms", "symptoms"
+  add_foreign_key "tracked_symptoms", "users"
 end
