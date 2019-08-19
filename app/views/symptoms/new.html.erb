@@ -124,8 +124,7 @@
               <div class="col-sm-4">
                 <%= m.text_field :unit_of_measure,
                     placeholder: "e.g mL",
-                    class: "form-control",
-                    required: true
+                    class: "form-control"
                 %>
               </div>
             </div>
@@ -136,7 +135,9 @@
                 <%= m.number_field :normal_range_upper,
                     placeholder: "e.g 7",
                     class: "form-control",
-                    required: true
+                    required: true,
+                    step: "any",
+                    min: 0
                 %>
               </div>
             </div>
@@ -146,7 +147,9 @@
                 <%= m.number_field :normal_range_lower,
                     placeholder: "e.g 2",
                     class: "form-control",
-                    required: true
+                    required: true,
+                    step: "any",
+                    min: 0
                 %>
               </div>
             </div>
