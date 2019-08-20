@@ -19,17 +19,17 @@
                   <div class="space-20"></div>
                   <!-- search bar -->
                   <div class="col-xs-12 col-md-6 col-md-offset-3">
-                    <form id="mc-form" class="subscrie-form">
-                        <label class="mt10" for="mc-email"></label>
+                    <%= form_tag(article_search_path, method: :get, class: 'subscrie-form') do %>
+                      <%= label_tag "search", '', class: 'mt10' %>
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="What can we help you find today?">
-                            <div class="input-group-btn">
-                                <button type="submit" class="btn btn-info">
-                                  <span class="ti-search"></span>
-                                  Search</button>
-                            </div>
+                          <%= text_field_tag :search, params[:search], placeholder: "What can we help you find today?", class: "form-control" %>
+                          <div class="input-group-btn">
+                            <%= button_tag(type: "submit", class: "btn btn-info", name: nil) do %>
+                              <span class="ti-search"></span> Search
+                            <% end %>
+                          </div>
                         </div>
-                    </form>
+                    <% end %>
                   </div>
 
                   <div class="space-100"></div>

@@ -163,14 +163,14 @@ jQuery(document).ready(function ($) {
     /*---------------------------
         MICHIMP INTEGRATION
     -----------------------------*/
-    $('#mc-form').ajaxChimp({
+  /*  $('#mc-form').ajaxChimp({
         url: 'http://facebook.us14.list-manage.com/subscribe/post?u=b2a3f199e321346f8785d48fb&amp;id=6d023c55e5', //Set Your Mailchamp URL
         callback: function (resp) {
             if (resp.result === 'success') {
                 $('.subscrie-form input, .subscrie-form button').fadeOut();
             }
         }
-    });
+    }); */
     $('.price-table').on('mouseenter', function () {
         $('.price-table').removeClass('active');
         $(this).addClass('active');
