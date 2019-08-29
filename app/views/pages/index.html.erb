@@ -46,72 +46,75 @@
       <div class="container">
         <div class="row wow fadeInUp">
             <div class="col-xs-12 col-md-10 col-md-offset-1 text-center">
-                <h3>Sign up today for FREE access to personalized tools to help you on your care journey.</h3>
+                <h3 class="text-uppercase">How it Works</h3>
             </div>
         </div>
           <div class="row">
-              <div class="space-60"></div>
+              <div class="space-40"></div>
               <div class="col-xs-12 col-md-4 wow fadeInUp" data-wow-delay="0.2s">
-                  <div id="tinted-image1" class="well well-hover text-center">
+                <%= image_tag ("home/home-organize.jpg") %>
+                  <div class="well well-hover text-center how-it-works">
                       <% if user_signed_in? %>
                         <%= link_to dashboard_plan_path do %>
-                        <p class="md-icon"><span class="ti-agenda" style="color: #B580D1"></span></p>
+                        <p class="md-icon"><span class="ti-agenda organize"></span></p>
                         <% end %>
                       <% else %>
                         <%= link_to plan_path do %>
-                        <p class="md-icon"><span class="ti-agenda" style="color: #B580D1"></span></p>
+                        <p class="md-icon"><span class="ti-agenda organize"></span></p>
                         <% end %>
                       <% end %>
-                      <div class="space-10"></div>
+                      <!-- <div class="space-10"></div> -->
                       <h5>
                         <% if user_signed_in? %>
-                          <%= link_to "Helping you organize your care needs", dashboard_plan_path %>
+                          <%= link_to "Helping you organize your care needs", dashboard_plan_path, class: 'organize' %>
                         <% else %>
-                          <%= link_to "Helping you organize your care needs", plan_path %>
+                          <%= link_to "Helping you organize your care needs", plan_path, class: 'organize'%>
                         <% end %>
                       </h5>
                       <p>Keeping track of all your appointments, medications, and relevant information should be easier. Our tools can help you stay organized.</p>
                   </div>
               </div>
               <div class="col-xs-12 col-md-4 wow fadeInUp" data-wow-delay="0.4s">
-                  <div id="tinted-image2" class="well well-hover text-center">
+                <%= image_tag ("home/home-tracking.jpg") %>
+                  <div class="well well-hover text-center how-it-works">
                       <% if user_signed_in? %>
                         <%= link_to symptoms_path do %>
-                        <p class="md-icon"><span class="ti-target" style="color: #41B6E6"></span></p>
+                        <p class="md-icon"><span class="ti-target track"></span></p>
                         <% end %>
                       <% else %>
                         <%= link_to track_path do %>
-                        <p class="md-icon"><span class="ti-target" style="color: #41B6E6"></span></p>
+                        <p class="md-icon"><span class="ti-target  track"></span></p>
                         <% end %>
                       <% end %>
-                      <div class="space-10"></div>
+                      <!-- <div class="space-10"></div> -->
                       <h5>
                         <% if user_signed_in? %>
-                          <%= link_to "Things I'm tracking", symptoms_path %>
+                          <%= link_to "Helping you track what matters to you", symptoms_path, class: 'track' %>
                         <% else %>
-                          <%= link_to "Things I'm tracking", track_path %>
+                          <%= link_to "Helping you track what matters to you", track_path, class: 'track' %>
                         <% end %>
                       </h5>
                       <p>A big part of managing your day-to-day chronic care needs is self-tracking. Our visualizations of your data might provide new insight into making those days the best they can be within your context.</p>
                   </div>
               </div>
               <div class="col-xs-12 col-md-4 wow fadeInUp" data-wow-delay="0.6s">
-                  <div id="tinted-image3" class="well well-hover text-center">
+                <%= image_tag ("home/home-goals.jpg") %>
+                  <div class="well well-hover text-center how-it-works">
                       <% if user_signed_in? %>
                         <%= link_to dashboard_goals_path do %>
-                        <p class="md-icon"><span class="ti-cup" style="color: #E06287"></span></p>
+                        <p class="md-icon"><span class="ti-cup goals"></span></p>
                         <% end %>
                       <% else %>
                         <%= link_to goal_centre_path do %>
-                        <p class="md-icon"><span class="ti-cup" style="color: #E06287"></span></p>
+                        <p class="md-icon"><span class="ti-cup goals"></span></p>
                         <% end %>
                       <% end %>
-                      <div class="space-10"></div>
+                      <!-- <div class="space-10"></div> -->
                       <h5>
                         <% if user_signed_in? %>
-                          <%= link_to "Set and Manage your goals", dashboard_goals_path %>
+                          <%= link_to "Helping you set and manage your goals", dashboard_goals_path, class: 'goals' %>
                         <% else %>
-                          <%= link_to "Set and Manage your goals", goal_centre_path %>
+                          <%= link_to "Helping you set and manage your goals", goal_centre_path, class: 'goals' %>
                         <% end %>
                       </h5>
                       <p>Setting SMART goals is a great way to successfully get to where you want to be. We’ve put together a guided step-by-step guides to help you reach your goals.</p>
@@ -126,13 +129,23 @@
       <div class="space-80"></div>
       <div class="container">
           <div class="row wow fadeInUp">
-              <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
-                  <h3 class="text-uppercase">How it works</h3>
-                  <p>Managing long term health care needs can feel overwhelming or like a full time job at times. We’re building tools for patients just like you to make that job just a little bit easier.</p>
+              <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
+                  <h3 class="text-uppercase">This Platform is Different</h3>
+                  <p>Sure, there are a lot of tools, apps, and even electronic health records out there already. This platform is different. Continue reading below to find out how.</p>
               </div>
           </div>
           <div class="space-60"></div>
           <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-3 text-center wow fadeInUp" data-wow-delay="0.8s">
+                  <div class="hover-shadow">
+                      <div class="space-60">
+                          <%= image_tag("icon/icon4.png") %>
+                      </div>
+                      <div class="space-20"></div>
+                      <h5 class="text-uppercase">Our Vision</h5>
+                      <p>Our vision is for these tools to become part of a seamless ecosystem where you and your care providers can work together to make living with chronic care needs easier for all you and everyone who helps you on that journey.</p>
+                  </div>
+              </div>
               <div class="col-xs-12 col-sm-6 col-md-3 text-center wow fadeInUp" data-wow-delay="0.2s">
                   <div class="hover-shadow">
                       <div class="space-60">
@@ -163,16 +176,7 @@
                       <p>Together with a group of forward-thinking Canadian developers, we’re building a suite of tools and supports to make your job easier.</p>
                   </div>
               </div>
-              <div class="col-xs-12 col-sm-6 col-md-3 text-center wow fadeInUp" data-wow-delay="0.8s">
-                  <div class="hover-shadow">
-                      <div class="space-60">
-                          <%= image_tag("icon/icon4.png") %>
-                      </div>
-                      <div class="space-20"></div>
-                      <h5 class="text-uppercase">Our Vision</h5>
-                      <p>Our vision is for these tools to become part of a seamless ecosystem where you and your care providers can work together to make living with chronic care needs easier for all you and everyone who helps you on that journey.</p>
-                  </div>
-              </div>
+
           </div>
           <div class="space-60"></div>
           <div class="row">

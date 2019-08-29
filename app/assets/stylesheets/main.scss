@@ -35,38 +35,39 @@ ul.nav.navbar-nav{
   margin-top: 10px;
 }
 
+/*
 #tinted-image1 {
   background:
-    /* top, transparent red, faked with gradient */
+    // top, transparent red, faked with gradient
     linear-gradient(
       rgba(255, 255, 255, 0.8),
       rgba(255, 255, 255, 0.6)
     ),
-    /* bottom, image */
+    // bottom, image
     asset-url('home/home-organize.jpg');
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
 #tinted-image2 {
   background:
-    /* top, transparent red, faked with gradient */
+    // top, transparent red, faked with gradient
     linear-gradient(
       rgba(255, 255, 255, 0.8),
       rgba(255, 255, 255, 0.6)
     ),
-    /* bottom, image */
+    // bottom, image
     asset-url('home/home-tracking.jpg');
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
 #tinted-image3 {
   background:
-    /* top, transparent red, faked with gradient */
+    // top, transparent red, faked with gradient
     linear-gradient(
       rgba(255, 255, 255, 0.8),
       rgba(255, 255, 255, 0.6)
     ),
-    /* bottom, image */
+    // bottom, image
     asset-url('home/home-goals.jpg');
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -75,6 +76,24 @@ ul.nav.navbar-nav{
 #tinted-image1, #tinted-image2, #tinted-image3 {
   height: 365px;
 }
+*/
+
+.how-it-works {
+  height: 300px;
+
+  .organize {
+    color: #B580D1
+  }
+
+  .track {
+    color: #41B6E6
+  }
+
+  .goals {
+    color: #E06287
+  }
+}
+
 
 /* Resources */
 
