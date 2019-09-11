@@ -49,7 +49,7 @@
         <%= button_to "View Calendar", dashboard_organize_events_path, method: :get, class: "btn btn-outline-primary" %>
       </p>
       <% if @events %>
-      <ol class="text-center">
+      <ol>
         <% @events.each do |event| %>
           <% if event.start %>
           <li>
@@ -113,20 +113,46 @@
         <%= button_to "View Medications", dashboard_organize_medications_path, method: :get, class: "btn btn-outline-primary" %>
       </p>
         <% if @medications %>
-        <ol>
-          <p class="text-center">
-          <% @medications.each do |medication| %>
-            <li>
-              <%= link_to dashboard_organize_medication_path(medication) do %>
-                <%= medication.name %>
-              <% end %>
-            </li>
-          <% end %>
-          </p>
-        </ol>
+          <ol>
+            <p class="text-center">
+            <% @medications.each do |medication| %>
+              <li>
+                <%= link_to dashboard_organize_medication_path(medication) do %>
+                  <%= medication.name %>
+                <% end %>
+              </li>
+            <% end %>
+            </p>
+          </ol>
         <% else %>
           You have no medications recorded yet!
         <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-4 mb-4">
+  <div class="card">
+    <div class="card-header with-elements">
+      <div class="card-header-title"><i class="ion ion-md-calendar text-primary"></i>&nbsp; Appointment Notes</div>
+    </div>
+    <div class="card-body">
+      <p>
+        <%= button_to "View all Entries", dashboard_organize_events_checklists_path, method: :get, class: "btn btn-outline-primary" %>
+      </p>
+      <% if @entries %>
+      <ol>
+        <% @entries.each do |entry| %>
+          <li>
+            <%= link_to dashboard_organize_event_path(entry.event) do %>
+              <%= entry.entry %> – <%= entry.created_at.to_formatted_s(:short_ordinal) %>
+            <% end %>
+          </li>
+        <% end %>
+      </ol>
+      <% else %>
+        You have no entries yet!
+      <% end %>
     </div>
   </div>
 </div>
