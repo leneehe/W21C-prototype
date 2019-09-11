@@ -25,9 +25,12 @@
   <div class="row">
     <div class="col-xs-12 col-md-4 col-sm-offset-4 wow fadeInUp" data-wow-delay="0.2s">
       <div class="well well-lg">
+          <%= link_to about_path do %>
+            <h5 class="text-center">Why Create an Account?</h5>
+          <% end %>
+          <div class="space-20"></div>
           <h3>Create an Account</h3>
-          <div class="space-10"></div>
-          <div class="space-10"></div>
+          <div class="space-20"></div>
               <div class="row">
                   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                   <%= devise_error_messages! %>

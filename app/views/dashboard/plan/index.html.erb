@@ -44,9 +44,12 @@
     <div class="card-header with-elements">
       <div class="card-header-title"><i class="ion ion-md-calendar text-primary"></i>&nbsp; Keep Me Organized</div>
     </div>
-    <div class="card-body text-center ">
+    <div class="card-body">
+      <p>
+        <%= button_to "View Calendar", dashboard_organize_events_path, method: :get, class: "btn btn-outline-primary" %>
+      </p>
       <% if @events %>
-      <ol>
+      <ol class="text-center">
         <% @events.each do |event| %>
           <% if event.start %>
           <li>
@@ -69,14 +72,16 @@
     <div class="card-header with-elements">
       <div class="card-header-title"><i class="ion ion-md-trophy text-primary"></i>&nbsp; Goals</div>
     </div>
-    <div class="card-body text-center ">
-      Total Goals: <b><%= @goals.length %></b>
-      <br>
-      Completed Goals: <b><%= @goals.complete.length %></b>
-      <br>
-      Incomplete Goals: <b><%= @goals.incomplete.length %></b>
+    <div class="card-body">
       <p>
         <%= button_to "View Goals", dashboard_goals_path, method: :get, class: "btn btn-outline-primary" %>
+      </p>
+      <p class="text-center">
+        Total Goals: <b><%= @goals.length %></b>
+        <br>
+        Completed Goals: <b><%= @goals.complete.length %></b>
+        <br>
+        Incomplete Goals: <b><%= @goals.incomplete.length %></b>
       </p>
     </div>
   </div>
@@ -87,11 +92,41 @@
     <div class="card-header with-elements">
       <div class="card-header-title"><i class="ion ion-md-document text-primary"></i>&nbsp; Report Tool</div>
     </div>
-    <div class="card-body text-center ">
+    <div class="card-body">
       <p>
+        <%= button_to "Create", dashboard_plan_report_path, method: :get, class: "btn btn-outline-primary" %>
+      </p>
+      <p class="text-center">
         Helping You Make the Most of Your Care Appointments
       </p>
-      <%= button_to "Create", dashboard_plan_report_path, method: :get, class: "btn btn-outline-primary" %>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-4 mb-4">
+  <div class="card">
+    <div class="card-header with-elements">
+      <div class="card-header-title"><i class="ion ion-md-pint text-primary"></i>&nbsp; Medications</div>
+    </div>
+    <div class="card-body">
+      <p>
+        <%= button_to "View Medications", dashboard_organize_medications_path, method: :get, class: "btn btn-outline-primary" %>
+      </p>
+        <% if @medications %>
+        <ol>
+          <p class="text-center">
+          <% @medications.each do |medication| %>
+            <li>
+              <%= link_to dashboard_organize_medication_path(medication) do %>
+                <%= medication.name %>
+              <% end %>
+            </li>
+          <% end %>
+          </p>
+        </ol>
+        <% else %>
+          You have no medications recorded yet!
+        <% end %>
     </div>
   </div>
 </div>

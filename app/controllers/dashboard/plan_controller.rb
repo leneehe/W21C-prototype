@@ -9,8 +9,9 @@ class Dashboard::PlanController < ApplicationController
     end
 
     @user_symptoms = Symptom.user_tracked(current_user.id)
-    @goals = current_user.goals
+    @goals = current_user.goals.limit(5)
     @events = current_user.events.order(start: :asc).limit(5)
+    @medications = current_user.medications.limit(5)
   end
 
   def report

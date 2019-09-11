@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :email, presence: true, length: {maximum: 30}, :uniqueness => { :case_sensitive => false }
+  validates :email, presence: true, length: {maximum: 60}, :uniqueness => { :case_sensitive => false }
 
   # has_and_belongs_to_many :symptoms
   has_many :symptoms_users
