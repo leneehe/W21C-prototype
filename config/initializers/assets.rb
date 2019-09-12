@@ -18,7 +18,7 @@ Rails.application.config.assets.precompile += [
 
 #Precompile Landing page Stylesheets
 Rails.application.config.assets.precompile += [
-  "bootstrap.min.css",
+  # "bootstrap.min.css",
   "owl.carousel.min.css",
   "themify-icons.css",
   "animate.css",

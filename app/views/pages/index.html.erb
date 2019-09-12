@@ -51,7 +51,7 @@
         </div>
           <div class="row">
               <div class="space-40"></div>
-              <div class="col-xs-12 col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+              <div class="col-xs-12 col-sm-4 wow fadeInUp" data-wow-delay="0.2s">
                 <%= image_tag ("home/home-organize.jpg") %>
                   <div class="well well-hover text-center how-it-works">
                       <% if user_signed_in? %>
@@ -74,7 +74,7 @@
                       <p>Keeping track of all your appointments, medications, and relevant information should be easier. Our tools can help you stay organized.</p>
                   </div>
               </div>
-              <div class="col-xs-12 col-md-4 wow fadeInUp" data-wow-delay="0.4s">
+              <div class="col-xs-12 col-sm-4 wow fadeInUp" data-wow-delay="0.4s">
                 <%= image_tag ("home/home-tracking.jpg") %>
                   <div class="well well-hover text-center how-it-works">
                       <% if user_signed_in? %>
@@ -97,7 +97,7 @@
                       <p>A big part of managing your day-to-day chronic care needs is self-tracking. Our visualizations of your data might provide new insight into making those days the best they can be within your context.</p>
                   </div>
               </div>
-              <div class="col-xs-12 col-md-4 wow fadeInUp" data-wow-delay="0.6s">
+              <div class="col-xs-12 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
                 <%= image_tag ("home/home-goals.jpg") %>
                   <div class="well well-hover text-center how-it-works">
                       <% if user_signed_in? %>
@@ -120,12 +120,13 @@
                       <p>Setting SMART goals is a great way to successfully get to where you want to be. We’ve put together a guided step-by-step guides to help you reach your goals.</p>
                   </div>
               </div>
-
-              <div class="well well-lg col-md-8 col-md-offset-2">
-                <h3 class="text-center" style="line-height: 1.8">
-                  <%= link_to "Sign up today", new_user_registration_path %> for FREE access to these<br>personalized tools to help you on your care journey.
-                </h3>
-              </div>
+          </div>
+          <div class="row">
+            <div class="well well-lg col-md-8 col-md-offset-2">
+              <h3 class="text-center" style="line-height: 1.8">
+                <%= link_to "Sign up today", new_user_registration_path %> for FREE access to these<br>personalized tools to help you on your care journey.
+              </h3>
+            </div>
           </div>
       </div>
       <div class="space-60"></div>
