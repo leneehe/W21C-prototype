@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     dashboard_plan_path
   end
   def after_sign_up_path_for(resource)
-    dashboard_plan_path
+    user_path(current_user)
   end
 
   def current_page_path?(p)
