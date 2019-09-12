@@ -14,7 +14,9 @@
             autofocus: true,
             placeholder: "Severity Score in #{@symptom_info.unit_of_measure}",
             class: "form-control",
-            required: true
+            required: true,
+            step: "any",
+            min: 0
         %>
         <%= f.hidden_field :symptom_id,  :value => @symptom.id %>
         <%= f.hidden_field :user_id,  :value => current_user.id %>
