@@ -121,7 +121,9 @@
                               style: "width: 100%"
                           %>
                           <div class="space-20"></div>
-                          <p>By clicking "Sign Up", you agree to our terms and privacy policy. We'll occasionally send you account related emails.</p>
+                          <p>By clicking "Sign Up", you agree to our
+                          <%= link_to 'terms and conditions', term_conditions_path %>
+                          policy. We'll occasionally send you account related emails.</p>
                       </div>
                   <% end %>
               </div>

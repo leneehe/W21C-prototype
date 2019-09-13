@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about', as: 'about'
   get 'signup', to: 'pages#signup', as: 'signup'
   get 'login', to: 'pages#login', as: 'login'
+  get 'terms-conditions', to: 'pages#terms_conditions', as: 'terms_conditions'
 
   get 'dashboard', to: 'dashboard/plan#index'
 
