@@ -111,9 +111,9 @@
 
           <%= form_for @symptom, html: {id: "symptomATracking"} do |form| %>
 
-          <%= form.fields_for :symptoms_users, @symptom.symptoms_users.find_by(user_id: current_user) do |m| %>
+          <%= form.fields_for :symptoms_users, @symptom_attributes do |m| %>
             <%= m.hidden_field :user_tracked, value: true %>
-            <%= m.hidden_field :user_id, value: current_user.id %>
+            <%# m.hidden_field :user_id, value: current_user.id %>
 
             <div class="form-group row">
               <%= m.label :normal_range_upper, "Normal Range Upper Bounds:", class: "col-form-label col-sm-4 text-md-right" %>
@@ -121,11 +121,14 @@
                 <div class="col-sm-6">
                   <%= m.number_field :normal_range_upper,
                       class: "form-control",
-                      required: true
+                      required: true,
+                      step: "any",
+                      min: 0,
+                      placeholder: "commonly " + @symptom.normal_range_upper.to_s
                   %>
                 </div>
                 <div class="col-sm-2">
-                  <%= @symptom_attributes.unit_of_measure %>
+                  <%= @symptom.unit_of_measure || @symptom_attributes.unit_of_measure %>
                 </div>
               </div>
             </div>
@@ -137,11 +140,12 @@
                   class: "form-control",
                   required: true,
                   step: "any",
-                  min: 0
+                  min: 0,
+                  placeholder: "commonly " + @symptom.normal_range_lower.to_s
                   %>
                 </div>
                 <div class="col-sm-2">
-                  <%= @symptom_attributes.unit_of_measure %>
+                  <%= @symptom.unit_of_measure || @symptom_attributes.unit_of_measure %>
                 </div>
               </div>
             </div>
@@ -156,11 +160,12 @@
                   class: "form-control",
                   required: true,
                   step: "any",
-                  min: 0
+                  min: 0,
+                  placeholder: "commonly " + @symptom.assistance_threshold.to_s
                   %>
                 </div>
                 <div class="col-sm-2">
-                  <%= @symptom_attributes.unit_of_measure %>
+                  <%= @symptom.unit_of_measure || @symptom_attributes.unit_of_measure %>
                 </div>
               </div>
             </div>
@@ -178,9 +183,9 @@
           <p>Typical ranges for <%= @symptom2.name %> are: </p>
             <%= form_for @symptom2, html: {id: "symptomBTracking"} do |form| %>
 
-            <%= form.fields_for :symptoms_users, @symptom2.symptoms_users.find_by(user_id: current_user) do |m| %>
+            <%= form.fields_for :symptoms_users, @symptom2_attributes do |m| %>
               <%= m.hidden_field :user_tracked, value: true %>
-              <%= m.hidden_field :user_id, value: current_user.id %>
+              <%# m.hidden_field :user_id, value: current_user.id %>
 
               <div class="form-group row">
                 <%= m.label :normal_range_upper, "Normal Range Upper Bounds:", class: "col-form-label col-sm-4 text-md-right" %>
@@ -190,11 +195,12 @@
                         class: "form-control",
                         required: true,
                         step: "any",
-                        min: 0
+                        min: 0,
+                        placeholder: "commonly " + @symptom2.normal_range_upper.to_s
                     %>
                   </div>
                   <div class="col-sm-2">
-                    <%= @symptom_attributes.unit_of_measure %>
+                    <%= @symptom2.unit_of_measure || @symptom2_attributes.unit_of_measure %>
                   </div>
                 </div>
               </div>
@@ -206,11 +212,12 @@
                     class: "form-control",
                     required: true,
                     step: "any",
-                    min: 0
+                    min: 0,
+                    placeholder: "commonly " + @symptom2.normal_range_lower.to_s
                     %>
                   </div>
                   <div class="col-sm-2">
-                    <%= @symptom_attributes.unit_of_measure %>
+                    <%= @symptom2.unit_of_measure || @symptom2_attributes.unit_of_measure %>
                   </div>
                 </div>
               </div>
@@ -223,11 +230,13 @@
                   <div class="col-sm-4">
                     <%= m.number_field :assistance_threshold,
                     class: "form-control",
-                    required: true
+                    required: true,
+                    min: 0,
+                    placeholder: "commonly " + @symptom2.assistance_threshold.to_s
                     %>
                   </div>
                   <div class="col-sm-2">
-                    <%= @symptom_attributes.unit_of_measure %>
+                    <%= @symptom2.unit_of_measure || @symptom2_attributes.unit_of_measure %>
                   </div>
                 </div>
               </div>

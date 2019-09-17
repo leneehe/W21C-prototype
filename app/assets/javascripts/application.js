@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require rails-ujs
+//= require turbolinks
 //= require activestorage
 //= require chartist/dist/chartist
 //= require chartist-plugin-axistitle/dist/chartist-plugin-axistitle

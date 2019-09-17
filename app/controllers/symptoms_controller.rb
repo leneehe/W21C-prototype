@@ -71,11 +71,13 @@ class SymptomsController < ApplicationController
   end
 
   def edit
-    @symptom_attributes = SymptomsUser.find_by(symptom_id: @symptom.id)
+    @symptom_attributes = @symptom.symptoms_users.find_by(user_id: current_user)
     if @symptom.name == "Blood Pressure Systolic"
       @symptom2 = Symptom.find_by(name: "Blood Pressure Diastolic")
+      @symptom2_attributes = @symptom2.symptoms_users.find_by(user_id: current_user)
     elsif @symptom.name == "Blood Pressure Diastolic"
       @symptom2 = Symptom.find_by(name: "Blood Pressure Systolic")
+      @symptom2_attributes = @symptom2.symptoms_users.find_by(user_id: current_user)
     end
   end
 
@@ -83,10 +85,10 @@ class SymptomsController < ApplicationController
     respond_to do |format|
       if @symptom.save
 
-        symptom_info = current_user.symptoms_users.find_by(symptom_id: params[:id])
+        symptom_info = @symptom.symptoms_users.find_by(user_id: current_user)
         symptom_info.update(symptom_params[:symptoms_users_attributes]["0"])
         if @symptom2
-          symptom_info = current_user.symptoms_users.find_by(symptom_id: @symptom2.id)
+          symptom_info = @symptom2.symptoms_users.find_by(user_id: current_user)
           symptom_info.update(symptom_params[:symptoms_users_attributes]["0"])
         end
 

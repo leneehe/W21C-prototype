@@ -37,7 +37,12 @@ obesity = Condition.create!(name:"Obesity")
 
 #-----Prepopulate Symptoms-----
 blood_glucose = Symptom.create!(
-  name: "Blood Glucose", symptoms_users_attributes: [user_id: user.id,
+  name: "Blood Glucose", normal_range_upper: 11,
+  normal_range_lower: 4,
+  assistance_threshold: 4,
+  unit_of_measure: "mmol/L",
+  above_assistance: false,
+   symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 11,
   normal_range_lower: 4,
   assistance_threshold: 4,
@@ -46,7 +51,12 @@ blood_glucose = Symptom.create!(
 )
 
 stress_level = Symptom.create!(
-  name: "Stress Level", symptoms_users_attributes: [user_id: user.id,
+  name: "Stress Level", normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: "",
+  above_assistance: true,
+   symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
@@ -55,7 +65,12 @@ stress_level = Symptom.create!(
 ])
 
 mood = Symptom.create!(
-  name: "Mood", symptoms_users_attributes: [user_id: user.id,
+  name: "Mood", normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: "",
+  above_assistance: true,
+    symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
@@ -64,7 +79,12 @@ mood = Symptom.create!(
 )
 
 sleep = Symptom.create!(
-  name: "Sleep", symptoms_users_attributes: [user_id: user.id,
+  name: "Sleep", normal_range_upper: 8,
+  normal_range_lower: 7,
+  assistance_threshold: 7,
+  unit_of_measure: "hours/night",
+  above_assistance: false,
+   symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 8,
   normal_range_lower: 7,
   assistance_threshold: 7,
@@ -73,7 +93,12 @@ sleep = Symptom.create!(
 )
 
 loneliness = Symptom.create!(
-  name: "Loneliness", symptoms_users_attributes: [user_id: user.id,
+  name: "Loneliness", normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: "",
+  above_assistance: true,
+    symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
@@ -82,26 +107,44 @@ loneliness = Symptom.create!(
 )
 
 blood_pressure_systolic = Symptom.create!(
-  name: "Blood Pressure Systolic", symptoms_users_attributes: [user_id: user.id,
-  normal_range_upper: 140,
-  normal_range_lower: 120,
-  assistance_threshold: 120,
+  name: "Blood Pressure Systolic",
+  normal_range_upper: 120,
+  normal_range_lower: 90,
+  assistance_threshold: 140,
   unit_of_measure: "mmHg",
-  above_assistance: false]
+  above_assistance: true,
+   symptoms_users_attributes: [user_id: user.id,
+  normal_range_upper: 120,
+  normal_range_lower: 90,
+  assistance_threshold: 140,
+  unit_of_measure: "mmHg",
+  above_assistance: true]
 )
 
 
 blood_pressure_diastolic = Symptom.create!(
-  name: "Blood Pressure Diastolic", symptoms_users_attributes: [user_id: user.id,
-  normal_range_upper: 90,
-  normal_range_lower: 80,
-  assistance_threshold: 80,
+  name: "Blood Pressure Diastolic",
+  normal_range_upper: 80,
+  normal_range_lower: 60,
+  assistance_threshold: 90,
   unit_of_measure: "mmHg",
-  above_assistance: false]
+  above_assistance: true,
+   symptoms_users_attributes: [user_id: user.id,
+  normal_range_upper: 80,
+  normal_range_lower: 60,
+  assistance_threshold: 90,
+  unit_of_measure: "mmHg",
+  above_assistance: true]
 )
 
 resting_heart_rate = Symptom.create!(
-  name: "Resting Heart Rate", symptoms_users_attributes: [user_id: user.id,
+  name: "Resting Heart Rate",
+  normal_range_upper: 100,
+  normal_range_lower: 40,
+  assistance_threshold: 100,
+  unit_of_measure: "BPM",
+  above_assistance: true,
+   symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 100,
   normal_range_lower: 40,
   assistance_threshold: 100,
@@ -110,7 +153,13 @@ resting_heart_rate = Symptom.create!(
 )
 
 tiredness = Symptom.create!(
-  name: "Tiredness/Exhaustion/Energy", symptoms_users_attributes: [user_id: user.id,
+  name: "Tiredness/Exhaustion/Energy",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: "",
+  above_assistance: true,
+   symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
@@ -119,7 +168,13 @@ tiredness = Symptom.create!(
 )
 
 edema = Symptom.create!(
-  name: "Edema (Leg/Ankle/Swelling)", symptoms_users_attributes: [user_id: user.id,
+  name: "Edema (Leg/Ankle/Swelling)",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: "",
+  above_assistance: true,
+   symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
@@ -128,7 +183,13 @@ edema = Symptom.create!(
 )
 
 medication_taken = Symptom.create!(
-  name: "Medication Taken", symptoms_users_attributes: [user_id: user.id,
+  name: "Medication Taken",
+  normal_range_upper: 1, #user 1 & 0 as binary yes/no
+  normal_range_lower: 0,
+  assistance_threshold: 1,
+  unit_of_measure: "",
+  above_assistance: false,
+   symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 1, #user 1 & 0 as binary yes/no
   normal_range_lower: 0,
   assistance_threshold: 1,
@@ -137,7 +198,13 @@ medication_taken = Symptom.create!(
 )
 
 smoking = Symptom.create!(
-  name: "Smoking", symptoms_users_attributes: [user_id: user.id,
+  name: "Smoking",
+  normal_range_upper: 30,
+  normal_range_lower: 0,
+  assistance_threshold: 0,
+  unit_of_measure: "cigarettes/day",
+  above_assistance: true,
+   symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 30,
   normal_range_lower: 0,
   assistance_threshold: 0,
@@ -146,7 +213,12 @@ smoking = Symptom.create!(
 )
 
 oxygen_therapy = Symptom.create!(
-  name: "Oxygen Therapy", symptoms_users_attributes: [user_id: user.id,
+  name: "Oxygen Therapy", normal_range_upper: 100,
+  normal_range_lower: 0,
+  assistance_threshold: 2,
+  unit_of_measure: "L/min",
+  above_assistance: false,
+    symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 100,
   normal_range_lower: 0,
   assistance_threshold: 2,
@@ -155,7 +227,12 @@ oxygen_therapy = Symptom.create!(
 )
 
 breath = Symptom.create!(
-  name: "Shortness of Breath", symptoms_users_attributes: [user_id: user.id,
+  name: "Shortness of Breath", normal_range_upper: 100,
+  normal_range_lower: 95,
+  assistance_threshold: 95,
+  unit_of_measure: "O2 saturation (%)",
+  above_assistance: false,
+   symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 100,
   normal_range_lower: 95,
   assistance_threshold: 95,
@@ -164,7 +241,12 @@ breath = Symptom.create!(
 )
 
 cough = Symptom.create!(
-  name: "Cough", symptoms_users_attributes: [user_id: user.id,
+  name: "Cough", normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: "",
+  above_assistance: true,
+    symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
@@ -173,7 +255,13 @@ cough = Symptom.create!(
 )
 
 wheezing = Symptom.create!(
-  name: "Wheezing", symptoms_users_attributes: [user_id: user.id,
+  name: "Wheezing",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: "",
+  above_assistance: true,
+    symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
@@ -182,7 +270,13 @@ wheezing = Symptom.create!(
 )
 
 lung_capacity = Symptom.create!(
-  name: "Total Lung Capacity", symptoms_users_attributes: [user_id: user.id,
+  name: "Total Lung Capacity",
+  normal_range_upper: 6,
+  normal_range_lower: 4,
+  assistance_threshold: 4,
+  unit_of_measure: "Litres of O2",
+  above_assistance: false,
+    symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 6,
   normal_range_lower: 4,
   assistance_threshold: 4,
@@ -191,7 +285,13 @@ lung_capacity = Symptom.create!(
 )
 
 impacted_activities = Symptom.create!(
-  name: "(Asthma) Impacted Activities", symptoms_users_attributes: [user_id: user.id,
+  name: "(Asthma) Impacted Activities",
+  normal_range_upper: 2, #0 = no, 1 = somewhat, 2 = completely
+  normal_range_lower: 1,
+  assistance_threshold: 0,
+  unit_of_measure: "No, Somewhat, Completely",
+  above_assistance: true,
+   symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 2, #0 = no, 1 = somewhat, 2 = completely
   normal_range_lower: 1,
   assistance_threshold: 0,
@@ -200,7 +300,13 @@ impacted_activities = Symptom.create!(
 )
 
 asthma_medication_taken = Symptom.create!(
-  name: "(Asthma) Medication Taken", symptoms_users_attributes: [user_id: user.id,
+  name: "(Asthma) Medication Taken",
+  normal_range_upper: 8,
+  normal_range_lower: 0,
+  assistance_threshold: 1,
+  unit_of_measure: "Puffs per Day",
+  above_assistance: false,
+   symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 8,
   normal_range_lower: 0,
   assistance_threshold: 1,
@@ -209,7 +315,13 @@ asthma_medication_taken = Symptom.create!(
 )
 
 allergens = Symptom.create!(
-  name: "Allergens or Triggers Present", symptoms_users_attributes: [user_id: user.id,
+  name: "Allergens or Triggers Present",
+  normal_range_upper: 1, # 0 = no, 1 = yes
+  normal_range_lower: 0,
+  assistance_threshold: 0,
+  unit_of_measure: "",
+  above_assistance: true,
+   symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 1, # 0 = no, 1 = yes
   normal_range_lower: 0,
   assistance_threshold: 0,
@@ -218,7 +330,13 @@ allergens = Symptom.create!(
 )
 
 bmi = Symptom.create!(
-  name: "BMI", symptoms_users_attributes: [user_id: user.id,
+  name: "BMI",
+  normal_range_upper: 24.9,
+  normal_range_lower: 18.5,
+  assistance_threshold: 18.5,
+  unit_of_measure: "Weight(kg)/Height(cm)^2",
+  above_assistance: false,
+    symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 24.9,
   normal_range_lower: 18.5,
   assistance_threshold: 18.5,
@@ -227,7 +345,13 @@ bmi = Symptom.create!(
 )
 
 dry_hacking_cough = Symptom.create!(
-  name: "Dry Hacking Cough", symptoms_users_attributes: [user_id: user.id,
+  name: "Dry Hacking Cough",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: "",
+  above_assistance: true,
+    symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
@@ -236,7 +360,13 @@ dry_hacking_cough = Symptom.create!(
 )
 
 discomfort = Symptom.create!(
-  name: "Discomfort/Swelling in Abdomen", symptoms_users_attributes: [user_id: user.id,
+  name: "Discomfort/Swelling in Abdomen",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: "",
+  above_assistance: true,
+   symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
@@ -245,7 +375,13 @@ discomfort = Symptom.create!(
 )
 
 dizziness = Symptom.create!(
-  name: "Dizziness", symptoms_users_attributes: [user_id: user.id,
+  name: "Dizziness",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: "",
+  above_assistance: true,
+    symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
@@ -254,7 +390,13 @@ dizziness = Symptom.create!(
 )
 
 appetite = Symptom.create!(
-  name: "Appetite", symptoms_users_attributes: [user_id: user.id,
+  name: "Appetite",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: "",
+  above_assistance: false,
+    symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
@@ -263,7 +405,13 @@ appetite = Symptom.create!(
 )
 
 nausea = Symptom.create!(
-  name: "Nausea", symptoms_users_attributes: [user_id: user.id,
+  name: "Nausea",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: "",
+  above_assistance: true,
+    symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
@@ -272,7 +420,13 @@ nausea = Symptom.create!(
 )
 
 sweatiness = Symptom.create!(
-  name: "Sweatiness/Heat", symptoms_users_attributes: [user_id: user.id,
+  name: "Sweatiness/Heat",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: "",
+  above_assistance: true,
+    symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
@@ -281,7 +435,13 @@ sweatiness = Symptom.create!(
 )
 
 social_activities = Symptom.create!(
-  name: "Social Activities", symptoms_users_attributes: [user_id: user.id,
+  name: "Social Activities",
+  normal_range_upper: 10,
+  normal_range_lower: 1,
+  assistance_threshold: 1,
+  unit_of_measure: "Activities per week",
+  above_assistance: false,
+    symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 10,
   normal_range_lower: 1,
   assistance_threshold: 1,
@@ -290,7 +450,13 @@ social_activities = Symptom.create!(
 )
 
 vitamin_d = Symptom.create!(
-  name: "Vitamin D", symptoms_users_attributes: [user_id: user.id,
+  name: "Vitamin D",
+  normal_range_upper: 800,
+  normal_range_lower: 600,
+  assistance_threshold: 600,
+  unit_of_measure: "International Units (IU)",
+  above_assistance: false,
+    symptoms_users_attributes: [user_id: user.id,
   normal_range_upper: 800,
   normal_range_lower: 600,
   assistance_threshold: 600,

@@ -81,11 +81,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
         name: "Blood Pressure Systolic")
       blood_pressure_systolic.symptoms_users.create!(
         user_id: user.id,
-        normal_range_upper: 140,
-        normal_range_lower: 120,
-        assistance_threshold: 120,
+        normal_range_upper: 120,
+        normal_range_lower: 90,
+        assistance_threshold: 140,
         unit_of_measure: "mmHg",
-        above_assistance: false
+        above_assistance: true
       )
 
 
@@ -93,11 +93,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
         name: "Blood Pressure Diastolic")
       blood_pressure_diastolic.symptoms_users.create!(
         user_id: user.id,
-        normal_range_upper: 90,
-        normal_range_lower: 80,
-        assistance_threshold: 80,
+        normal_range_upper: 80,
+        normal_range_lower: 60,
+        assistance_threshold: 90,
         unit_of_measure: "mmHg",
-        above_assistance: false
+        above_assistance: true
       )
 
       resting_heart_rate = Symptom.find_by(
