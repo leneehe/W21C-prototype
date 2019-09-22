@@ -76,7 +76,14 @@
 
           <% @primary_symptoms.each do |symptom| %>
           <div>
-            <strong><%= link_to symptom.name, edit_symptom_path(symptom.id) %></strong>
+
+            <% if @primary_symptoms.include?(Symptom.find_by(name: "Blood Pressure Systolic")) && @primary_symptoms.include?(Symptom.find_by(name: "Blood Pressure Diastolic")) && symptom.name == "Blood Pressure Systolic" %>
+              <strong><%= link_to "Blood Pressure", edit_symptom_path(symptom.id) %></strong>
+            <% elsif  @primary_symptoms.include?(Symptom.find_by(name: "Blood Pressure Systolic")) && @primary_symptoms.include?(Symptom.find_by(name: "Blood Pressure Diastolic")) && symptom.name == "Blood Pressure Diastolic"  %>
+            <% else %>
+              <strong><%= link_to symptom.name, edit_symptom_path(symptom.id) %></strong>
+            <% end %>
+
           </div>
           <% end %>
 
@@ -177,7 +184,7 @@
     </div>
     <div id="symptoms-step-3" class="card animated fadeIn">
       <div class="card-body">
-        Step Content 3
+        Oops! Looks like you haven't completed the previous step.<br> Please click on 'Previous' button to go back.
       </div>
     </div>
   </div>

@@ -87,12 +87,16 @@ class SymptomsController < ApplicationController
 
         symptom_info = @symptom.symptoms_users.find_by(user_id: current_user)
         symptom_info.update(symptom_params[:symptoms_users_attributes]["0"])
-        if @symptom2
-          symptom_info = @symptom2.symptoms_users.find_by(user_id: current_user)
-          symptom_info.update(symptom_params[:symptoms_users_attributes]["0"])
+        # if @symptom2
+        #   symptom_info = @symptom2.symptoms_users.find_by(user_id: current_user)
+        #   symptom_info.update(symptom_params[:symptoms_users_attributes]["0"])
+        # end
+        if @symptom.name == "Blood Pressure Systolic"
+          format.html { redirect_to edit_symptom_path(Symptom.find_by(name: "Blood Pressure Diastolic")), notice: "Symptom tracked!" }
+        else
+          format.html { redirect_to symptoms_summary_path, notice: "Symptom tracked!" }
         end
 
-        format.html { redirect_to symptoms_summary_path, notice: "Symptom tracked!" }
       else
         format.html { render :edit }
       end

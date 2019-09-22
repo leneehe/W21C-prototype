@@ -74,7 +74,14 @@
 
           <% @primary_symptoms.each do |symptom| %>
           <div>
-            <strong><%= link_to symptom.name, edit_symptom_path(symptom.id) %></strong>
+
+            <% if @primary_symptoms.include?(Symptom.find_by(name: "Blood Pressure Systolic")) && @primary_symptoms.include?(Symptom.find_by(name: "Blood Pressure Diastolic")) && symptom.name == "Blood Pressure Systolic" %>
+              <strong><%= link_to "Blood Pressure", edit_symptom_path(symptom.id) %></strong>
+            <% elsif  @primary_symptoms.include?(Symptom.find_by(name: "Blood Pressure Systolic")) && @primary_symptoms.include?(Symptom.find_by(name: "Blood Pressure Diastolic")) && symptom.name == "Blood Pressure Diastolic"  %>
+            <% else %>
+              <strong><%= link_to symptom.name, edit_symptom_path(symptom.id) %></strong>
+            <% end %>
+
           </div>
           <% end %>
 
@@ -178,77 +185,6 @@
           </div>
           <% end %>
 
-
-          <% if @symptom2 %>
-          <p>Typical ranges for <%= @symptom2.name %> are: </p>
-            <%= form_for @symptom2, html: {id: "symptomBTracking"} do |form| %>
-
-            <%= form.fields_for :symptoms_users, @symptom2_attributes do |m| %>
-              <%= m.hidden_field :user_tracked, value: true %>
-              <%# m.hidden_field :user_id, value: current_user.id %>
-
-              <div class="form-group row">
-                <%= m.label :normal_range_upper, "Normal Range Upper Bounds:", class: "col-form-label col-sm-4 text-md-right" %>
-                <div class="col-sm-8">
-                  <div class="col-sm-6">
-                    <%= m.number_field :normal_range_upper,
-                        class: "form-control",
-                        required: true,
-                        step: "any",
-                        min: 0,
-                        placeholder: "commonly " + @symptom2.normal_range_upper.to_s
-                    %>
-                  </div>
-                  <div class="col-sm-2">
-                    <%= @symptom2.unit_of_measure || @symptom2_attributes.unit_of_measure %>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <%= m.label :normal_range_lower, "Normal Range Lower Bounds:", class: "col-form-label col-sm-4 text-md-right" %>
-                <div class="col-sm-8">
-                  <div class="col-sm-6">
-                    <%= m.number_field :normal_range_lower,
-                    class: "form-control",
-                    required: true,
-                    step: "any",
-                    min: 0,
-                    placeholder: "commonly " + @symptom2.normal_range_lower.to_s
-                    %>
-                  </div>
-                  <div class="col-sm-2">
-                    <%= @symptom2.unit_of_measure || @symptom2_attributes.unit_of_measure %>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <%= m.label :assistance_threshold, "When to Seek Assistance:", class: "col-form-label col-sm-4 text-md-right" %>
-                <div class="col-sm-8">
-                  <div class="col-sm-2">
-                    <%= m.select(:above_assistance, [["Above", true], ["Below", false]], {index: nil}) %>
-                  </div>
-                  <div class="col-sm-4">
-                    <%= m.number_field :assistance_threshold,
-                    class: "form-control",
-                    required: true,
-                    min: 0,
-                    placeholder: "commonly " + @symptom2.assistance_threshold.to_s
-                    %>
-                  </div>
-                  <div class="col-sm-2">
-                    <%= @symptom2.unit_of_measure || @symptom2_attributes.unit_of_measure %>
-                  </div>
-                </div>
-              </div>
-
-            <% end %>
-            <div class="form-group row">
-              <div class="col-sm-12 ml-md-auto">
-                <%= form.submit "Track Symptom", class:"btn btn-outline-primary pull-right" %>
-              </div>
-            </div>
-            <% end %>
-          <% end %>
       </div>
     </div>
     <div id="symptoms-step-3" class="card animated fadeIn">
