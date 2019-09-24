@@ -21,11 +21,11 @@
       <%= f.label :created_at, "Time of Entry:" %>
       <%= f.text_field :created_at, class: "form-control", id: "tracked-symptom-datetime", placeholder: "Select a time", value: DateTime.now.strftime("%d/%m/%Y - %H:%M")%>
 
-      <%= f.label :severity_score, "Severity Score:" %>
+      <%= f.label :severity_score, "New Value:" %>
       <div class="input-group">
         <%= f.number_field :severity_score,
             autofocus: true,
-            placeholder: @symptom_info.unit_of_measure ? "Severity Score in #{@symptom_info.unit_of_measure}" : "",
+            placeholder: @symptom_info.unit_of_measure == "" ? "" : "Measured in #{@symptom_info.unit_of_measure}",
             class: "form-control",
             required: true,
             step: "any",
