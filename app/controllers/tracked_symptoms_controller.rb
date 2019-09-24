@@ -21,6 +21,7 @@ class TrackedSymptomsController < ApplicationController
   def create
 
     @symptom = current_user.symptoms.find(params[:symptom_id])
+    measurement_params[:created_at] = DateTime.parse(measurement_params[:created_at])
     @measurement = TrackedSymptom.new(measurement_params)
     # @measurement =  @symptom.tracked_symptoms.build(tracked_symptoms_params)
     respond_to do |format|
@@ -41,6 +42,6 @@ class TrackedSymptomsController < ApplicationController
 
 
   def measurement_params
-    params.require(:tracked_symptom).permit(:severity_score, :symptom_id, :user_id)
+    params.require(:tracked_symptom).permit(:severity_score, :symptom_id, :user_id, :created_at)
   end
 end

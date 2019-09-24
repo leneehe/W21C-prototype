@@ -57,7 +57,7 @@
       <% symptom.tracked_symptoms.where(user_id: current_user.id).each do |track| %>
         <tr>
           <td>
-            <%= track.updated_at.to_formatted_s(:short) %>
+            <%= track.created_at.to_formatted_s(:short) %>
           </td>
           <td>
             <%= track.severity_score %> <%= symptom.symptoms_users.first.unit_of_measure %>

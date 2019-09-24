@@ -1,3 +1,13 @@
+
+<% content_for :styles do %>
+  <%= stylesheet_link_tag 'libs/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.css', media: 'all' %>
+<% end %>
+<% content_for :scripts do %>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <%= javascript_include_tag 'libs/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.js' %>
+  <%= javascript_include_tag 'libs/moment/moment.js' %>
+  <%= javascript_include_tag 'dashboard/datetime_picker.js' %>
+<% end %>
 <%# No need to use fields_for due to only having to input 1 value %>
 <%# <%= form_for symptom_tracked_symptoms_path(@symptom) do |f|%>
 <h3>Add A Record</h3>
@@ -8,6 +18,9 @@
   <%= @symptom_info.normal_range_upper %> <i><%= @symptom_info.unit_of_measure %></i>
   </p>
   <%= form_for @tracked_symptom, :url => symptom_tracked_symptoms_path(@symptom) do |f|%>
+      <%= f.label :created_at, "Time of Entry:" %>
+      <%= f.text_field :created_at, class: "form-control", id: "tracked-symptom-datetime", placeholder: "Select a time", value: DateTime.now.strftime("%d/%m/%Y - %H:%M")%>
+
       <%= f.label :severity_score, "Severity Score:" %>
       <div class="input-group">
         <%= f.number_field :severity_score,
