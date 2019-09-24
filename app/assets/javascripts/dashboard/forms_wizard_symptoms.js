@@ -67,7 +67,7 @@ $(function() {
       useURLhash: true,
       showStepURLhash: true,
       toolbarSettings: {
-        // showNextButton: false, // show/hide a Next button
+        showNextButton: false // show/hide a Next button
         // showPreviousButton: false, // show/hide a Previous button
         // toolbarExtraButtons: [btnSubmit2]
       },
@@ -92,7 +92,7 @@ $(function() {
         btnNext.attr("disabled", false)
       }
     })
-
+    
     // Click on Track Symptom buttton
     /*
     form2.on('submit', function(e) {

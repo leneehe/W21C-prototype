@@ -25,11 +25,11 @@ class TrackedSymptomsController < ApplicationController
     # @measurement =  @symptom.tracked_symptoms.build(tracked_symptoms_params)
     respond_to do |format|
       if @measurement.save!
-        format.html { redirect_to symptoms_path, notice: 'Entry was added' }
+        format.html { redirect_to symptoms_path(anchor: @symptom.name), notice: 'Entry was added' }
       else
         format.html { redirect_to symptoms_path }
       end
-    end 
+    end
   end
 
   def edit

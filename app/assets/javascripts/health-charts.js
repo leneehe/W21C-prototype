@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             if (label === 0) {
               return moment().format('MMM D');
             } else {
-              return moment(label).local().format('MMM D hh:MM:SS');
+              return moment(label).local().format('MMM D hh:MM');
             }
           },
         },
@@ -99,9 +99,9 @@ document.addEventListener("DOMContentLoaded", function(e){
           Chartist.plugins.tooltip({
             transformTooltipTextFnc: function (tooltip) {
               let xy = tooltip.split(",");
-              let formattedX = moment(parseInt(xy[0])).local().format('MMM D hh:MM:SS');
+              let formattedX = moment(parseInt(xy[0])).local().format('MMM D hh:MM');
               // console.log(formattedX);
-              return `x: ${formattedX}<br> y: ${xy[1]}`;
+              return `x: ${formattedX}<br> y: ${xy[1]} ${xAxisTitle}`;
             }
           }),
           Chartist.plugins.ctAxisTitle({
