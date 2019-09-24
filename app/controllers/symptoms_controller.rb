@@ -107,7 +107,7 @@ class SymptomsController < ApplicationController
     @value_collection = Array.new
     @value_data = Array.new
 
-    symptom.tracked_symptoms.one_week_ago.each do |measurement|
+    TrackedSymptom.one_week_ago.where(user_id: current_user.id, symptom_id: symptom.id).each do |measurement|
       # collection_name =  ValueType.find(key).name
         @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})
     end

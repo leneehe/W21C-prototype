@@ -54,7 +54,7 @@
     </thead>
 
     <tbody>
-      <% symptom.tracked_symptoms.each do |track| %>
+      <% symptom.tracked_symptoms.where(user_id: current_user.id).each do |track| %>
         <tr>
           <td>
             <%= track.updated_at.to_formatted_s(:short) %>
