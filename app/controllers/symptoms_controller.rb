@@ -112,13 +112,18 @@ class SymptomsController < ApplicationController
         @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})
     end
 
+    start_date = TrackedSymptom.one_week_ago.sort_by { |x| x.created_at }.first.created_at
+    end_date = TrackedSymptom.one_week_ago.sort_by { |x| x.created_at }.last.created_at
+
     @value_collection.push({
       "name" => symptom.name,
       "meta" => symptom.name,
       "data" => @value_data,
       "unit_of_measure" => unit,
       "assistance_threshold" =>  symptom_info.assistance_threshold,
-      "above_assistance" => symptom_info.above_assistance
+      "above_assistance" => symptom_info.above_assistance,
+      "start_date" => start_date,
+      "end_date" => end_date,
     })
 
     return @value_collection

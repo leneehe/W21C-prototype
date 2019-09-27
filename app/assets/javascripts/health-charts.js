@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", function(e){
     let ticks = [];
     let tickSet = [];
     let xAxisTitle = chartData[0].unit_of_measure;
+    let start_date = new Date(chartData[0].start_date);
+    let end_date = new Date(chartData[0].end_date);
 
     // Convert the Ruby date into Javascript Date object
     if ("name" in chartData[0]) {
@@ -33,6 +35,9 @@ document.addEventListener("DOMContentLoaded", function(e){
         tickSet = chartData[j].data.map(item => {
           return item.x;
         });
+
+        tickSet.push(start_date);
+        tickSet.push(end_date);
 
         ticks = ticks.concat(tickSet).unique();
         divisors = chartData[j].data.length;
@@ -79,6 +84,8 @@ document.addEventListener("DOMContentLoaded", function(e){
           // position: 'start',
           type: Chartist.FixedScaleAxis,
           // divisor: 1,
+          low: +(moment(start_date).startOf('day')),
+          high: +(moment(end_date).startOf('day').add(1, 'day')),
           ticks: ticks,
           labelInterpolationFnc: function (label, index, chart) {
             if (label === 0) {
@@ -148,12 +155,14 @@ document.addEventListener("DOMContentLoaded", function(e){
           if (context.value['y'] >= chartData[0].assistance_threshold) {
             context.element.attr({
               style: `stroke: #E06287`
+              // style: `stroke: #000`
             });
           }
         } else {
           if (context.value['y'] <= chartData[0].assistance_threshold) {
             context.element.attr({
               style: `stroke: #E06287;`
+              // style: `stroke: #000`
             });
           }
         }
