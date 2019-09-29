@@ -15,6 +15,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
   })
 
+saveCondition = (e) => {
+  let form = $(e.closest("form"));
+  $.ajax({
+    url: form.attr('action'),
+    method: 'put',
+    data: form.serialize(),
+    dataType: 'html'
+  }).done(function(responseData) {
+    console.log($(this).is(':checked'))
+    alert('Saved changes.')
+  }).fail(function(jqXHR, textStatus, errorThrown) {
+    alert('Cannot save', textStatus)
+  })
+}
+
+  $('#editConditions').hide();
+
 editConditions = () => {
     $('#displayConditions').hide();
     $('#editConditions').show();

@@ -11,13 +11,13 @@
   <p><strong>Gender:</strong> <%= @user.gender %></p>
 </section>
 
-<section  id="displayConditions">
+<section id="displayConditions">
   <div class="card-header with-elements">
     <div class="card-header-title">
       <h4>My Conditions:</h4>
     </div>
     <div class="card-header-elements">
-      <%= link_to "Add/Edit", "#", onclick:"editConditions()", :class => "btn btn-outline-primary" %>
+      <%= link_to "Add/Edit", "", onclick:"editConditions()", :class => "btn btn-outline-primary" %>
     </div>
   </div>
   <div class="card-body condition-list">
@@ -30,9 +30,6 @@
       <% end %>
     <% end %>
   </div>
-  <%# <div class="">
-
-  </div> %>
 </section>
 
 <section class="card" id="editConditions">
@@ -41,7 +38,7 @@
         <h4>My Conditions: </h4>
       </div>
       <div class="card-header-elements ml-auto">
-        <%= link_to "x", user_path(@user), :class => "btn btn-outline-primary" %>
+        <%= link_to "x", user_path(@user), data: { turbolinks: false }, :class => "btn btn-outline-primary" %>
       </div>
     </div>
     <div class="card-body">
@@ -49,7 +46,7 @@
         <% Condition.all.each do |condition| %>
           <%= form_tag({action: 'save_condition'}, method: 'put') do %>
             <label class="ui-todo-item custom-control custom-checkbox">
-              <%= check_box_tag :checked, @user.conditions.exists?(id: condition.id), @user.conditions.exists?(id: condition.id), class: "custom-control-input"  %>
+              <%= check_box_tag :checked, @user.conditions.exists?(id: condition.id), @user.conditions.exists?(id: condition.id), class: "custom-control-input", onchange: "saveCondition(this)"  %>
               <span class="custom-control-label"><%= condition.name %></span>
               <br>
             </label>
@@ -59,16 +56,15 @@
       </div>
     <br>
   </div>
-  <div class="card-footer">
-    <%= form_for @new_user_condition do |f|%>
-    <%= f.label :name, "Add New Condition"%>
+  <!-- <div class="card-footer">
+    <%# form_for @new_user_condition do |f|%>
+    <%# f.label :name, "Add New Condition"%>
     <div class="input-group col-4">
-      <%= f.text_field :name, :placeholder => "e.g. Mental Health", class: "form-control" %>
+      <%# f.text_field :name, :placeholder => "e.g. Mental Health", class: "form-control" %>
       <div class="input-group-append">
-        <%= f.submit "Add", class: "btn btn-primary" %>
+        <%# f.submit "Add", class: "btn btn-primary" %>
       </div>
     </div>
-    <% end%>
-  </div>
-  <%# link_to_add_association 'Add a new condition +', form, :value_types, 'data-association-insertion-node' => "#value-type-field ul", 'data-association-insertion-method' => "append" %>
+    <%# end%>
+  </div> -->
 </section>
