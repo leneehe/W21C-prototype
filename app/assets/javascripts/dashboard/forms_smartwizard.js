@@ -36,12 +36,15 @@ $(function() {
   })
   .on('showStep', function(e, anchorObject, stepNumber, stepDirection) {
       var btn = form.find('.btn-finish');
+      var nextBtn = form.find('.sw-btn-next');
 
       // Enable finish button only on last step
       if (stepNumber === 5) {
         btn.removeClass('hidden');
+        nextBtn.addClass('hidden');
       } else {
         btn.addClass('hidden');
+        nextBtn.removeClass('hidden');
       }
   })
 
