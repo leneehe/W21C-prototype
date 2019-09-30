@@ -97,8 +97,34 @@ private
       # Assign colorClasses
       e[:className] = legends[event.event_type_id]
 
-
       calendar_events.push(e)
+
+      if event.frequency == "Daily"
+        (1..90).each do |d|
+          recurring_event = {id: event.id, title: event.name, start: event.start.to_datetime + d, end: event.end.to_datetime + d,
+          className: legends[event.event_type_id]}
+          calendar_events.push(recurring_event)
+        end
+      elsif event.frequency == "Weekly"
+        (7..90).step(7).each do |d|
+          recurring_event = {id: event.id, title: event.name, start: event.start.to_datetime + d, end: event.end.to_datetime + d,
+          className: legends[event.event_type_id]}
+          calendar_events.push(recurring_event)
+        end
+      elsif event.frequency == "Bi-weekly"
+        (14..120).step(14).each do |d|
+          recurring_event = {id: event.id, title: event.name, start: event.start.to_datetime + d, end: event.end.to_datetime + d,
+          className: legends[event.event_type_id]}
+          calendar_events.push(recurring_event)
+        end
+      elsif event.frequency == "Monthly"
+        (30..120).step(31).each do |d|
+          recurring_event = {id: event.id, title: event.name, start: event.start.to_datetime + d, end: event.end.to_datetime + d,
+          className: legends[event.event_type_id]}
+          calendar_events.push(recurring_event)
+        end
+      end
+
     end
 
     return calendar_events
