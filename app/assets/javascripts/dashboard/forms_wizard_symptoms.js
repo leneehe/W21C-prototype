@@ -28,11 +28,13 @@ $(function() {
         if (stepNumber === 2) {
           btn.show()
           btnNext.addClass('disabled');
+          btnNext.addClass('hidden');
           btnNext.attr("disabled", true);
 
         } else {
           btn.hide()
           btnNext.removeClass('disabled');
+          btnNext.removeClass('hidden');
           btnNext.attr("disabled", false)
         }
     });
@@ -92,7 +94,7 @@ $(function() {
         btnNext.attr("disabled", false)
       }
     })
-    
+
     // Click on Track Symptom buttton
     /*
     form2.on('submit', function(e) {
