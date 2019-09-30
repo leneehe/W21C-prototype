@@ -6,11 +6,6 @@
 
     <h2><%= @medication.name %></h2>
 
-    <% if @medication.rx_photograph_link %>
-    <p>
-      <%= image_tag(@medication.rx_photograph_link) %>
-    </p>
-    <% end %>
     <% if @medication.link %>
     <p>
       <%= link_to "Pharmacy link", @medication.link, target: "_blank" %>

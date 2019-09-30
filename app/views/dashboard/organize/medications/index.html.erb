@@ -26,6 +26,7 @@
         <th>Dosage</th>
         <th>Description of Medication</th>
         <th>How Many to Take at Each Dose</th>
+        <th>When to Take the Medication</th>
         <th>How to Take the Medication</th>
         <th>Special Instructions</th>
         <th>What is the Medication for?</th>
@@ -47,6 +48,9 @@
         </td>
         <td class="center">
           <%= tracked_medication.dosage %>
+        </td>
+        <td class="center">
+          <%= tracked_medication.frequency %>
         </td>
         <td class="center">
           <%= tracked_medication.find_instruction %>

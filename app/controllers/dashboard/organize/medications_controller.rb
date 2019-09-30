@@ -59,7 +59,7 @@ private
   end
 
   def medication_params
-    params.require(:medication).except(:mednames).permit(:name, :rx_photograph_link, :link, :strength, :description, :instruction, :condition_cure,
+    params.require(:medication).except(:mednames).permit(:name, :link, :strength, :description, :instruction, :condition_cure,
     tracked_medications_attributes: [:id,
       :prescribed_by, :special_instruction, :dosage, :frequency, :user_id, :medication_id, :_destroy
       ])
