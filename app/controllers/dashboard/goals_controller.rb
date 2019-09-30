@@ -7,7 +7,7 @@ class Dashboard::GoalsController < ApplicationController
       redirect_to new_user_session_path, notice: 'you have to sign in first.'
       return
     end
-    
+
     @goals = current_user.goals.incomplete
     @complete_goals = current_user.goals.complete
   end
@@ -18,20 +18,7 @@ class Dashboard::GoalsController < ApplicationController
 
   # GET /goals/1
   def show
-    # show goal number
-    goal_ids = []
 
-    if @goal.complete
-      goal_ids = current_user.goals.complete.collect{ |g| g.id }
-    else
-      goal_ids = current_user.goals.incomplete.collect{ |g| g.id }
-    end
-
-    goal_ids.each_with_index do |val, index|
-      if @goal.id == val
-        @goal_number = index + 1
-      end
-    end
   end
 
   def goal_summary
