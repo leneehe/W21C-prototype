@@ -91,4 +91,12 @@ $(function() {
 
   $('#report .sw-toolbar').appendTo($('#report .sw-container'));
 
+  function checkEnter(e){
+   e = e || event;
+   var txtArea = /input/i.test((e.target || e.srcElement).tagName);
+   return txtArea || (e.keyCode || e.which || e.charCode || 0) !== 13;
+  }
+
+  form.onkeypress = checkEnter;
+
 });
