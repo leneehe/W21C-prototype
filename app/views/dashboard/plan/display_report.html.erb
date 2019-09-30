@@ -13,5 +13,10 @@
   <%= javascript_include_tag 'dashboard/print_pdf.js' %>
 <% end %>
 
-<h1>My Report</h1>
-<%= render(partial: 'report_summary2', locals: {legends: @legends, goals: @goals, events: @events}) %>
+<h1 class="col-sm-2">My Report</h1>
+<div class="col-sm-10">
+  <%= image_tag("mycarecompass_logo.png", class:"pull-right")  %>
+</div>
+<div class="col-sm-12">
+  <%= render(partial: 'report_summary2', locals: {legends: @legends, goals: @goals, events: @events}) %>
+</div>
