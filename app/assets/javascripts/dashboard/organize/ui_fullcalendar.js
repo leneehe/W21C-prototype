@@ -112,11 +112,13 @@ $(function () {
         .on('shown.bs.modal', function() {
           $(this).find('input[type="text"]').trigger('focus');
           document.querySelector('input[type="submit"]').removeAttribute("disabled");
+          /*
           document.querySelector('input#event_start').value = start
 
           if (end - start !== 86400000) {
             document.querySelector('input#event_end').value = end
           }
+          */
         })
         .on('hidden.bs.modal', function() {
           $(this)
@@ -167,7 +169,8 @@ $(function () {
     },
     eventDrop: function(calEvent, delta, revertFunc) {
 
-       alert(calEvent.title + " was dropped on " + calEvent.start.format());
+       alert(calEvent.title + " was dropped on " + moment(calEvent.start.format()).local().format('MMM D, YYYY hh:MM A')
+     );
 
        if (!confirm("Are you sure about this change?")) {
          revertFunc();
@@ -178,7 +181,8 @@ $(function () {
      },
      eventResize: function(calEvent, delta, revertFunc) {
 
-        alert(calEvent.title + " is now ending at " + calEvent.end.format());
+        alert(calEvent.title + " is now ending at " + moment(calEvent.end.format()).local().format('MMM D, YYYY hh:MM A')
+      );
 
         if (!confirm("Do you want to change to this time?")) {
           revertFunc();
@@ -258,6 +262,7 @@ function changeFunc() {
 }
 
 function updateEvent(calEvent) {
+  console.log('update Event:', calEvent)
   let event_data = {
       name: calEvent.title,
       id: calEvent.id,

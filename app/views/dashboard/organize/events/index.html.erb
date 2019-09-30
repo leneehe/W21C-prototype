@@ -2,16 +2,18 @@
   <%= stylesheet_link_tag 'fullcalendar/fullcalendar.css', media: 'all' %>
   <%= stylesheet_link_tag 'bootstrap-select/bootstrap-select.css', media: 'all' %>
   <%= stylesheet_link_tag 'select2/select2.css', media: 'all' %>
+  <%= stylesheet_link_tag 'bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.css', media: 'all' %>
 <% end %>
 
 <% content_for :scripts do %>
   <!-- Dependencies -->
   <%= javascript_include_tag 'moment/moment.js' %>
   <%= javascript_include_tag 'fullcalendar/fullcalendar.js' %>
-
   <%= javascript_include_tag 'dashboard/organize/ui_fullcalendar.js' %>
   <%= javascript_include_tag 'bootstrap-select/bootstrap-select.js' %>
   <%= javascript_include_tag 'select2/select2.js' %>
+  <%= javascript_include_tag 'bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.js' %>
+  <%= javascript_include_tag 'dashboard/organize/datetime_picker.js' %>
 <% end %>
 
 <!--
