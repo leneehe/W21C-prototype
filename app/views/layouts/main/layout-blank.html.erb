@@ -22,4 +22,7 @@
 <%= render 'layouts/partials/footer' %>
 
 <% end %>
+<% content_for(:body_attributes) do %>
+    data-turbolinks="false"
+<% end %>
 <%= render template: "layouts/application" %>

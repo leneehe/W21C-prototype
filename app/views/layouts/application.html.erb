@@ -65,7 +65,9 @@
 
   <%= yield :styles %>
 </head>
-  <body>
+  <body <% if content_for?(:body_attributes) %>
+    <%= yield(:body_attributes) %>
+  <% end %>>
     <%= content_for?(:content) ? yield(:content) : yield %>
 
     <!-- LANDING PAGE JS -->
