@@ -8,11 +8,18 @@
 
   <div class="space-20 hidden-xs"></div>
   <!--Header-Text-->
-  <div class="container text-white">
-      <div class="row text-center">
+  <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-sm-offset-2 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="space-90"></div>
+          <div class="well well-sm">
+            <p>This site is only for use within our research study and not for the general public at this time. If interested, please contact Julie Babione at <%= mail_to "jnstrome@ucalgary.ca" %>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center text-white">
           <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-              <div class="space-40"></div>
-              <div class="space-100"></div>
+              <div class="space-30"></div>
               <h1>Sign Up</h1>
               <div class="space-10"></div>
               <p>Already have an account? <%= link_to "Login Here", login_path %></p>
