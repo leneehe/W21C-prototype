@@ -50,6 +50,6 @@
 <div class="col-sm-12">
   <br>
   <%= button_to "Edit", edit_dashboard_organize_medication_path(@medication), method: :get, class: "btn btn-default" %>
-  <%= button_to "Delete Medication", dashboard_organize_medication_path(@medication), method: :delete, data: { confirm: 'Are you sure to delete this medication?' }, class: "btn btn-secondary" %>
+  <%= button_to "Delete Medication", dashboard_organize_medication_path(@medication), method: :delete, data: { confirm: 'Are you sure to delete this medication?' }, class: "btn", style: "background-color: #B580D1; color:#FFF" %>
   <%= link_to "Back", dashboard_organize_medications_path %>
 </div>
