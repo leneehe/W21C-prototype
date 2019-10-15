@@ -91,6 +91,7 @@ $(function() {
       } else {
         btn.hide();
         btnNext.removeClass('disabled');
+        btnNext.removeClass('hidden');
         btnNext.attr("disabled", false)
       }
     })
