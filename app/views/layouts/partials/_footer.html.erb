@@ -19,7 +19,12 @@
         </div>
         <div class="space-40"></div>
         <div class="col-xs-12 text-center">
-          <%= image_tag("university-of-calgary-logo.png", class: "footer-logo") %><!-- --><%= image_tag("w21c-logo-sm.jpg", class: "footer-logo") %>
+          <%= link_to "https://ucalgary.ca", target: :_blank do %>
+            <%= image_tag("university-of-calgary-logo.png", class: "footer-logo") %><!--
+       --><% end %><!--
+       --><%= link_to "https://www.w21c.org", target: :_blank do %><!--
+        --><%= image_tag("w21c-logo-sm.jpg", class: "footer-logo") %>
+          <% end %>
         <div class="space-40"></div>
         </div>
         <div class="row text-white wow fadeIn">
