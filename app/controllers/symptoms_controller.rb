@@ -112,8 +112,10 @@ class SymptomsController < ApplicationController
         @value_data.push({"x" => measurement.created_at, "y" => measurement.severity_score})
     end
 
-    start_date = TrackedSymptom.one_week_ago.sort_by { |x| x.created_at }.first.created_at
-    end_date = TrackedSymptom.one_week_ago.sort_by { |x| x.created_at }.last.created_at
+    if !TrackedSymptom.one_week_ago.empty?
+      start_date = TrackedSymptom.one_week_ago.sort_by { |x| x.created_at }.first.created_at
+      end_date = TrackedSymptom.one_week_ago.sort_by { |x| x.created_at }.last.created_at
+    end
 
     @value_collection.push({
       "name" => symptom.name,
