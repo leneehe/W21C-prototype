@@ -10,7 +10,7 @@
     "bootstrap-duallistbox": "~3.0.6",
     "bootstrap-markdown": "~2.10.0",
     "bootstrap-multiselect": "~0.9.13-1",
-    "bootstrap-select": "~1.13.1",
+    "bootstrap-select": "~1.13.6",
     "bootstrap-slider": "~10.0.0",
     "bootstrap-sortable": "git+https://github.com/drvic10k/bootstrap-sortable.git",
     "bootstrap-table": "~1.12.1",
