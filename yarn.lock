@@ -2,12 +2,10 @@
 # yarn lockfile v1
 
 
-"@claviska/jquery-minicolors@~2.2.6":
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/@claviska/jquery-minicolors/-/jquery-minicolors-2.2.6.tgz#00b4c1e4e31e4da483501785d5c2ed3fccfdedc9"
-  integrity sha1-ALTB5OMeTaSDUBeF1cLtP8z97ck=
-  dependencies:
-    jquery ">= 1.7.x"
+"@claviska/jquery-minicolors@~2.3.6":
+  version "2.3.6"
+  resolved "https://registry.yarnpkg.com/@claviska/jquery-minicolors/-/jquery-minicolors-2.3.6.tgz#0f3dfe9baf11e93a3b1b1dcf2448177cf4c32e3e"
+  integrity sha512-8Ro6D4GCrmOl41+6w4NFhEOpx8vjxwVRI69bulXsFDt49uVRKhLU5TnzEV7AmOJrylkVq+ugnYNMiGHBieeKUQ==
 
 almond@~0.3.1:
   version "0.3.3"
@@ -190,7 +188,7 @@ jquery.growl@~1.3.5:
   resolved "https://registry.yarnpkg.com/jquery.growl/-/jquery.growl-1.3.5.tgz#fa1c4d758e0d7686551e15896b1aaac2bb1af7f1"
   integrity sha1-+hxNdY4NdoZVHhWJaxqqwrsa9/E=
 
-"jquery@>= 1.7.x", jquery@>=1.12.0, jquery@>=1.7, jquery@>=1.9.1, jquery@^3.0.0, jquery@^3.3.1:
+jquery@>=1.12.0, jquery@>=1.7, jquery@>=1.9.1, jquery@^3.0.0, jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==
