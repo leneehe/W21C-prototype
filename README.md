@@ -1,8 +1,22 @@
 # My Care Compass
+![mcc-landing](https://github.com/user-attachments/assets/92094208-ffc0-4bf2-be07-c16039f1d45e)
+
 
 A patient care planning platform for the Ward of the 21st Century at University of Calgary.
 
 Hosted on AWS at: http://mycarecompass.ca/
+
+## Features
+- Resources and Information finding tool
+- Profile & personal conditions
+- Medications List
+- Calendar tool
+- Reminder tool
+- Appointment Checklist
+- Goal creation and summary
+- Track symptoms data entry tool
+- Track symptoms data insights tool
+- Generate report for care provider (print/pdf)
 
 ## Stack
 
@@ -84,3 +98,13 @@ container_commands:
   01_db_reset:
     command: RAILS_ENV=production rake db:reset DISABLE_DATABASE_ENVIRONMENT_CHECK=1
 ```
+
+# Screenshots
+![mcc-learning](https://github.com/user-attachments/assets/36ab6342-e297-40a2-8e49-6142970168fc)
+
+![mcc-symptom-tracking](https://github.com/user-attachments/assets/a6fe6b85-6801-4fc6-a3ba-23473c7b6a5b)
+
+![mcc-calendar](https://github.com/user-attachments/assets/d33e5b4c-dc2b-4086-bd89-60213aa43545)
+
+![mcc-fullscreen-landing](https://github.com/user-attachments/assets/d7e6bccd-2b2f-450f-963e-706236d89b58)
+
