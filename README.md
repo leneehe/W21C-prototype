@@ -103,8 +103,11 @@ container_commands:
 ![mcc-learning](https://github.com/user-attachments/assets/36ab6342-e297-40a2-8e49-6142970168fc)
 
 ![mcc-symptom-tracking](https://github.com/user-attachments/assets/a6fe6b85-6801-4fc6-a3ba-23473c7b6a5b)
+![mcc-symptoms-summary](https://github.com/user-attachments/assets/b0ae156f-cfe1-48c7-8e87-8e5e442ce0c8)
 
 ![mcc-calendar](https://github.com/user-attachments/assets/d33e5b4c-dc2b-4086-bd89-60213aa43545)
+
+<img width="1004" alt="image" src="https://github.com/user-attachments/assets/884a102d-d771-4d3e-96d9-e13ef85acd3a">
 
 ![mcc-fullscreen-landing](https://github.com/user-attachments/assets/d7e6bccd-2b2f-450f-963e-706236d89b58)
 
