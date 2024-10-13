@@ -7,16 +7,26 @@ A patient care planning platform for the Ward of the 21st Century at University 
 Hosted on AWS at: http://mycarecompass.ca/
 
 ## Features
-- Resources and Information finding tool
-- Profile & personal conditions
-- Medications List
-- Calendar tool
-- Reminder tool
-- Appointment Checklist
-- Goal creation and summary
-- Track symptoms data entry tool
-- Track symptoms data insights tool
-- Generate report for care provider (print/pdf)
+
+📚 Resources and Information finding tool
+
+📝 Profile & personal conditions
+
+💊 Medications List
+
+📅 Calendar tool
+
+🔔 Reminder tool
+
+✅ Appointment Checklist
+
+🎯 Goal creation and summary
+
+📈 Track symptoms data entry tool
+
+📊 Track symptoms data insights tool
+
+📝 Generate report for care provider (print/pdf)
 
 ## Stack
 
