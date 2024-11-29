@@ -44,10 +44,10 @@ bootstrap-multiselect@~0.9.13-1:
   resolved "https://registry.yarnpkg.com/bootstrap-multiselect/-/bootstrap-multiselect-0.9.13-1.tgz#2c57cee260b18d7f01a4edd9d65f25df0425fd2a"
   integrity sha1-LFfO4mCxjX8BpO3Z1l8l3wQl/So=
 
-bootstrap-select@~1.13.1:
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/bootstrap-select/-/bootstrap-select-1.13.1.tgz#f59c02926fb5ac6356b9d1cdbc5384c2f013d9ba"
-  integrity sha1-9ZwCkm+1rGNWudHNvFOEwvAT2bo=
+bootstrap-select@~1.13.6:
+  version "1.13.6"
+  resolved "https://registry.yarnpkg.com/bootstrap-select/-/bootstrap-select-1.13.6.tgz#dc41f8a7385ab4e385562b400d4cf2422f5ef852"
+  integrity sha512-MsOZjYVv0jjHOCUV6CG3J8MSsosrKL8MlA8DacMhMqFq43tTxMjjd7Czo5a/upKPNHW6asFq29oyKJTrPva6FQ==
 
 bootstrap-slider@~10.0.0:
   version "10.0.2"
